@@ -405,72 +405,93 @@ export default function HomeSection() {
       </div>
 
       {/* ===== 교통 인프라 ===== */}
-      <div ref={sec3.ref} className="relative bg-navy py-24 lg:py-32 overflow-hidden">
+      <div ref={sec3.ref} className="relative bg-[#0f1a2e] py-28 lg:py-36 overflow-hidden">
         {/* 배경 장식 */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(201,169,110,0.5) 1px, transparent 0)`,
-          backgroundSize: '32px 32px'
+        <div className="absolute inset-0 opacity-[0.04]" style={{
+          backgroundImage: `linear-gradient(rgba(201,169,110,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,169,110,0.3) 1px, transparent 1px)`,
+          backgroundSize: '80px 80px'
         }} />
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent" />
 
         <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div className={`text-center mb-16 transition-all duration-[800ms] ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <span className="text-gold text-[13px] tracking-[4px] font-medium">TRANSPORTATION</span>
-            <h2 className="text-[28px] lg:text-[36px] font-bold text-white mt-4">
-              더 넓은 세상을 잇는 교통인프라
+          {/* 섹션 타이틀 */}
+          <div className={`text-center mb-20 transition-all duration-[800ms] ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+            <span className="text-gold/80 text-[11px] tracking-[6px] font-light uppercase">Transportation</span>
+            <h2 className="text-[28px] lg:text-[38px] font-light text-white mt-5 tracking-tight">
+              더 넓은 세상을 잇는 <span className="font-bold">교통인프라</span>
             </h2>
-            <p className="text-white/40 text-[14px] mt-3">인천1호선 · 서울7호선 · GTX-B</p>
+            <div className="w-12 h-[1px] bg-gold/40 mx-auto mt-6" />
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+
+          {/* 메인 카드 3열 */}
+          <div className="grid md:grid-cols-3 gap-0">
             {[
               {
                 num: "01",
-                title: "갈산역 이용",
+                station: "갈산역",
+                line: "인천1호선",
+                lineColor: "bg-blue-500",
+                title: "갈산역 도보 1분",
                 desc: "사당역까지 바로 갈산역 이용",
-                sub: "인천1호선 갈산역 도보 1분",
-                accent: "border-t-blue-400"
               },
               {
                 num: "02",
-                title: "부평구청역 이용",
+                station: "부평구청역",
+                line: "서울7호선",
+                lineColor: "bg-green-500",
+                title: "서울7호선 환승",
                 desc: "1정거장, 약 도보 5분이면 서울7호선 부평구청역 이용",
-                sub: "서울7호선 환승",
-                accent: "border-t-green-400"
               },
               {
                 num: "03",
-                title: "부평역 이용",
+                station: "부평역",
+                line: "GTX-B",
+                lineColor: "bg-gold",
+                title: "GTX-B 노선 수혜",
                 desc: "3정거장이면 서해라인 GTX-B(시행예정) 부평역 이용",
-                sub: "GTX-B 노선 수혜",
-                accent: "border-t-gold"
               },
             ].map((item, i) => (
               <div
                 key={item.num}
-                className={`relative p-8 bg-white/[0.03] backdrop-blur-sm border border-white/10 hover:border-gold/30 hover:bg-white/[0.06] transition-all duration-500 group border-t-2 ${item.accent} ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                className={`group relative p-10 border-r border-white/[0.06] last:border-r-0 hover:bg-white/[0.03] transition-all duration-700 ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                 style={{ transitionDelay: sec3.visible ? `${200 + i * 150}ms` : "0ms" }}
               >
-                <span className="text-gold/20 text-[64px] font-black absolute top-3 right-6 group-hover:text-gold/40 transition-colors duration-500">{item.num}</span>
-                <h3 className="text-white text-[20px] font-bold mb-3 mt-2">{item.title}</h3>
-                <p className="text-white/60 text-[14px] leading-relaxed mb-5">{item.desc}</p>
-                <span className="inline-block px-4 py-1.5 bg-white/5 border border-white/10 text-gold text-[12px] rounded-full font-medium">
-                  {item.sub}
-                </span>
+                {/* 넘버링 */}
+                <span className="text-white/[0.04] text-[100px] font-black absolute -top-2 -left-1 leading-none select-none group-hover:text-white/[0.07] transition-colors duration-700">{item.num}</span>
+
+                {/* 노선 태그 */}
+                <div className="relative flex items-center gap-2.5 mb-7">
+                  <span className={`w-2 h-2 rounded-full ${item.lineColor}`} />
+                  <span className="text-white/40 text-[11px] tracking-[2px] font-medium uppercase">{item.line}</span>
+                </div>
+
+                {/* 역명 */}
+                <h3 className="relative text-white text-[26px] font-bold mb-2 tracking-tight">{item.station}</h3>
+                <p className="relative text-gold/70 text-[13px] font-medium mb-4">{item.title}</p>
+                <p className="relative text-white/35 text-[13px] leading-relaxed">{item.desc}</p>
+
+                {/* 하단 데코 라인 */}
+                <div className="mt-8 w-8 h-[1px] bg-gold/20 group-hover:w-16 group-hover:bg-gold/50 transition-all duration-700" />
               </div>
             ))}
           </div>
 
+          {/* 구분선 */}
+          <div className="my-14 h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+
           {/* Quick Access Points */}
-          <div className={`mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 transition-all duration-[800ms] delay-500 ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div className={`flex items-center justify-center gap-0 transition-all duration-[800ms] delay-500 ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             {[
               { label: "경인고속도로", value: "IC 부평" },
               { label: "수도권제1순환", value: "중동IC" },
               { label: "인천1호선", value: "갈산역" },
               { label: "서울7호선", value: "부평구청역" },
             ].map((item, i) => (
-              <div key={i} className="group text-center py-6 bg-white/[0.03] border border-white/5 rounded-xl hover:bg-white/[0.06] hover:border-white/10 transition-all duration-300">
-                <p className="text-white/30 text-[11px] tracking-wider uppercase">{item.label}</p>
-                <p className="text-white text-[16px] font-bold mt-1.5 group-hover:text-gold transition-colors">{item.value}</p>
+              <div key={i} className="group flex-1 text-center py-5 relative">
+                {i > 0 && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-8 bg-white/[0.06]" />}
+                <p className="text-white/25 text-[10px] tracking-[2px] uppercase font-light">{item.label}</p>
+                <p className="text-white/80 text-[15px] font-semibold mt-1.5 group-hover:text-gold transition-colors duration-500">{item.value}</p>
               </div>
             ))}
           </div>
