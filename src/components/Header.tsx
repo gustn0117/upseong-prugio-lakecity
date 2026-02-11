@@ -122,7 +122,7 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
           {menuItems.map((item) => (
             <div
               key={item.id}
-              className="relative"
+              className="relative group"
               onMouseEnter={() => setHoveredMenu(item.id)}
               onMouseLeave={() => setHoveredMenu(null)}
             >
@@ -142,21 +142,30 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
 
               {/* Dropdown */}
               {item.subItems && hoveredMenu === item.id && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3">
-                  <div className="bg-white rounded-lg shadow-2xl border border-gray-100/80 py-2.5 min-w-[180px] backdrop-blur-xl">
-                    <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-l border-t border-gray-100/80 rotate-45" />
-                    {item.subItems.map((sub) => (
-                      <button
-                        key={sub.id}
-                        onClick={() => {
-                          onTabChange(item.id, sub.id);
-                          setHoveredMenu(null);
-                        }}
-                        className="block w-full text-left px-5 py-2.5 text-[13px] text-gray-500 hover:text-navy hover:bg-gray-50/80 transition-all duration-200 hover:pl-6"
-                      >
-                        {sub.label}
-                      </button>
-                    ))}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50">
+                  <div className="relative overflow-hidden rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] min-w-[220px]">
+                    {/* 상단 네이비 헤더 */}
+                    <div className="bg-gradient-to-r from-[#1a2744] to-[#2a3a5c] px-5 py-3">
+                      <p className="text-white/90 text-[13px] font-semibold tracking-wide">{item.label}</p>
+                    </div>
+                    {/* 하단 메뉴 목록 */}
+                    <div className="bg-white py-1.5">
+                      {item.subItems.map((sub, idx) => (
+                        <button
+                          key={sub.id}
+                          onClick={() => {
+                            onTabChange(item.id, sub.id);
+                            setHoveredMenu(null);
+                          }}
+                          className="group/item flex items-center gap-3 w-full text-left px-5 py-3 text-[13px] text-gray-600 hover:text-[#1a2744] hover:bg-gradient-to-r hover:from-amber-50/60 hover:to-transparent transition-all duration-200"
+                        >
+                          <span className="w-1 h-1 rounded-full bg-[#c9a96e] opacity-0 group-hover/item:opacity-100 transition-opacity flex-shrink-0" />
+                          <span className="group-hover/item:translate-x-0.5 transition-transform duration-200">{sub.label}</span>
+                        </button>
+                      ))}
+                    </div>
+                    {/* 하단 골드 라인 */}
+                    <div className="h-[2px] bg-gradient-to-r from-[#c9a96e] via-[#d4b87a] to-[#c9a96e]" />
                   </div>
                 </div>
               )}

@@ -13,20 +13,60 @@ interface ComplexSectionProps {
   initialSubTab?: string;
 }
 
-// Unit table data for Building 101
+// 101동 (16F, 2라인, 동향) - 1호: 14세대, 2호: 13세대
 const building101Floors = [
-  { floor: "21F", units: [null, null, "2103", "2104"] },
-  { floor: "20F", units: ["2001", "2002", "2003", "2004"] },
+  { floor: "16F", units: ["1601", "1602"] },
+  { floor: "15F", units: ["1501", "1502"] },
+  { floor: "14F", units: ["1401", "1402"] },
+  { floor: "13F", units: ["1301", "1302"] },
+  { floor: "12F", units: ["1201", "1202"] },
+  { floor: "11F", units: ["1101", "1102"] },
+  { floor: "10F", units: ["보류지", "1002"] },
+  { floor: "9F", units: ["901", "902"] },
+  { floor: "8F", units: ["801", "802"] },
+  { floor: "7F", units: ["701", "702"] },
+  { floor: "6F", units: ["601", "602"] },
+  { floor: "5F", units: ["501", "502"] },
+  { floor: "4F", units: ["401", "402"] },
+  { floor: "3F", units: ["301", null] },
+  { floor: "2F", units: ["상가", "상가"] },
+  { floor: "1F", units: [null, null] },
+  { floor: "B1F", units: [null, null] },
+];
+
+// 102동 (16F, 2라인, 동향) - 1호: 13세대, 2호: 14세대
+const building102Floors = [
+  { floor: "16F", units: ["1601", "1602"] },
+  { floor: "15F", units: ["1501", "1502"] },
+  { floor: "14F", units: ["1401", "1402"] },
+  { floor: "13F", units: ["1301", "1302"] },
+  { floor: "12F", units: ["1201", "1202"] },
+  { floor: "11F", units: ["1101", "1102"] },
+  { floor: "10F", units: ["1001", "보류지"] },
+  { floor: "9F", units: ["901", "902"] },
+  { floor: "8F", units: ["801", "802"] },
+  { floor: "7F", units: ["701", "702"] },
+  { floor: "6F", units: ["601", "602"] },
+  { floor: "5F", units: ["501", "502"] },
+  { floor: "4F", units: ["401", "402"] },
+  { floor: "3F", units: [null, "302"] },
+  { floor: "2F", units: ["상가", "상가"] },
+  { floor: "1F", units: [null, null] },
+  { floor: "B1F", units: [null, null] },
+];
+
+// 103동 (19F, 4라인, 남향) - 각 18세대
+const building103Floors = [
   { floor: "19F", units: ["1901", "1902", "1903", "1904"] },
   { floor: "18F", units: ["1801", "1802", "1803", "1804"] },
-  { floor: "17F", units: ["1701", "1702", "1703", "1704"] },
+  { floor: "17F", units: ["1701", "1702", "보류지", "보류지"] },
   { floor: "16F", units: ["1601", "1602", "1603", "1604"] },
   { floor: "15F", units: ["1501", "1502", "1503", "1504"] },
   { floor: "14F", units: ["1401", "1402", "1403", "1404"] },
   { floor: "13F", units: ["1301", "1302", "1303", "1304"] },
   { floor: "12F", units: ["1201", "1202", "1203", "1204"] },
   { floor: "11F", units: ["1101", "1102", "1103", "1104"] },
-  { floor: "10F", units: ["1001", "1002", "1003", "1004"] },
+  { floor: "10F", units: ["보류지", "1002", "1003", "1004"] },
   { floor: "9F", units: ["901", "902", "903", "904"] },
   { floor: "8F", units: ["801", "802", "803", "804"] },
   { floor: "7F", units: ["701", "702", "703", "704"] },
@@ -37,52 +77,10 @@ const building101Floors = [
   { floor: "2F", units: ["201", "202", "203", "204"] },
 ];
 
-// Building 102 data
-const building102Floors = [
-  { floor: "20F", units: ["2001", "2002"] },
-  { floor: "19F", units: ["1901", "1902"] },
-  { floor: "18F", units: ["1801", "1802"] },
-  { floor: "17F", units: ["1701", "1702"] },
-  { floor: "16F", units: ["1601", "1602"] },
-  { floor: "15F", units: ["1501", "1502"] },
-  { floor: "14F", units: ["1401", "1402"] },
-  { floor: "13F", units: ["1301", "1302"] },
-  { floor: "12F", units: ["1201", "1202"] },
-  { floor: "11F", units: ["1101", "1102"] },
-  { floor: "10F", units: ["1001", "1002"] },
-  { floor: "9F", units: ["901", "902"] },
-  { floor: "8F", units: ["801", "802"] },
-  { floor: "7F", units: ["701", "702"] },
-  { floor: "6F", units: ["601", "602"] },
-  { floor: "5F", units: ["501", "502"] },
-  { floor: "4F", units: ["401", "402"] },
-  { floor: "3F", units: ["301", "302"] },
-  { floor: "2F", units: ["201", "202"] },
-];
-
-function getUnitStyle(unit: string | null, buildingIndex: number): string {
-  if (!unit) return "bg-white";
-  const floorNum = parseInt(unit.substring(0, unit.length - 2));
-  const unitSuffix = parseInt(unit.substring(unit.length - 2));
-
-  if (buildingIndex === 0) {
-    // Building 101: columns 3,4 (03, 04) in certain floors are highlighted
-    if ((unitSuffix === 3 || unitSuffix === 4) && floorNum >= 15 && floorNum <= 19 && floorNum % 2 !== 0) {
-      return "bg-yellow-200";
-    }
-    if ((unitSuffix === 3 || unitSuffix === 4) && floorNum >= 15 && floorNum <= 19 && floorNum % 2 === 0) {
-      return "bg-yellow-200";
-    }
-  }
-  if (buildingIndex === 1) {
-    // Building 102: some floors highlighted
-    if (floorNum >= 15 && floorNum <= 19 && floorNum % 2 !== 0) {
-      return "bg-pink-200";
-    }
-    if (floorNum >= 15 && floorNum <= 19 && floorNum % 2 === 0) {
-      return "bg-pink-200";
-    }
-  }
+function getUnitStyle(unit: string | null): string {
+  if (!unit) return "";
+  if (unit === "보류지") return "bg-amber-100 text-amber-700 font-medium";
+  if (unit === "상가") return "bg-gray-200 text-gray-600 font-medium";
   return "bg-white";
 }
 
@@ -148,51 +146,143 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
 
         {activeSubTab === "unitplan" && (
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">동·호수 배치도</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">동·호수 배치도</h3>
+            <p className="text-gray-500 text-sm mb-8">갈산역 센트럴 중앙하이츠의 동·호수 배치를 확인하세요.</p>
 
-            {/* Legend */}
-            <div className="flex gap-6 mb-8 justify-center">
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 bg-yellow-200 border border-gray-300 rounded-sm" />
-                <span className="text-sm text-gray-600">타입 A</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 bg-pink-200 border border-gray-300 rounded-sm" />
-                <span className="text-sm text-gray-600">타입 B</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 bg-blue-200 border border-gray-300 rounded-sm" />
-                <span className="text-sm text-gray-600">타입 C</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 bg-white border border-gray-300 rounded-sm" />
-                <span className="text-sm text-gray-600">일반</span>
+            {/* Summary Card */}
+            <div className="bg-gradient-to-r from-[#f9f6f0] to-[#f5f0e6] rounded-2xl p-8 mb-10 border border-[#e8dcc8]">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="text-center md:text-left">
+                  <p className="text-sm text-gray-500 mb-1">총 세대수</p>
+                  <p className="text-4xl font-bold text-navy">126<span className="text-lg font-normal text-gray-500 ml-1">세대</span></p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span className="text-5xl font-bold text-navy border-2 border-navy rounded-full w-20 h-20 flex items-center justify-center">59</span>
+                  <span className="text-sm text-gray-500 ml-2">TYPE 단일</span>
+                </div>
+                <div className="grid grid-cols-3 gap-6 text-center">
+                  <div>
+                    <p className="text-sm text-gray-500 mb-1">조합원</p>
+                    <p className="text-2xl font-bold text-navy">71<span className="text-sm font-normal text-gray-500">세대</span></p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500 mb-1">일반</p>
+                    <p className="text-2xl font-bold text-navy">50<span className="text-sm font-normal text-gray-500">세대</span></p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500 mb-1">보류지</p>
+                    <p className="text-2xl font-bold text-amber-600">5<span className="text-sm font-normal text-gray-500">세대</span></p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-12 justify-center">
-              {/* Building 101 */}
+            {/* Legend */}
+            <div className="flex flex-wrap gap-4 md:gap-6 mb-8 justify-center">
+              <div className="flex items-center gap-2">
+                <span className="w-5 h-5 bg-white border-2 border-gray-300 rounded-sm" />
+                <span className="text-sm text-gray-600">조합원 / 일반</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-5 h-5 bg-amber-100 border-2 border-amber-300 rounded-sm" />
+                <span className="text-sm text-gray-600">보류지</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-5 h-5 bg-gray-200 border-2 border-gray-300 rounded-sm" />
+                <span className="text-sm text-gray-600">상가</span>
+              </div>
+            </div>
+
+            {/* Building Tables */}
+            <div className="flex flex-col xl:flex-row gap-8 justify-center">
+              {/* 101동 + 102동 그룹 */}
+              <div className="flex flex-col md:flex-row gap-8 justify-center">
+                {/* 101동 */}
+                <div>
+                  <h4 className="text-lg font-bold text-center mb-4 text-navy">101동</h4>
+                  <table className="unit-table text-sm mx-auto">
+                    <thead>
+                      <tr>
+                        <th className="floor-label !bg-navy !text-white">층</th>
+                        <th>1호</th>
+                        <th>2호</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {building101Floors.map((row) => (
+                        <tr key={row.floor}>
+                          <td className="floor-label">{row.floor}</td>
+                          {row.units.map((unit, colIdx) => (
+                            <td key={colIdx} className={unit ? getUnitStyle(unit) : "bg-gray-50"}>
+                              {unit || ""}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <div className="mt-3 text-center">
+                    <div className="flex justify-center gap-4 text-xs text-gray-500">
+                      <span>라인: <b className="text-gray-700">1호, 2호</b></span>
+                      <span>향: <b className="text-gray-700">동향</b></span>
+                    </div>
+                    <p className="text-xs text-gray-500 mt-1">세대수: <b className="text-gray-700">14</b> + <b className="text-gray-700">13</b> = 27세대</p>
+                  </div>
+                </div>
+
+                {/* 102동 */}
+                <div>
+                  <h4 className="text-lg font-bold text-center mb-4 text-navy">102동</h4>
+                  <table className="unit-table text-sm mx-auto">
+                    <thead>
+                      <tr>
+                        <th className="floor-label !bg-navy !text-white">층</th>
+                        <th>1호</th>
+                        <th>2호</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {building102Floors.map((row) => (
+                        <tr key={row.floor}>
+                          <td className="floor-label">{row.floor}</td>
+                          {row.units.map((unit, colIdx) => (
+                            <td key={colIdx} className={unit ? getUnitStyle(unit) : "bg-gray-50"}>
+                              {unit || ""}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <div className="mt-3 text-center">
+                    <div className="flex justify-center gap-4 text-xs text-gray-500">
+                      <span>라인: <b className="text-gray-700">1호, 2호</b></span>
+                      <span>향: <b className="text-gray-700">동향</b></span>
+                    </div>
+                    <p className="text-xs text-gray-500 mt-1">세대수: <b className="text-gray-700">13</b> + <b className="text-gray-700">14</b> = 27세대</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 103동 */}
               <div>
-                <h4 className="text-lg font-bold text-center mb-4 text-gray-800">101동</h4>
+                <h4 className="text-lg font-bold text-center mb-4 text-navy">103동</h4>
                 <table className="unit-table text-sm mx-auto">
                   <thead>
                     <tr>
-                      <th className="floor-label">층</th>
-                      <th className="bg-gray-100 font-semibold">01호</th>
-                      <th className="bg-gray-100 font-semibold">02호</th>
-                      <th className="bg-gray-100 font-semibold">03호</th>
-                      <th className="bg-gray-100 font-semibold">04호</th>
+                      <th className="floor-label !bg-navy !text-white">층</th>
+                      <th>1호</th>
+                      <th>2호</th>
+                      <th>3호</th>
+                      <th>4호</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {building101Floors.map((row) => (
+                    {building103Floors.map((row) => (
                       <tr key={row.floor}>
                         <td className="floor-label">{row.floor}</td>
                         {row.units.map((unit, colIdx) => (
-                          <td
-                            key={colIdx}
-                            className={unit ? getUnitStyle(unit, 0) : "bg-gray-50"}
-                          >
+                          <td key={colIdx} className={unit ? getUnitStyle(unit) : "bg-gray-50"}>
                             {unit || ""}
                           </td>
                         ))}
@@ -200,37 +290,21 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
                     ))}
                   </tbody>
                 </table>
-              </div>
-
-              {/* Building 102 */}
-              <div>
-                <h4 className="text-lg font-bold text-center mb-4 text-gray-800">102동</h4>
-                <table className="unit-table text-sm mx-auto">
-                  <thead>
-                    <tr>
-                      <th className="floor-label">층</th>
-                      <th className="bg-gray-100 font-semibold">01호</th>
-                      <th className="bg-gray-100 font-semibold">02호</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {building102Floors.map((row) => (
-                      <tr key={row.floor}>
-                        <td className="floor-label">{row.floor}</td>
-                        {row.units.map((unit, colIdx) => (
-                          <td
-                            key={colIdx}
-                            className={getUnitStyle(unit, 1)}
-                          >
-                            {unit}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                <div className="mt-3 text-center">
+                  <div className="flex justify-center gap-4 text-xs text-gray-500">
+                    <span>라인: <b className="text-gray-700">1호, 2호, 3호, 4호</b></span>
+                    <span>향: <b className="text-gray-700">남향</b></span>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">세대수: <b className="text-gray-700">18</b> × 4 = 72세대</p>
+                </div>
               </div>
             </div>
+
+            {/* 안내 문구 */}
+            <p className="text-xs text-gray-400 text-center mt-10 leading-relaxed">
+              ※ 위 이미지 및 내용, 문구 등은 소비자의 이해를 돕기 위해 제작, 표기된 것으로 실제와 차이가 있습니다.<br />
+              ※ 위 개발내용은 사업주체 및 관계기관의 사정에 따라 변경될 수 있습니다.
+            </p>
           </div>
         )}
 
