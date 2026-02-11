@@ -26,9 +26,9 @@ export default function Home() {
   const [showFloatingBtn, setShowFloatingBtn] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      setShowFloatingBtn(window.scrollY > 300);
+      setShowFloatingBtn(window.scrollY > 400);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -47,13 +47,29 @@ export default function Home() {
         {activeTab === "register" && <RegisterSection />}
       </main>
 
-      <Footer />
+      <Footer onTabChange={handleTabChange} />
 
       {/* Floating Register Button */}
-      {showFloatingBtn && (
+      <div
+        className={`fixed bottom-8 right-8 z-40 flex flex-col items-center gap-3 transition-all duration-500 ${
+          showFloatingBtn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+        }`}
+      >
+        {/* Scroll to Top */}
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="w-12 h-12 bg-white text-gray-600 rounded-full shadow-lg border border-gray-100 flex items-center justify-center hover:bg-gray-50 hover:shadow-xl transition-all duration-300"
+          title="맨 위로"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+          </svg>
+        </button>
+
+        {/* Register CTA */}
         <button
           onClick={() => handleTabChange("register")}
-          className="fixed bottom-8 right-8 z-40 w-14 h-14 bg-navy text-white rounded-full shadow-xl flex items-center justify-center hover:bg-navy-light transition-all hover:scale-110"
+          className="w-14 h-14 bg-gold text-white rounded-full shadow-xl flex items-center justify-center hover:bg-gold-light transition-all duration-300 hover:scale-110 floating-btn"
           title="관심고객등록"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,7 +81,21 @@ export default function Home() {
             />
           </svg>
         </button>
-      )}
+      </div>
+
+      {/* Phone Floating Button (Mobile) */}
+      <a
+        href="tel:1688-0458"
+        className={`fixed bottom-8 left-6 z-40 lg:hidden flex items-center gap-2 px-5 py-3 bg-navy text-white rounded-full shadow-xl transition-all duration-500 ${
+          showFloatingBtn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+        }`}
+      >
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+        <span className="text-[13px] font-bold tracking-wider">전화상담</span>
+      </a>
     </div>
   );
 }
