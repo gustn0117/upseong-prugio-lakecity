@@ -103,7 +103,11 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg}`}>
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-[76px]">
+      {/* 홈 투명 상태일 때 글자 가독성을 위한 상단 그라데이션 */}
+      {isHome && !scrolled && (
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent pointer-events-none" />
+      )}
+      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-[76px]">
         {/* Logo */}
         <button
           onClick={() => onTabChange("home")}
