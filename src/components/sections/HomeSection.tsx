@@ -313,29 +313,52 @@ export default function HomeSection() {
             </div>
           </div>
 
-          {/* 상단 2개 - 대형 카드 */}
-          <div className={`grid md:grid-cols-2 gap-5 mb-5 transition-all duration-[800ms] delay-200 ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          {/* 4개 카드 그리드 */}
+          <div className={`grid md:grid-cols-2 gap-4 transition-all duration-[800ms] delay-200 ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             {[
               {
+                num: "01",
                 badge: "도보 0분",
                 tag: "TRANSPORTATION",
                 title: "교통중심",
                 desc: "갈산역 도보 1분! 인천1호선 운행 시 7호선 직결운행으로 서울 4대 중심 업무지구까지 한 번에",
                 image: "/images/premium-transport.jpg",
-                pixel: "680 x 420",
+                pixel: "680 x 340",
               },
               {
+                num: "02",
                 badge: "도보 1분",
                 tag: "NATURE",
                 title: "자연중심",
                 desc: "갈산천수변공원까지 1분! 단지에서 나오면 바로 수변공원이 펼쳐지는 자연친화적 주거환경",
                 image: "/images/premium-nature.jpg",
-                pixel: "680 x 420",
+                pixel: "680 x 340",
+              },
+              {
+                num: "03",
+                badge: "도보 2분",
+                tag: "LIVING",
+                title: "생활중심",
+                desc: "롯데마트, 부평문화의거리, 부평역지하상가, 부평중앙시장 등 풍부한 생활 인프라",
+                image: "/images/premium-living.jpg",
+                pixel: "680 x 340",
+              },
+              {
+                num: "04",
+                badge: "도보 10분",
+                tag: "EDUCATION",
+                title: "교육중심",
+                desc: "갈산초, 부평동중, 부평여고 등 우수한 교육 환경과 학원가가 가까이",
+                image: "/images/premium-edu.jpg",
+                pixel: "680 x 340",
               },
             ].map((item, i) => (
-              <div key={i} className="group relative h-[420px] overflow-hidden cursor-default">
-                {/* 이미지 배경 또는 플레이스홀더 */}
-                <div className="absolute inset-0 bg-navy-light">
+              <div
+                key={i}
+                className={`group relative h-[340px] overflow-hidden cursor-default ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                style={{ transitionDelay: sec2.visible ? `${200 + i * 100}ms` : "0ms", transitionDuration: "800ms" }}
+              >
+                <div className="absolute inset-0 bg-[#0f2238]">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -345,90 +368,34 @@ export default function HomeSection() {
                     onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                   />
                   {/* 이미지 미설정 안내 */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 opacity-60">
-                    <div className="w-12 h-12 rounded-xl border-2 border-dashed border-white/20 flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 opacity-50">
+                    <div className="w-12 h-12 rounded-xl border-2 border-dashed border-white/15 flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-1.5 border border-white/10">
-                      <p className="text-white/70 text-[11px] font-mono">{item.image}</p>
-                      <p className="text-white/40 text-[10px] font-mono text-center">{item.pixel} px</p>
+                      <p className="text-white/60 text-[11px] font-mono">{item.image}</p>
+                      <p className="text-white/35 text-[10px] font-mono text-center">{item.pixel} px</p>
                     </div>
                   </div>
                 </div>
                 {/* 그라데이션 오버레이 */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
+                {/* 넘버링 */}
+                <span className="absolute top-5 right-7 text-[80px] font-black text-white/[0.04] leading-none select-none">{item.num}</span>
                 {/* 컨텐츠 */}
                 <div className="absolute inset-0 p-8 lg:p-10 flex flex-col justify-between">
                   <div className="flex items-center gap-3">
-                    <span className="text-gold/80 text-[11px] tracking-[3px] font-medium">{item.tag}</span>
+                    <span className="text-gold/70 text-[10px] tracking-[4px] font-medium">{item.tag}</span>
                   </div>
                   <div>
-                    <span className="inline-block px-3 py-1 bg-gold/90 text-white text-[11px] font-bold tracking-wide rounded-sm mb-4">
+                    <span className="inline-block px-3 py-1 bg-gold/90 text-white text-[10px] font-bold tracking-[1px] rounded-sm mb-4">
                       {item.badge}
                     </span>
-                    <h3 className="text-white text-[28px] lg:text-[32px] font-bold mb-3">{item.title}</h3>
-                    <p className="text-white/60 text-[14px] leading-[1.8] max-w-[400px]">{item.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* 하단 2개 - 가로형 카드 */}
-          <div className={`grid md:grid-cols-2 gap-5 transition-all duration-[800ms] delay-400 ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            {[
-              {
-                badge: "도보 2분",
-                tag: "LIVING",
-                title: "생활중심",
-                desc: "롯데마트, 부평문화의거리, 부평역지하상가, 부평중앙시장 등 풍부한 생활 인프라",
-                image: "/images/premium-living.jpg",
-                pixel: "680 x 320",
-              },
-              {
-                badge: "도보 10분",
-                tag: "EDUCATION",
-                title: "교육중심",
-                desc: "갈산초, 부평동중, 부평여고 등 우수한 교육 환경과 학원가가 가까이",
-                image: "/images/premium-edu.jpg",
-                pixel: "680 x 320",
-              },
-            ].map((item, i) => (
-              <div key={i} className="group relative h-[320px] overflow-hidden cursor-default">
-                <div className="absolute inset-0 bg-navy-light">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                  />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 opacity-60">
-                    <div className="w-12 h-12 rounded-xl border-2 border-dashed border-white/20 flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-1.5 border border-white/10">
-                      <p className="text-white/70 text-[11px] font-mono">{item.image}</p>
-                      <p className="text-white/40 text-[10px] font-mono text-center">{item.pixel} px</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
-                <div className="absolute inset-0 p-8 lg:p-10 flex flex-col justify-between">
-                  <span className="text-gold/80 text-[11px] tracking-[3px] font-medium">{item.tag}</span>
-                  <div>
-                    <span className="inline-block px-3 py-1 bg-gold/90 text-white text-[11px] font-bold tracking-wide rounded-sm mb-4">
-                      {item.badge}
-                    </span>
-                    <h3 className="text-white text-[26px] lg:text-[28px] font-bold mb-2">{item.title}</h3>
-                    <p className="text-white/60 text-[14px] leading-[1.8] max-w-[400px]">{item.desc}</p>
+                    <h3 className="text-white text-[26px] lg:text-[30px] font-bold mb-2">{item.title}</h3>
+                    <p className="text-white/55 text-[13px] leading-[1.8] max-w-[400px]">{item.desc}</p>
                   </div>
                 </div>
               </div>
