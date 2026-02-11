@@ -144,165 +144,226 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
 
         {activeSubTab === "unitplan" && (
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">동·호수 배치도</h3>
-            <p className="text-gray-500 text-sm mb-8">갈산역 센트럴 중앙하이츠의 동·호수 배치를 확인하세요.</p>
+            {/* 섹션 헤더 */}
+            <div className="text-center mb-14">
+              <span className="text-gold text-[12px] tracking-[5px] font-medium">UNIT PLAN</span>
+              <h3 className="text-[28px] lg:text-[34px] font-bold text-gray-900 mt-3 tracking-tight">동·호수 배치도</h3>
+              <p className="text-gray-400 text-[14px] mt-3">갈산역 센트럴 중앙하이츠의 동·호수 배치를 확인하세요.</p>
+              <div className="flex items-center justify-center gap-3 mt-5">
+                <span className="w-10 h-[1px] bg-gold/40" />
+                <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                <span className="w-10 h-[1px] bg-gold/40" />
+              </div>
+            </div>
 
-            {/* Summary Card */}
-            <div className="bg-gradient-to-r from-[#f9f6f0] to-[#f5f0e6] rounded-2xl p-8 mb-10 border border-[#e8dcc8]">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="text-center md:text-left">
-                  <p className="text-sm text-gray-500 mb-1">총 세대수</p>
-                  <p className="text-4xl font-bold text-navy">126<span className="text-lg font-normal text-gray-500 ml-1">세대</span></p>
+            {/* Summary Stats - 네이비 배경 */}
+            <div className="relative bg-navy rounded-xl overflow-hidden mb-12">
+              <div className="absolute inset-0 opacity-[0.03]" style={{
+                backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(201,169,110,0.4) 20px, rgba(201,169,110,0.4) 21px)`
+              }} />
+              <div className="relative grid grid-cols-2 lg:grid-cols-5">
+                {/* 총 세대수 */}
+                <div className="col-span-2 lg:col-span-1 flex flex-col items-center justify-center py-8 px-6 border-b lg:border-b-0 lg:border-r border-white/10">
+                  <p className="text-white/40 text-[10px] tracking-[3px] font-medium uppercase mb-2">총 세대수</p>
+                  <p className="text-white text-[42px] font-bold leading-none">126</p>
+                  <p className="text-gold text-[12px] font-medium mt-1">세대</p>
                 </div>
-                <div className="flex items-center gap-1">
-                  <span className="text-5xl font-bold text-navy border-2 border-navy rounded-full w-20 h-20 flex items-center justify-center">59</span>
-                  <span className="text-sm text-gray-500 ml-2">TYPE 단일</span>
+                {/* 59 TYPE */}
+                <div className="col-span-2 lg:col-span-1 flex flex-col items-center justify-center py-8 px-6 border-b lg:border-b-0 lg:border-r border-white/10">
+                  <p className="text-white/40 text-[10px] tracking-[3px] font-medium uppercase mb-2">평형</p>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-gold text-[42px] font-bold leading-none">59</span>
+                    <span className="text-white/50 text-[13px] font-medium">TYPE</span>
+                  </div>
+                  <p className="text-white/30 text-[11px] mt-1">단일 평형</p>
                 </div>
-                <div className="grid grid-cols-3 gap-6 text-center">
-                  <div>
-                    <p className="text-sm text-gray-500 mb-1">조합원</p>
-                    <p className="text-2xl font-bold text-navy">71<span className="text-sm font-normal text-gray-500">세대</span></p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 mb-1">일반</p>
-                    <p className="text-2xl font-bold text-navy">50<span className="text-sm font-normal text-gray-500">세대</span></p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 mb-1">보류지</p>
-                    <p className="text-2xl font-bold text-amber-600">5<span className="text-sm font-normal text-gray-500">세대</span></p>
-                  </div>
+                {/* 조합원 */}
+                <div className="flex flex-col items-center justify-center py-8 px-6 border-r border-white/10">
+                  <p className="text-white/40 text-[10px] tracking-[3px] font-medium uppercase mb-2">조합원</p>
+                  <p className="text-white text-[32px] font-bold leading-none">71</p>
+                  <p className="text-white/30 text-[11px] mt-1">세대</p>
+                </div>
+                {/* 일반 */}
+                <div className="flex flex-col items-center justify-center py-8 px-6 border-r border-white/10">
+                  <p className="text-white/40 text-[10px] tracking-[3px] font-medium uppercase mb-2">일반분양</p>
+                  <p className="text-white text-[32px] font-bold leading-none">50</p>
+                  <p className="text-white/30 text-[11px] mt-1">세대</p>
+                </div>
+                {/* 보류지 */}
+                <div className="flex flex-col items-center justify-center py-8 px-6">
+                  <p className="text-white/40 text-[10px] tracking-[3px] font-medium uppercase mb-2">보류지</p>
+                  <p className="text-amber-400 text-[32px] font-bold leading-none">5</p>
+                  <p className="text-white/30 text-[11px] mt-1">세대</p>
                 </div>
               </div>
             </div>
 
             {/* Legend */}
-            <div className="flex flex-wrap gap-4 md:gap-6 mb-8 justify-center">
-              <div className="flex items-center gap-2">
-                <span className="w-5 h-5 bg-white border-2 border-gray-300 rounded-sm" />
-                <span className="text-sm text-gray-600">조합원 / 일반</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-5 h-5 bg-amber-100 border-2 border-amber-300 rounded-sm" />
-                <span className="text-sm text-gray-600">보류지</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-5 h-5 bg-gray-200 border-2 border-gray-300 rounded-sm" />
-                <span className="text-sm text-gray-600">상가</span>
-              </div>
+            <div className="flex flex-wrap gap-6 mb-10 justify-center">
+              {[
+                { color: "bg-white border-gray-300", label: "조합원 / 일반" },
+                { color: "bg-amber-100 border-amber-300", label: "보류지" },
+                { color: "bg-gray-200 border-gray-300", label: "상가" },
+              ].map((item) => (
+                <div key={item.label} className="flex items-center gap-2.5">
+                  <span className={`w-4 h-4 rounded-[3px] border-2 ${item.color}`} />
+                  <span className="text-[13px] text-gray-500">{item.label}</span>
+                </div>
+              ))}
             </div>
 
             {/* Building Tables */}
-            <div className="flex flex-col xl:flex-row gap-8 justify-center">
+            <div className="flex flex-col xl:flex-row gap-10 justify-center">
               {/* 101동 + 102동 그룹 */}
-              <div className="flex flex-col md:flex-row gap-8 justify-center">
+              <div className="flex flex-col md:flex-row gap-10 justify-center">
                 {/* 101동 */}
-                <div>
-                  <h4 className="text-lg font-bold text-center mb-4 text-navy">101동</h4>
-                  <table className="unit-table text-sm mx-auto">
-                    <thead>
-                      <tr>
-                        <th className="floor-label !bg-navy !text-white">층</th>
-                        <th>1호</th>
-                        <th>2호</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {building101Floors.map((row) => (
-                        <tr key={row.floor}>
-                          <td className="floor-label">{row.floor}</td>
-                          {row.units.map((unit, colIdx) => (
-                            <td key={colIdx} className={unit ? getUnitStyle(unit) : "bg-gray-50"}>
-                              {unit || ""}
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                  <div className="mt-3 text-center">
-                    <div className="flex justify-center gap-4 text-xs text-gray-500">
-                      <span>라인: <b className="text-gray-700">1호, 2호</b></span>
-                      <span>향: <b className="text-gray-700">동향</b></span>
+                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                  <div className="bg-navy px-6 py-4 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <span className="w-1.5 h-6 bg-gold rounded-full" />
+                      <h4 className="text-white text-[17px] font-bold tracking-tight">101동</h4>
                     </div>
-                    <p className="text-xs text-gray-500 mt-1">세대수: <b className="text-gray-700">14</b> + <b className="text-gray-700">13</b> = 27세대</p>
+                    <span className="text-white/40 text-[11px] tracking-[2px]">EAST</span>
+                  </div>
+                  <div className="p-4">
+                    <table className="unit-table text-sm mx-auto">
+                      <thead>
+                        <tr>
+                          <th className="floor-label !bg-navy !text-white">층</th>
+                          <th>1호</th>
+                          <th>2호</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {building101Floors.map((row) => (
+                          <tr key={row.floor}>
+                            <td className="floor-label">{row.floor}</td>
+                            {row.units.map((unit, colIdx) => (
+                              <td key={colIdx} className={unit ? getUnitStyle(unit) : "bg-gray-50"}>
+                                {unit || ""}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="bg-gray-50 px-6 py-4 border-t border-gray-100">
+                    <div className="flex items-center justify-between text-[12px]">
+                      <div className="flex items-center gap-4 text-gray-400">
+                        <span>라인 <b className="text-gray-600">1호, 2호</b></span>
+                        <span className="w-px h-3 bg-gray-200" />
+                        <span>향 <b className="text-gray-600">동향</b></span>
+                      </div>
+                      <span className="text-navy font-bold">27세대</span>
+                    </div>
                   </div>
                 </div>
 
                 {/* 102동 */}
-                <div>
-                  <h4 className="text-lg font-bold text-center mb-4 text-navy">102동</h4>
-                  <table className="unit-table text-sm mx-auto">
-                    <thead>
-                      <tr>
-                        <th className="floor-label !bg-navy !text-white">층</th>
-                        <th>1호</th>
-                        <th>2호</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {building102Floors.map((row) => (
-                        <tr key={row.floor}>
-                          <td className="floor-label">{row.floor}</td>
-                          {row.units.map((unit, colIdx) => (
-                            <td key={colIdx} className={unit ? getUnitStyle(unit) : "bg-gray-50"}>
-                              {unit || ""}
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                  <div className="mt-3 text-center">
-                    <div className="flex justify-center gap-4 text-xs text-gray-500">
-                      <span>라인: <b className="text-gray-700">1호, 2호</b></span>
-                      <span>향: <b className="text-gray-700">동향</b></span>
+                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                  <div className="bg-navy px-6 py-4 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <span className="w-1.5 h-6 bg-gold rounded-full" />
+                      <h4 className="text-white text-[17px] font-bold tracking-tight">102동</h4>
                     </div>
-                    <p className="text-xs text-gray-500 mt-1">세대수: <b className="text-gray-700">13</b> + <b className="text-gray-700">14</b> = 27세대</p>
+                    <span className="text-white/40 text-[11px] tracking-[2px]">EAST</span>
+                  </div>
+                  <div className="p-4">
+                    <table className="unit-table text-sm mx-auto">
+                      <thead>
+                        <tr>
+                          <th className="floor-label !bg-navy !text-white">층</th>
+                          <th>1호</th>
+                          <th>2호</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {building102Floors.map((row) => (
+                          <tr key={row.floor}>
+                            <td className="floor-label">{row.floor}</td>
+                            {row.units.map((unit, colIdx) => (
+                              <td key={colIdx} className={unit ? getUnitStyle(unit) : "bg-gray-50"}>
+                                {unit || ""}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="bg-gray-50 px-6 py-4 border-t border-gray-100">
+                    <div className="flex items-center justify-between text-[12px]">
+                      <div className="flex items-center gap-4 text-gray-400">
+                        <span>라인 <b className="text-gray-600">1호, 2호</b></span>
+                        <span className="w-px h-3 bg-gray-200" />
+                        <span>향 <b className="text-gray-600">동향</b></span>
+                      </div>
+                      <span className="text-navy font-bold">27세대</span>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* 103동 */}
-              <div>
-                <h4 className="text-lg font-bold text-center mb-4 text-navy">103동</h4>
-                <table className="unit-table text-sm mx-auto">
-                  <thead>
-                    <tr>
-                      <th className="floor-label !bg-navy !text-white">층</th>
-                      <th>1호</th>
-                      <th>2호</th>
-                      <th>3호</th>
-                      <th>4호</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {building103Floors.map((row) => (
-                      <tr key={row.floor}>
-                        <td className="floor-label">{row.floor}</td>
-                        {row.units.map((unit, colIdx) => (
-                          <td key={colIdx} className={unit ? getUnitStyle(unit) : "bg-gray-50"}>
-                            {unit || ""}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                <div className="mt-3 text-center">
-                  <div className="flex justify-center gap-4 text-xs text-gray-500">
-                    <span>라인: <b className="text-gray-700">1호, 2호, 3호, 4호</b></span>
-                    <span>향: <b className="text-gray-700">남향</b></span>
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                <div className="bg-navy px-6 py-4 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <span className="w-1.5 h-6 bg-gold rounded-full" />
+                    <h4 className="text-white text-[17px] font-bold tracking-tight">103동</h4>
                   </div>
-                  <p className="text-xs text-gray-500 mt-1">세대수: <b className="text-gray-700">18</b> × 4 = 72세대</p>
+                  <span className="text-white/40 text-[11px] tracking-[2px]">SOUTH</span>
+                </div>
+                <div className="p-4">
+                  <table className="unit-table text-sm mx-auto">
+                    <thead>
+                      <tr>
+                        <th className="floor-label !bg-navy !text-white">층</th>
+                        <th>1호</th>
+                        <th>2호</th>
+                        <th>3호</th>
+                        <th>4호</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {building103Floors.map((row) => (
+                        <tr key={row.floor}>
+                          <td className="floor-label">{row.floor}</td>
+                          {row.units.map((unit, colIdx) => (
+                            <td key={colIdx} className={unit ? getUnitStyle(unit) : "bg-gray-50"}>
+                              {unit || ""}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="bg-gray-50 px-6 py-4 border-t border-gray-100">
+                  <div className="flex items-center justify-between text-[12px]">
+                    <div className="flex items-center gap-4 text-gray-400">
+                      <span>라인 <b className="text-gray-600">1호, 2호, 3호, 4호</b></span>
+                      <span className="w-px h-3 bg-gray-200" />
+                      <span>향 <b className="text-gray-600">남향</b></span>
+                    </div>
+                    <span className="text-navy font-bold">72세대</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* 안내 문구 */}
-            <p className="text-xs text-gray-400 text-center mt-10 leading-relaxed">
-              ※ 위 이미지 및 내용, 문구 등은 소비자의 이해를 돕기 위해 제작, 표기된 것으로 실제와 차이가 있습니다.<br />
-              ※ 위 개발내용은 사업주체 및 관계기관의 사정에 따라 변경될 수 있습니다.
-            </p>
+            <div className="mt-14 bg-gray-50 rounded-lg border border-gray-100 px-6 py-5">
+              <div className="flex items-start gap-3">
+                <svg className="w-4 h-4 text-gray-300 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div className="text-[12px] text-gray-400 leading-[1.8]">
+                  <p>※ 위 이미지 및 내용, 문구 등은 소비자의 이해를 돕기 위해 제작, 표기된 것으로 실제와 차이가 있습니다.</p>
+                  <p>※ 위 개발내용은 사업주체 및 관계기관의 사정에 따라 변경될 수 있습니다.</p>
+                </div>
+              </div>
+            </div>
           </div>
         )}
 
