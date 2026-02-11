@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import ImagePlaceholder from "../ImagePlaceholder";
 import SectionBanner from "../SectionBanner";
 
@@ -60,11 +61,13 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
           <div>
             {/* Location Hero */}
             <div className="relative h-[80vh] min-h-[600px]">
-              <ImagePlaceholder
-                number={8}
-                gradient="gradient-night"
-                height="h-full"
-                label="입지환경 이미지"
+              <Image
+                src="/images/location-hero.jpg"
+                alt="입지환경"
+                fill
+                className="object-cover"
+                sizes="100vw"
+                priority
               />
               <div className="absolute inset-0 flex items-center">
                 <div className="max-w-[1400px] mx-auto px-6 w-full">
