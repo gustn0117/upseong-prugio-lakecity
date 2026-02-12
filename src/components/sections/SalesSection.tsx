@@ -7,7 +7,6 @@ import SectionBanner from "../SectionBanner";
 const subTabs = [
   { id: "schedule", label: "분양일정" },
   { id: "recruitment", label: "입주자 모집공고" },
-  { id: "policy", label: "주택시장 안정화 대책" },
 ];
 
 interface SalesSectionProps {
@@ -21,48 +20,45 @@ export default function SalesSection({ initialSubTab }: SalesSectionProps) {
     <section className="pt-[72px]">
       <SectionBanner
         title="분 양 안 내"
-        subtitle="중앙하이츠 갈산역 센트럴의 분양 일정을 확인하세요."
+        subtitle="갈산역 중앙하이츠센트럴의 분양 일정을 확인하세요."
         bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700"
       />
 
       {/* Sub Navigation */}
-      <div className="bg-[#1a2744]">
-        <div className="max-w-[1200px] mx-auto flex items-center">
-          <button className="p-4 text-white/60 hover:text-white">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-          </button>
-          {subTabs.map((tab, i) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveSubTab(tab.id)}
-              className={`relative px-8 py-4 text-sm font-medium transition-colors
-                ${activeSubTab === tab.id
-                  ? "text-white bg-white/10"
-                  : "text-white/60 hover:text-white"
-                }
-                ${i < subTabs.length - 1 ? "border-r border-white/10" : ""}
-              `}
-            >
-              {tab.label}
-              {activeSubTab === tab.id && (
-                <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-gold" />
-              )}
-            </button>
-          ))}
+      <div className="relative">
+        <div className="bg-[#0c1320]">
+          <div className="max-w-[1200px] mx-auto flex items-center justify-center overflow-x-auto">
+            {subTabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveSubTab(tab.id)}
+                className={`relative px-10 py-5 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
+                  ${activeSubTab === tab.id
+                    ? "text-gold"
+                    : "text-white/30 hover:text-white/55"
+                  }
+                `}
+              >
+                {tab.label}
+                {activeSubTab === tab.id && (
+                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-gold rounded-full" />
+                )}
+              </button>
+            ))}
+          </div>
         </div>
+        <div className="h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
       </div>
 
       {/* Content */}
       <div className="max-w-[1200px] mx-auto px-6 py-16">
         {activeSubTab === "schedule" && (
-          <div>
+          <div className="tab-content">
             <h3 className="text-2xl font-bold text-gray-900 mb-8">분양일정</h3>
 
             {/* Timeline */}
-            <div className="relative max-w-[800px] mx-auto">
+            <div className="relative max-w-[800px] mx-auto" data-animate>
               <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-200" />
               {[
                 { step: "모델하우스 오픈", date: "일정 미정", status: "upcoming" },
@@ -91,7 +87,7 @@ export default function SalesSection({ initialSubTab }: SalesSectionProps) {
         )}
 
         {activeSubTab === "recruitment" && (
-          <div>
+          <div className="tab-content">
             <h3 className="text-2xl font-bold text-gray-900 mb-8">입주자 모집공고</h3>
             <ImagePlaceholder
               number={35}
@@ -104,19 +100,6 @@ export default function SalesSection({ initialSubTab }: SalesSectionProps) {
           </div>
         )}
 
-        {activeSubTab === "policy" && (
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">주택시장 안정화 대책</h3>
-            <ImagePlaceholder
-              number={36}
-              gradient="gradient-silver"
-              height="h-[600px]"
-              label="주택시장 안정화 대책 문서"
-              dark
-              className="rounded-lg"
-            />
-          </div>
-        )}
       </div>
     </section>
   );

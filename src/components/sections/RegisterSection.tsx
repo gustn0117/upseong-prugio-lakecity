@@ -7,13 +7,13 @@ export default function RegisterSection() {
     <section className="pt-[72px]">
       <SectionBanner
         title="관심고객등록"
-        subtitle="중앙하이츠 갈산역 센트럴에 관심을 가져주셔서 감사합니다."
+        subtitle="갈산역 중앙하이츠센트럴에 관심을 가져주셔서 감사합니다."
         bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-amber-900 via-amber-800 to-amber-700"
       />
 
       {/* Form */}
-      <div className="max-w-[700px] mx-auto px-6 py-16">
+      <div data-animate className="max-w-[700px] mx-auto px-6 py-16">
         <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">
           관심고객 등록
         </h3>

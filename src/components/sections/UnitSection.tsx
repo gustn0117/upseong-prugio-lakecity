@@ -6,7 +6,7 @@ import SectionBanner from "../SectionBanner";
 
 const subTabs = [
   { id: "floorplan", label: "평면안내" },
-  { id: "materials", label: "마감재 리스트" },
+  { id: "vr", label: "VR영상" },
 ];
 
 interface UnitSectionProps {
@@ -20,120 +20,146 @@ export default function UnitSection({ initialSubTab }: UnitSectionProps) {
     <section className="pt-[72px]">
       <SectionBanner
         title="세 대 안 내"
-        subtitle="중앙하이츠 갈산역 센트럴의 세대 정보를 확인하세요."
+        subtitle="갈산역 중앙하이츠센트럴의 세대 정보를 확인하세요."
         bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-stone-700 via-stone-600 to-stone-500"
       />
 
       {/* Sub Navigation */}
-      <div className="bg-[#1a2744]">
-        <div className="max-w-[1200px] mx-auto flex items-center">
-          <button className="p-4 text-white/60 hover:text-white">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-          </button>
-          {subTabs.map((tab, i) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveSubTab(tab.id)}
-              className={`relative px-8 py-4 text-sm font-medium transition-colors
-                ${activeSubTab === tab.id
-                  ? "text-white bg-white/10"
-                  : "text-white/60 hover:text-white"
-                }
-                ${i < subTabs.length - 1 ? "border-r border-white/10" : ""}
-              `}
-            >
-              {tab.label}
-              {activeSubTab === tab.id && (
-                <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-gold" />
-              )}
-            </button>
-          ))}
+      <div className="relative">
+        <div className="bg-[#0c1320]">
+          <div className="max-w-[1200px] mx-auto flex items-center justify-center overflow-x-auto">
+            {subTabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveSubTab(tab.id)}
+                className={`relative px-10 py-5 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
+                  ${activeSubTab === tab.id
+                    ? "text-gold"
+                    : "text-white/30 hover:text-white/55"
+                  }
+                `}
+              >
+                {tab.label}
+                {activeSubTab === tab.id && (
+                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-gold rounded-full" />
+                )}
+              </button>
+            ))}
+          </div>
         </div>
+        <div className="h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
       </div>
 
       {/* Content */}
       <div className="max-w-[1200px] mx-auto px-6 py-16">
         {activeSubTab === "floorplan" && (
-          <div>
-            <div className="text-center mb-10">
-              <span className="inline-block px-4 py-1.5 bg-navy text-white text-[13px] font-bold rounded-full mb-4">
-                59 TYPE
-              </span>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">평면안내</h3>
-              <p className="text-gray-400 text-sm">59type 단일 평면으로 효율적인 공간 활용을 제공합니다.</p>
+          <div className="tab-content">
+            {/* ── Two-Column Layout: Floor Plan + Spec Sidebar ── */}
+            <div className="flex flex-col lg:flex-row gap-0 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+
+              {/* Left: Floor Plan Image */}
+              <div className="flex-1 relative bg-white p-8 md:p-12 lg:p-14">
+                {/* Corner frame decorations */}
+                <div className="absolute top-6 left-6 w-10 h-10 border-t border-l border-gold/20" />
+                <div className="absolute top-6 right-6 lg:hidden w-10 h-10 border-t border-r border-gold/20" />
+                <div className="absolute bottom-6 left-6 w-10 h-10 border-b border-l border-gold/20" />
+                <div className="absolute bottom-6 right-6 lg:hidden w-10 h-10 border-b border-r border-gold/20" />
+
+                <ImagePlaceholder
+                  number={28}
+                  gradient="gradient-silver"
+                  height="h-[400px] md:h-[520px] lg:h-[580px]"
+                  label="59type 평면도"
+                  dark={false}
+                  className="rounded-md"
+                />
+              </div>
+
+              {/* Right: Spec Sidebar */}
+              <div className="w-full lg:w-[340px] xl:w-[380px] bg-gradient-to-b from-[#0e1525] to-navy flex-shrink-0">
+                {/* Type Header */}
+                <div className="px-8 pt-10 pb-8 border-b border-white/[0.06]">
+                  <p className="text-gold/50 text-[10px] tracking-[4px] font-medium uppercase mb-3">TYPE</p>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-white text-[42px] font-bold leading-none" style={{ fontFamily: "'Noto Serif KR', serif" }}>59</span>
+                    <span className="text-white/30 text-[16px]">㎡</span>
+                  </div>
+                  <p className="text-white/25 text-[12px] mt-3 tracking-wide">전용면적 기준 단일 타입</p>
+                </div>
+
+                {/* Key Areas */}
+                <div className="grid grid-cols-2 border-b border-white/[0.06]">
+                  <div className="px-8 py-7 border-r border-white/[0.06]">
+                    <p className="text-gold/40 text-[9px] tracking-[2px] uppercase font-medium mb-2">공급면적</p>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-white text-[24px] font-bold leading-none" style={{ fontFamily: "'Noto Serif KR', serif" }}>86.81</span>
+                      <span className="text-white/20 text-[11px]">㎡</span>
+                    </div>
+                  </div>
+                  <div className="px-8 py-7">
+                    <p className="text-gold/40 text-[9px] tracking-[2px] uppercase font-medium mb-2">전용면적</p>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-gold text-[24px] font-bold leading-none" style={{ fontFamily: "'Noto Serif KR', serif" }}>59.79</span>
+                      <span className="text-gold/30 text-[11px]">㎡</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Detail Specs - Vertical List */}
+                <div className="divide-y divide-white/[0.06]">
+                  {[
+                    { label: "주거공용면적", value: "27.02㎡" },
+                    { label: "기타공용면적", value: "78.65㎡" },
+                    { label: "대지지분", value: "24.72㎡" },
+                    { label: "전용률", value: "68.9%" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between px-8 py-4">
+                      <span className="text-white/30 text-[12px]">{item.label}</span>
+                      <span className="text-white/70 text-[13px] font-medium">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Room Composition */}
+                <div className="px-8 pt-7 pb-8 border-t border-white/[0.06] mt-auto">
+                  <p className="text-gold/40 text-[9px] tracking-[3px] uppercase font-medium mb-5">ROOM</p>
+                  <div className="grid grid-cols-4 gap-3">
+                    {[
+                      { num: "3", label: "방" },
+                      { num: "2", label: "욕실" },
+                      { num: "1", label: "거실" },
+                      { num: "1", label: "주방" },
+                    ].map((room, i) => (
+                      <div key={i} className="text-center">
+                        <span className="text-white text-[22px] font-bold leading-none block" style={{ fontFamily: "'Noto Serif KR', serif" }}>{room.num}</span>
+                        <span className="text-white/30 text-[11px] block mt-1.5">{room.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Floor Plan Image */}
-            <ImagePlaceholder
-              number={28}
-              gradient="gradient-silver"
-              height="h-[600px]"
-              label="59type 평면도"
-              dark
-              className="rounded-lg max-w-[800px] mx-auto"
-            />
-
-            {/* Area Info */}
-            <div className="mt-12 max-w-[900px] mx-auto">
-              <h4 className="text-lg font-bold text-gray-900 mb-6 text-center">면적 정보</h4>
-              <div className="bg-gray-50 rounded-xl overflow-hidden">
-                <table className="w-full">
-                  <thead>
-                    <tr className="bg-navy text-white">
-                      <th className="py-4 px-6 text-[13px] font-semibold text-center">타입</th>
-                      <th className="py-4 px-6 text-[13px] font-semibold text-center">공급면적</th>
-                      <th className="py-4 px-6 text-[13px] font-semibold text-center">주거전용면적</th>
-                      <th className="py-4 px-6 text-[13px] font-semibold text-center hidden md:table-cell">주거공용면적</th>
-                      <th className="py-4 px-6 text-[13px] font-semibold text-center hidden md:table-cell">기타공용면적</th>
-                      <th className="py-4 px-6 text-[13px] font-semibold text-center hidden lg:table-cell">대지지분</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-gray-200">
-                      <td className="py-4 px-6 text-center">
-                        <span className="inline-block px-3 py-1 bg-gold/10 text-gold font-bold text-[13px] rounded">59type</span>
-                      </td>
-                      <td className="py-4 px-6 text-center text-[14px] font-semibold text-gray-800">86.81㎡</td>
-                      <td className="py-4 px-6 text-center text-[14px] font-semibold text-navy">59.79㎡</td>
-                      <td className="py-4 px-6 text-center text-[14px] text-gray-600 hidden md:table-cell">27.02㎡</td>
-                      <td className="py-4 px-6 text-center text-[14px] text-gray-600 hidden md:table-cell">78.65㎡</td>
-                      <td className="py-4 px-6 text-center text-[14px] text-gray-600 hidden lg:table-cell">24.72㎡</td>
-                    </tr>
-                  </tbody>
-                </table>
+            {/* ── Space Features - Full Width Bar ── */}
+            <div className="mt-14 relative">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px flex-1 bg-gray-200" />
+                <span className="text-gold/50 text-[10px] tracking-[4px] font-medium uppercase">SPACE DESIGN</span>
+                <div className="h-px flex-1 bg-gray-200" />
               </div>
 
-              {/* Mobile Area Details */}
-              <div className="grid grid-cols-2 gap-3 mt-6 md:hidden">
-                <div className="bg-gray-50 rounded-lg p-4 text-center">
-                  <span className="text-[11px] text-gray-400">주거공용면적</span>
-                  <p className="text-[14px] font-semibold text-gray-700 mt-1">27.02㎡</p>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-4 text-center">
-                  <span className="text-[11px] text-gray-400">기타공용면적</span>
-                  <p className="text-[14px] font-semibold text-gray-700 mt-1">78.65㎡</p>
-                </div>
-              </div>
-
-              {/* Room Layout */}
-              <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
                 {[
-                  { icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6", label: "방 3개", desc: "넉넉한 공간" },
-                  { icon: "M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z", label: "욕실 2개", desc: "쾌적한 위생" },
-                  { icon: "M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z", label: "거실", desc: "개방감 설계" },
-                  { icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10", label: "주방", desc: "효율적 동선" },
-                ].map((room, i) => (
-                  <div key={i} className="bg-white border border-gray-200 rounded-xl p-5 text-center hover:shadow-md transition-shadow">
-                    <div className="w-12 h-12 mx-auto bg-navy/5 rounded-full flex items-center justify-center mb-3">
-                      <svg className="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={room.icon} />
-                      </svg>
-                    </div>
-                    <span className="text-[15px] font-bold text-gray-800 block">{room.label}</span>
-                    <span className="text-[12px] text-gray-400 mt-1 block">{room.desc}</span>
+                  { num: "01", title: "남향 위주 배치", copy: "채광과 통풍을 극대화한 남향 중심 단지 설계로 사계절 쾌적한 주거 환경" },
+                  { num: "02", title: "3BAY 광폭 설계", copy: "개방감 있는 거실과 분리된 침실 공간, 모든 방에 자연 채광 확보" },
+                  { num: "03", title: "알파 수납 공간", copy: "드레스룸, 팬트리 등 풍부한 수납 설계로 깔끔한 생활 공간 실현" },
+                ].map((item, i) => (
+                  <div key={i} className={`group relative p-8 md:p-10 ${i < 2 ? "md:border-r border-gray-100" : ""} hover:bg-[#faf9f7] transition-colors duration-300`}>
+                    <span className="text-gold/25 text-[11px] tracking-[2px] font-medium">{item.num}</span>
+                    <h5 className="text-navy text-[16px] font-bold mt-3 mb-3 group-hover:text-gold transition-colors duration-300" style={{ fontFamily: "'Noto Serif KR', serif" }}>{item.title}</h5>
+                    <p className="text-gray-400 text-[13px] leading-[1.9]">{item.copy}</p>
+                    <div className="w-6 h-px bg-gold/20 mt-5 group-hover:w-10 transition-all duration-500" />
                   </div>
                 ))}
               </div>
@@ -141,25 +167,60 @@ export default function UnitSection({ initialSubTab }: UnitSectionProps) {
           </div>
         )}
 
-        {activeSubTab === "materials" && (
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">마감재 리스트</h3>
-            <p className="text-gray-400 text-sm mb-10">프리미엄 마감재로 완성되는 품격 있는 공간</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[31, 32, 33, 34].map((num, i) => (
-                <div key={num}>
-                  <ImagePlaceholder
-                    number={num}
-                    gradient={i % 2 === 0 ? "gradient-community" : "gradient-silver"}
-                    height="h-[300px]"
-                    label={`마감재 ${i + 1}`}
-                    dark
-                    className="rounded-lg"
-                  />
-                  <h4 className="text-base font-bold text-gray-900 mt-4">마감재 항목 {i + 1}</h4>
-                  <p className="text-sm text-gray-500 mt-1">마감재 설명 영역</p>
+        {activeSubTab === "vr" && (
+          <div className="tab-content">
+            <div className="text-center mb-10">
+              <p className="text-gold/60 text-[11px] tracking-[4px] font-medium uppercase mb-4">VIRTUAL REALITY</p>
+              <h3 className="text-[32px] md:text-[38px] font-bold text-gray-900 tracking-tight" style={{ fontFamily: "'Noto Serif KR', serif" }}>VR 영상</h3>
+              <div className="w-12 h-px bg-gold/40 mx-auto mt-5 mb-5" />
+              <p className="text-gray-400 text-[14px]">360° VR 영상으로 미리 만나보는 갈산역 중앙하이츠센트럴</p>
+            </div>
+
+            {/* VR Video Embed Area */}
+            <div className="max-w-[900px] mx-auto">
+              <div className="relative bg-gradient-to-b from-navy to-[#0d1a30] rounded-2xl overflow-hidden shadow-2xl">
+                {/* Video Placeholder */}
+                <div className="relative aspect-video flex flex-col items-center justify-center">
+                  {/* Background Pattern */}
+                  <div className="absolute inset-0 opacity-[0.03]" style={{
+                    backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, white 20px, white 21px)`,
+                  }} />
+
+                  {/* Play Button */}
+                  <div className="relative z-10 flex flex-col items-center gap-5">
+                    <div className="w-20 h-20 rounded-full border-2 border-gold/40 flex items-center justify-center bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-gold/60 transition-all duration-300 cursor-pointer group">
+                      <svg className="w-8 h-8 text-gold ml-1 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-white/70 text-[14px] font-medium tracking-wide">VR 영상 준비중</p>
+                      <p className="text-white/30 text-[12px] mt-1">360° 파노라마 뷰로 제공 예정</p>
+                    </div>
+                  </div>
+
+                  {/* Corner Decorations */}
+                  <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-gold/20" />
+                  <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-gold/20" />
+                  <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-gold/20" />
+                  <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-gold/20" />
                 </div>
-              ))}
+              </div>
+
+              {/* VR Info Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-gray-200 rounded-lg overflow-hidden mt-8 stagger-children">
+                {[
+                  { num: "360°", title: "파노라마 뷰", desc: "실제 모델하우스를 360도로 둘러볼 수 있습니다" },
+                  { num: "ALL", title: "PC / 모바일", desc: "어디서든 편하게 VR 투어를 체험하세요" },
+                  { num: "VR", title: "실감형 체험", desc: "VR 기기로 더욱 몰입감 있는 체험 가능" },
+                ].map((item, i) => (
+                  <div key={i} className={`group bg-white p-6 text-center hover:bg-navy/[0.02] transition-colors duration-300 ${i < 2 ? "border-b md:border-b-0 md:border-r border-gray-200" : ""}`}>
+                    <span className="text-gold/60 text-[11px] tracking-[3px] font-medium">{item.num}</span>
+                    <h4 className="text-navy text-[15px] font-bold mt-2 mb-1.5 group-hover:text-gold transition-colors duration-300" style={{ fontFamily: "'Noto Serif KR', serif" }}>{item.title}</h4>
+                    <p className="text-gray-400 text-[12px] leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         )}

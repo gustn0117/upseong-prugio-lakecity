@@ -23,7 +23,6 @@ export default function HomeSection() {
   const sec1 = useInView();
   const sec2 = useInView();
   const sec3 = useInView();
-  const sec4 = useInView();
   const sec5 = useInView();
   const sec6 = useInView();
 
@@ -45,7 +44,7 @@ export default function HomeSection() {
         >
           <Image
             src="/images/hero-rendering.jpg"
-            alt="중앙하이츠 갈산역 센트럴 조감도"
+            alt="갈산역 중앙하이츠센트럴 조감도"
             fill
             priority
             className="object-cover"
@@ -82,7 +81,7 @@ export default function HomeSection() {
               {/* Main Quote */}
               <div className="mb-6">
                 <p className="text-white/60 text-[16px] lg:text-[18px] font-light tracking-wide mb-4" style={{ fontFamily: "'Noto Serif KR', serif" }}>
-                  &ldquo; 갈산역 &lsquo;0분&rsquo;의 가치, 중앙하이츠에서 누린다 &rdquo;
+                  &ldquo; 갈산역 &lsquo;0분&rsquo;의 가치, 중앙하이츠에서 누리다 &rdquo;
                 </p>
                 <h1 className="text-white">
                   <span className="block text-[38px] lg:text-[52px] xl:text-[60px] font-extralight leading-[1.15] tracking-tight">
@@ -172,24 +171,18 @@ export default function HomeSection() {
         }} />
         <div className="relative max-w-[1400px] mx-auto grid grid-cols-2 lg:grid-cols-4">
           {[
-            { label: "위치", value: "인천 부평구 부평대로 258", icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z" },
-            { label: "총 세대수", value: "126세대 (일반 50세대)", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
-            { label: "타입", value: "59type 단일", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
-            { label: "분양문의", value: "1800-5636", icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" },
+            { label: "위치", value: "인천 부평구 부평대로 258" },
+            { label: "총 세대수", value: "126세대 (일반 50세대)" },
+            { label: "타입", value: "59type 단일" },
+            { label: "분양문의", value: "1800-5636" },
           ].map((item, i) => (
             <div
               key={i}
-              className="group flex items-center gap-4 px-8 py-7 border-r border-white/10 last:border-r-0 border-b lg:border-b-0 hover:bg-white/5 transition-all duration-300 cursor-default"
+              className="group px-8 py-7 border-r border-b lg:border-b-0 border-white/[0.06] last:border-r-0 hover:bg-white/[0.03] transition-all duration-300 cursor-default"
             >
-              <div className="w-11 h-11 rounded-full border border-gold/30 flex items-center justify-center flex-shrink-0 group-hover:border-gold/60 group-hover:scale-110 transition-all duration-300">
-                <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
-                </svg>
-              </div>
-              <div>
-                <p className="text-white/40 text-[11px] tracking-wider font-medium uppercase">{item.label}</p>
-                <p className="text-white text-[15px] font-semibold mt-1 group-hover:text-gold transition-colors">{item.value}</p>
-              </div>
+              <p className="text-gold/50 text-[10px] tracking-[3px] font-medium uppercase">{item.label}</p>
+              <p className="text-white text-[15px] font-semibold mt-2.5 group-hover:text-gold transition-colors duration-300">{item.value}</p>
+              <div className="w-4 h-px bg-gold/20 mt-3 group-hover:w-8 transition-all duration-300" />
             </div>
           ))}
         </div>
@@ -206,17 +199,15 @@ export default function HomeSection() {
             {/* Text Content */}
             <div className={`transition-all duration-[800ms] ${sec5.visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}>
               <span className="text-gold text-[13px] tracking-[4px] font-medium">ABOUT</span>
-              <h2 className="text-[32px] lg:text-[44px] font-bold text-gray-900 mt-4 mb-6 leading-tight">
-                삶의 중심이
-                <br />
-                <span className="text-navy">된다.</span>
+              <h2 className="text-[32px] lg:text-[44px] font-bold text-gray-900 mt-4 mb-6 leading-tight" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                삶의 중심이 <span className="text-navy">되다.</span>
               </h2>
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-16 h-[2px] bg-gold" />
                 <div className="w-2 h-2 rounded-full bg-gold/40" />
               </div>
               <p className="text-gray-500 text-[15px] leading-[1.9] mb-4">
-                중앙하이츠 갈산역 센트럴은 갈산역 도보 1분의 초역세권에 위치하여
+                갈산역 중앙하이츠센트럴은 갈산역 도보 1분의 초역세권에 위치하여
                 인천1호선은 물론 서울7호선 직결운행으로 서울 주요 업무지구까지 한 번에 연결됩니다.
               </p>
               <p className="text-gray-500 text-[15px] leading-[1.9] mb-10">
@@ -246,7 +237,7 @@ export default function HomeSection() {
               <div className="relative aspect-[4/5] overflow-hidden shadow-2xl">
                 <Image
                   src="/images/hero-rendering.jpg"
-                  alt="중앙하이츠 갈산역 센트럴"
+                  alt="갈산역 중앙하이츠센트럴"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -283,10 +274,10 @@ export default function HomeSection() {
           {/* 섹션 타이틀 */}
           <div className={`text-center mb-20 transition-all duration-[800ms] ${sec1.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <span className="text-gold text-[13px] tracking-[4px] font-medium">VALUE OF ZERO</span>
-            <h2 className="text-[30px] lg:text-[42px] font-bold text-gray-900 mt-4 leading-tight">
+            <h2 className="text-[30px] lg:text-[42px] font-bold text-gray-900 mt-4 leading-tight" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               갈산역 <span className="text-navy">「0분」</span>의 가치,
               <br />
-              중앙하이츠에서 누린다
+              중앙하이츠에서 누리다
             </h2>
             <div className="flex items-center justify-center gap-3 mt-6">
               <span className="w-12 h-[1px] bg-gold/40" />
@@ -307,7 +298,7 @@ export default function HomeSection() {
               <div className="relative">
                 <span className="inline-block px-3 py-1 bg-gold/10 text-gold text-[11px] tracking-[3px] font-semibold rounded-sm">STATION</span>
                 <p className="text-white/50 text-[14px] mt-5 mb-1">내집앞 갈산역</p>
-                <h3 className="text-white text-[36px] lg:text-[42px] font-bold leading-tight">
+                <h3 className="text-white text-[36px] lg:text-[42px] font-bold leading-tight" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                   초역세권
                 </h3>
                 <div className="w-12 h-[2px] bg-gradient-to-r from-gold to-gold/0 mt-6 mb-7" />
@@ -338,7 +329,7 @@ export default function HomeSection() {
               <div className="relative">
                 <span className="inline-block px-3 py-1 bg-green-700/10 text-green-700 text-[11px] tracking-[3px] font-semibold rounded-sm">NATURE</span>
                 <p className="text-gray-500 text-[14px] mt-5 mb-1">내집앞 수변공원</p>
-                <h3 className="text-gray-900 text-[36px] lg:text-[42px] font-bold leading-tight">
+                <h3 className="text-gray-900 text-[36px] lg:text-[42px] font-bold leading-tight" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                   초공세권
                 </h3>
                 <div className="w-12 h-[2px] bg-gradient-to-r from-green-600 to-green-600/0 mt-6 mb-7" />
@@ -380,7 +371,7 @@ export default function HomeSection() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className={`text-center mb-20 transition-all duration-[800ms] ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <span className="text-gold text-[12px] tracking-[5px] font-medium">PREMIUM 4</span>
-            <h2 className="text-[30px] lg:text-[40px] font-bold text-white mt-5 leading-tight">
+            <h2 className="text-[30px] lg:text-[40px] font-bold text-white mt-5 leading-tight" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               걸어서 누리는 완성된 프리미엄
             </h2>
             <div className="flex items-center justify-center gap-3 mt-6">
@@ -417,7 +408,7 @@ export default function HomeSection() {
                 tag: "LIVING",
                 title: "생활중심",
                 desc: "롯데마트, 부평문화의거리, 부평역지하상가, 부평중앙시장 등 풍부한 생활 인프라",
-                image: "/images/premium-living.jpg",
+                image: "/images/premium-life.jpg",
                 pixel: "680 x 340",
               },
               {
@@ -495,8 +486,8 @@ export default function HomeSection() {
           <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
             <div className={`text-center mb-16 transition-all duration-[800ms] ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
               <span className="text-gold/80 text-[11px] tracking-[6px] font-light uppercase">Transportation</span>
-              <h2 className="text-[28px] lg:text-[38px] font-light text-white mt-5 tracking-tight">
-                더 넓은 세상을 잇는 <span className="font-bold">교통인프라</span>
+              <h2 className="text-[28px] lg:text-[38px] font-light text-white mt-5 tracking-tight" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                더 넓은 세상을 잇다, <span className="font-bold">교통인프라</span>
               </h2>
               <p className="text-white/30 text-[14px] mt-4">인천1호선 · 서울7호선 · GTX-B 트리플 노선 수혜</p>
               <div className="w-12 h-[1px] bg-gold/40 mx-auto mt-6" />
@@ -644,74 +635,6 @@ export default function HomeSection() {
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent" />
       </div>
 
-      {/* ===== 생활 인프라 ===== */}
-      <div ref={sec4.ref} className="py-24 lg:py-32 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div className={`text-center mb-16 transition-all duration-[800ms] ${sec4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <span className="text-gold text-[13px] tracking-[4px] font-medium">LIVING INFRA</span>
-            <h2 className="text-[28px] lg:text-[36px] font-bold text-gray-900 mt-4">
-              앞마당에 펼쳐진 완벽한 생활인프라
-            </h2>
-            <p className="text-gray-400 text-[14px] mt-3">
-              중심상업지구를 통한 풍부한 생활편의시설
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                category: "쇼핑",
-                icon: "M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z",
-                color: "bg-gold",
-                lightBg: "bg-[#fdf8f0]",
-                items: ["롯데마트 부평점", "부평역지하상가", "부평중앙시장", "부평문화의거리"],
-              },
-              {
-                category: "교육",
-                icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
-                color: "bg-navy",
-                lightBg: "bg-[#f0f2f7]",
-                items: ["갈산초등학교", "부평동중학교", "부평여자고등학교", "인천부평고등학교"],
-              },
-              {
-                category: "편의/의료",
-                icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5",
-                color: "bg-green-600",
-                lightBg: "bg-[#f0f5f0]",
-                items: ["부평구청", "부평경찰서", "인천의료원", "부평세림병원"],
-              },
-            ].map((group, i) => (
-              <div
-                key={i}
-                className={`group relative overflow-hidden rounded-xl ${group.lightBg} hover:shadow-xl transition-all duration-500 hover:-translate-y-1 ${sec4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-                style={{ transitionDelay: sec4.visible ? `${200 + i * 150}ms` : "0ms" }}
-              >
-                <div className={`h-1 ${group.color}`} />
-                <div className="p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className={`w-10 h-10 rounded-xl ${group.color} flex items-center justify-center`}>
-                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={group.icon} />
-                      </svg>
-                    </div>
-                    <h3 className="text-[18px] font-bold text-gray-900">{group.category}</h3>
-                  </div>
-                  <ul className="space-y-3.5">
-                    {group.items.map((item, j) => (
-                      <li key={j} className="flex items-center gap-3 text-[14px] text-gray-600 group-hover:text-gray-700 transition-colors">
-                        <svg className="w-4 h-4 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* ===== CTA Section ===== */}
       <div ref={sec6.ref} className="relative py-24 lg:py-32 bg-gradient-to-br from-[#1a2744] via-[#1e3050] to-[#2a4470] overflow-hidden">
         {/* 배경 장식 */}
@@ -736,9 +659,9 @@ export default function HomeSection() {
             <p className="text-gold text-[13px] tracking-[4px] font-medium">CONTACT</p>
             <span className="w-8 h-[1px] bg-gold/50" />
           </div>
-          <h2 className="text-white text-[34px] lg:text-[46px] font-bold mb-4">분양문의</h2>
+          <h2 className="text-white text-[34px] lg:text-[46px] font-bold mb-4" style={{ fontFamily: "'Noto Serif KR', serif" }}>분양문의</h2>
           <p className="text-white/50 text-[15px] mb-10 leading-relaxed">
-            중앙하이츠 갈산역 센트럴에 대한
+            갈산역 중앙하이츠센트럴에 대한
             <br className="sm:hidden" /> 자세한 상담을 받아보세요.
           </p>
           <a

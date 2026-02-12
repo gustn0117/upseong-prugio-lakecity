@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import ImagePlaceholder from "../ImagePlaceholder";
 import SectionBanner from "../SectionBanner";
 
@@ -99,58 +100,132 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
     <section className="pt-[72px]">
       <SectionBanner
         title="단 지 안 내"
-        subtitle="중앙하이츠 갈산역 센트럴의 단지 정보를 확인하세요."
+        subtitle="갈산역 중앙하이츠센트럴의 단지 정보를 확인하세요."
         bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-500"
       />
 
       {/* Sub Navigation */}
-      <div className="bg-[#1a2744]">
-        <div className="max-w-[1200px] mx-auto flex items-center">
-          <button className="p-4 text-white/60 hover:text-white">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-          </button>
-          {subTabs.map((tab, i) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveSubTab(tab.id)}
-              className={`relative px-8 py-4 text-sm font-medium transition-colors
-                ${activeSubTab === tab.id
-                  ? "text-white bg-white/10"
-                  : "text-white/60 hover:text-white"
-                }
-                ${i < subTabs.length - 1 ? "border-r border-white/10" : ""}
-              `}
-            >
-              {tab.label}
-              {activeSubTab === tab.id && (
-                <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-gold" />
-              )}
-            </button>
-          ))}
+      <div className="relative">
+        <div className="bg-[#0c1320]">
+          <div className="max-w-[1200px] mx-auto flex items-center justify-center overflow-x-auto">
+            {subTabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveSubTab(tab.id)}
+                className={`relative px-10 py-5 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
+                  ${activeSubTab === tab.id
+                    ? "text-gold"
+                    : "text-white/30 hover:text-white/55"
+                  }
+                `}
+              >
+                {tab.label}
+                {activeSubTab === tab.id && (
+                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-gold rounded-full" />
+                )}
+              </button>
+            ))}
+          </div>
         </div>
+        <div className="h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
       </div>
 
       {/* Content */}
-      <div className="max-w-[1200px] mx-auto px-6 py-16">
-        {activeSubTab === "siteplan" && (
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">단지배치도</h3>
-            <ImagePlaceholder
-              number={23}
-              gradient="gradient-community"
-              height="h-[600px]"
-              label="단지배치도 이미지"
-              dark
-              className="rounded-lg"
-            />
-          </div>
-        )}
+      {activeSubTab === "siteplan" && (
+        <div className="tab-content bg-white">
+          <div className="max-w-[1100px] mx-auto px-6 py-20 lg:py-28">
+            {/* 섹션 헤더 */}
+            <div className="text-center mb-16">
+              <span className="text-gold text-[11px] tracking-[6px] font-medium uppercase">Site Plan</span>
+              <h3 className="text-navy text-[28px] lg:text-[36px] font-bold mt-4 leading-tight" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                단지배치도
+              </h3>
+              <div className="w-12 h-[2px] bg-gold mx-auto mt-6" />
+              <p className="text-gray-400 text-[14px] mt-5 tracking-wide">
+                총 126세대 · 3개동 · 59TYPE 단일평형
+              </p>
+            </div>
 
+            {/* 이미지 영역 */}
+            <div data-animate="scale-up" className="relative mb-16">
+              {/* 이미지 프레임 */}
+              <div className="relative">
+                {/* 골드 코너 장식 */}
+                <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-gold/50 z-10" />
+                <div className="absolute -top-3 -right-3 w-8 h-8 border-t-2 border-r-2 border-gold/50 z-10" />
+                <div className="absolute -bottom-3 -left-3 w-8 h-8 border-b-2 border-l-2 border-gold/50 z-10" />
+                <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-gold/50 z-10" />
+
+                <div className="border border-gray-200/80 overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)]">
+                  <Image
+                    src="/images/site-plan.jpg"
+                    alt="갈산역 중앙하이츠센트럴 단지배치도"
+                    width={2400}
+                    height={1698}
+                    className="w-full h-auto"
+                    sizes="(max-width: 1100px) 100vw, 1100px"
+                    quality={85}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* 동별 정보 카드 */}
+            <div data-animate className="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-200 rounded-lg overflow-hidden mb-8 stagger-children">
+              {[
+                { dong: "101동", floor: "B1 ~ 16F", lines: "2라인", direction: "동향", units: "27", color: "border-l-navy" },
+                { dong: "102동", floor: "B1 ~ 16F", lines: "2라인", direction: "동향", units: "27", color: "border-l-navy" },
+                { dong: "103동", floor: "2F ~ 19F", lines: "4라인", direction: "남향", units: "72", color: "border-l-gold" },
+              ].map((b, i) => (
+                <div key={i} className={`group relative border-l-4 ${b.color} ${i < 2 ? "lg:border-r border-gray-200 border-b lg:border-b-0" : ""} py-7 px-7 hover:bg-gray-50/60 transition-all duration-300`}>
+                  {/* 동 번호 + 향 */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <span className="text-navy text-[20px] font-bold" style={{ fontFamily: "'Noto Serif KR', serif" }}>{b.dong}</span>
+                      <span className="text-[10px] font-semibold text-gold tracking-[2px] px-2.5 py-1 bg-gold/[0.06] rounded-sm">{b.direction}</span>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-navy text-[26px] font-bold leading-none" style={{ fontFamily: "'Noto Serif KR', serif" }}>{b.units}</span>
+                      <span className="text-gray-400 text-[11px] ml-0.5">세대</span>
+                    </div>
+                  </div>
+                  {/* 세부 정보 */}
+                  <div className="flex items-center gap-4 text-gray-400 text-[12px]">
+                    <div className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5" />
+                      </svg>
+                      <span>{b.floor}</span>
+                    </div>
+                    <span className="w-px h-3 bg-gray-200" />
+                    <div className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                      </svg>
+                      <span>{b.lines}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* 구분선 + 안내 */}
+            <div className="flex items-center justify-center gap-4 mb-5">
+              <span className="w-12 h-px bg-gray-200" />
+              <span className="w-1 h-1 bg-gold/40 rotate-45" />
+              <span className="w-12 h-px bg-gray-200" />
+            </div>
+            <p className="text-gray-300 text-[11px] text-center tracking-wide">
+              * 본 단지배치도는 소비자의 이해를 돕기 위한 것으로, 실제와 다소 차이가 있을 수 있습니다.
+            </p>
+          </div>
+        </div>
+      )}
+
+      <div className="max-w-[1200px] mx-auto px-6 py-16">
         {activeSubTab === "unitplan" && (
-          <div>
+          <div className="tab-content">
             {/* 섹션 헤더 */}
             <div className="text-center mb-14">
               <span className="text-gold text-[12px] tracking-[5px] font-medium">UNIT PLAN</span>
@@ -324,7 +399,7 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
         )}
 
         {activeSubTab === "community" && (
-          <div>
+          <div className="tab-content">
             <h3 className="text-2xl font-bold text-gray-900 mb-8">커뮤니티</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[24, 25, 26, 27].map((num, i) => (
