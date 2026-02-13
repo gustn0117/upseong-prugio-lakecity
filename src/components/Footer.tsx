@@ -49,7 +49,8 @@ export default function Footer({ onTabChange }: FooterProps) {
                 alt="중앙하이츠 갈산역 센트럴"
                 width={180}
                 height={40}
-                className="h-[32px] w-auto brightness-0 invert opacity-80"
+                className="h-[32px] w-auto opacity-80"
+                style={{ filter: "brightness(0) invert(1)" }}
               />
             </div>
             <p className="text-[13px] leading-[1.8] text-gray-500">

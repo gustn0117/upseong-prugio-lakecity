@@ -401,7 +401,8 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
                     alt="중앙하이츠 갈산역 센트럴"
                     width={400}
                     height={90}
-                    className="h-[60px] lg:h-[80px] w-auto brightness-0 invert"
+                    className="h-[60px] lg:h-[80px] w-auto"
+                    style={{ filter: "brightness(0) invert(1)" }}
                   />
                 </div>
                 <div className="flex items-center justify-center gap-2 mb-10">

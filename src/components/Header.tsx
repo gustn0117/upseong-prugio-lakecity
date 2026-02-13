@@ -148,7 +148,8 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
             alt="중앙하이츠 갈산역 센트럴"
             width={180}
             height={40}
-            className={`h-[34px] w-auto transition-all duration-300 ${logoWhite ? "brightness-0 invert" : ""}`}
+            className="h-[34px] w-auto transition-[filter] duration-300"
+            style={logoWhite ? { filter: "brightness(0) invert(1)" } : undefined}
             priority
           />
         </button>

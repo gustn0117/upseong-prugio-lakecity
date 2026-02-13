@@ -114,7 +114,8 @@ export default function HomeSection() {
                   alt="중앙하이츠 갈산역 센트럴"
                   width={360}
                   height={80}
-                  className="h-[48px] lg:h-[56px] w-auto brightness-0 invert"
+                  className="h-[48px] lg:h-[56px] w-auto"
+                  style={{ filter: "brightness(0) invert(1)" }}
                 />
               </div>
 
