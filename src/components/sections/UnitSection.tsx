@@ -20,7 +20,7 @@ export default function UnitSection({ initialSubTab }: UnitSectionProps) {
     <section className="pt-[72px]">
       <SectionBanner
         title="세 대 안 내"
-        subtitle="갈산역 중앙하이츠센트럴의 세대 정보를 확인하세요."
+        subtitle="중앙하이츠 갈산역 센트럴의 세대 정보를 확인하세요."
         bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-stone-700 via-stone-600 to-stone-500"
       />
@@ -173,7 +173,7 @@ export default function UnitSection({ initialSubTab }: UnitSectionProps) {
               <p className="text-gold/60 text-[11px] tracking-[4px] font-medium uppercase mb-4">VIRTUAL REALITY</p>
               <h3 className="text-[32px] md:text-[38px] font-bold text-gray-900 tracking-tight" style={{ fontFamily: "'Noto Serif KR', serif" }}>VR 영상</h3>
               <div className="w-12 h-px bg-gold/40 mx-auto mt-5 mb-5" />
-              <p className="text-gray-400 text-[14px]">360° VR 영상으로 미리 만나보는 갈산역 중앙하이츠센트럴</p>
+              <p className="text-gray-400 text-[14px]">360° VR 영상으로 미리 만나보는 중앙하이츠 갈산역 센트럴</p>
             </div>
 
             {/* VR Video Embed Area */}

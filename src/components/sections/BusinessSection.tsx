@@ -21,7 +21,7 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
     <section className="pt-[72px]">
       <SectionBanner
         title="사 업 안 내"
-        subtitle="갈산역 중앙하이츠센트럴의 사업 정보를 확인하세요."
+        subtitle="중앙하이츠 갈산역 센트럴의 사업 정보를 확인하세요."
         bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500"
       />
@@ -64,7 +64,7 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
                   <span className="text-gold/70 text-[10px] tracking-[4px] font-medium uppercase">Project Overview</span>
                 </div>
                 <h3 className="text-white text-[24px] lg:text-[32px] font-bold leading-tight" style={{ fontFamily: "'Noto Serif KR', serif" }}>
-                  갈산역 중앙하이츠센트럴
+                  중앙하이츠 갈산역 센트럴
                 </h3>
                 <p className="text-white/35 text-[13px] mt-2 tracking-wide">
                   인천광역시 부평구 부평대로 258 · 지하 1층 ~ 지상 19층
@@ -109,7 +109,7 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
                     <div className="relative aspect-[16/9]">
                       <Image
                         src="/images/perspective.jpg"
-                        alt="갈산역 중앙하이츠센트럴 투시도"
+                        alt="중앙하이츠 갈산역 센트럴 투시도"
                         fill
                         className="object-cover"
                         sizes="(max-width: 1100px) 100vw, 1100px"
@@ -130,7 +130,7 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
                   <h4 className="text-navy text-[15px] font-bold tracking-wide" style={{ fontFamily: "'Noto Serif KR', serif" }}>사업 정보</h4>
                 </div>
                 {[
-                  { label: "사업명", value: "갈산역 중앙하이츠센트럴", highlight: true },
+                  { label: "사업명", value: "중앙하이츠 갈산역 센트럴", highlight: true },
                   { label: "위치", value: "인천광역시 부평구 부평대로 258" },
                   { label: "규모", value: "지하 1층 ~ 지상 19층, 3개동 총 126세대" },
                   { label: "일반분양", value: "50세대" },
@@ -234,7 +234,7 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
                 <div className="relative h-[300px] sm:h-[400px] lg:h-[480px] flex items-center justify-center">
                   <Image
                     src="/images/map-directions.jpg"
-                    alt="갈산역 중앙하이츠센트럴 오시는길 약도"
+                    alt="중앙하이츠 갈산역 센트럴 오시는길 약도"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1100px) 100vw, 1100px"

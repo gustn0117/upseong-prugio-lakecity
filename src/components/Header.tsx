@@ -144,10 +144,10 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
           className="flex items-center gap-2.5 cursor-pointer group"
         >
           <span className={`inline-block px-2.5 py-1 pl-[calc(0.625rem+2px)] border text-[11px] font-medium tracking-[2px] transition-all duration-300 ${logoBorder} group-hover:bg-gold group-hover:border-gold group-hover:text-white`}>
-            갈산역
+            중앙하이츠
           </span>
           <span className={`text-[20px] font-bold tracking-tight transition-colors duration-300 ${logoText}`}>
-            중앙하이츠센트럴
+            갈산역 센트럴
           </span>
         </button>
 
@@ -252,7 +252,7 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
           {/* 하단 정보 바 */}
           <div className="border-t border-white/[0.04]">
             <div className="max-w-[1100px] mx-auto px-10 py-3 flex items-center justify-between">
-              <p className="text-white/20 text-[11px] tracking-wide">갈산역 중앙하이츠센트럴 · 총 126세대 · 59TYPE 단일</p>
+              <p className="text-white/20 text-[11px] tracking-wide">중앙하이츠 갈산역 센트럴 · 총 126세대 · 59TYPE 단일</p>
               <a href="tel:18005636" className="flex items-center gap-1.5 text-gold/60 hover:text-gold text-[12px] font-medium tracking-wider transition-colors">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}

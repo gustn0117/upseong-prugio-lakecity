@@ -119,7 +119,7 @@ export default function Footer({ onTabChange }: FooterProps) {
       <div className="border-t border-gray-800/60">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[12px] text-gray-600">
-            &copy; 2025 갈산역 중앙하이츠센트럴. All rights reserved.
+            &copy; 2025 중앙하이츠 갈산역 센트럴. All rights reserved.
           </p>
           <p className="text-[11px] text-gray-700 max-w-[600px] text-center md:text-right leading-relaxed">
             본 제작물에 사용된 이미지 및 내용, 문구 등은 소비자의 이해를 돕기 위해 제작 또는 표기된 것으로

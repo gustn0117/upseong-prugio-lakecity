@@ -100,7 +100,7 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
     <section className="pt-[72px]">
       <SectionBanner
         title="단 지 안 내"
-        subtitle="갈산역 중앙하이츠센트럴의 단지 정보를 확인하세요."
+        subtitle="중앙하이츠 갈산역 센트럴의 단지 정보를 확인하세요."
         bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-500"
       />
@@ -160,7 +160,7 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
                 <div className="border border-gray-200/80 overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)]">
                   <Image
                     src="/images/site-plan.jpg"
-                    alt="갈산역 중앙하이츠센트럴 단지배치도"
+                    alt="중앙하이츠 갈산역 센트럴 단지배치도"
                     width={2400}
                     height={1698}
                     className="w-full h-auto"
@@ -230,7 +230,7 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
             <div className="text-center mb-14">
               <span className="text-gold text-[12px] tracking-[5px] font-medium">UNIT PLAN</span>
               <h3 className="text-[28px] lg:text-[34px] font-bold text-gray-900 mt-3 tracking-tight">동·호수 배치도</h3>
-              <p className="text-gray-400 text-[14px] mt-3">갈산역 센트럴 중앙하이츠의 동·호수 배치를 확인하세요.</p>
+              <p className="text-gray-400 text-[14px] mt-3">중앙하이츠 갈산역 센트럴의 동·호수 배치를 확인하세요.</p>
               <div className="flex items-center justify-center gap-3 mt-5">
                 <span className="w-10 h-[1px] bg-gold/40" />
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />

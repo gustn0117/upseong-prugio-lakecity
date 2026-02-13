@@ -20,7 +20,7 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
     <section className="pt-[72px]">
       <SectionBanner
         title="홍 보 센 터"
-        subtitle="갈산역 중앙하이츠센트럴의 최신 소식을 만나보세요."
+        subtitle="중앙하이츠 갈산역 센트럴의 최신 소식을 만나보세요."
         bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700"
       />
@@ -89,7 +89,7 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
         {activeSubTab === "video" && (
           <div className="tab-content">
             <h3 className="text-2xl font-bold text-gray-900 mb-2">홍보영상</h3>
-            <p className="text-sm text-gray-500 mb-8">갈산역 중앙하이츠센트럴의 프리미엄 주거공간을 영상으로 만나보세요.</p>
+            <p className="text-sm text-gray-500 mb-8">중앙하이츠 갈산역 센트럴의 프리미엄 주거공간을 영상으로 만나보세요.</p>
 
             {/* 메인 비디오 플레이어 */}
             <div className="bg-[#0a0f1a] rounded-2xl overflow-hidden shadow-2xl">
@@ -112,7 +112,7 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
               {/* 하단 정보 바 */}
               <div className="px-6 pb-5 flex items-center justify-between">
                 <div>
-                  <h4 className="text-white font-bold text-base tracking-wide">갈산역 중앙하이츠센트럴 홍보영상</h4>
+                  <h4 className="text-white font-bold text-base tracking-wide">중앙하이츠 갈산역 센트럴 홍보영상</h4>
                   <p className="text-white/40 text-xs mt-1">갈산역 0분의 가치 · 총 126세대 · 59TYPE 단일</p>
                 </div>
                 <div className="flex items-center gap-1.5 text-[#c9a96e]/60">

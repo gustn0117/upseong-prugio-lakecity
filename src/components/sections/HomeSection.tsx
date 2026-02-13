@@ -43,7 +43,7 @@ export default function HomeSection() {
         >
           <Image
             src="/images/hero-rendering.jpg"
-            alt="갈산역 중앙하이츠센트럴 조감도"
+            alt="중앙하이츠 갈산역 센트럴 조감도"
             fill
             priority
             className="object-cover"
@@ -110,10 +110,10 @@ export default function HomeSection() {
                 }`}
               >
                 <span className="inline-block px-4 py-1.5 pl-[calc(1rem+3px)] border border-gold/60 text-gold text-[12px] font-medium tracking-[3px]">
-                  갈산역
+                  중앙하이츠
                 </span>
                 <span className="text-white text-[28px] lg:text-[32px] font-bold tracking-tight">
-                  중앙하이츠센트럴
+                  갈산역 센트럴
                 </span>
               </div>
 
@@ -206,7 +206,7 @@ export default function HomeSection() {
                 <div className="w-2 h-2 rounded-full bg-gold/40" />
               </div>
               <p className="text-gray-500 text-[15px] leading-[1.9] mb-4">
-                갈산역 중앙하이츠센트럴은 갈산역 도보 1분의 초역세권에 위치하여
+                중앙하이츠 갈산역 센트럴은 갈산역 도보 1분의 초역세권에 위치하여
                 인천1호선은 물론 서울7호선 직결운행으로 서울 주요 업무지구까지 한 번에 연결됩니다.
               </p>
               <p className="text-gray-500 text-[15px] leading-[1.9] mb-10">
@@ -236,7 +236,7 @@ export default function HomeSection() {
               <div className="relative aspect-[4/5] overflow-hidden shadow-2xl">
                 <Image
                   src="/images/hero-rendering.jpg"
-                  alt="갈산역 중앙하이츠센트럴"
+                  alt="중앙하이츠 갈산역 센트럴"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -497,7 +497,7 @@ export default function HomeSection() {
           </div>
           <h2 className="text-white text-[34px] lg:text-[46px] font-bold mb-4" style={{ fontFamily: "'Noto Serif KR', serif" }}>분양문의</h2>
           <p className="text-white/50 text-[15px] mb-10 leading-relaxed">
-            갈산역 중앙하이츠센트럴에 대한
+            중앙하이츠 갈산역 센트럴에 대한
             <br className="sm:hidden" /> 자세한 상담을 받아보세요.
           </p>
           <a

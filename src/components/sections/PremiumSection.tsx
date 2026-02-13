@@ -142,7 +142,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                     <div className="h-[350px] sm:h-[420px] lg:h-[520px] overflow-hidden border border-gray-200/60 shadow-sm">
                       <Image
                         src="/images/location.jpg"
-                        alt="갈산역 중앙하이츠센트럴 위치도"
+                        alt="중앙하이츠 갈산역 센트럴 위치도"
                         width={1800}
                         height={1031}
                         className="max-w-none w-[170%] h-auto"
@@ -226,7 +226,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                     걸어서 누리는 완성된 프리미엄
                   </p>
                   <p className="text-white/25 text-[13px] mt-3 tracking-[1px]">
-                    갈산역 중앙하이츠센트럴, 삶의 중심이 되다
+                    중앙하이츠 갈산역 센트럴, 삶의 중심이 되다
                   </p>
                 </div>
               </div>
