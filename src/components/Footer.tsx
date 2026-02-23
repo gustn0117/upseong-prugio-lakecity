@@ -15,9 +15,9 @@ export default function Footer({ onTabChange }: FooterProps) {
   };
 
   return (
-    <footer className="bg-[#111318] text-gray-400">
-      {/* Gold accent line */}
-      <div className="h-px gold-line-shimmer" />
+    <footer className="bg-elif-green-dark text-gray-400">
+      {/* Nature accent line */}
+      <div className="h-px nature-line-shimmer" />
 
       {/* Top CTA Bar */}
       <div className="bg-elif-green">
@@ -28,7 +28,7 @@ export default function Footer({ onTabChange }: FooterProps) {
           </div>
           <button
             onClick={() => handleNav("register")}
-            className="group flex items-center gap-3 px-8 py-3.5 border border-elif-beige text-elif-beige hover:bg-elif-beige hover:text-white text-[14px] font-medium tracking-wider transition-all duration-300"
+            className="group flex items-center gap-3 px-8 py-3.5 border border-elif-lake text-elif-lake hover:bg-elif-lake hover:text-white text-[14px] font-medium tracking-wider transition-all duration-300 rounded-full"
           >
             등록하기
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,7 +53,7 @@ export default function Footer({ onTabChange }: FooterProps) {
             </p>
             <div className="mt-5 flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center">
-                <svg className="w-3.5 h-3.5 text-elif-beige" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 text-elif-lake" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
@@ -68,7 +68,7 @@ export default function Footer({ onTabChange }: FooterProps) {
           {/* Links */}
           <div className="flex gap-16">
             <div>
-              <h4 className="text-[13px] font-semibold text-elif-beige tracking-wider mb-5">바로가기</h4>
+              <h4 className="text-[13px] font-semibold text-elif-lake tracking-wider mb-5">바로가기</h4>
               <ul className="space-y-3">
                 {[
                   { id: "business", label: "사업안내" },
@@ -88,7 +88,7 @@ export default function Footer({ onTabChange }: FooterProps) {
               </ul>
             </div>
             <div>
-              <h4 className="text-[13px] font-semibold text-elif-beige tracking-wider mb-5">고객센터</h4>
+              <h4 className="text-[13px] font-semibold text-elif-lake tracking-wider mb-5">고객센터</h4>
               <ul className="space-y-3">
                 {[
                   { id: "sales", label: "분양안내" },

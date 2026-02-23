@@ -22,7 +22,7 @@ export default function ElifLogo({
 }: ElifLogoProps) {
   const s = sizeMap[size];
   const mainColor = white ? "text-white" : "text-elif-green";
-  const accentColor = "text-elif-beige";
+  const accentColor = "text-elif-lake";
   const subColor = white ? "text-white/50" : "text-gray-400";
 
   return (

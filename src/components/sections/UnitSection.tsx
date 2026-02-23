@@ -26,7 +26,7 @@ export default function UnitSection({ initialSubTab }: UnitSectionProps) {
 
       {/* Sub Navigation */}
       <div className="relative">
-        <div className="bg-[#041f18]">
+        <div className="bg-elif-green-dark">
           <div className="max-w-[1200px] mx-auto flex items-center justify-center overflow-x-auto">
             {subTabs.map((tab) => (
               <button
@@ -34,20 +34,20 @@ export default function UnitSection({ initialSubTab }: UnitSectionProps) {
                 onClick={() => setActiveSubTab(tab.id)}
                 className={`relative px-10 py-5 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
                   ${activeSubTab === tab.id
-                    ? "text-elif-beige"
+                    ? "text-elif-lake"
                     : "text-white/30 hover:text-white/55"
                   }
                 `}
               >
                 {tab.label}
                 {activeSubTab === tab.id && (
-                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-beige rounded-full" />
+                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-lake rounded-full" />
                 )}
               </button>
             ))}
           </div>
         </div>
-        <div className="h-px bg-gradient-to-r from-transparent via-elif-beige/25 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-elif-lake/25 to-transparent" />
       </div>
 
       {/* Content */}
@@ -59,11 +59,6 @@ export default function UnitSection({ initialSubTab }: UnitSectionProps) {
 
               {/* Left: Floor Plan Image */}
               <div className="flex-1 relative bg-white p-8 md:p-12 lg:p-14">
-                {/* Corner frame decorations */}
-                <div className="absolute top-6 left-6 w-10 h-10 border-t border-l border-elif-beige/20" />
-                <div className="absolute top-6 right-6 lg:hidden w-10 h-10 border-t border-r border-elif-beige/20" />
-                <div className="absolute bottom-6 left-6 w-10 h-10 border-b border-l border-elif-beige/20" />
-                <div className="absolute bottom-6 right-6 lg:hidden w-10 h-10 border-b border-r border-elif-beige/20" />
 
                 <ImagePlaceholder
                   number={28}
@@ -76,7 +71,7 @@ export default function UnitSection({ initialSubTab }: UnitSectionProps) {
               </div>
 
               {/* Right: Spec Sidebar */}
-              <div className="w-full lg:w-[340px] xl:w-[380px] bg-gradient-to-b from-[#032820] to-elif-green flex-shrink-0">
+              <div className="w-full lg:w-[340px] xl:w-[380px] bg-gradient-to-b from-[#032820] to-elif-green flex-shrink-0 lg:rounded-r-2xl">
                 {/* Type Header */}
                 <div className="px-8 pt-10 pb-8 border-b border-white/[0.06]">
                   <p className="text-elif-beige/50 text-[10px] tracking-[4px] font-medium uppercase mb-3">TYPE</p>
@@ -198,11 +193,6 @@ export default function UnitSection({ initialSubTab }: UnitSectionProps) {
                     </div>
                   </div>
 
-                  {/* Corner Decorations */}
-                  <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-elif-beige/20" />
-                  <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-elif-beige/20" />
-                  <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-elif-beige/20" />
-                  <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-elif-beige/20" />
                 </div>
               </div>
 

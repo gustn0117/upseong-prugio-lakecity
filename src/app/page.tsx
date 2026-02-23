@@ -69,7 +69,7 @@ export default function Home() {
         {/* Register CTA */}
         <button
           onClick={() => handleTabChange("register")}
-          className="w-14 h-14 bg-elif-beige text-white rounded-full shadow-xl flex items-center justify-center hover:bg-elif-lime transition-all duration-300 hover:scale-110 floating-btn"
+          className="w-14 h-14 bg-elif-lake text-white rounded-full shadow-xl flex items-center justify-center hover:bg-elif-lake-light transition-all duration-300 hover:scale-110 breathe"
           title="관심고객등록"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

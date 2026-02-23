@@ -105,7 +105,7 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
 
       {/* Sub Navigation */}
       <div className="relative">
-        <div className="bg-[#0c1320]">
+        <div className="bg-elif-green-dark">
           <div className="max-w-[1200px] mx-auto flex items-center justify-center overflow-x-auto">
             {subTabs.map((tab) => (
               <button
@@ -113,20 +113,20 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
                 onClick={() => setActiveSubTab(tab.id)}
                 className={`relative px-10 py-5 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
                   ${activeSubTab === tab.id
-                    ? "text-elif-beige"
+                    ? "text-elif-lake"
                     : "text-white/30 hover:text-white/55"
                   }
                 `}
               >
                 {tab.label}
                 {activeSubTab === tab.id && (
-                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-beige rounded-full" />
+                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-lake rounded-full" />
                 )}
               </button>
             ))}
           </div>
         </div>
-        <div className="h-px bg-gradient-to-r from-transparent via-elif-beige/25 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-elif-lake/25 to-transparent" />
       </div>
 
       {/* Content */}
@@ -149,13 +149,8 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
             <div data-animate="scale-up" className="relative mb-16">
               {/* 이미지 프레임 */}
               <div className="relative">
-                {/* 골드 코너 장식 */}
-                <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-elif-beige/50 z-10" />
-                <div className="absolute -top-3 -right-3 w-8 h-8 border-t-2 border-r-2 border-elif-beige/50 z-10" />
-                <div className="absolute -bottom-3 -left-3 w-8 h-8 border-b-2 border-l-2 border-elif-beige/50 z-10" />
-                <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-elif-beige/50 z-10" />
 
-                <div className="border border-gray-200/80 overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)]">
+                <div className="rounded-xl border border-elif-stone overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)]">
                   <div className="w-full aspect-[16/11] bg-gradient-to-br from-[#e8e4dc] via-[#f0ece4] to-[#e5e0d8] flex items-center justify-center">
                     <div className="text-center">
                       <svg className="w-16 h-16 text-gray-400/30 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -170,7 +165,7 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
             </div>
 
             {/* 동별 정보 카드 */}
-            <div data-animate className="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-200 rounded-lg overflow-hidden mb-8 stagger-children">
+            <div data-animate className="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-200 rounded-xl overflow-hidden mb-8 stagger-children">
               {[
                 { dong: "101동", floor: "B1 ~ 16F", lines: "2라인", direction: "동향", units: "27", color: "border-l-elif-green" },
                 { dong: "102동", floor: "B1 ~ 16F", lines: "2라인", direction: "동향", units: "27", color: "border-l-elif-green" },
@@ -238,9 +233,7 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
 
             {/* Summary Stats - 네이비 배경 */}
             <div className="relative bg-elif-green rounded-xl overflow-hidden mb-12">
-              <div className="absolute inset-0 opacity-[0.03]" style={{
-                backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(200,186,167,0.4) 20px, rgba(200,186,167,0.4) 21px)`
-              }} />
+              <div className="absolute inset-0 opacity-[0.03] pattern-waves" />
               <div className="relative grid grid-cols-2 lg:grid-cols-5">
                 {/* 총 세대수 */}
                 <div className="col-span-2 lg:col-span-1 flex flex-col items-center justify-center py-8 px-6 border-b lg:border-b-0 lg:border-r border-white/10">
@@ -293,7 +286,7 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
                   >
                     <span className="relative z-10">{b.label}</span>
                     {activeBuilding === b.id && (
-                      <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-6 h-[2px] bg-elif-beige rounded-full" />
+                      <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-6 h-[2px] bg-elif-lake rounded-full" />
                     )}
                   </button>
                 ))}
@@ -307,7 +300,7 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
                 <div className="bg-elif-green px-8 py-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="w-1 h-10 bg-elif-beige rounded-full" />
+                      <div className="w-1 h-10 bg-elif-lake rounded-full" />
                       <div>
                         <h4 className="text-white text-[22px] font-bold tracking-tight">{b.label}</h4>
                         <p className="text-white/40 text-[11px] tracking-[3px] mt-0.5">{b.dirEn} FACING</p>

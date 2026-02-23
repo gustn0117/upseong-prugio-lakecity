@@ -27,7 +27,7 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
 
       {/* Sub Navigation */}
       <div className="relative">
-        <div className="bg-[#0c1320]">
+        <div className="bg-elif-green-dark">
           <div className="max-w-[1200px] mx-auto flex items-center justify-center overflow-x-auto">
             {subTabs.map((tab) => (
               <button
@@ -35,20 +35,20 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
                 onClick={() => setActiveSubTab(tab.id)}
                 className={`relative px-10 py-5 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
                   ${activeSubTab === tab.id
-                    ? "text-elif-beige"
+                    ? "text-elif-lake"
                     : "text-white/30 hover:text-white/55"
                   }
                 `}
               >
                 {tab.label}
                 {activeSubTab === tab.id && (
-                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-beige rounded-full" />
+                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-lake rounded-full" />
                 )}
               </button>
             ))}
           </div>
         </div>
-        <div className="h-px bg-gradient-to-r from-transparent via-elif-beige/25 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-elif-lake/25 to-transparent" />
       </div>
 
       {/* Content */}
@@ -95,15 +95,10 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
               {/* 조감도 이미지 */}
               <div className="mb-14">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="w-1 h-5 bg-elif-beige rounded-full" />
+                  <span className="w-1 h-5 bg-elif-lake rounded-full" />
                   <h4 className="text-elif-green text-[15px] font-bold tracking-wide" style={{ fontFamily: "'Noto Serif KR', serif" }}>조감도</h4>
                 </div>
-                <div className="relative p-3 lg:p-4 bg-white rounded-lg border border-gray-200/80 shadow-sm">
-                  {/* 골드 코너 장식 */}
-                  <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-elif-beige/40 rounded-tl-lg" />
-                  <div className="absolute top-0 right-0 w-10 h-10 border-t-2 border-r-2 border-elif-beige/40 rounded-tr-lg" />
-                  <div className="absolute bottom-0 left-0 w-10 h-10 border-b-2 border-l-2 border-elif-beige/40 rounded-bl-lg" />
-                  <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-elif-beige/40 rounded-br-lg" />
+                <div className="relative p-3 lg:p-4 bg-white rounded-xl border border-elif-stone shadow-sm">
                   <div className="relative overflow-hidden rounded">
                     <div className="relative aspect-[16/9]">
                       <div className="absolute inset-0 bg-gradient-to-br from-[#054438] via-[#0a5e4d] to-[#065240] flex items-center justify-center">
@@ -124,9 +119,9 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
               </div>
 
               {/* 사업 정보 테이블 */}
-              <div data-animate className="bg-white overflow-hidden rounded-lg border border-gray-200/80 shadow-sm">
+              <div data-animate className="bg-white overflow-hidden rounded-xl border border-gray-200/80 shadow-sm">
                 <div className="bg-elif-green/[0.03] px-6 lg:px-8 py-4 border-b border-gray-200/80 flex items-center gap-3">
-                  <span className="w-1 h-5 bg-elif-beige rounded-full" />
+                  <span className="w-1 h-5 bg-elif-lake rounded-full" />
                   <h4 className="text-elif-green text-[15px] font-bold tracking-wide" style={{ fontFamily: "'Noto Serif KR', serif" }}>사업 정보</h4>
                 </div>
                 {[
@@ -174,7 +169,7 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
               {/* 시행/시공 정보 카드 */}
               <div data-animate className="mt-14">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="w-1 h-5 bg-elif-beige rounded-full" />
+                  <span className="w-1 h-5 bg-elif-lake rounded-full" />
                   <h4 className="text-elif-green text-[15px] font-bold tracking-wide" style={{ fontFamily: "'Noto Serif KR', serif" }}>시행 · 시공</h4>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -282,7 +277,7 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
             {/* 교통 안내 */}
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-6">
-                <span className="w-1 h-5 bg-elif-beige rounded-full" />
+                <span className="w-1 h-5 bg-elif-lake rounded-full" />
                 <h4 className="text-elif-green text-[15px] font-bold tracking-wide" style={{ fontFamily: "'Noto Serif KR', serif" }}>교통 안내</h4>
               </div>
 
@@ -333,7 +328,7 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
             {/* 분양홍보관 안내 */}
             <div data-animate className="overflow-hidden rounded-lg border border-gray-200">
               <div className="bg-gray-50 px-6 py-3.5 border-b border-gray-200 flex items-center gap-3">
-                <span className="w-1 h-4 bg-elif-beige rounded-full" />
+                <span className="w-1 h-4 bg-elif-lake rounded-full" />
                 <h4 className="text-elif-green text-[14px] font-bold" style={{ fontFamily: "'Noto Serif KR', serif" }}>분양홍보관 안내</h4>
               </div>
               {[
@@ -348,7 +343,7 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
                   <div className="flex-1 px-5 py-3.5 flex items-center">
                     {item.isPhone ? (
                       <a href="tel:18000000" className="text-[13px] text-elif-green font-bold hover:text-elif-beige transition-colors flex items-center gap-1.5">
-                        <svg className="w-3.5 h-3.5 text-elif-beige" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-3.5 h-3.5 text-elif-lake" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
                         {item.value}
@@ -371,7 +366,7 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
       {activeSubTab === "brand" && (
         <div className="tab-content">
           {/* 브랜드 히어로 */}
-          <div className="relative bg-[#060a14] overflow-hidden">
+          <div className="relative bg-elif-green-dark overflow-hidden">
             {/* 배경 장식 */}
             <div className="absolute inset-0">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-elif-beige/[0.03] to-transparent rounded-full" />
@@ -384,11 +379,6 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
             <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-elif-beige/20 to-transparent" />
 
             <div className="relative max-w-[1100px] mx-auto px-6 lg:px-12 py-24 lg:py-36">
-              {/* 코너 장식 */}
-              <div className="absolute top-8 left-8 lg:top-12 lg:left-12 w-16 h-16 border-t border-l border-elif-beige/15" />
-              <div className="absolute top-8 right-8 lg:top-12 lg:right-12 w-16 h-16 border-t border-r border-elif-beige/15" />
-              <div className="absolute bottom-8 left-8 lg:bottom-12 lg:left-12 w-16 h-16 border-b border-l border-elif-beige/15" />
-              <div className="absolute bottom-8 right-8 lg:bottom-12 lg:right-12 w-16 h-16 border-b border-r border-elif-beige/15" />
 
               <div className="max-w-[700px] mx-auto text-center">
                 <div className="flex items-center justify-center gap-3 mb-10">

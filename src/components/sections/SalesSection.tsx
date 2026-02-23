@@ -26,7 +26,7 @@ export default function SalesSection({ initialSubTab }: SalesSectionProps) {
 
       {/* Sub Navigation */}
       <div className="relative">
-        <div className="bg-[#041f18]">
+        <div className="bg-elif-green-dark">
           <div className="max-w-[1200px] mx-auto flex items-center justify-center overflow-x-auto">
             {subTabs.map((tab) => (
               <button
@@ -34,20 +34,20 @@ export default function SalesSection({ initialSubTab }: SalesSectionProps) {
                 onClick={() => setActiveSubTab(tab.id)}
                 className={`relative px-10 py-5 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
                   ${activeSubTab === tab.id
-                    ? "text-elif-beige"
+                    ? "text-elif-lake"
                     : "text-white/30 hover:text-white/55"
                   }
                 `}
               >
                 {tab.label}
                 {activeSubTab === tab.id && (
-                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-beige rounded-full" />
+                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-lake rounded-full" />
                 )}
               </button>
             ))}
           </div>
         </div>
-        <div className="h-px bg-gradient-to-r from-transparent via-elif-beige/25 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-elif-lake/25 to-transparent" />
       </div>
 
       {/* Content */}
@@ -58,7 +58,7 @@ export default function SalesSection({ initialSubTab }: SalesSectionProps) {
 
             {/* Timeline */}
             <div className="relative max-w-[800px] mx-auto" data-animate>
-              <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-200" />
+              <div className="absolute left-1/2 top-0 bottom-0 w-px bg-elif-sage/50" />
               {[
                 { step: "모델하우스 오픈", date: "일정 미정", status: "upcoming" },
                 { step: "특별공급", date: "일정 미정", status: "upcoming" },
@@ -77,7 +77,7 @@ export default function SalesSection({ initialSubTab }: SalesSectionProps) {
                     <h4 className="text-lg font-bold text-gray-900">{item.step}</h4>
                     <p className="text-sm text-gray-500 mt-1">{item.date}</p>
                   </div>
-                  <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-elif-green border-4 border-white shadow" />
+                  <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-elif-lake border-4 border-white shadow" />
                   <div className="w-1/2" />
                 </div>
               ))}

@@ -28,7 +28,7 @@ export default function RegisterSection() {
             </label>
             <input
               type="text"
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-elif-green/30 focus:border-elif-green"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-elif-lake/30 focus:border-elif-lake"
               placeholder="이름을 입력해 주세요"
             />
           </div>
@@ -40,7 +40,7 @@ export default function RegisterSection() {
             </label>
             <input
               type="tel"
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-elif-green/30 focus:border-elif-green"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-elif-lake/30 focus:border-elif-lake"
               placeholder="연락처를 입력해 주세요 (예: 010-1234-5678)"
             />
           </div>
@@ -54,11 +54,11 @@ export default function RegisterSection() {
               {["TBD", "전체"].map((type) => (
                 <label
                   key={type}
-                  className="flex items-center gap-2 px-4 py-2.5 border border-gray-200 rounded-lg cursor-pointer hover:border-elif-green/50 transition-colors"
+                  className="flex items-center gap-2 px-4 py-2.5 border border-gray-200 rounded-xl cursor-pointer hover:border-elif-lake/50 transition-colors"
                 >
                   <input
                     type="checkbox"
-                    className="w-4 h-4 text-elif-green focus:ring-elif-green/30 border-gray-300 rounded"
+                    className="w-4 h-4 text-elif-green focus:ring-elif-lake/30 border-gray-300 rounded"
                   />
                   <span className="text-sm text-gray-700">{type}</span>
                 </label>
@@ -73,17 +73,17 @@ export default function RegisterSection() {
             </label>
             <textarea
               rows={4}
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-elif-green/30 focus:border-elif-green resize-none"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-elif-lake/30 focus:border-elif-lake resize-none"
               placeholder="문의사항을 입력해 주세요"
             />
           </div>
 
           {/* Privacy Agreement */}
-          <div className="bg-gray-50 rounded-lg p-5">
+          <div className="bg-elif-cream rounded-xl p-5">
             <label className="flex items-start gap-3 cursor-pointer">
               <input
                 type="checkbox"
-                className="w-4 h-4 mt-0.5 text-elif-green focus:ring-elif-green/30 border-gray-300 rounded"
+                className="w-4 h-4 mt-0.5 text-elif-green focus:ring-elif-lake/30 border-gray-300 rounded"
               />
               <span className="text-sm text-gray-600">
                 <span className="font-medium text-gray-800">[필수]</span> 개인정보 수집 및 이용에
@@ -96,7 +96,7 @@ export default function RegisterSection() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-4 bg-elif-green text-white font-bold text-base rounded-lg hover:bg-elif-green/80 transition-colors"
+            className="w-full py-4 bg-elif-green text-white font-bold text-base rounded-full hover:bg-elif-green/80 transition-colors"
           >
             등록하기
           </button>

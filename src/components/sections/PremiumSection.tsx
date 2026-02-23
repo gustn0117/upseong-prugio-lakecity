@@ -26,7 +26,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
 
       {/* Sub Navigation */}
       <div className="relative">
-        <div className="bg-[#0c1320]">
+        <div className="bg-elif-green-dark">
           <div className="max-w-[1200px] mx-auto flex items-center justify-center overflow-x-auto">
             {subTabs.map((tab) => (
               <button
@@ -34,20 +34,20 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                 onClick={() => setActiveSubTab(tab.id)}
                 className={`relative px-10 py-5 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
                   ${activeSubTab === tab.id
-                    ? "text-elif-beige"
+                    ? "text-elif-lake"
                     : "text-white/30 hover:text-white/55"
                   }
                 `}
               >
                 {tab.label}
                 {activeSubTab === tab.id && (
-                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-beige rounded-full" />
+                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-lake rounded-full" />
                 )}
               </button>
             ))}
           </div>
         </div>
-        <div className="h-px bg-gradient-to-r from-transparent via-elif-beige/25 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-elif-lake/25 to-transparent" />
       </div>
 
       {/* Content */}
@@ -55,8 +55,8 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
         {activeSubTab === "location" && (
           <div className="tab-content">
             {/* Location Hero */}
-            <div className="relative h-[80vh] min-h-[600px]">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#054438] via-[#0a5e4d] to-[#032820]" />
+            <div className="relative h-[70vh] min-h-[600px]">
+              <div className="absolute inset-0 bg-gradient-to-br from-elif-green via-elif-green-light to-elif-lake/40" />
               <div className="absolute inset-0 bg-black/50" />
               <div className="absolute inset-0 flex items-center">
                 <div className="max-w-[1400px] mx-auto px-6 w-full">
@@ -73,6 +73,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                   </div>
                 </div>
               </div>
+              <div className="absolute -bottom-1 left-0 right-0 h-16 z-10"><svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" className="w-full h-full"><path d="M0,60 L0,20 Q360,0 720,20 Q1080,40 1440,20 L1440,60 Z" fill="white" /></svg></div>
             </div>
 
             {/* 교통 인프라 섹션 */}
@@ -197,7 +198,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
         {activeSubTab === "premium4" && (
           <div className="tab-content">
             {/* Premium 4 — Grand Header */}
-            <div className="relative bg-[#0a0f1a] overflow-hidden">
+            <div className="relative bg-elif-green-dark overflow-hidden">
               {/* Decorative background elements */}
               <div className="absolute inset-0">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-radial from-elif-beige/[0.04] to-transparent rounded-full" />
@@ -212,7 +213,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                     <span className="w-12 h-px bg-elif-beige/40" />
                   </div>
                   <h3 className="text-white text-[40px] lg:text-[56px] font-bold leading-none mb-2" style={{ fontFamily: "'Noto Serif KR', serif" }}>
-                    프리미엄 <span className="text-elif-beige">4</span>
+                    프리미엄 <span className="text-elif-lake">4</span>
                   </h3>
                   <div className="w-16 h-[2px] bg-elif-beige mx-auto mt-6 mb-6 premium4-line" />
                   <p className="text-white/40 text-[15px] lg:text-[17px] tracking-wide" style={{ fontFamily: "'Noto Serif KR', serif" }}>
@@ -226,7 +227,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
             </div>
 
             {/* Premium 4 — Feature Cards (alternating magazine layout) */}
-            <div className="bg-[#0a0f1a] py-10 lg:py-16 space-y-10 lg:space-y-16">
+            <div className="bg-elif-green-dark py-10 lg:py-16 space-y-10 lg:space-y-16">
               {[
                 {
                   num: "01",
@@ -278,7 +279,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                   <div key={i} className="premium4-card">
                     <div className={`max-w-[1400px] mx-auto flex flex-col ${isReversed ? "lg:flex-row-reverse" : "lg:flex-row"} min-h-[420px] lg:min-h-[500px] group`}>
                       {/* Image Area */}
-                      <div className={`relative lg:w-[55%] premium4-image-area ${isReversed ? "premium4-blend-left" : "premium4-blend-right"}`}>
+                      <div className={`relative lg:w-[55%] premium4-image-area rounded-xl overflow-hidden ${isReversed ? "premium4-blend-left" : "premium4-blend-right"}`}>
                         <ImagePlaceholder
                           number={item.placeholderNum}
                           gradient={item.gradient}
@@ -293,7 +294,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                         </div>
                         {/* Badge */}
                         <div className={`absolute bottom-5 ${isReversed ? "right-5" : "left-5"} z-10`}>
-                          <span className="bg-elif-beige/90 backdrop-blur-sm text-[#0a0f1a] text-[11px] font-bold px-4 py-2 tracking-[1px]">
+                          <span className="bg-elif-lake/90 backdrop-blur-sm text-elif-green-dark text-[11px] font-bold px-4 py-2 tracking-[1px]">
                             {item.badge}
                           </span>
                         </div>
@@ -325,7 +326,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                           {/* Highlight tags */}
                           <div className="flex flex-wrap gap-2.5">
                             {item.highlights.map((tag, j) => (
-                              <span key={j} className="text-[11px] text-elif-beige/70 border border-elif-beige/15 bg-elif-beige/[0.04] px-3.5 py-1.5 tracking-[0.5px]">
+                              <span key={j} className="text-[11px] text-elif-lake/70 border border-elif-lake/15 bg-elif-lake/[0.04] px-3.5 py-1.5 tracking-[0.5px] rounded-full">
                                 {tag}
                               </span>
                             ))}
@@ -346,7 +347,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
             </div>
 
             {/* Bottom Summary Strip */}
-            <div className="bg-[#070b14] border-t border-white/[0.04]">
+            <div className="bg-elif-green-dark border-t border-white/[0.04]">
               <div className="max-w-[1200px] mx-auto px-6 py-16 lg:py-20">
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
                   {[
@@ -356,10 +357,10 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                     { time: "10분", label: "교육 인프라", sub: "교육" },
                   ].map((item, i) => (
                     <div key={i} className="text-center group">
-                      <div className="text-elif-beige text-[28px] lg:text-[36px] font-bold leading-none mb-2" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                      <div className="text-elif-lake text-[28px] lg:text-[36px] font-bold leading-none mb-2" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                         {item.time}
                       </div>
-                      <div className="w-6 h-px bg-elif-beige/30 mx-auto mb-3 group-hover:w-10 transition-all duration-300" />
+                      <div className="w-6 h-px bg-elif-lake/30 mx-auto mb-3 group-hover:w-10 transition-all duration-300" />
                       <div className="text-white/80 text-[14px] font-medium mb-1">{item.label}</div>
                       <div className="text-white/30 text-[11px] tracking-[2px] uppercase">{item.sub}</div>
                     </div>

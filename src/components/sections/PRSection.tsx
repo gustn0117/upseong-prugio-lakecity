@@ -26,7 +26,7 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
 
       {/* Sub Navigation */}
       <div className="relative">
-        <div className="bg-[#041f18]">
+        <div className="bg-elif-green-dark">
           <div className="max-w-[1200px] mx-auto flex items-center justify-center overflow-x-auto">
             {subTabs.map((tab) => (
               <button
@@ -34,20 +34,20 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
                 onClick={() => setActiveSubTab(tab.id)}
                 className={`relative px-10 py-5 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
                   ${activeSubTab === tab.id
-                    ? "text-elif-beige"
+                    ? "text-elif-lake"
                     : "text-white/30 hover:text-white/55"
                   }
                 `}
               >
                 {tab.label}
                 {activeSubTab === tab.id && (
-                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-beige rounded-full" />
+                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-lake rounded-full" />
                 )}
               </button>
             ))}
           </div>
         </div>
-        <div className="h-px bg-gradient-to-r from-transparent via-elif-beige/25 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-elif-lake/25 to-transparent" />
       </div>
 
       {/* Content */}
@@ -59,7 +59,7 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
               {[1, 2, 3, 4, 5].map((i) => (
                 <div
                   key={i}
-                  className="flex gap-6 p-6 bg-white border border-gray-100 rounded-lg hover:shadow-md transition-shadow cursor-pointer"
+                  className="flex gap-6 p-6 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-shadow cursor-pointer"
                 >
                   <ImagePlaceholder
                     number={36 + i}
@@ -70,7 +70,7 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
                     className="rounded-md w-[180px] flex-shrink-0"
                   />
                   <div className="flex-1">
-                    <span className="text-xs text-blue-600 font-medium">언론보도</span>
+                    <span className="text-xs text-elif-lake font-medium">언론보도</span>
                     <h4 className="text-lg font-bold text-gray-900 mt-1">
                       기사 제목 영역 {i}
                     </h4>
@@ -96,7 +96,7 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
               <div className="h-[2px] bg-gradient-to-r from-transparent via-[#c8baa7] to-transparent" />
 
               <div className="p-4 md:p-6">
-                <div className="w-full rounded-lg aspect-video bg-black/90 flex items-center justify-center">
+                <div className="w-full rounded-xl aspect-video bg-black/90 flex items-center justify-center">
                   <div className="text-center">
                     <svg className="w-16 h-16 text-white/15 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />

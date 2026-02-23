@@ -5,11 +5,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Noto+Serif+KR:wght@400;600;700&display=swap');
 
 :root {
-  --elif-green: #054438;
-  --elif-green-light: #0a5e4d;
-  --elif-beige: #C8BAA7;
-  --elif-lime: #DADDB9;
-  --blue-accent: #3b82f6;
+  --elif-green: #2D5A45;
+  --elif-green-light: #3D7A5C;
+  --elif-green-dark: #1E3D30;
+  --elif-beige: #C4B49A;
+  --elif-sand: #C4B49A;
+  --elif-lake: #6B9DAB;
+  --elif-lake-light: #8FB8C4;
+  --elif-sage: #B5C4A8;
+  --elif-moss: #8BA07A;
+  --elif-stone: #E8E2D8;
+  --elif-cream: #F5F2EC;
+  --elif-bark: #6B5E4F;
 }
 
 * {
@@ -24,8 +31,8 @@ html {
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
-  color: #333;
-  background: #fff;
+  color: #3D3D3D;
+  background: #FAFAF7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -52,11 +59,11 @@ body {
   }
 }
 
-/* ===== Section Fade-in Animation ===== */
+/* ===== Section Fade-in Animation (softer) ===== */
 .fade-in-up {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .fade-in-up.visible {
@@ -80,18 +87,54 @@ body {
   animation: shimmer 3s ease-in-out infinite;
 }
 
-/* ===== Pulse glow for CTA ===== */
-@keyframes pulseGlow {
+/* ===== Breathe Animation (gentle, nature-inspired) ===== */
+@keyframes breathe {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(200, 186, 167, 0.4);
+    box-shadow: 0 0 0 0 rgba(107, 157, 171, 0.3);
+    transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 20px 4px rgba(200, 186, 167, 0.2);
+    box-shadow: 0 0 20px 8px rgba(107, 157, 171, 0.1);
+    transform: scale(1.02);
   }
 }
 
-.pulse-glow {
-  animation: pulseGlow 2.5s ease-in-out infinite;
+.breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+/* ===== Gentle Float Animation ===== */
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(-4px) rotate(-1deg);
+  }
+}
+
+.gentle-float {
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+/* ===== Organic Blob Shape ===== */
+.organic-blob {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+/* ===== Nature Pattern: Waves ===== */
+.pattern-waves {
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='40' viewBox='0 0 120 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 Q30 0 60 20 Q90 40 120 20' stroke='%236B9DAB' stroke-opacity='0.06' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-size: 120px 40px;
+}
+
+/* ===== Nature Pattern: Leaves ===== */
+.pattern-leaves {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 10 Q35 20 30 30 Q25 20 30 10Z' fill='%232D5A45' fill-opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
 }
 
 /* ===== Image Placeholder Styles ===== */
@@ -123,39 +166,39 @@ body {
   color: rgba(0, 0, 0, 0.35);
 }
 
-/* ===== Gradient backgrounds for placeholders ===== */
+/* ===== Nature-inspired gradient backgrounds ===== */
 .gradient-hero {
-  background: linear-gradient(135deg, #2c3e6b 0%, #4a6fa5 30%, #7ba0c9 60%, #b8cfe0 100%);
+  background: linear-gradient(135deg, #2D5A45 0%, #3D7A5C 30%, #6B9DAB 70%, #B4CED6 100%);
 }
 
 .gradient-aerial {
-  background: linear-gradient(180deg, #2d5a3d 0%, #3a7a52 30%, #5a9a6e 60%, #7ab88a 100%);
+  background: linear-gradient(180deg, #2D5A45 0%, #4A8A65 30%, #8BA07A 60%, #B5C4A8 100%);
 }
 
 .gradient-night {
-  background: linear-gradient(135deg, #0d1117 0%, #1a1f2e 30%, #2a3145 60%, #3d4a6b 100%);
+  background: linear-gradient(135deg, #1E3D30 0%, #2D5A45 30%, #3D6B52 60%, #4A8A65 100%);
 }
 
 .gradient-premium {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background: linear-gradient(135deg, #1E3D30 0%, #2D5A45 50%, #3D7A5C 100%);
 }
 
 .gradient-location {
-  background: linear-gradient(135deg, #e8d5b7 0%, #d4c4a8 50%, #c0b396 100%);
+  background: linear-gradient(135deg, #E8E2D8 0%, #D8D0C0 50%, #C4B49A 100%);
 }
 
 .gradient-community {
-  background: linear-gradient(135deg, #f5f0e8 0%, #e8e0d4 50%, #dbd2c4 100%);
+  background: linear-gradient(135deg, #F5F2EC 0%, #E8E2D8 50%, #D8D0C0 100%);
 }
 
 .gradient-silver {
-  background: linear-gradient(135deg, #c0c0c0 0%, #d8d8d8 30%, #e8e8e8 60%, #f0f0f0 100%);
+  background: linear-gradient(135deg, #E8E2D8 0%, #EEEBE4 30%, #F5F2EC 60%, #FAFAF7 100%);
 }
 
 /* ===== Header styles ===== */
 .header-scrolled {
   background: rgba(255, 255, 255, 0.97) !important;
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.06);
 }
 
 /* ===== Header dropdown animation ===== */
@@ -172,7 +215,7 @@ body {
 
 /* ===== Sub navigation bar ===== */
 .sub-nav {
-  background: var(--elif-green);
+  background: var(--elif-green-dark);
 }
 
 /* ===== Section Banner Overlay ===== */
@@ -188,7 +231,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(5, 68, 56, 0.92), rgba(5, 68, 56, 0.75));
+  background: linear-gradient(135deg, rgba(45, 90, 69, 0.85), rgba(107, 157, 171, 0.6));
   z-index: 1;
 }
 
@@ -199,25 +242,25 @@ body {
 
 .unit-table td,
 .unit-table th {
-  border: 1px solid #e5e7eb;
+  border: 1px solid #E8E2D8;
   padding: 10px 16px;
   text-align: center;
   min-width: 60px;
   font-size: 14px;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s ease;
 }
 
 .unit-table th {
   background: var(--elif-green);
   color: white;
   font-weight: 600;
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .unit-table .floor-label {
-  background: #f8f9fa;
+  background: var(--elif-cream);
   font-weight: 600;
-  color: #555;
+  color: var(--elif-bark);
 }
 
 .unit-table .unit-normal {
@@ -235,7 +278,7 @@ body {
 }
 
 .unit-table .unit-highlight-blue {
-  background: #e3f2fd;
+  background: rgba(107, 157, 171, 0.1);
   color: #333;
 }
 
@@ -253,7 +296,7 @@ body {
   }
 }
 
-/* ===== Gold Underline Hover Effect ===== */
+/* ===== Nature Underline Hover Effect ===== */
 .gold-underline {
   position: relative;
 }
@@ -265,7 +308,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--elif-beige);
+  background: var(--elif-lake);
   transition: width 0.3s ease;
 }
 
@@ -273,14 +316,15 @@ body {
   width: 100%;
 }
 
-/* ===== Smooth card hover ===== */
+/* ===== Smooth card hover (organic) ===== */
 .card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+  border-radius: 16px;
 }
 
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(45, 90, 69, 0.06);
 }
 
 /* ===== Scrollbar ===== */
@@ -293,17 +337,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--elif-beige);
+  background: var(--elif-sage);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--elif-green);
+  background: var(--elif-lake);
 }
 
 /* ===== Selection Color ===== */
 ::selection {
-  background: var(--elif-beige);
+  background: var(--elif-lake);
   color: white;
 }
 
@@ -356,31 +400,29 @@ body {
 .premium4-image-area {
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
 }
 
-/* 네이비 색조 오버레이 — 가볍게 */
 .premium4-image-area::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(10, 15, 26, 0.15);
+  background: rgba(30, 61, 48, 0.12);
   mix-blend-mode: multiply;
   z-index: 2;
   pointer-events: none;
 }
 
-/* 가장자리만 살짝 블렌딩 */
 .premium4-image-area::after {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(10, 15, 26, 0.35) 0%, transparent 15%, transparent 75%, rgba(10, 15, 26, 0.4) 100%);
+    linear-gradient(180deg, rgba(30, 61, 48, 0.3) 0%, transparent 15%, transparent 75%, rgba(30, 61, 48, 0.35) 100%);
   z-index: 3;
   pointer-events: none;
 }
 
-/* 실제 이미지에 적용되는 필터 — 밝기 유지하면서 톤만 맞춤 */
 .premium4-image-area img {
   filter: brightness(0.88) contrast(1.08) saturate(0.75);
   transition: filter 0.5s ease;
@@ -390,18 +432,16 @@ body {
   filter: brightness(0.95) contrast(1.05) saturate(0.85);
 }
 
-/* 텍스트쪽으로의 자연스러운 블렌딩 (좌→우) */
 .premium4-blend-right::after {
   background:
-    linear-gradient(180deg, rgba(10, 15, 26, 0.3) 0%, transparent 15%, transparent 75%, rgba(10, 15, 26, 0.35) 100%),
-    linear-gradient(90deg, transparent 0%, transparent 60%, rgba(10, 15, 26, 0.5) 100%) !important;
+    linear-gradient(180deg, rgba(30, 61, 48, 0.3) 0%, transparent 15%, transparent 75%, rgba(30, 61, 48, 0.35) 100%),
+    linear-gradient(90deg, transparent 0%, transparent 60%, rgba(30, 61, 48, 0.5) 100%) !important;
 }
 
-/* 텍스트쪽으로의 자연스러운 블렌딩 (우→좌, reversed) */
 .premium4-blend-left::after {
   background:
-    linear-gradient(180deg, rgba(10, 15, 26, 0.3) 0%, transparent 15%, transparent 75%, rgba(10, 15, 26, 0.35) 100%),
-    linear-gradient(270deg, transparent 0%, transparent 60%, rgba(10, 15, 26, 0.5) 100%) !important;
+    linear-gradient(180deg, rgba(30, 61, 48, 0.3) 0%, transparent 15%, transparent 75%, rgba(30, 61, 48, 0.35) 100%),
+    linear-gradient(270deg, transparent 0%, transparent 60%, rgba(30, 61, 48, 0.5) 100%) !important;
 }
 
 /* ===== Tab Content Transition ===== */
@@ -477,14 +517,15 @@ body {
 .stagger-children.is-visible > *:nth-child(9) { transition-delay: 560ms; }
 .stagger-children.is-visible > *:nth-child(10) { transition-delay: 600ms; }
 
-/* ===== Gold shimmer line ===== */
+/* ===== Nature shimmer line ===== */
 @keyframes goldLineShimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
 
-.gold-line-shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(200,186,167,0.4) 25%, rgba(200,186,167,0.6) 50%, rgba(200,186,167,0.4) 75%, transparent 100%);
+.gold-line-shimmer,
+.nature-line-shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(107,157,171,0.3) 25%, rgba(181,196,168,0.4) 50%, rgba(107,157,171,0.3) 75%, transparent 100%);
   background-size: 200% 100%;
   animation: goldLineShimmer 4s ease-in-out infinite;
 }
@@ -503,11 +544,11 @@ body {
 @keyframes bannerTextReveal {
   from {
     opacity: 0;
-    letter-spacing: 30px;
+    letter-spacing: 26px;
   }
   to {
     opacity: 1;
-    letter-spacing: 20px;
+    letter-spacing: 16px;
   }
 }
 
