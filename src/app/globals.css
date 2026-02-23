@@ -10,8 +10,8 @@
   --elif-green-dark: #1E3D30;
   --elif-beige: #C4B49A;
   --elif-sand: #C4B49A;
-  --elif-lake: #6B9DAB;
-  --elif-lake-light: #8FB8C4;
+  --elif-lake: #C9A96E;
+  --elif-lake-light: #D4B87A;
   --elif-sage: #B5C4A8;
   --elif-moss: #8BA07A;
   --elif-stone: #E8E2D8;
@@ -90,11 +90,11 @@ body {
 /* ===== Breathe Animation (gentle, nature-inspired) ===== */
 @keyframes breathe {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(107, 157, 171, 0.3);
+    box-shadow: 0 0 0 0 rgba(201, 169, 110, 0.3);
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 20px 8px rgba(107, 157, 171, 0.1);
+    box-shadow: 0 0 20px 8px rgba(201, 169, 110, 0.1);
     transform: scale(1.02);
   }
 }
@@ -127,7 +127,7 @@ body {
 
 /* ===== Nature Pattern: Waves ===== */
 .pattern-waves {
-  background-image: url("data:image/svg+xml,%3Csvg width='120' height='40' viewBox='0 0 120 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 Q30 0 60 20 Q90 40 120 20' stroke='%236B9DAB' stroke-opacity='0.06' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='40' viewBox='0 0 120 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 Q30 0 60 20 Q90 40 120 20' stroke='%23C9A96E' stroke-opacity='0.06' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
   background-size: 120px 40px;
 }
 
@@ -231,7 +231,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(45, 90, 69, 0.85), rgba(107, 157, 171, 0.6));
+  background: linear-gradient(135deg, rgba(45, 90, 69, 0.85), rgba(201, 169, 110, 0.6));
   z-index: 1;
 }
 
@@ -278,7 +278,7 @@ body {
 }
 
 .unit-table .unit-highlight-blue {
-  background: rgba(107, 157, 171, 0.1);
+  background: rgba(201, 169, 110, 0.1);
   color: #333;
 }
 
@@ -525,7 +525,7 @@ body {
 
 .gold-line-shimmer,
 .nature-line-shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(107,157,171,0.3) 25%, rgba(181,196,168,0.4) 50%, rgba(107,157,171,0.3) 75%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(201,169,110,0.3) 25%, rgba(212,184,122,0.4) 50%, rgba(201,169,110,0.3) 75%, transparent 100%);
   background-size: 200% 100%;
   animation: goldLineShimmer 4s ease-in-out infinite;
 }
