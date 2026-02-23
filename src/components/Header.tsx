@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
+import ElifLogo from "./ElifLogo";
 
 interface MenuItem {
   id: string;
@@ -143,15 +143,7 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
           onClick={() => { onTabChange("home"); setMegaOpen(false); }}
           className="flex items-center cursor-pointer"
         >
-          <Image
-            src="/images/logo-bi.png"
-            alt="엘리프 성성호수공원"
-            width={180}
-            height={40}
-            className="h-[34px] w-auto transition-[filter] duration-300"
-            style={logoWhite ? { filter: "brightness(0) invert(1)" } : undefined}
-            priority
-          />
+          <ElifLogo white={logoWhite} size="sm" showSub={false} />
         </button>
 
         {/* Desktop Navigation */}

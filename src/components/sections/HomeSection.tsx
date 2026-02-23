@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import Image from "next/image";
+import ElifLogo from "../ElifLogo";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -41,14 +41,7 @@ export default function HomeSection() {
           className="absolute inset-0 scale-110"
           style={{ transform: `scale(1.1) translateY(${scrollY * 0.15}px)` }}
         >
-          <Image
-            src="/images/hero-rendering.jpg"
-            alt="엘리프 성성호수공원 조감도"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#032820] via-[#054438] to-[#0a5e4d]" />
         </div>
 
         {/* Gradient Overlays */}
@@ -109,14 +102,7 @@ export default function HomeSection() {
                   loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
               >
-                <Image
-                  src="/images/logo-bi.png"
-                  alt="엘리프 성성호수공원"
-                  width={360}
-                  height={80}
-                  className="h-[48px] lg:h-[56px] w-auto"
-                  style={{ filter: "brightness(0) invert(1)" }}
-                />
+                <ElifLogo white size="xl" />
               </div>
 
               {/* CTA Buttons */}
@@ -236,13 +222,14 @@ export default function HomeSection() {
             {/* Image Side */}
             <div className={`relative transition-all duration-[800ms] delay-300 ${sec5.visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}>
               <div className="relative aspect-[4/5] overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/hero-rendering.jpg"
-                  alt="엘리프 성성호수공원"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#054438] via-[#0a5e4d] to-[#054438] flex items-center justify-center">
+                  <div className="text-center">
+                    <svg className="w-16 h-16 text-white/20 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <p className="text-white/30 text-[13px] tracking-wider">조감도 이미지 예정</p>
+                  </div>
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-elif-green/30 via-transparent to-transparent" />
               </div>
               {/* Floating Card */}
@@ -428,16 +415,8 @@ export default function HomeSection() {
                 style={{ transitionDelay: sec2.visible ? `${200 + i * 100}ms` : "0ms", transitionDuration: "800ms" }}
               >
                 <div className="absolute inset-0 bg-[#0f2238]">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                  />
                   {/* 이미지 미설정 안내 */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 opacity-50">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
                     <div className="w-12 h-12 rounded-xl border-2 border-dashed border-white/15 flex items-center justify-center">
                       <svg className="w-6 h-6 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -477,13 +456,7 @@ export default function HomeSection() {
       <div ref={sec6.ref} className="relative py-24 lg:py-32 bg-gradient-to-br from-[#054438] via-[#065240] to-[#0a6a52] overflow-hidden">
         {/* 배경 장식 */}
         <div className="absolute inset-0 opacity-10">
-          <Image
-            src="/images/hero-rendering.jpg"
-            alt=""
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#054438]/30 via-[#065240]/20 to-[#0a6a52]/10" />
         </div>
         <div className="absolute inset-0 opacity-[0.04]" style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, rgba(201,169,110,0.5) 1px, transparent 0)`,

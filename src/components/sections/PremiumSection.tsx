@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import ImagePlaceholder from "../ImagePlaceholder";
 import SectionBanner from "../SectionBanner";
 
@@ -22,7 +21,6 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
       <SectionBanner
         title="프 리 미 엄"
         subtitle="자연과 함께하는 프리미엄 주거를 만나보세요."
-        bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600"
       />
 
@@ -58,14 +56,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
           <div className="tab-content">
             {/* Location Hero */}
             <div className="relative h-[80vh] min-h-[600px]">
-              <Image
-                src="/images/location-hero.jpg"
-                alt="입지환경"
-                fill
-                className="object-cover"
-                sizes="100vw"
-                priority
-              />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#054438] via-[#0a5e4d] to-[#032820]" />
               <div className="absolute inset-0 bg-black/50" />
               <div className="absolute inset-0 flex items-center">
                 <div className="max-w-[1400px] mx-auto px-6 w-full">
@@ -140,14 +131,16 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                   </div>
                   <div className="relative">
                     <div className="h-[350px] sm:h-[420px] lg:h-[520px] overflow-hidden border border-gray-200/60 shadow-sm">
-                      <Image
-                        src="/images/location.jpg"
-                        alt="엘리프 성성호수공원 위치도"
-                        width={1800}
-                        height={1031}
-                        className="max-w-none w-[170%] h-auto"
-                        sizes="1870px"
-                      />
+                      <div className="w-full h-full bg-gradient-to-br from-[#e8e0d0] via-[#f0ebe3] to-[#e5ddd0] flex items-center justify-center" style={{minHeight: '400px'}}>
+                        <div className="text-center">
+                          <svg className="w-14 h-14 text-gray-400/40 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                          <p className="text-gray-500/50 text-[13px] tracking-wider">위치도 이미지 예정</p>
+                          <p className="text-gray-400/40 text-[11px] mt-1 font-mono">/images/location.jpg</p>
+                        </div>
+                      </div>
                     </div>
                     <p className="text-gray-300 text-[11px] text-center mt-4 tracking-wide">
                       * 본 위치도는 소비자의 이해를 돕기 위한 것으로, 실제와 다소 차이가 있을 수 있습니다.
@@ -244,7 +237,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                   highlights: ["천안아산KTX역", "수도권전철 1호선", "천안IC 인접"],
                   placeholderNum: 12,
                   gradient: "gradient-premium",
-                  imageSrc: "/images/premium-transport.jpg",
+                  imageSrc: "",
                 },
                 {
                   num: "02",
@@ -255,7 +248,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                   highlights: ["성성호수공원", "호수공원 산책로", "자연친화 주거"],
                   placeholderNum: 9,
                   gradient: "gradient-aerial",
-                  imageSrc: "/images/premium-nature.jpg",
+                  imageSrc: "",
                 },
                 {
                   num: "03",
@@ -266,7 +259,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                   highlights: ["이마트", "불당상업지구", "천안시청"],
                   placeholderNum: 10,
                   gradient: "gradient-night",
-                  imageSrc: "/images/premium-life.jpg",
+                  imageSrc: "",
                 },
                 {
                   num: "04",
@@ -277,7 +270,7 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                   highlights: ["우수 학군", "교육 특화", "최적 교육환경"],
                   placeholderNum: 11,
                   gradient: "gradient-hero",
-                  imageSrc: "/images/premium-edu.jpg",
+                  imageSrc: "",
                 },
               ].map((item, i) => {
                 const isReversed = i % 2 === 1;
@@ -286,25 +279,12 @@ export default function PremiumSection({ initialSubTab }: PremiumSectionProps) {
                     <div className={`max-w-[1400px] mx-auto flex flex-col ${isReversed ? "lg:flex-row-reverse" : "lg:flex-row"} min-h-[420px] lg:min-h-[500px] group`}>
                       {/* Image Area */}
                       <div className={`relative lg:w-[55%] premium4-image-area ${isReversed ? "premium4-blend-left" : "premium4-blend-right"}`}>
-                        {"imageSrc" in item && item.imageSrc ? (
-                          <div className="relative h-[300px] lg:h-full min-h-[300px]">
-                            <Image
-                              src={item.imageSrc}
-                              alt={item.category}
-                              fill
-                              className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                              sizes="(max-width: 1024px) 100vw, 55vw"
-                            />
-                            <div className="absolute inset-0 bg-[#0a1528]/10 z-[1]" />
-                          </div>
-                        ) : (
-                          <ImagePlaceholder
-                            number={item.placeholderNum}
-                            gradient={item.gradient}
-                            height="h-[300px] lg:h-full"
-                            label={`${item.category} 이미지`}
-                          />
-                        )}
+                        <ImagePlaceholder
+                          number={item.placeholderNum}
+                          gradient={item.gradient}
+                          height="h-[300px] lg:h-full"
+                          label={`${item.category} 이미지`}
+                        />
                         {/* Number overlay */}
                         <div className={`absolute top-5 ${isReversed ? "right-5" : "left-5"} z-10`}>
                           <span className="text-white/[0.07] text-[100px] lg:text-[140px] font-black leading-none select-none" style={{ fontFamily: "'Noto Serif KR', serif" }}>

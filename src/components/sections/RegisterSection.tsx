@@ -8,7 +8,6 @@ export default function RegisterSection() {
       <SectionBanner
         title="관심고객등록"
         subtitle="엘리프 성성호수공원에 관심을 가져주셔서 감사합니다."
-        bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-amber-900 via-amber-800 to-amber-700"
       />
 

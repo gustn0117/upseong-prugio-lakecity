@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import ElifLogo from "../ElifLogo";
 import SectionBanner from "../SectionBanner";
 
 const subTabs = [
@@ -22,7 +22,6 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
       <SectionBanner
         title="사 업 안 내"
         subtitle="엘리프 성성호수공원의 사업 정보를 확인하세요."
-        bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500"
       />
 
@@ -107,14 +106,15 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
                   <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-elif-beige/40 rounded-br-lg" />
                   <div className="relative overflow-hidden rounded">
                     <div className="relative aspect-[16/9]">
-                      <Image
-                        src="/images/perspective.jpg"
-                        alt="엘리프 성성호수공원 투시도"
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 1100px) 100vw, 1100px"
-                        priority
-                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#054438] via-[#0a5e4d] to-[#065240] flex items-center justify-center">
+                        <div className="text-center">
+                          <svg className="w-14 h-14 text-white/15 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                          <p className="text-white/30 text-[13px] tracking-wider">투시도 이미지 예정</p>
+                          <p className="text-white/15 text-[11px] mt-1 font-mono">/images/perspective.jpg · 1200×675px</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -230,13 +230,16 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
               <div className="relative overflow-hidden rounded-lg border border-gray-200 shadow-sm bg-gray-50">
                 {/* 지도 이미지 — /images/map-directions.jpg (권장: 1200x600px) */}
                 <div className="relative h-[300px] sm:h-[400px] lg:h-[480px] flex items-center justify-center">
-                  <Image
-                    src="/images/map-directions.jpg"
-                    alt="엘리프 성성호수공원 오시는길 약도"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1100px) 100vw, 1100px"
-                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#e8e0d0] via-[#f0ebe3] to-[#e5ddd0] flex items-center justify-center">
+                    <div className="text-center">
+                      <svg className="w-14 h-14 text-gray-400/40 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <p className="text-gray-500/60 text-[13px] tracking-wider">약도 이미지 예정</p>
+                      <p className="text-gray-400/40 text-[11px] mt-1 font-mono">/images/map-directions.jpg · 1200×600px</p>
+                    </div>
+                  </div>
                   {/* 하단 주소 오버레이 */}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-5">
                     <div className="flex items-end justify-between gap-4">
@@ -394,14 +397,7 @@ export default function BusinessSection({ initialSubTab }: BusinessSectionProps)
                   <span className="w-12 h-px bg-gradient-to-l from-transparent to-elif-beige/40" />
                 </div>
                 <div className="flex justify-center mb-10">
-                  <Image
-                    src="/images/logo-bi.png"
-                    alt="엘리프 성성호수공원"
-                    width={400}
-                    height={90}
-                    className="h-[60px] lg:h-[80px] w-auto"
-                    style={{ filter: "brightness(0) invert(1)" }}
-                  />
+                  <ElifLogo white size="xl" />
                 </div>
                 <div className="flex items-center justify-center gap-2 mb-10">
                   <span className="w-6 h-px bg-elif-beige/30" />

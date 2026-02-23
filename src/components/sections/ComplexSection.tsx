@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import ImagePlaceholder from "../ImagePlaceholder";
 import SectionBanner from "../SectionBanner";
 
@@ -101,7 +100,6 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
       <SectionBanner
         title="단 지 안 내"
         subtitle="엘리프 성성호수공원의 단지 정보를 확인하세요."
-        bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-500"
       />
 
@@ -158,15 +156,15 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
                 <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-elif-beige/50 z-10" />
 
                 <div className="border border-gray-200/80 overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)]">
-                  <Image
-                    src="/images/site-plan.jpg"
-                    alt="엘리프 성성호수공원 단지배치도"
-                    width={2400}
-                    height={1698}
-                    className="w-full h-auto"
-                    sizes="(max-width: 1100px) 100vw, 1100px"
-                    quality={85}
-                  />
+                  <div className="w-full aspect-[16/11] bg-gradient-to-br from-[#e8e4dc] via-[#f0ece4] to-[#e5e0d8] flex items-center justify-center">
+                    <div className="text-center">
+                      <svg className="w-16 h-16 text-gray-400/30 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      <p className="text-gray-500/50 text-[14px] tracking-wider">단지배치도 이미지 예정</p>
+                      <p className="text-gray-400/40 text-[11px] mt-1 font-mono">/images/site-plan.jpg · 2400x1698px</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

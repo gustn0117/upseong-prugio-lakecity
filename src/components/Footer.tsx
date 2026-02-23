@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import ElifLogo from "./ElifLogo";
 
 interface FooterProps {
   onTabChange?: (tabId: string) => void;
@@ -44,14 +44,7 @@ export default function Footer({ onTabChange }: FooterProps) {
           {/* Brand */}
           <div className="max-w-[360px]">
             <div className="mb-5">
-              <Image
-                src="/images/logo-bi.png"
-                alt="엘리프 성성호수공원"
-                width={180}
-                height={40}
-                className="h-[32px] w-auto opacity-80"
-                style={{ filter: "brightness(0) invert(1)" }}
-              />
+              <ElifLogo white size="sm" className="opacity-80" />
             </div>
             <p className="text-[13px] leading-[1.8] text-gray-500">
               성성호수공원 앞,

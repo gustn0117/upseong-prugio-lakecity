@@ -21,7 +21,6 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
       <SectionBanner
         title="홍 보 센 터"
         subtitle="엘리프 성성호수공원의 최신 소식을 만나보세요."
-        bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700"
       />
 
@@ -97,16 +96,15 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
               <div className="h-[2px] bg-gradient-to-r from-transparent via-[#c8baa7] to-transparent" />
 
               <div className="p-4 md:p-6">
-                <video
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster=""
-                  className="w-full rounded-lg aspect-video bg-black"
-                >
-                  <source src="/videos/promo.mp4" type="video/mp4" />
-                  브라우저가 비디오 재생을 지원하지 않습니다.
-                </video>
+                <div className="w-full rounded-lg aspect-video bg-black/90 flex items-center justify-center">
+                  <div className="text-center">
+                    <svg className="w-16 h-16 text-white/15 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <p className="text-white/30 text-[14px] tracking-wider">홍보영상 준비 중</p>
+                    <p className="text-white/15 text-[11px] mt-1 font-mono">/videos/promo.mp4</p>
+                  </div>
+                </div>
               </div>
 
               {/* 하단 정보 바 */}
