@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import ImagePlaceholder from "../ImagePlaceholder";
 import SectionBanner from "../SectionBanner";
 
 const subTabs = [
@@ -11,6 +10,20 @@ const subTabs = [
 
 interface SalesSectionProps {
   initialSubTab?: string;
+}
+
+function ComingSoon() {
+  return (
+    <div className="flex flex-col items-center justify-center py-32 lg:py-40">
+      <div className="w-16 h-16 rounded-full bg-elif-cream flex items-center justify-center mb-6">
+        <svg className="w-7 h-7 text-elif-lake" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <p className="text-gray-400 text-[15px] font-medium tracking-wide">준비중입니다</p>
+      <p className="text-gray-300 text-[13px] mt-2">확정 후 업데이트 예정</p>
+    </div>
+  );
 }
 
 export default function SalesSection({ initialSubTab }: SalesSectionProps) {
@@ -47,55 +60,8 @@ export default function SalesSection({ initialSubTab }: SalesSectionProps) {
         </div>
       </div>
 
-      {/* Content */}
-      <div className="max-w-[1200px] mx-auto px-6 py-16">
-        {activeSubTab === "schedule" && (
-          <div className="tab-content">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">분양일정</h3>
-
-            {/* Timeline */}
-            <div className="relative max-w-[800px] mx-auto" data-animate>
-              <div className="absolute left-1/2 top-0 bottom-0 w-px bg-elif-sage/50" />
-              {[
-                { step: "모델하우스 오픈", date: "일정 미정", status: "upcoming" },
-                { step: "특별공급", date: "일정 미정", status: "upcoming" },
-                { step: "1순위", date: "일정 미정", status: "upcoming" },
-                { step: "2순위", date: "일정 미정", status: "upcoming" },
-                { step: "당첨자 발표", date: "일정 미정", status: "upcoming" },
-                { step: "계약", date: "일정 미정", status: "upcoming" },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className={`relative flex items-center mb-8 ${
-                    i % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                  }`}
-                >
-                  <div className={`w-1/2 ${i % 2 === 0 ? "pr-12 text-right" : "pl-12 text-left"}`}>
-                    <h4 className="text-lg font-bold text-gray-900">{item.step}</h4>
-                    <p className="text-sm text-gray-500 mt-1">{item.date}</p>
-                  </div>
-                  <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-elif-lake border-4 border-white shadow" />
-                  <div className="w-1/2" />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {activeSubTab === "recruitment" && (
-          <div className="tab-content">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">입주자 모집공고</h3>
-            <ImagePlaceholder
-              number={35}
-              gradient="gradient-silver"
-              height="h-[700px]"
-              label="입주자 모집공고 문서"
-              dark
-              className="rounded-lg"
-            />
-          </div>
-        )}
-
+      <div className="max-w-[1200px] mx-auto px-6">
+        <ComingSoon />
       </div>
     </section>
   );
