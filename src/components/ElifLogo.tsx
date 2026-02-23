@@ -22,7 +22,8 @@ export default function ElifLogo({
 }: ElifLogoProps) {
   const s = sizeMap[size];
   const mainColor = white ? "text-white" : "text-elif-green";
-  const accentColor = "text-elif-lake";
+  const accentColor = white ? "text-white" : "text-elif-green";
+  const dotColor = "text-[#C9A96E]";
   const subColor = white ? "text-white/50" : "text-gray-400";
 
   return (
@@ -39,6 +40,12 @@ export default function ElifLogo({
           style={{ fontFamily: "'Noto Serif KR', serif" }}
         >
           IF
+        </span>
+        <span
+          className={`${dotColor} leading-none ml-0.5`}
+          style={{ fontSize: size === "xl" ? "10px" : size === "lg" ? "8px" : "6px" }}
+        >
+          ●
         </span>
       </div>
       {showSub && (
