@@ -36,17 +36,17 @@ export default function HomeSection() {
     <section className="relative">
       {/* ===== Hero Section ===== */}
       <div className="relative h-[100vh] min-h-[700px] overflow-hidden">
-        {/* Background Image with Parallax */}
+        {/* Background with Parallax */}
         <div
           className="absolute inset-0 scale-110"
           style={{ transform: `scale(1.1) translateY(${scrollY * 0.15}px)` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1E3D30] via-[#2D5A45] to-[#3D7A5C]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#162B22] via-[#1E3D30] to-[#2D5A45]" />
         </div>
 
         {/* Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1E3D30]/50 via-[#1E3D30]/30 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1E3D30]/40 via-transparent to-[#1E3D30]/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#162B22]/60 via-[#1E3D30]/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#162B22]/50 via-transparent to-[#162B22]/10" />
 
         {/* Decorative Wave Pattern */}
         <div className="absolute inset-0 pattern-waves opacity-30" />
@@ -73,10 +73,10 @@ export default function HomeSection() {
                   &ldquo; 성성호수공원 앞, 엘리프에서 누리다 &rdquo;
                 </p>
                 <h1 className="text-white">
-                  <span className="block text-[38px] lg:text-[52px] xl:text-[60px] font-extralight leading-[1.15] tracking-tight">
+                  <span className="block text-[40px] lg:text-[56px] xl:text-[68px] font-extralight leading-[1.1] tracking-tight">
                     자연과 함께하는
                   </span>
-                  <span className="block text-[38px] lg:text-[52px] xl:text-[60px] font-bold leading-[1.15] tracking-tight mt-1">
+                  <span className="block text-[40px] lg:text-[56px] xl:text-[68px] font-bold leading-[1.1] tracking-tight mt-1">
                     프리미엄 <span className="text-elif-lake">주거</span>
                   </span>
                 </h1>
@@ -450,13 +450,11 @@ export default function HomeSection() {
       </div>
 
       {/* ===== CTA Section ===== */}
-      <div ref={sec6.ref} className="relative py-24 lg:py-32 bg-gradient-to-br from-elif-green via-elif-green-light to-elif-lake/30 overflow-hidden">
+      <div ref={sec6.ref} className="relative py-28 lg:py-36 bg-elif-green overflow-hidden">
         {/* 배경 장식 */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-elif-green/30 via-elif-green-light/20 to-elif-lake/10" />
-        </div>
-        <div className="absolute inset-0 pattern-waves opacity-30" />
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-elif-lake/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-elif-green via-elif-green to-elif-green-light/40" />
+        <div className="absolute inset-0 pattern-waves opacity-20" />
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         <div className={`relative max-w-[800px] mx-auto px-6 text-center transition-all duration-[800ms] ${sec6.visible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-95"}`}>
           <div className="flex items-center justify-center gap-3 mb-6">
@@ -464,14 +462,14 @@ export default function HomeSection() {
             <p className="text-elif-lake text-[13px] tracking-[4px] font-medium">CONTACT</p>
             <span className="w-8 h-[1px] bg-elif-lake/50" />
           </div>
-          <h2 className="text-white text-[34px] lg:text-[46px] font-bold mb-4" style={{ fontFamily: "'Noto Serif KR', serif" }}>분양문의</h2>
-          <p className="text-white/50 text-[15px] mb-10 leading-relaxed">
+          <h2 className="text-white text-[36px] lg:text-[50px] font-bold mb-4" style={{ fontFamily: "'Noto Serif KR', serif" }}>분양문의</h2>
+          <p className="text-white/40 text-[15px] mb-12 leading-relaxed">
             엘리프 성성호수공원에 대해
             <br className="sm:hidden" /> 자세한 상담을 받아보세요.
           </p>
           <a
             href="tel:1800-0000"
-            className="group inline-flex items-center gap-3 px-12 py-5 bg-elif-lake hover:bg-elif-lake-light text-white text-[22px] font-bold tracking-wider transition-all duration-300 hover:shadow-2xl hover:shadow-elif-lake/20 hover:scale-[1.02] rounded-full"
+            className="group inline-flex items-center gap-3 px-14 py-5 bg-white text-elif-green text-[22px] font-bold tracking-wider transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 hover:scale-[1.02] rounded-full"
           >
             <svg className="w-6 h-6 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -479,7 +477,7 @@ export default function HomeSection() {
             </svg>
             1800-0000
           </a>
-          <div className="mt-8 flex flex-wrap justify-center gap-8 text-white/30 text-[13px]">
+          <div className="mt-10 flex flex-wrap justify-center gap-8 text-white/20 text-[13px]">
             <span>시공 | 계룡건설산업(주)</span>
           </div>
         </div>

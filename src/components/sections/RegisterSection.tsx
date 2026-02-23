@@ -4,7 +4,7 @@ import SectionBanner from "../SectionBanner";
 
 export default function RegisterSection() {
   return (
-    <section className="pt-[72px]">
+    <section className="pt-[80px]">
       <SectionBanner
         title="관심고객등록"
         subtitle="엘리프 성성호수공원에 관심을 가져주셔서 감사합니다."

@@ -60,11 +60,11 @@ const menuItems: MenuItem[] = [
       { id: "video", label: "홍보영상" },
     ],
   },
-  {
-    id: "register",
-    label: "관심고객등록",
-  },
 ];
+
+// Split navigation for centered logo layout
+const leftItems = menuItems.slice(0, 3);
+const rightItems = menuItems.slice(3, 6);
 
 interface HeaderProps {
   activeTab: string;
@@ -83,173 +83,192 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
   }, [activeTab]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleMegaEnter = (hasSub: boolean) => {
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [activeTab]);
+
+  const handleMegaEnter = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
-    if (hasSub) setMegaOpen(true);
-    else setMegaOpen(false);
+    setMegaOpen(true);
   };
 
   const handleHeaderLeave = () => {
-    closeTimer.current = setTimeout(() => setMegaOpen(false), 120);
+    closeTimer.current = setTimeout(() => setMegaOpen(false), 150);
   };
 
   const isDark = isHome && !scrolled && !megaOpen;
-  const isMegaDark = megaOpen; // 메가 메뉴 열릴 때도 다크 스타일
 
   const headerBg = isDark
     ? "bg-transparent"
-    : isMegaDark
-      ? "bg-elif-green-dark/95 backdrop-blur-xl"
-      : "bg-white/95 shadow-sm backdrop-blur-md";
+    : megaOpen
+      ? "bg-white shadow-lg shadow-black/[0.04]"
+      : "bg-white/97 backdrop-blur-lg shadow-sm";
 
-  const textMuted = isDark || isMegaDark ? "text-white/80" : "text-gray-700";
-  const textColor = isDark || isMegaDark ? "text-white" : "text-gray-900";
-  const logoWhite = isDark || isMegaDark;
-  const activeColor = isDark || isMegaDark ? "text-elif-lake font-bold" : "text-elif-green font-bold";
-  const activeBar = isDark || isMegaDark ? "bg-elif-lake" : "bg-elif-green";
+  const textMuted = isDark ? "text-white/60" : "text-gray-500";
+  const textColor = isDark ? "text-white" : "text-gray-900";
+  const logoWhite = isDark;
 
-  const menuWithSubs = menuItems.filter((m) => m.subItems);
+  const navItemClass = (itemId: string) => {
+    const isActive = activeTab === itemId;
+    if (isActive) return isDark ? "text-white font-bold" : "text-elif-green font-bold";
+    return isDark
+      ? "text-white/60 hover:text-white"
+      : "text-gray-500 hover:text-gray-900";
+  };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg}`}
       onMouseLeave={handleHeaderLeave}
     >
-      {/* 홈 투명 상태일 때 글자 가독성을 위한 상단 그라데이션 */}
+      {/* Hero readability gradient */}
       {isDark && (
-        <div className="absolute inset-0 bg-gradient-to-b from-elif-green-dark/50 via-elif-green-dark/25 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/15 to-transparent pointer-events-none" />
       )}
 
-      {/* 헤더 하단 악센트 라인 */}
+      {/* Bottom accent line */}
       {!isDark && !megaOpen && (
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-elif-sage/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200/80 to-transparent" />
       )}
 
-      {/* 메가 메뉴 열릴 때 상단 그라데이션 */}
-      {megaOpen && isHome && !scrolled && (
-        <div className="absolute inset-0 bg-gradient-to-b from-elif-green-dark/30 to-transparent pointer-events-none" />
-      )}
+      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="flex items-center justify-between h-[80px]">
 
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-[76px]">
-        {/* Logo */}
-        <button
-          onClick={() => { onTabChange("home"); setMegaOpen(false); }}
-          className="flex items-center cursor-pointer"
-        >
-          <ElifLogo white={logoWhite} size="sm" showSub={false} />
-        </button>
+          {/* Left Nav (Desktop) */}
+          <nav className="hidden lg:flex items-center gap-0 flex-1 justify-end">
+            {leftItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => { onTabChange(item.id); setMegaOpen(false); }}
+                onMouseEnter={handleMegaEnter}
+                className={`relative px-4 xl:px-5 py-2 text-[13px] tracking-[0.5px] transition-all duration-300 ${navItemClass(item.id)}`}
+              >
+                {item.label}
+                {activeTab === item.id && (
+                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-elif-lake" />
+                )}
+              </button>
+            ))}
+          </nav>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-0.5">
-          {menuItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => { onTabChange(item.id); setMegaOpen(false); }}
-              onMouseEnter={() => handleMegaEnter(!!item.subItems)}
-              className={`px-4 py-2.5 text-[14px] font-medium transition-all duration-300 relative
-                ${activeTab === item.id
-                  ? activeColor
-                  : `${textMuted} hover:${textColor}`
-                }`}
-            >
-              {item.label}
-              {activeTab === item.id && (
-                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-[2px] ${activeBar} transition-all`} />
-              )}
+          {/* Centered Logo */}
+          <button
+            onClick={() => { onTabChange("home"); setMegaOpen(false); setMobileOpen(false); }}
+            className="flex items-center cursor-pointer lg:mx-8 xl:mx-12 flex-shrink-0"
+          >
+            <ElifLogo white={logoWhite} size="md" showSub={false} />
+          </button>
+
+          {/* Right Nav + CTA (Desktop) */}
+          <div className="hidden lg:flex items-center flex-1">
+            <nav className="flex items-center gap-0">
+              {rightItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => { onTabChange(item.id); setMegaOpen(false); }}
+                  onMouseEnter={handleMegaEnter}
+                  className={`relative px-4 xl:px-5 py-2 text-[13px] tracking-[0.5px] transition-all duration-300 ${navItemClass(item.id)}`}
+                >
+                  {item.label}
+                  {activeTab === item.id && (
+                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-elif-lake" />
+                  )}
+                </button>
+              ))}
+            </nav>
+            <div className="ml-auto flex items-center gap-4">
+              <a
+                href="tel:18000000"
+                className={`hidden xl:flex items-center gap-1.5 text-[13px] font-bold tracking-wider transition-colors duration-300 ${isDark ? "text-white/70 hover:text-white" : "text-gray-500 hover:text-elif-green"}`}
+              >
+                <svg className="w-3.5 h-3.5 text-elif-lake" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                1800-0000
+              </a>
+              <button
+                onClick={() => { onTabChange("register"); setMegaOpen(false); }}
+                className={`px-5 py-2 text-[12px] font-semibold tracking-wider rounded-full transition-all duration-300
+                  ${isDark
+                    ? "border border-elif-lake/50 text-elif-lake hover:bg-elif-lake/10"
+                    : "bg-elif-green text-white hover:bg-elif-green-light"
+                  }`}
+              >
+                사전등록
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Controls */}
+          <div className="lg:hidden flex items-center gap-2">
+            <a href="tel:18000000" className={`p-1.5 ${textColor}`}>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </a>
+            <button className={`p-1.5 ${textColor}`} onClick={() => setMobileOpen(!mobileOpen)}>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
             </button>
-          ))}
-        </nav>
-
-        {/* Phone Number */}
-        <a
-          href="tel:18000000"
-          className={`hidden lg:flex items-center gap-2 transition-colors duration-300 ${textColor} hover:text-elif-lake`}
-        >
-          <svg className="w-4 h-4 text-elif-lake" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-          </svg>
-          <span className="text-[15px] font-bold tracking-wider">1800-0000</span>
-        </a>
-
-        {/* Mobile Menu Button */}
-        <button
-          className={`lg:hidden p-2 transition-colors ${textColor}`}
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {mobileOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
+          </div>
+        </div>
       </div>
 
-      {/* 메가 메뉴 */}
+      {/* ═══ Mega Menu (Desktop) ═══ */}
       <div
         className={`hidden lg:block overflow-hidden transition-all duration-300 ease-in-out ${
-          megaOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+          megaOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
         }`}
         onMouseEnter={() => { if (closeTimer.current) clearTimeout(closeTimer.current); }}
         onMouseLeave={handleHeaderLeave}
       >
-        <div className="bg-elif-green-dark/95 backdrop-blur-xl">
-          {/* 상단 악센트 라인 */}
-          <div className="h-px bg-gradient-to-r from-transparent via-elif-lake/20 to-transparent" />
-
-          <div className="max-w-[1100px] mx-auto px-10 py-8">
-            <div className="grid grid-cols-6 gap-0">
-              {menuWithSubs.map((item, idx) => (
-                <div key={item.id} className="relative">
-                  {/* 컬럼 구분선 */}
-                  {idx > 0 && (
-                    <div className="absolute left-0 top-0 bottom-0 w-px bg-white/[0.06]" />
-                  )}
-                  <div className="px-5">
-                    {/* 카테고리 헤더 */}
-                    <button
-                      onClick={() => { onTabChange(item.id); setMegaOpen(false); }}
-                      className="group/cat flex items-center gap-2 mb-4"
-                    >
-                      <span className="w-1 h-4 bg-elif-lake/60 rounded-full group-hover/cat:h-5 transition-all duration-300" />
-                      <span className="text-[13px] font-bold text-white tracking-wider group-hover/cat:text-elif-lake transition-colors duration-300">
-                        {item.label}
-                      </span>
-                    </button>
-                    {/* 서브 메뉴 */}
-                    <div className="space-y-0.5 pl-3">
-                      {item.subItems!.map((sub) => (
-                        <button
-                          key={sub.id}
-                          onClick={() => { onTabChange(item.id, sub.id); setMegaOpen(false); }}
-                          className="group/sub flex items-center gap-2.5 w-full text-left py-2 text-[13px] text-white/40 hover:text-elif-lake transition-all duration-200"
-                        >
-                          <span className="w-0 group-hover/sub:w-3 h-px bg-elif-lake transition-all duration-300" />
-                          <span>{sub.label}</span>
-                        </button>
-                      ))}
-                    </div>
+        <div className="border-t border-gray-100">
+          <div className="max-w-[1000px] mx-auto px-8 py-7">
+            <div className="grid grid-cols-6 gap-6">
+              {menuItems.map((item) => (
+                <div key={item.id}>
+                  <button
+                    onClick={() => { onTabChange(item.id); setMegaOpen(false); }}
+                    className="group/cat mb-2 block"
+                  >
+                    <span className="text-[12px] font-bold text-elif-green tracking-wider group-hover/cat:text-elif-lake transition-colors">
+                      {item.label}
+                    </span>
+                  </button>
+                  <div className="w-5 h-px bg-elif-lake/30 mb-3" />
+                  <div className="space-y-0.5">
+                    {item.subItems?.map((sub) => (
+                      <button
+                        key={sub.id}
+                        onClick={() => { onTabChange(item.id, sub.id); setMegaOpen(false); }}
+                        className="block w-full text-left py-1.5 text-[12px] text-gray-400 hover:text-elif-green transition-colors duration-200"
+                      >
+                        {sub.label}
+                      </button>
+                    ))}
                   </div>
                 </div>
               ))}
             </div>
           </div>
-
-          {/* 하단 정보 바 */}
-          <div className="border-t border-white/[0.04]">
-            <div className="max-w-[1100px] mx-auto px-10 py-3 flex items-center justify-between">
-              <p className="text-white/20 text-[11px] tracking-wide">엘리프 성성호수공원 · 호수공원 앞 프리미엄 주거</p>
-              <a href="tel:18000000" className="flex items-center gap-1.5 text-elif-lake/60 hover:text-elif-lake text-[12px] font-medium tracking-wider transition-colors">
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {/* Bottom bar */}
+          <div className="border-t border-gray-50">
+            <div className="max-w-[1000px] mx-auto px-8 py-2.5 flex items-center justify-between">
+              <p className="text-gray-300 text-[11px] tracking-wide">엘리프 성성호수공원 · 호수공원 앞 프리미엄 주거</p>
+              <a href="tel:18000000" className="flex items-center gap-1.5 text-elif-lake/70 hover:text-elif-lake text-[12px] font-medium tracking-wider transition-colors">
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
@@ -260,63 +279,72 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="lg:hidden bg-elif-green-dark/[0.98] backdrop-blur-xl border-t border-white/[0.06] shadow-2xl max-h-[calc(100vh-76px)] overflow-y-auto rounded-b-2xl">
-          <div className="px-6 py-5">
+      {/* ═══ Mobile Menu — Slide-in Sidebar ═══ */}
+      <div className={`lg:hidden fixed inset-0 top-[80px] z-50 transition-all duration-400 ${
+        mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
+      }`}>
+        {/* Backdrop */}
+        <div
+          className={`absolute inset-0 bg-black/20 backdrop-blur-[2px] transition-opacity duration-400 ${
+            mobileOpen ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={() => setMobileOpen(false)}
+        />
+
+        {/* Sidebar Panel */}
+        <div className={`absolute top-0 right-0 w-[280px] max-w-[80vw] h-full bg-white shadow-2xl transition-transform duration-400 ease-out overflow-y-auto ${
+          mobileOpen ? "translate-x-0" : "translate-x-full"
+        }`}>
+          <div className="p-5">
+            {/* CTA at top */}
+            <button
+              onClick={() => { onTabChange("register"); setMobileOpen(false); }}
+              className="w-full py-3.5 bg-elif-green text-white text-[14px] font-bold tracking-wider rounded-xl mb-5 hover:bg-elif-green-light transition-colors"
+            >
+              관심고객 사전등록
+            </button>
+
+            {/* Menu Items */}
             {menuItems.map((item) => (
-              <div key={item.id} className="border-b border-white/[0.06] last:border-0">
+              <div key={item.id} className="border-b border-gray-100 last:border-0">
                 <button
-                  onClick={() => {
-                    if (!item.subItems) {
-                      onTabChange(item.id);
-                      setMobileOpen(false);
-                    } else {
-                      onTabChange(item.id);
-                      setMobileOpen(false);
-                    }
-                  }}
-                  className={`flex items-center justify-between w-full text-left py-4 text-[16px] font-semibold transition-colors
-                    ${activeTab === item.id ? "text-elif-lake" : "text-white/90"}`}
+                  onClick={() => { onTabChange(item.id); setMobileOpen(false); }}
+                  className={`flex items-center justify-between w-full text-left py-3.5 text-[14px] font-medium transition-colors
+                    ${activeTab === item.id ? "text-elif-green font-bold" : "text-gray-700"}`}
                 >
                   <span>{item.label}</span>
-                  {activeTab === item.id && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-elif-lake" />
-                  )}
+                  {activeTab === item.id && <span className="w-1.5 h-1.5 rounded-full bg-elif-lake" />}
                 </button>
                 {item.subItems && (
-                  <div className="pb-4 -mt-1">
-                    <div className="bg-white/[0.04] rounded-lg overflow-hidden">
-                      {item.subItems.map((sub, si) => (
-                        <button
-                          key={sub.id}
-                          onClick={() => {
-                            onTabChange(item.id, sub.id);
-                            setMobileOpen(false);
-                          }}
-                          className={`flex items-center gap-3 w-full text-left px-5 py-3.5 text-[15px] transition-colors active:bg-white/[0.04] ${si > 0 ? "border-t border-white/[0.04]" : ""} text-white/50 hover:text-elif-lake`}
-                        >
-                          <span className="w-1 h-1 rounded-full bg-elif-lake/40 flex-shrink-0" />
-                          {sub.label}
-                        </button>
-                      ))}
-                    </div>
+                  <div className="pb-2.5 space-y-0.5">
+                    {item.subItems.map((sub) => (
+                      <button
+                        key={sub.id}
+                        onClick={() => { onTabChange(item.id, sub.id); setMobileOpen(false); }}
+                        className="flex items-center gap-2 w-full text-left pl-3 py-2 text-[13px] text-gray-400 hover:text-elif-green transition-colors"
+                      >
+                        <span className="w-1 h-1 rounded-full bg-gray-200" />
+                        {sub.label}
+                      </button>
+                    ))}
                   </div>
                 )}
               </div>
             ))}
-            <div className="pt-4 mt-1 border-t border-white/[0.06]">
-              <a href="tel:18000000" className="flex items-center gap-2 text-elif-lake/70 hover:text-elif-lake transition-colors">
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+            {/* Phone */}
+            <div className="mt-5 pt-5 border-t border-gray-100">
+              <a href="tel:18000000" className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-elif-lake" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="text-[15px] font-bold tracking-wider">1800-0000</span>
+                <span className="text-[15px] font-bold text-elif-green tracking-wider">1800-0000</span>
               </a>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }

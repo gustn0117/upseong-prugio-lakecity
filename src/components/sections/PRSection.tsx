@@ -17,7 +17,7 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
   const [activeSubTab, setActiveSubTab] = useState(initialSubTab || "news");
 
   return (
-    <section className="pt-[72px]">
+    <section className="pt-[80px]">
       <SectionBanner
         title="홍 보 센 터"
         subtitle="엘리프 성성호수공원의 최신 소식을 만나보세요."
@@ -25,29 +25,26 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
       />
 
       {/* Sub Navigation */}
-      <div className="relative">
-        <div className="bg-elif-green-dark">
-          <div className="max-w-[1200px] mx-auto flex items-center justify-center overflow-x-auto">
-            {subTabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveSubTab(tab.id)}
-                className={`relative px-10 py-5 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
-                  ${activeSubTab === tab.id
-                    ? "text-elif-lake"
-                    : "text-white/30 hover:text-white/55"
-                  }
-                `}
-              >
-                {tab.label}
-                {activeSubTab === tab.id && (
-                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-lake rounded-full" />
-                )}
-              </button>
-            ))}
-          </div>
+      <div className="bg-white border-b border-gray-200">
+        <div className="max-w-[1200px] mx-auto flex items-center justify-center overflow-x-auto">
+          {subTabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveSubTab(tab.id)}
+              className={`relative px-8 py-4 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
+                ${activeSubTab === tab.id
+                  ? "text-elif-green font-bold"
+                  : "text-gray-400 hover:text-gray-600"
+                }
+              `}
+            >
+              {tab.label}
+              {activeSubTab === tab.id && (
+                <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-lake rounded-full" />
+              )}
+            </button>
+          ))}
         </div>
-        <div className="h-px bg-gradient-to-r from-transparent via-elif-lake/25 to-transparent" />
       </div>
 
       {/* Content */}
