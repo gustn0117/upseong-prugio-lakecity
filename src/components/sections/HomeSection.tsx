@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import ElifLogo from "../ElifLogo";
 
 function useInView(threshold = 0.15) {
@@ -36,20 +37,29 @@ export default function HomeSection() {
     <section className="relative">
       {/* ===== Hero Section ===== */}
       <div className="relative h-[100vh] min-h-[700px] overflow-hidden">
-        {/* Background with Parallax */}
+        {/* Background Image with Parallax */}
         <div
-          className="absolute inset-0 scale-110"
-          style={{ transform: `scale(1.1) translateY(${scrollY * 0.15}px)` }}
+          className="absolute inset-0"
+          style={{ transform: `translateY(${scrollY * 0.15}px)` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#162B22] via-[#1E3D30] to-[#2D5A45]" />
+          <Image
+            src="/images/hero-lake.jpg"
+            alt="성성호수공원 전경"
+            fill
+            priority
+            className="object-cover scale-110"
+            sizes="100vw"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1f17]/75 via-[#162B22]/55 to-[#1E3D30]/40" />
         </div>
 
-        {/* Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#162B22]/60 via-[#1E3D30]/20 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#162B22]/50 via-transparent to-[#162B22]/10" />
+        {/* Secondary Gradient Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f17]/50 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f17]/60 via-transparent to-[#0a1f17]/20" />
 
-        {/* Decorative Wave Pattern */}
-        <div className="absolute inset-0 pattern-waves opacity-30" />
+        {/* Subtle Vignette */}
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at center, transparent 50%, rgba(10,31,23,0.4) 100%)' }} />
 
         {/* Hero Content */}
         <div className="absolute inset-0 flex items-center">
@@ -62,21 +72,21 @@ export default function HomeSection() {
               {/* Badge */}
               <div className="flex items-center gap-3 mb-8">
                 <span className="inline-block w-12 h-[1px] bg-elif-lake" />
-                <span className="text-elif-lake text-[13px] tracking-[4px] font-medium uppercase rounded-full">
+                <span className="text-elif-lake text-[13px] tracking-[4px] font-medium uppercase">
                   Premium Residence
                 </span>
               </div>
 
               {/* Main Quote */}
               <div className="mb-6">
-                <p className="text-white/60 text-[16px] lg:text-[18px] font-light tracking-wide mb-4" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                <p className="text-white/50 text-[15px] lg:text-[17px] font-light tracking-wide mb-5" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                   &ldquo; 성성호수공원 앞, 엘리프에서 누리다 &rdquo;
                 </p>
                 <h1 className="text-white">
-                  <span className="block text-[40px] lg:text-[56px] xl:text-[68px] font-extralight leading-[1.1] tracking-tight">
+                  <span className="block text-[38px] lg:text-[54px] xl:text-[64px] font-extralight leading-[1.15] tracking-tight">
                     자연과 함께하는
                   </span>
-                  <span className="block text-[40px] lg:text-[56px] xl:text-[68px] font-bold leading-[1.1] tracking-tight mt-1">
+                  <span className="block text-[38px] lg:text-[54px] xl:text-[64px] font-bold leading-[1.15] tracking-tight mt-2">
                     프리미엄 <span className="text-elif-lake">주거</span>
                   </span>
                 </h1>
@@ -84,7 +94,7 @@ export default function HomeSection() {
 
               {/* Subtitle */}
               <p
-                className={`text-white/60 text-[14px] lg:text-[16px] leading-[1.8] mb-10 max-w-[520px] transition-all duration-[1200ms] delay-300 ${
+                className={`text-white/50 text-[14px] lg:text-[15px] leading-[1.9] mb-10 max-w-[480px] transition-all duration-[1200ms] delay-300 ${
                   loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
               >
@@ -116,7 +126,7 @@ export default function HomeSection() {
                 </button>
                 <a
                   href="tel:1800-0000"
-                  className="flex items-center gap-2 px-6 py-4 border border-white/30 text-white/80 hover:border-white hover:text-white text-[14px] font-medium tracking-wider transition-all duration-300 rounded-full"
+                  className="flex items-center gap-2 px-6 py-4 border border-white/25 text-white/70 hover:border-white/50 hover:text-white text-[14px] font-medium tracking-wider transition-all duration-300 rounded-full backdrop-blur-sm"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -135,22 +145,21 @@ export default function HomeSection() {
             loaded ? "opacity-100" : "opacity-0"
           }`}
         >
-          <span className="text-white/40 text-[11px] tracking-[3px] uppercase">Scroll</span>
-          <div className="w-[1px] h-8 bg-gradient-to-b from-white/40 to-transparent scroll-indicator" />
+          <span className="text-white/30 text-[10px] tracking-[3px] uppercase">Scroll</span>
+          <div className="w-[1px] h-8 bg-gradient-to-b from-white/30 to-transparent scroll-indicator" />
         </div>
 
         {/* Side Info Bar */}
         <div className="absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6">
-          <div className="w-[1px] h-16 bg-white/20" />
-          <span className="text-white/40 text-[11px] tracking-[2px] writing-vertical">1800-0000</span>
-          <div className="w-[1px] h-16 bg-white/20" />
+          <div className="w-[1px] h-16 bg-white/15" />
+          <span className="text-white/30 text-[11px] tracking-[2px] writing-vertical">1800-0000</span>
+          <div className="w-[1px] h-16 bg-white/15" />
         </div>
       </div>
 
       {/* ===== Key Info Strip ===== */}
-      <div className="relative bg-elif-green text-white overflow-hidden rounded-b-[2rem]">
-        {/* 배경 패턴 */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{
+      <div className="relative bg-elif-green text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(201,169,110,0.3) 35px, rgba(201,169,110,0.3) 36px)`
         }} />
         <div className="relative max-w-[1400px] mx-auto grid grid-cols-2 lg:grid-cols-4">
@@ -172,9 +181,9 @@ export default function HomeSection() {
         </div>
       </div>
 
-      {/* ===== About Section - 브랜드 ===== */}
+      {/* ===== About Section ===== */}
       <div ref={sec5.ref} className="relative py-28 lg:py-36 bg-elif-cream overflow-hidden">
-        {/* 배경 장식 */}
+        {/* Background Decorations */}
         <div className="absolute top-20 right-0 w-96 h-96 bg-elif-lake/[0.02] rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-0 w-80 h-80 bg-elif-green/[0.02] rounded-full blur-3xl" />
 
@@ -219,15 +228,14 @@ export default function HomeSection() {
             {/* Image Side */}
             <div className={`relative transition-all duration-[800ms] delay-300 ${sec5.visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}>
               <div className="relative aspect-[4/5] overflow-hidden shadow-2xl rounded-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-elif-green via-elif-green-light to-elif-green flex items-center justify-center">
-                  <div className="text-center">
-                    <svg className="w-16 h-16 text-white/20 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <p className="text-white/30 text-[13px] tracking-wider">조감도 이미지 예정</p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-elif-green/30 via-transparent to-transparent" />
+                <Image
+                  src="/images/nature-park.jpg"
+                  alt="성성호수공원 자연환경"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-elif-green/40 via-transparent to-transparent" />
               </div>
               {/* Floating Card */}
               <div className="absolute -bottom-6 -left-6 bg-elif-green text-white p-7 lg:p-9 shadow-2xl max-w-[280px] rounded-xl">
@@ -248,8 +256,77 @@ export default function HomeSection() {
         </div>
       </div>
 
-      {/* ===== 0분의 가치 - 초역세권 · 초공세권 ===== */}
-      <div ref={sec1.ref} className="relative py-28 lg:py-36 bg-white overflow-hidden">
+      {/* ===== Gallery Section - 호수공원 뷰 ===== */}
+      <div className="relative bg-white py-24 lg:py-32 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <span className="text-elif-lake text-[12px] tracking-[5px] font-medium">LAKE PARK VIEW</span>
+            <h2 className="text-[28px] lg:text-[38px] font-bold text-gray-900 mt-4 leading-tight" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+              호수공원의 사계
+            </h2>
+            <div className="flex items-center justify-center gap-3 mt-5">
+              <span className="w-10 h-[1px] bg-elif-lake/40" />
+              <span className="w-1.5 h-1.5 rounded-full bg-elif-lake" />
+              <span className="w-10 h-[1px] bg-elif-lake/40" />
+            </div>
+          </div>
+
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+            {/* Large Image */}
+            <div className="md:col-span-7 relative aspect-[16/10] rounded-2xl overflow-hidden group">
+              <Image
+                src="/images/lake-view.jpg"
+                alt="호수공원 전경"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 58vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6">
+                <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-[11px] tracking-[2px] font-medium rounded-full mb-2">PANORAMA</span>
+                <p className="text-white text-[20px] lg:text-[24px] font-bold">탁 트인 호수공원 조망</p>
+              </div>
+            </div>
+
+            {/* Right Column - 2 stacked images */}
+            <div className="md:col-span-5 flex flex-col gap-4">
+              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden group">
+                <Image
+                  src="/images/about-nature.jpg"
+                  alt="자연 풍경"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 42vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-5">
+                  <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-[11px] tracking-[2px] font-medium rounded-full mb-1.5">NATURE</span>
+                  <p className="text-white text-[17px] font-bold">자연이 선사하는 힐링</p>
+                </div>
+              </div>
+              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden group">
+                <Image
+                  src="/images/hero-lake.jpg"
+                  alt="호수 풍경"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 42vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-5">
+                  <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-[11px] tracking-[2px] font-medium rounded-full mb-1.5">LAKE</span>
+                  <p className="text-white text-[17px] font-bold">호수가 있는 일상</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== 0분의 가치 - 호수공원 앞 ===== */}
+      <div ref={sec1.ref} className="relative py-28 lg:py-36 bg-[#f8f8f5] overflow-hidden">
         {/* 배경 대형 텍스트 */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
           <span className="text-[180px] lg:text-[280px] font-black text-gray-100/50 tracking-tight leading-none">0</span>
@@ -273,12 +350,10 @@ export default function HomeSection() {
 
           {/* 초역세권 / 초공세권 양쪽 카드 */}
           <div className={`grid md:grid-cols-2 gap-0 mb-20 transition-all duration-[800ms] delay-200 ${sec1.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            {/* 초역세권 */}
-            <div className="group relative bg-elif-green p-10 lg:p-14 overflow-hidden rounded-l-xl">
-              {/* 배경 장식 원 */}
+            {/* 호수공원 앞 */}
+            <div className="group relative bg-elif-green p-10 lg:p-14 overflow-hidden rounded-l-2xl rounded-t-2xl md:rounded-t-none md:rounded-l-2xl">
               <div className="absolute -top-20 -right-20 w-60 h-60 bg-elif-lake/[0.03] rounded-full" />
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-elif-lake/[0.03] rounded-full" />
-              {/* 대형 배경 숫자 */}
               <span className="absolute top-6 right-8 text-[120px] font-black text-white/[0.03] leading-none">0</span>
               <div className="relative">
                 <span className="inline-block px-3 py-1 bg-elif-lake/10 text-elif-lake text-[11px] tracking-[3px] font-semibold rounded-full">LAKE PARK</span>
@@ -306,8 +381,8 @@ export default function HomeSection() {
               </div>
             </div>
 
-            {/* 초공세권 */}
-            <div className="group relative bg-[#eef3ee] p-10 lg:p-14 overflow-hidden rounded-r-xl">
+            {/* 에코 라이프 */}
+            <div className="group relative bg-[#eef3ee] p-10 lg:p-14 overflow-hidden rounded-b-2xl md:rounded-b-none md:rounded-r-2xl">
               <div className="absolute -top-20 -right-20 w-60 h-60 bg-green-600/[0.04] rounded-full" />
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-green-600/[0.04] rounded-full" />
               <span className="absolute top-6 right-8 text-[120px] font-black text-green-800/[0.04] leading-none">1</span>
@@ -352,7 +427,10 @@ export default function HomeSection() {
       </div>
 
       {/* ===== PREMIUM 4 Highlights ===== */}
-      <div ref={sec2.ref} className="bg-elif-green-dark py-28 lg:py-36 overflow-hidden">
+      <div ref={sec2.ref} className="relative bg-elif-green-dark py-28 lg:py-36 overflow-hidden">
+        {/* Decorative background */}
+        <div className="absolute inset-0 pattern-waves opacity-10" />
+
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className={`text-center mb-20 transition-all duration-[800ms] ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <span className="text-elif-lake text-[12px] tracking-[5px] font-medium">PREMIUM 4</span>
@@ -375,8 +453,12 @@ export default function HomeSection() {
                 tag: "TRANSPORTATION",
                 title: "교통중심",
                 desc: "편리한 광역교통망과 우수한 도로 접근성으로 천안 주요 지역까지 빠르게 연결",
-                image: "/images/premium-transport.jpg",
-                pixel: "680 x 340",
+                gradient: "from-[#1a3a2c] to-[#2a5a42]",
+                icon: (
+                  <svg className="w-8 h-8 text-elif-lake/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                ),
               },
               {
                 num: "02",
@@ -384,8 +466,12 @@ export default function HomeSection() {
                 tag: "NATURE",
                 title: "자연중심",
                 desc: "성성호수공원 바로 앞! 탁 트인 호수 조망과 풍요로운 자연환경의 힐링 라이프",
-                image: "/images/premium-nature.jpg",
-                pixel: "680 x 340",
+                bgImage: "/images/lake-view.jpg",
+                icon: (
+                  <svg className="w-8 h-8 text-elif-lake/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                ),
               },
               {
                 num: "03",
@@ -393,8 +479,12 @@ export default function HomeSection() {
                 tag: "LIVING",
                 title: "생활중심",
                 desc: "대형마트, 상업시설 등 편리한 생활 인프라가 가까이",
-                image: "/images/premium-life.jpg",
-                pixel: "680 x 340",
+                gradient: "from-[#2a4a3a] to-[#3a6a52]",
+                icon: (
+                  <svg className="w-8 h-8 text-elif-lake/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                ),
               },
               {
                 num: "04",
@@ -402,8 +492,12 @@ export default function HomeSection() {
                 tag: "EDUCATION",
                 title: "교육중심",
                 desc: "도보권 내 초·고등학교 설립 예정, 우수한 교육 환경",
-                image: "/images/premium-edu.jpg",
-                pixel: "680 x 340",
+                gradient: "from-[#1e3830] to-[#2e5845]",
+                icon: (
+                  <svg className="w-8 h-8 text-elif-lake/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                ),
               },
             ].map((item, i) => (
               <div
@@ -411,26 +505,38 @@ export default function HomeSection() {
                 className={`group relative h-[340px] overflow-hidden cursor-default rounded-xl ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                 style={{ transitionDelay: sec2.visible ? `${200 + i * 100}ms` : "0ms", transitionDuration: "800ms" }}
               >
-                <div className="absolute inset-0 bg-elif-green-dark">
-                  {/* 이미지 미설정 안내 */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                    <div className="w-12 h-12 rounded-xl border-2 border-dashed border-white/15 flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
+                {/* Background - Image or Gradient */}
+                <div className="absolute inset-0">
+                  {"bgImage" in item && item.bgImage ? (
+                    <>
+                      <Image
+                        src={item.bgImage}
+                        alt={item.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f17]/80 via-[#0a1f17]/30 to-[#0a1f17]/10" />
+                    </>
+                  ) : (
+                    <div className={`absolute inset-0 bg-gradient-to-br ${"gradient" in item ? item.gradient : "from-elif-green-dark to-elif-green"}`}>
+                      {/* Subtle pattern */}
+                      <div className="absolute inset-0 opacity-5 pattern-leaves" />
+                      {/* Icon decoration */}
+                      <div className="absolute top-8 right-8 opacity-40 group-hover:opacity-60 transition-opacity duration-500">
+                        {item.icon}
+                      </div>
                     </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-1.5 border border-white/10">
-                      <p className="text-white/60 text-[11px] font-mono">{item.image}</p>
-                      <p className="text-white/35 text-[10px] font-mono text-center">{item.pixel} px</p>
-                    </div>
-                  </div>
+                  )}
                 </div>
-                {/* 그라데이션 오버레이 */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1E3D30]/80 via-[#1E3D30]/20 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#1E3D30]/30 to-transparent" />
-                {/* 넘버링 */}
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f17]/60 via-transparent to-transparent" />
+
+                {/* Numbering */}
                 <span className="absolute top-5 right-7 text-[80px] font-black text-white/[0.04] leading-none select-none">{item.num}</span>
-                {/* 컨텐츠 */}
+
+                {/* Content */}
                 <div className="absolute inset-0 p-8 lg:p-10 flex flex-col justify-between">
                   <div className="flex items-center gap-3">
                     <span className="text-elif-lake/70 text-[10px] tracking-[4px] font-medium">{item.tag}</span>
@@ -450,11 +556,19 @@ export default function HomeSection() {
       </div>
 
       {/* ===== CTA Section ===== */}
-      <div ref={sec6.ref} className="relative py-28 lg:py-36 bg-elif-green overflow-hidden">
-        {/* 배경 장식 */}
-        <div className="absolute inset-0 bg-gradient-to-br from-elif-green via-elif-green to-elif-green-light/40" />
-        <div className="absolute inset-0 pattern-waves opacity-20" />
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div ref={sec6.ref} className="relative py-28 lg:py-36 overflow-hidden">
+        {/* Full background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/nature-park.jpg"
+            alt="자연 배경"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-elif-green/80" />
+          <div className="absolute inset-0 pattern-waves opacity-15" />
+        </div>
 
         <div className={`relative max-w-[800px] mx-auto px-6 text-center transition-all duration-[800ms] ${sec6.visible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-95"}`}>
           <div className="flex items-center justify-center gap-3 mb-6">
