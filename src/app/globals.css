@@ -5,10 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Noto+Serif+KR:wght@400;600;700&display=swap');
 
 :root {
-  --navy: #1a2744;
-  --navy-light: #2a3a5c;
-  --gold: #c9a96e;
-  --gold-light: #d4b87a;
+  --elif-green: #054438;
+  --elif-green-light: #0a5e4d;
+  --elif-beige: #C8BAA7;
+  --elif-lime: #DADDB9;
   --blue-accent: #3b82f6;
 }
 
@@ -83,10 +83,10 @@ body {
 /* ===== Pulse glow for CTA ===== */
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(201, 169, 110, 0.4);
+    box-shadow: 0 0 0 0 rgba(200, 186, 167, 0.4);
   }
   50% {
-    box-shadow: 0 0 20px 4px rgba(201, 169, 110, 0.2);
+    box-shadow: 0 0 20px 4px rgba(200, 186, 167, 0.2);
   }
 }
 
@@ -172,7 +172,7 @@ body {
 
 /* ===== Sub navigation bar ===== */
 .sub-nav {
-  background: var(--navy);
+  background: var(--elif-green);
 }
 
 /* ===== Section Banner Overlay ===== */
@@ -188,7 +188,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(26, 39, 68, 0.92), rgba(26, 39, 68, 0.75));
+  background: linear-gradient(135deg, rgba(5, 68, 56, 0.92), rgba(5, 68, 56, 0.75));
   z-index: 1;
 }
 
@@ -208,7 +208,7 @@ body {
 }
 
 .unit-table th {
-  background: var(--navy);
+  background: var(--elif-green);
   color: white;
   font-weight: 600;
   border-color: rgba(255, 255, 255, 0.1);
@@ -265,7 +265,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--gold);
+  background: var(--elif-beige);
   transition: width 0.3s ease;
 }
 
@@ -293,17 +293,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gold);
+  background: var(--elif-beige);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--navy);
+  background: var(--elif-green);
 }
 
 /* ===== Selection Color ===== */
 ::selection {
-  background: var(--gold);
+  background: var(--elif-beige);
   color: white;
 }
 
@@ -484,7 +484,7 @@ body {
 }
 
 .gold-line-shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(201,169,110,0.4) 25%, rgba(201,169,110,0.6) 50%, rgba(201,169,110,0.4) 75%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(200,186,167,0.4) 25%, rgba(200,186,167,0.6) 50%, rgba(200,186,167,0.4) 75%, transparent 100%);
   background-size: 200% 100%;
   animation: goldLineShimmer 4s ease-in-out infinite;
 }

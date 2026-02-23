@@ -106,14 +106,14 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
   const headerBg = isDark
     ? "bg-transparent"
     : isMegaDark
-      ? "bg-navy/[0.97] backdrop-blur-xl"
+      ? "bg-elif-green/[0.97] backdrop-blur-xl"
       : "bg-white/97 shadow-sm backdrop-blur-md";
 
   const textMuted = isDark || isMegaDark ? "text-white/80" : "text-gray-700";
   const textColor = isDark || isMegaDark ? "text-white" : "text-gray-900";
   const logoWhite = isDark || isMegaDark;
-  const activeColor = isDark || isMegaDark ? "text-gold font-bold" : "text-navy font-bold";
-  const activeBar = isDark || isMegaDark ? "bg-gold" : "bg-navy";
+  const activeColor = isDark || isMegaDark ? "text-elif-beige font-bold" : "text-elif-green font-bold";
+  const activeBar = isDark || isMegaDark ? "bg-elif-beige" : "bg-elif-green";
 
   const menuWithSubs = menuItems.filter((m) => m.subItems);
 
@@ -129,7 +129,7 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
 
       {/* 헤더 하단 골드 악센트 라인 (일반 스크롤 시에만) */}
       {!isDark && !megaOpen && (
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-elif-beige/20 to-transparent" />
       )}
 
       {/* 메가 메뉴 열릴 때 상단 그라데이션 (홈에서 투명 상태일 때와 유사) */}
@@ -145,7 +145,7 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
         >
           <Image
             src="/images/logo-bi.png"
-            alt="중앙하이츠 갈산역 센트럴"
+            alt="엘리프 성성호수공원"
             width={180}
             height={40}
             className="h-[34px] w-auto transition-[filter] duration-300"
@@ -177,14 +177,14 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
 
         {/* Phone Number */}
         <a
-          href="tel:18005636"
-          className={`hidden lg:flex items-center gap-2 transition-colors duration-300 ${textColor} hover:text-gold`}
+          href="tel:18000000"
+          className={`hidden lg:flex items-center gap-2 transition-colors duration-300 ${textColor} hover:text-elif-beige`}
         >
-          <svg className="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 text-elif-beige" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
               d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
           </svg>
-          <span className="text-[15px] font-bold tracking-wider">1800-5636</span>
+          <span className="text-[15px] font-bold tracking-wider">1800-0000</span>
         </a>
 
         {/* Mobile Menu Button */}
@@ -210,9 +210,9 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
         onMouseEnter={() => { if (closeTimer.current) clearTimeout(closeTimer.current); }}
         onMouseLeave={handleHeaderLeave}
       >
-        <div className="bg-navy/[0.97] backdrop-blur-xl">
+        <div className="bg-elif-green/[0.97] backdrop-blur-xl">
           {/* 상단 골드 악센트 라인 */}
-          <div className="h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+          <div className="h-px bg-gradient-to-r from-transparent via-elif-beige/30 to-transparent" />
 
           <div className="max-w-[1100px] mx-auto px-10 py-8">
             <div className="grid grid-cols-6 gap-0">
@@ -228,8 +228,8 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
                       onClick={() => { onTabChange(item.id); setMegaOpen(false); }}
                       className="group/cat flex items-center gap-2 mb-4"
                     >
-                      <span className="w-1 h-4 bg-gold/60 rounded-full group-hover/cat:h-5 transition-all duration-300" />
-                      <span className="text-[13px] font-bold text-white tracking-wider group-hover/cat:text-gold transition-colors duration-300">
+                      <span className="w-1 h-4 bg-elif-beige/60 rounded-full group-hover/cat:h-5 transition-all duration-300" />
+                      <span className="text-[13px] font-bold text-white tracking-wider group-hover/cat:text-elif-beige transition-colors duration-300">
                         {item.label}
                       </span>
                     </button>
@@ -239,9 +239,9 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
                         <button
                           key={sub.id}
                           onClick={() => { onTabChange(item.id, sub.id); setMegaOpen(false); }}
-                          className="group/sub flex items-center gap-2.5 w-full text-left py-2 text-[13px] text-white/40 hover:text-gold transition-all duration-200"
+                          className="group/sub flex items-center gap-2.5 w-full text-left py-2 text-[13px] text-white/40 hover:text-elif-beige transition-all duration-200"
                         >
-                          <span className="w-0 group-hover/sub:w-3 h-px bg-gold transition-all duration-300" />
+                          <span className="w-0 group-hover/sub:w-3 h-px bg-elif-beige transition-all duration-300" />
                           <span>{sub.label}</span>
                         </button>
                       ))}
@@ -255,13 +255,13 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
           {/* 하단 정보 바 */}
           <div className="border-t border-white/[0.04]">
             <div className="max-w-[1100px] mx-auto px-10 py-3 flex items-center justify-between">
-              <p className="text-white/20 text-[11px] tracking-wide">중앙하이츠 갈산역 센트럴 · 총 126세대 · 59TYPE 단일</p>
-              <a href="tel:18005636" className="flex items-center gap-1.5 text-gold/60 hover:text-gold text-[12px] font-medium tracking-wider transition-colors">
+              <p className="text-white/20 text-[11px] tracking-wide">엘리프 성성호수공원 · 호수공원 앞 프리미엄 주거</p>
+              <a href="tel:18000000" className="flex items-center gap-1.5 text-elif-beige/60 hover:text-elif-beige text-[12px] font-medium tracking-wider transition-colors">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                1800-5636
+                1800-0000
               </a>
             </div>
           </div>
@@ -270,7 +270,7 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-navy/[0.98] backdrop-blur-xl border-t border-white/[0.06] shadow-2xl max-h-[calc(100vh-76px)] overflow-y-auto">
+        <div className="lg:hidden bg-elif-green/[0.98] backdrop-blur-xl border-t border-white/[0.06] shadow-2xl max-h-[calc(100vh-76px)] overflow-y-auto">
           <div className="px-6 py-5">
             {menuItems.map((item) => (
               <div key={item.id} className="border-b border-white/[0.06] last:border-0">
@@ -285,11 +285,11 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
                     }
                   }}
                   className={`flex items-center justify-between w-full text-left py-4 text-[16px] font-semibold transition-colors
-                    ${activeTab === item.id ? "text-gold" : "text-white/90"}`}
+                    ${activeTab === item.id ? "text-elif-beige" : "text-white/90"}`}
                 >
                   <span>{item.label}</span>
                   {activeTab === item.id && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-elif-beige" />
                   )}
                 </button>
                 {item.subItems && (
@@ -302,9 +302,9 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
                             onTabChange(item.id, sub.id);
                             setMobileOpen(false);
                           }}
-                          className={`flex items-center gap-3 w-full text-left px-5 py-3.5 text-[15px] transition-colors active:bg-white/[0.04] ${si > 0 ? "border-t border-white/[0.04]" : ""} text-white/50 hover:text-gold`}
+                          className={`flex items-center gap-3 w-full text-left px-5 py-3.5 text-[15px] transition-colors active:bg-white/[0.04] ${si > 0 ? "border-t border-white/[0.04]" : ""} text-white/50 hover:text-elif-beige`}
                         >
-                          <span className="w-1 h-1 rounded-full bg-gold/40 flex-shrink-0" />
+                          <span className="w-1 h-1 rounded-full bg-elif-beige/40 flex-shrink-0" />
                           {sub.label}
                         </button>
                       ))}
@@ -314,12 +314,12 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
               </div>
             ))}
             <div className="pt-4 mt-1 border-t border-white/[0.06]">
-              <a href="tel:18005636" className="flex items-center gap-2 text-gold/70 hover:text-gold transition-colors">
+              <a href="tel:18000000" className="flex items-center gap-2 text-elif-beige/70 hover:text-elif-beige transition-colors">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="text-[15px] font-bold tracking-wider">1800-5636</span>
+                <span className="text-[15px] font-bold tracking-wider">1800-0000</span>
               </a>
             </div>
           </div>

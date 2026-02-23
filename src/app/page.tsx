@@ -69,7 +69,7 @@ export default function Home() {
         {/* Register CTA */}
         <button
           onClick={() => handleTabChange("register")}
-          className="w-14 h-14 bg-gold text-white rounded-full shadow-xl flex items-center justify-center hover:bg-gold-light transition-all duration-300 hover:scale-110 floating-btn"
+          className="w-14 h-14 bg-elif-beige text-white rounded-full shadow-xl flex items-center justify-center hover:bg-elif-lime transition-all duration-300 hover:scale-110 floating-btn"
           title="관심고객등록"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,8 +85,8 @@ export default function Home() {
 
       {/* Phone Floating Button (Mobile) */}
       <a
-        href="tel:1800-5636"
-        className={`fixed bottom-8 left-6 z-40 lg:hidden flex items-center gap-2 px-5 py-3 bg-navy text-white rounded-full shadow-xl transition-all duration-500 ${
+        href="tel:1800-0000"
+        className={`fixed bottom-8 left-6 z-40 lg:hidden flex items-center gap-2 px-5 py-3 bg-elif-green text-white rounded-full shadow-xl transition-all duration-500 ${
           showFloatingBtn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
         }`}
       >

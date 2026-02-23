@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: "#1a2744",
-        "navy-light": "#2a3a5c",
-        gold: "#c9a96e",
-        "gold-light": "#d4b87a",
+        "elif-green": "#054438",
+        "elif-green-light": "#0a5e4d",
+        "elif-beige": "#C8BAA7",
+        "elif-lime": "#DADDB9",
       },
       fontFamily: {
         sans: ["Pretendard", "Noto Sans KR", "sans-serif"],

@@ -20,14 +20,14 @@ export default function SalesSection({ initialSubTab }: SalesSectionProps) {
     <section className="pt-[72px]">
       <SectionBanner
         title="분 양 안 내"
-        subtitle="중앙하이츠 갈산역 센트럴의 분양 일정을 확인하세요."
+        subtitle="엘리프 성성호수공원의 분양 일정을 확인하세요."
         bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700"
       />
 
       {/* Sub Navigation */}
       <div className="relative">
-        <div className="bg-[#0c1320]">
+        <div className="bg-[#041f18]">
           <div className="max-w-[1200px] mx-auto flex items-center justify-center overflow-x-auto">
             {subTabs.map((tab) => (
               <button
@@ -35,20 +35,20 @@ export default function SalesSection({ initialSubTab }: SalesSectionProps) {
                 onClick={() => setActiveSubTab(tab.id)}
                 className={`relative px-10 py-5 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
                   ${activeSubTab === tab.id
-                    ? "text-gold"
+                    ? "text-elif-beige"
                     : "text-white/30 hover:text-white/55"
                   }
                 `}
               >
                 {tab.label}
                 {activeSubTab === tab.id && (
-                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-gold rounded-full" />
+                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-beige rounded-full" />
                 )}
               </button>
             ))}
           </div>
         </div>
-        <div className="h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-elif-beige/25 to-transparent" />
       </div>
 
       {/* Content */}
@@ -78,7 +78,7 @@ export default function SalesSection({ initialSubTab }: SalesSectionProps) {
                     <h4 className="text-lg font-bold text-gray-900">{item.step}</h4>
                     <p className="text-sm text-gray-500 mt-1">{item.date}</p>
                   </div>
-                  <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-navy border-4 border-white shadow" />
+                  <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-elif-green border-4 border-white shadow" />
                   <div className="w-1/2" />
                 </div>
               ))}

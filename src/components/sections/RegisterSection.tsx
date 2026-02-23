@@ -7,7 +7,7 @@ export default function RegisterSection() {
     <section className="pt-[72px]">
       <SectionBanner
         title="관심고객등록"
-        subtitle="중앙하이츠 갈산역 센트럴에 관심을 가져주셔서 감사합니다."
+        subtitle="엘리프 성성호수공원에 관심을 가져주셔서 감사합니다."
         bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-amber-900 via-amber-800 to-amber-700"
       />
@@ -29,7 +29,7 @@ export default function RegisterSection() {
             </label>
             <input
               type="text"
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy"
+              className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-elif-green/30 focus:border-elif-green"
               placeholder="이름을 입력해 주세요"
             />
           </div>
@@ -41,7 +41,7 @@ export default function RegisterSection() {
             </label>
             <input
               type="tel"
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy"
+              className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-elif-green/30 focus:border-elif-green"
               placeholder="연락처를 입력해 주세요 (예: 010-1234-5678)"
             />
           </div>
@@ -52,14 +52,14 @@ export default function RegisterSection() {
               관심 평형 <span className="text-red-500">*</span>
             </label>
             <div className="flex flex-wrap gap-3">
-              {["59㎡ (전용 59.79㎡)", "전체"].map((type) => (
+              {["TBD", "전체"].map((type) => (
                 <label
                   key={type}
-                  className="flex items-center gap-2 px-4 py-2.5 border border-gray-200 rounded-lg cursor-pointer hover:border-navy/50 transition-colors"
+                  className="flex items-center gap-2 px-4 py-2.5 border border-gray-200 rounded-lg cursor-pointer hover:border-elif-green/50 transition-colors"
                 >
                   <input
                     type="checkbox"
-                    className="w-4 h-4 text-navy focus:ring-navy/30 border-gray-300 rounded"
+                    className="w-4 h-4 text-elif-green focus:ring-elif-green/30 border-gray-300 rounded"
                   />
                   <span className="text-sm text-gray-700">{type}</span>
                 </label>
@@ -74,7 +74,7 @@ export default function RegisterSection() {
             </label>
             <textarea
               rows={4}
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy resize-none"
+              className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-elif-green/30 focus:border-elif-green resize-none"
               placeholder="문의사항을 입력해 주세요"
             />
           </div>
@@ -84,7 +84,7 @@ export default function RegisterSection() {
             <label className="flex items-start gap-3 cursor-pointer">
               <input
                 type="checkbox"
-                className="w-4 h-4 mt-0.5 text-navy focus:ring-navy/30 border-gray-300 rounded"
+                className="w-4 h-4 mt-0.5 text-elif-green focus:ring-elif-green/30 border-gray-300 rounded"
               />
               <span className="text-sm text-gray-600">
                 <span className="font-medium text-gray-800">[필수]</span> 개인정보 수집 및 이용에
@@ -97,7 +97,7 @@ export default function RegisterSection() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-4 bg-navy text-white font-bold text-base rounded-lg hover:bg-navy-light transition-colors"
+            className="w-full py-4 bg-elif-green text-white font-bold text-base rounded-lg hover:bg-elif-green/80 transition-colors"
           >
             등록하기
           </button>
@@ -107,8 +107,8 @@ export default function RegisterSection() {
         <div className="mt-12 text-center">
           <p className="text-gray-500 text-sm">
             전화 문의:{" "}
-            <a href="tel:1800-5636" className="text-navy font-bold text-lg">
-              1800-5636
+            <a href="tel:1800-0000" className="text-elif-green font-bold text-lg">
+              1800-0000
             </a>
           </p>
         </div>

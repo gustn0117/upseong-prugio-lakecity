@@ -20,14 +20,14 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
     <section className="pt-[72px]">
       <SectionBanner
         title="홍 보 센 터"
-        subtitle="중앙하이츠 갈산역 센트럴의 최신 소식을 만나보세요."
+        subtitle="엘리프 성성호수공원의 최신 소식을 만나보세요."
         bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700"
       />
 
       {/* Sub Navigation */}
       <div className="relative">
-        <div className="bg-[#0c1320]">
+        <div className="bg-[#041f18]">
           <div className="max-w-[1200px] mx-auto flex items-center justify-center overflow-x-auto">
             {subTabs.map((tab) => (
               <button
@@ -35,20 +35,20 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
                 onClick={() => setActiveSubTab(tab.id)}
                 className={`relative px-10 py-5 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
                   ${activeSubTab === tab.id
-                    ? "text-gold"
+                    ? "text-elif-beige"
                     : "text-white/30 hover:text-white/55"
                   }
                 `}
               >
                 {tab.label}
                 {activeSubTab === tab.id && (
-                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-gold rounded-full" />
+                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-beige rounded-full" />
                 )}
               </button>
             ))}
           </div>
         </div>
-        <div className="h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-elif-beige/25 to-transparent" />
       </div>
 
       {/* Content */}
@@ -89,12 +89,12 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
         {activeSubTab === "video" && (
           <div className="tab-content">
             <h3 className="text-2xl font-bold text-gray-900 mb-2">홍보영상</h3>
-            <p className="text-sm text-gray-500 mb-8">중앙하이츠 갈산역 센트럴의 프리미엄 주거공간을 영상으로 만나보세요.</p>
+            <p className="text-sm text-gray-500 mb-8">엘리프 성성호수공원의 프리미엄 주거공간을 영상으로 만나보세요.</p>
 
             {/* 메인 비디오 플레이어 */}
-            <div className="bg-[#0a0f1a] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="bg-[#032820] rounded-2xl overflow-hidden shadow-2xl">
               {/* 상단 골드 악센트 */}
-              <div className="h-[2px] bg-gradient-to-r from-transparent via-[#c9a96e] to-transparent" />
+              <div className="h-[2px] bg-gradient-to-r from-transparent via-[#c8baa7] to-transparent" />
 
               <div className="p-4 md:p-6">
                 <video
@@ -112,10 +112,10 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
               {/* 하단 정보 바 */}
               <div className="px-6 pb-5 flex items-center justify-between">
                 <div>
-                  <h4 className="text-white font-bold text-base tracking-wide">중앙하이츠 갈산역 센트럴 홍보영상</h4>
-                  <p className="text-white/40 text-xs mt-1">갈산역 0분의 가치 · 총 126세대 · 59TYPE 단일</p>
+                  <h4 className="text-white font-bold text-base tracking-wide">엘리프 성성호수공원 홍보영상</h4>
+                  <p className="text-white/40 text-xs mt-1">성성호수공원의 가치 · TBD</p>
                 </div>
-                <div className="flex items-center gap-1.5 text-[#c9a96e]/60">
+                <div className="flex items-center gap-1.5 text-[#c8baa7]/60">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>

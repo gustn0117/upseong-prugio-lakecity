@@ -100,7 +100,7 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
     <section className="pt-[72px]">
       <SectionBanner
         title="단 지 안 내"
-        subtitle="중앙하이츠 갈산역 센트럴의 단지 정보를 확인하세요."
+        subtitle="엘리프 성성호수공원의 단지 정보를 확인하세요."
         bgImage="/images/banner.jpg"
         fallbackGradient="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-500"
       />
@@ -115,20 +115,20 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
                 onClick={() => setActiveSubTab(tab.id)}
                 className={`relative px-10 py-5 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
                   ${activeSubTab === tab.id
-                    ? "text-gold"
+                    ? "text-elif-beige"
                     : "text-white/30 hover:text-white/55"
                   }
                 `}
               >
                 {tab.label}
                 {activeSubTab === tab.id && (
-                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-gold rounded-full" />
+                  <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-beige rounded-full" />
                 )}
               </button>
             ))}
           </div>
         </div>
-        <div className="h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-elif-beige/25 to-transparent" />
       </div>
 
       {/* Content */}
@@ -137,13 +137,13 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
           <div className="max-w-[1100px] mx-auto px-6 py-20 lg:py-28">
             {/* 섹션 헤더 */}
             <div className="text-center mb-16">
-              <span className="text-gold text-[11px] tracking-[6px] font-medium uppercase">Site Plan</span>
-              <h3 className="text-navy text-[28px] lg:text-[36px] font-bold mt-4 leading-tight" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+              <span className="text-elif-beige text-[11px] tracking-[6px] font-medium uppercase">Site Plan</span>
+              <h3 className="text-elif-green text-[28px] lg:text-[36px] font-bold mt-4 leading-tight" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                 단지배치도
               </h3>
-              <div className="w-12 h-[2px] bg-gold mx-auto mt-6" />
+              <div className="w-12 h-[2px] bg-elif-beige mx-auto mt-6" />
               <p className="text-gray-400 text-[14px] mt-5 tracking-wide">
-                총 126세대 · 3개동 · 59TYPE 단일평형
+                총 TBD · TBD · TBD 단일평형
               </p>
             </div>
 
@@ -152,15 +152,15 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
               {/* 이미지 프레임 */}
               <div className="relative">
                 {/* 골드 코너 장식 */}
-                <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-gold/50 z-10" />
-                <div className="absolute -top-3 -right-3 w-8 h-8 border-t-2 border-r-2 border-gold/50 z-10" />
-                <div className="absolute -bottom-3 -left-3 w-8 h-8 border-b-2 border-l-2 border-gold/50 z-10" />
-                <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-gold/50 z-10" />
+                <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-elif-beige/50 z-10" />
+                <div className="absolute -top-3 -right-3 w-8 h-8 border-t-2 border-r-2 border-elif-beige/50 z-10" />
+                <div className="absolute -bottom-3 -left-3 w-8 h-8 border-b-2 border-l-2 border-elif-beige/50 z-10" />
+                <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-elif-beige/50 z-10" />
 
                 <div className="border border-gray-200/80 overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)]">
                   <Image
                     src="/images/site-plan.jpg"
-                    alt="중앙하이츠 갈산역 센트럴 단지배치도"
+                    alt="엘리프 성성호수공원 단지배치도"
                     width={2400}
                     height={1698}
                     className="w-full h-auto"
@@ -174,19 +174,19 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
             {/* 동별 정보 카드 */}
             <div data-animate className="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-200 rounded-lg overflow-hidden mb-8 stagger-children">
               {[
-                { dong: "101동", floor: "B1 ~ 16F", lines: "2라인", direction: "동향", units: "27", color: "border-l-navy" },
-                { dong: "102동", floor: "B1 ~ 16F", lines: "2라인", direction: "동향", units: "27", color: "border-l-navy" },
-                { dong: "103동", floor: "2F ~ 19F", lines: "4라인", direction: "남향", units: "72", color: "border-l-gold" },
+                { dong: "101동", floor: "B1 ~ 16F", lines: "2라인", direction: "동향", units: "27", color: "border-l-elif-green" },
+                { dong: "102동", floor: "B1 ~ 16F", lines: "2라인", direction: "동향", units: "27", color: "border-l-elif-green" },
+                { dong: "103동", floor: "2F ~ 19F", lines: "4라인", direction: "남향", units: "72", color: "border-l-elif-beige" },
               ].map((b, i) => (
                 <div key={i} className={`group relative border-l-4 ${b.color} ${i < 2 ? "lg:border-r border-gray-200 border-b lg:border-b-0" : ""} py-7 px-7 hover:bg-gray-50/60 transition-all duration-300`}>
                   {/* 동 번호 + 향 */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <span className="text-navy text-[20px] font-bold" style={{ fontFamily: "'Noto Serif KR', serif" }}>{b.dong}</span>
-                      <span className="text-[10px] font-semibold text-gold tracking-[2px] px-2.5 py-1 bg-gold/[0.06] rounded-sm">{b.direction}</span>
+                      <span className="text-elif-green text-[20px] font-bold" style={{ fontFamily: "'Noto Serif KR', serif" }}>{b.dong}</span>
+                      <span className="text-[10px] font-semibold text-elif-beige tracking-[2px] px-2.5 py-1 bg-elif-beige/[0.06] rounded-sm">{b.direction}</span>
                     </div>
                     <div className="text-right">
-                      <span className="text-navy text-[26px] font-bold leading-none" style={{ fontFamily: "'Noto Serif KR', serif" }}>{b.units}</span>
+                      <span className="text-elif-green text-[26px] font-bold leading-none" style={{ fontFamily: "'Noto Serif KR', serif" }}>{b.units}</span>
                       <span className="text-gray-400 text-[11px] ml-0.5">세대</span>
                     </div>
                   </div>
@@ -213,7 +213,7 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
             {/* 구분선 + 안내 */}
             <div className="flex items-center justify-center gap-4 mb-5">
               <span className="w-12 h-px bg-gray-200" />
-              <span className="w-1 h-1 bg-gold/40 rotate-45" />
+              <span className="w-1 h-1 bg-elif-beige/40 rotate-45" />
               <span className="w-12 h-px bg-gray-200" />
             </div>
             <p className="text-gray-300 text-[11px] text-center tracking-wide">
@@ -228,33 +228,33 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
           <div className="tab-content">
             {/* 섹션 헤더 */}
             <div className="text-center mb-14">
-              <span className="text-gold text-[12px] tracking-[5px] font-medium">UNIT PLAN</span>
+              <span className="text-elif-beige text-[12px] tracking-[5px] font-medium">UNIT PLAN</span>
               <h3 className="text-[28px] lg:text-[34px] font-bold text-gray-900 mt-3 tracking-tight">동·호수 배치도</h3>
-              <p className="text-gray-400 text-[14px] mt-3">중앙하이츠 갈산역 센트럴의 동·호수 배치를 확인하세요.</p>
+              <p className="text-gray-400 text-[14px] mt-3">엘리프 성성호수공원의 동·호수 배치를 확인하세요.</p>
               <div className="flex items-center justify-center gap-3 mt-5">
-                <span className="w-10 h-[1px] bg-gold/40" />
-                <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                <span className="w-10 h-[1px] bg-gold/40" />
+                <span className="w-10 h-[1px] bg-elif-beige/40" />
+                <span className="w-1.5 h-1.5 rounded-full bg-elif-beige" />
+                <span className="w-10 h-[1px] bg-elif-beige/40" />
               </div>
             </div>
 
             {/* Summary Stats - 네이비 배경 */}
-            <div className="relative bg-navy rounded-xl overflow-hidden mb-12">
+            <div className="relative bg-elif-green rounded-xl overflow-hidden mb-12">
               <div className="absolute inset-0 opacity-[0.03]" style={{
-                backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(201,169,110,0.4) 20px, rgba(201,169,110,0.4) 21px)`
+                backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(200,186,167,0.4) 20px, rgba(200,186,167,0.4) 21px)`
               }} />
               <div className="relative grid grid-cols-2 lg:grid-cols-5">
                 {/* 총 세대수 */}
                 <div className="col-span-2 lg:col-span-1 flex flex-col items-center justify-center py-8 px-6 border-b lg:border-b-0 lg:border-r border-white/10">
                   <p className="text-white/40 text-[10px] tracking-[3px] font-medium uppercase mb-2">총 세대수</p>
                   <p className="text-white text-[42px] font-bold leading-none">126</p>
-                  <p className="text-gold text-[12px] font-medium mt-1">세대</p>
+                  <p className="text-elif-beige text-[12px] font-medium mt-1">세대</p>
                 </div>
                 {/* 59 TYPE */}
                 <div className="col-span-2 lg:col-span-1 flex flex-col items-center justify-center py-8 px-6 border-b lg:border-b-0 lg:border-r border-white/10">
                   <p className="text-white/40 text-[10px] tracking-[3px] font-medium uppercase mb-2">평형</p>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-gold text-[42px] font-bold leading-none">59</span>
+                    <span className="text-elif-beige text-[42px] font-bold leading-none">59</span>
                     <span className="text-white/50 text-[13px] font-medium">TYPE</span>
                   </div>
                   <p className="text-white/30 text-[11px] mt-1">단일 평형</p>
@@ -289,13 +289,13 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
                     onClick={() => setActiveBuilding(b.id)}
                     className={`relative px-8 py-3 rounded-lg text-[14px] font-medium transition-all duration-300 ${
                       activeBuilding === b.id
-                        ? "bg-navy text-white shadow-md"
+                        ? "bg-elif-green text-white shadow-md"
                         : "text-gray-400 hover:text-gray-600"
                     }`}
                   >
                     <span className="relative z-10">{b.label}</span>
                     {activeBuilding === b.id && (
-                      <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-6 h-[2px] bg-gold rounded-full" />
+                      <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-6 h-[2px] bg-elif-beige rounded-full" />
                     )}
                   </button>
                 ))}
@@ -306,10 +306,10 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
             {buildings.filter(b => b.id === activeBuilding).map((b) => (
               <div key={b.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
                 {/* Building Header */}
-                <div className="bg-navy px-8 py-6">
+                <div className="bg-elif-green px-8 py-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="w-1 h-10 bg-gold rounded-full" />
+                      <div className="w-1 h-10 bg-elif-beige rounded-full" />
                       <div>
                         <h4 className="text-white text-[22px] font-bold tracking-tight">{b.label}</h4>
                         <p className="text-white/40 text-[11px] tracking-[3px] mt-0.5">{b.dirEn} FACING</p>
@@ -328,7 +328,7 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
                       <div className="w-px h-8 bg-white/10" />
                       <div className="text-right">
                         <p className="text-white/30 text-[10px] tracking-[2px] uppercase">세대수</p>
-                        <p className="text-gold text-[20px] font-bold mt-0.5">{b.total}<span className="text-[12px] text-white/40 ml-1">세대</span></p>
+                        <p className="text-elif-beige text-[20px] font-bold mt-0.5">{b.total}<span className="text-[12px] text-white/40 ml-1">세대</span></p>
                       </div>
                     </div>
                   </div>
@@ -340,7 +340,7 @@ export default function ComplexSection({ initialSubTab }: ComplexSectionProps) {
                     <table className="unit-table text-sm mx-auto">
                       <thead>
                         <tr>
-                          <th className="floor-label !bg-navy !text-white">층</th>
+                          <th className="floor-label !bg-elif-green !text-white">층</th>
                           {b.cols.map((col) => (
                             <th key={col}>{col}</th>
                           ))}
