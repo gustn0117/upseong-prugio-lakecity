@@ -1,18 +1,18 @@
 services:
   app:
     build: .
-    container_name: elif-sungsung
+    container_name: upseong-prugio-lakecity
     ports:
-      - "3014:3000"
+      - "3016:3000"
     volumes:
-      - elif-data:/app/data
+      - prugio-data:/app/data
     environment:
       - NODE_ENV=production
       - ADMIN_PASSWORD=1234
-      - AUTH_SECRET=elif-admin-secret-key-production
+      - AUTH_SECRET=prugio-admin-secret-key-production
       - DB_PATH=/app/data/registrations.db
     restart: unless-stopped
 
 volumes:
-  elif-data:
+  prugio-data:
     driver: local
