@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import SectionBanner from "../SectionBanner";
 
 function useInView(threshold = 0.15) {
@@ -23,7 +22,7 @@ function useInView(threshold = 0.15) {
 const locationAdvantages = [
   {
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
@@ -33,7 +32,7 @@ const locationAdvantages = [
   },
   {
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
       </svg>
     ),
@@ -43,7 +42,7 @@ const locationAdvantages = [
   },
   {
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
@@ -53,7 +52,7 @@ const locationAdvantages = [
   },
   {
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
       </svg>
     ),
@@ -93,42 +92,35 @@ export default function LocationSection() {
   const sec4 = useInView();
 
   return (
-    <section className="pt-[80px]">
+    <section className="pt-[72px]">
       <SectionBanner
-        title="입 지 환 경"
+        title="입지환경"
         subtitle="호수공원 앞, 최적의 입지를 만나보세요."
         fallbackGradient="bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500"
         bgImage="/images/banner-location.jpg"
       />
 
-      {/* ===== 헤드라인 섹션 ===== */}
-      <div className="bg-[#FAFAF7]">
+      {/* ===== Headline ===== */}
+      <div className="bg-white">
         <div
           ref={sec1.ref}
           className={`max-w-[1100px] mx-auto px-6 pt-20 pb-16 text-center transition-all duration-700 ${sec1.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
-          <p className="text-prugio-blue text-[13px] font-semibold tracking-[4px] uppercase mb-4">LOCATION</p>
-          <h2
-            className="text-[26px] sm:text-[32px] lg:text-[38px] font-light text-gray-900 leading-snug"
-            style={{ fontFamily: "'Noto Serif KR', serif" }}
-          >
+          <p className="text-gold text-[11px] font-medium tracking-[4px] uppercase mb-4">LOCATION</p>
+          <h2 className="text-[26px] sm:text-[32px] lg:text-[38px] font-light text-charcoal leading-snug tracking-tight">
             호수공원을 품은 프리미엄,<br />
-            <span className="font-bold">주거의 품격</span>을 새롭게 세우다
+            주거의 품격을 새롭게 세우다
           </h2>
-          <p className="mt-5 text-[14px] sm:text-[15px] text-gray-500 leading-relaxed max-w-[500px] mx-auto">
+          <p className="mt-5 text-[14px] sm:text-[15px] text-cool-gray leading-relaxed max-w-[500px] mx-auto font-light">
             호수공원과 교육, 산업단지를 아우르는 입지 위에<br className="hidden sm:inline" />
             주거의 가치가 균형 있게 완성됩니다.
           </p>
-          <div className="mt-8 flex items-center justify-center gap-3">
-            <span className="w-8 h-[1px] bg-prugio-gold/40" />
-            <span className="w-1.5 h-1.5 rounded-full bg-prugio-gold/60" />
-            <span className="w-8 h-[1px] bg-prugio-gold/40" />
-          </div>
+          <div className="w-10 h-[1px] bg-gold/40 mx-auto mt-8" />
         </div>
       </div>
 
-      {/* ===== 4대 입지 강점 카드 ===== */}
-      <div className="bg-[#FAFAF7]">
+      {/* ===== 4 Advantages ===== */}
+      <div className="bg-white">
         <div
           ref={sec2.ref}
           className="max-w-[1100px] mx-auto px-6 pb-20"
@@ -137,76 +129,61 @@ export default function LocationSection() {
             {locationAdvantages.map((item, i) => (
               <div
                 key={i}
-                className={`group relative bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500 ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                className={`group bg-off-white rounded-sm p-7 border border-gray-100 hover:border-gold/30 transition-all duration-500 ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: sec2.visible ? `${i * 120}ms` : "0ms" }}
               >
-                <div className="w-14 h-14 rounded-xl bg-prugio-blue/[0.08] flex items-center justify-center text-prugio-blue mb-5 group-hover:bg-prugio-blue group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-sm bg-navy/[0.06] flex items-center justify-center text-navy mb-5 group-hover:bg-navy group-hover:text-white transition-all duration-300">
                   {item.icon}
                 </div>
-                <span className="inline-block px-2.5 py-1 bg-prugio-gold/10 text-prugio-gold text-[11px] font-bold rounded-full mb-3 tracking-wide">
+                <span className="inline-block px-2.5 py-1 bg-gold/10 text-gold text-[10px] font-medium rounded-sm mb-3 tracking-wide">
                   {item.highlight}
                 </span>
-                <h3 className="text-[17px] font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-[13px] text-gray-500 leading-relaxed whitespace-pre-line">{item.desc}</p>
+                <h3 className="text-[16px] font-semibold text-charcoal mb-2">{item.title}</h3>
+                <p className="text-[13px] text-cool-gray leading-relaxed whitespace-pre-line font-light">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* ===== 그라데이션 전환 ===== */}
-      <div className="h-20 bg-gradient-to-b from-[#FAFAF7] to-prugio-blue-dark" />
-
-      {/* ===== 입지 지도 섹션 ===== */}
-      <div className="bg-prugio-blue-dark relative overflow-hidden">
-        <div className="absolute inset-0 pattern-waves opacity-10" />
+      {/* ===== Location Map ===== */}
+      <div className="bg-off-white border-t border-gray-100">
         <div
           ref={sec3.ref}
           className={`max-w-[1200px] mx-auto px-6 py-20 transition-all duration-700 ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
           <div className="text-center mb-12">
-            <p className="text-prugio-gold text-[12px] font-semibold tracking-[4px] uppercase mb-3">PREMIUM LOCATION MAP</p>
-            <h2
-              className="text-[24px] sm:text-[30px] text-white font-light"
-              style={{ fontFamily: "'Noto Serif KR', serif" }}
-            >
-              <span className="font-bold">업성 푸르지오 레이크시티</span> 입지 안내
+            <p className="text-gold text-[11px] font-medium tracking-[4px] uppercase mb-3">PREMIUM LOCATION MAP</p>
+            <h2 className="text-[24px] sm:text-[30px] text-charcoal font-light tracking-tight">
+              업성 푸르지오 레이크시티 입지 안내
             </h2>
           </div>
 
-          {/* 지도 이미지 */}
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+          <div className="relative rounded-sm overflow-hidden border border-gray-200">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/location-map.jpg"
               alt="업성 푸르지오 레이크시티 입지 안내도"
               className="w-full h-auto block"
             />
-            {/* 하단 그라데이션 */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 px-6 pb-5 flex items-end justify-between">
-              <p className="text-white/70 text-[12px]">* 본 이미지는 소비자의 이해를 돕기 위한 것으로 실제와 차이가 있을 수 있습니다.</p>
+            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 px-6 pb-4">
+              <p className="text-white/70 text-[11px] font-light">* 본 이미지는 소비자의 이해를 돕기 위한 것으로 실제와 차이가 있을 수 있습니다.</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* ===== 그라데이션 전환 ===== */}
-      <div className="h-16 bg-gradient-to-b from-prugio-blue-dark to-[#FAFAF7]" />
-
-      {/* ===== 주변 인프라 상세 ===== */}
-      <div className="bg-[#FAFAF7]">
+      {/* ===== Infrastructure ===== */}
+      <div className="bg-white border-t border-gray-100">
         <div
           ref={sec4.ref}
-          className={`max-w-[1100px] mx-auto px-6 pt-10 pb-24 transition-all duration-700 ${sec4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          className={`max-w-[1100px] mx-auto px-6 py-20 transition-all duration-700 ${sec4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
           <div className="text-center mb-14">
-            <p className="text-prugio-blue text-[13px] font-semibold tracking-[4px] uppercase mb-3">INFRASTRUCTURE</p>
-            <h2
-              className="text-[24px] sm:text-[30px] text-gray-900 font-light"
-              style={{ fontFamily: "'Noto Serif KR', serif" }}
-            >
-              풍부한 <span className="font-bold">생활 인프라</span>
+            <p className="text-gold text-[11px] font-medium tracking-[4px] uppercase mb-3">INFRASTRUCTURE</p>
+            <h2 className="text-[24px] sm:text-[30px] text-charcoal font-light tracking-tight">
+              풍부한 생활 인프라
             </h2>
           </div>
 
@@ -214,39 +191,17 @@ export default function LocationSection() {
             {nearbySpots.map((group, gi) => (
               <div
                 key={gi}
-                className={`bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm transition-all duration-500 ${sec4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                className={`bg-off-white rounded-sm overflow-hidden border border-gray-100 transition-all duration-500 ${sec4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: sec4.visible ? `${gi * 120}ms` : "0ms" }}
               >
-                <div className="bg-prugio-blue px-5 py-3.5 flex items-center gap-2.5">
-                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-                    {gi === 0 && (
-                      <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                      </svg>
-                    )}
-                    {gi === 1 && (
-                      <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                      </svg>
-                    )}
-                    {gi === 2 && (
-                      <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                    )}
-                    {gi === 3 && (
-                      <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                      </svg>
-                    )}
-                  </div>
-                  <span className="text-white text-[14px] font-bold tracking-wide">{group.category}</span>
+                <div className="bg-navy px-5 py-3.5">
+                  <span className="text-white text-[13px] font-medium tracking-wide">{group.category}</span>
                 </div>
-                <div className="divide-y divide-gray-50">
+                <div className="divide-y divide-gray-100">
                   {group.items.map((item, ii) => (
-                    <div key={ii} className="px-5 py-4 flex items-center justify-between hover:bg-gray-50/50 transition-colors">
-                      <span className="text-[13px] text-gray-700">{item.name}</span>
-                      <span className="text-[12px] text-prugio-blue font-semibold bg-prugio-blue/[0.08] px-2.5 py-1 rounded-full whitespace-nowrap">
+                    <div key={ii} className="px-5 py-4 flex items-center justify-between hover:bg-white transition-colors">
+                      <span className="text-[13px] text-dark-gray font-light">{item.name}</span>
+                      <span className="text-[11px] text-navy font-medium bg-navy/[0.06] px-2.5 py-1 rounded-sm whitespace-nowrap">
                         {item.time}
                       </span>
                     </div>
@@ -256,35 +211,27 @@ export default function LocationSection() {
             ))}
           </div>
 
-          {/* 하단 안내 문구 */}
-          <p className="text-center text-[12px] text-gray-400 mt-10">
+          <p className="text-center text-[12px] text-cool-gray mt-10 font-light">
             * 거리 및 소요시간은 네이버 지도 기준이며, 교통 상황에 따라 달라질 수 있습니다.
           </p>
 
           {/* CTA */}
-          <div className="mt-16 bg-prugio-blue rounded-2xl p-10 sm:p-12 relative overflow-hidden">
-            <div className="absolute inset-0 pattern-waves opacity-10" />
-            <div className="absolute inset-0 bg-gradient-to-br from-prugio-blue-dark/20 to-transparent" />
-            <div className="relative text-center">
-              <p className="text-prugio-gold text-[12px] font-semibold tracking-[3px] mb-3">CONTACT US</p>
-              <h3
-                className="text-white text-[22px] sm:text-[26px] font-light mb-3"
-                style={{ fontFamily: "'Noto Serif KR', serif" }}
-              >
-                입지 관련 <span className="font-bold">상담 문의</span>
-              </h3>
-              <p className="text-white/50 text-[13px] mb-7">현장 방문 및 상세 입지 안내를 도와드리겠습니다.</p>
-              <a
-                href="tel:1844-0981"
-                className="inline-flex items-center gap-3 px-9 py-3.5 bg-white text-prugio-blue rounded-full text-[15px] font-bold tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
-              >
-                <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                1844-0981
-              </a>
-            </div>
+          <div className="mt-16 bg-navy rounded-sm p-10 sm:p-12 text-center">
+            <p className="text-gold/60 text-[11px] font-medium tracking-[3px] mb-3">CONTACT US</p>
+            <h3 className="text-white text-[22px] sm:text-[26px] font-extralight mb-3 tracking-tight">
+              입지 관련 상담 문의
+            </h3>
+            <p className="text-white/30 text-[13px] mb-7 font-light">현장 방문 및 상세 입지 안내를 도와드리겠습니다.</p>
+            <a
+              href="tel:1844-0981"
+              className="inline-flex items-center gap-3 px-9 py-3.5 bg-white text-navy rounded-sm text-[15px] font-semibold tracking-wider hover:bg-off-white transition-all duration-300"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              1844-0981
+            </a>
           </div>
         </div>
       </div>

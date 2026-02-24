@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import SectionBanner from "../SectionBanner";
 
 function useInView(threshold = 0.15) {
@@ -50,85 +49,66 @@ export default function BusinessSection() {
   const sec5 = useInView();
 
   return (
-    <section className="pt-[80px]">
+    <section className="pt-[72px]">
       <SectionBanner
-        title="사 업 개 요"
+        title="사업개요"
         subtitle="업성 푸르지오 레이크시티의 사업 정보를 확인하세요."
         fallbackGradient="bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500"
         bgImage="/images/banner-business.jpg"
       />
 
-      {/* ===== 헤드라인 ===== */}
-      <div className="bg-[#FAFAF7]">
+      {/* ===== Headline ===== */}
+      <div className="bg-white">
         <div
           ref={sec1.ref}
           className={`max-w-[1100px] mx-auto px-6 pt-20 pb-16 text-center transition-all duration-700 ${sec1.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
-          <p className="text-prugio-blue text-[13px] font-semibold tracking-[4px] uppercase mb-4">PROJECT OVERVIEW</p>
-          <h2
-            className="text-[26px] sm:text-[32px] lg:text-[38px] font-light text-gray-900 leading-snug"
-            style={{ fontFamily: "'Noto Serif KR', serif" }}
-          >
+          <p className="text-gold text-[11px] font-medium tracking-[4px] uppercase mb-4">PROJECT OVERVIEW</p>
+          <h2 className="text-[26px] sm:text-[32px] lg:text-[38px] font-light text-charcoal leading-snug tracking-tight">
             호수공원의 새로운 랜드마크,<br />
-            <span className="font-bold">업성 푸르지오 레이크시티</span>
+            업성 푸르지오 레이크시티
           </h2>
-          <p className="mt-5 text-[14px] sm:text-[15px] text-gray-500 leading-relaxed max-w-[480px] mx-auto">
+          <p className="mt-5 text-[14px] sm:text-[15px] text-cool-gray leading-relaxed max-w-[480px] mx-auto font-light">
             자연과 도시가 조화를 이루는 프리미엄 주거단지<br />
             1,165세대의 대규모 커뮤니티가 완성됩니다.
           </p>
-          <div className="mt-8 flex items-center justify-center gap-3">
-            <span className="w-8 h-[1px] bg-prugio-gold/40" />
-            <span className="w-1.5 h-1.5 rounded-full bg-prugio-gold/60" />
-            <span className="w-8 h-[1px] bg-prugio-gold/40" />
-          </div>
+          <div className="w-10 h-[1px] bg-gold/40 mx-auto mt-8" />
         </div>
       </div>
 
-      {/* ===== 하이라이트 숫자 4개 ===== */}
-      <div className="bg-[#FAFAF7]">
+      {/* ===== Highlight Numbers ===== */}
+      <div className="bg-white">
         <div ref={sec2.ref} className="max-w-[1000px] mx-auto px-6 pb-20">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
             {highlights.map((item, i) => (
               <div
                 key={i}
-                className={`relative bg-white rounded-2xl p-7 text-center border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500 group ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                className={`relative bg-off-white rounded-sm p-7 text-center border border-gray-100 hover:border-gold/30 transition-all duration-500 group ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: sec2.visible ? `${i * 100}ms` : "0ms" }}
               >
-                {/* Top accent bar */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-1 rounded-b-full bg-prugio-blue/60 group-hover:w-20 group-hover:bg-prugio-blue transition-all duration-300" />
-                <div className="flex items-baseline justify-center gap-1 mt-2">
-                  <span
-                    className="text-[34px] lg:text-[40px] font-bold text-gray-900"
-                    style={{ fontFamily: "'Noto Serif KR', serif" }}
-                  >
+                <div className="flex items-baseline justify-center gap-1">
+                  <span className="text-[34px] lg:text-[40px] font-extralight text-charcoal">
                     {item.num}
                   </span>
-                  <span className="text-[14px] text-prugio-blue font-semibold">{item.unit}</span>
+                  <span className="text-[14px] text-gold font-medium">{item.unit}</span>
                 </div>
-                <p className="text-[13px] text-gray-400 mt-2 tracking-wide">{item.label}</p>
+                <p className="text-[13px] text-cool-gray mt-2 tracking-wide font-light">{item.label}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* ===== 그라데이션 전환 ===== */}
-      <div className="h-24 bg-gradient-to-b from-[#FAFAF7] to-prugio-blue-dark" />
-
-      {/* ===== 사업개요 상세 ===== */}
-      <div className="bg-prugio-blue-dark relative overflow-hidden">
-        <div className="absolute inset-0 pattern-waves opacity-10" />
+      {/* ===== Details ===== */}
+      <div className="bg-off-white border-t border-gray-100">
         <div
           ref={sec3.ref}
-          className={`relative max-w-[900px] mx-auto px-6 py-20 transition-all duration-700 ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          className={`max-w-[900px] mx-auto px-6 py-20 transition-all duration-700 ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
           <div className="text-center mb-14">
-            <p className="text-prugio-gold text-[12px] font-semibold tracking-[4px] uppercase mb-3">DETAILS</p>
-            <h2
-              className="text-[24px] sm:text-[30px] text-white font-light"
-              style={{ fontFamily: "'Noto Serif KR', serif" }}
-            >
-              사업 <span className="font-bold">상세 정보</span>
+            <p className="text-gold text-[11px] font-medium tracking-[4px] uppercase mb-3">DETAILS</p>
+            <h2 className="text-[24px] sm:text-[30px] text-charcoal font-light tracking-tight">
+              사업 상세 정보
             </h2>
           </div>
 
@@ -136,17 +116,17 @@ export default function BusinessSection() {
             {overviewData.map((row, i) => (
               <div
                 key={i}
-                className={`flex items-start gap-4 p-5 rounded-xl border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.07] transition-all duration-300 ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+                className={`flex items-start gap-4 p-5 rounded-sm border border-gray-100 bg-white hover:border-gold/30 transition-all duration-300 ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
                 style={{ transitionDelay: sec3.visible ? `${i * 80}ms` : "0ms" }}
               >
-                <div className="w-10 h-10 rounded-lg bg-prugio-gold/15 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-5 h-5 text-prugio-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-10 h-10 rounded-sm bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={row.icon} />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[12px] text-prugio-gold font-semibold tracking-wider mb-1">{row.label}</p>
-                  <p className="text-[14px] text-white/90 font-medium leading-relaxed">{row.value}</p>
+                  <p className="text-[11px] text-gold font-medium tracking-wider mb-1">{row.label}</p>
+                  <p className="text-[14px] text-dark-gray font-medium leading-relaxed">{row.value}</p>
                 </div>
               </div>
             ))}
@@ -154,22 +134,16 @@ export default function BusinessSection() {
         </div>
       </div>
 
-      {/* ===== 그라데이션 전환 ===== */}
-      <div className="h-20 bg-gradient-to-b from-prugio-blue-dark to-[#FAFAF7]" />
-
-      {/* ===== 타입별 면적 ===== */}
-      <div className="bg-[#FAFAF7]">
+      {/* ===== Unit Types ===== */}
+      <div className="bg-white border-t border-gray-100">
         <div
           ref={sec4.ref}
-          className={`max-w-[900px] mx-auto px-6 pt-10 pb-12 transition-all duration-700 ${sec4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          className={`max-w-[900px] mx-auto px-6 py-20 transition-all duration-700 ${sec4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
           <div className="text-center mb-14">
-            <p className="text-prugio-blue text-[13px] font-semibold tracking-[4px] uppercase mb-3">UNIT TYPES</p>
-            <h2
-              className="text-[24px] sm:text-[30px] text-gray-900 font-light"
-              style={{ fontFamily: "'Noto Serif KR', serif" }}
-            >
-              타입별 <span className="font-bold">세대 안내</span>
+            <p className="text-gold text-[11px] font-medium tracking-[4px] uppercase mb-3">UNIT TYPES</p>
+            <h2 className="text-[24px] sm:text-[30px] text-charcoal font-light tracking-tight">
+              타입별 세대 안내
             </h2>
           </div>
 
@@ -177,33 +151,31 @@ export default function BusinessSection() {
             {typeInfo.map((t, i) => (
               <div
                 key={i}
-                className={`bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 group ${sec4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                className={`bg-off-white rounded-sm overflow-hidden border border-gray-100 hover:border-gold/30 transition-all duration-500 ${sec4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: sec4.visible ? `${i * 120}ms` : "0ms" }}
               >
-                <div className="relative bg-prugio-blue px-5 py-5 text-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-prugio-blue-dark/30 to-transparent" />
-                  <div className="absolute inset-0 pattern-waves opacity-10" />
-                  <span className="relative text-white text-[24px] font-bold tracking-wide" style={{ fontFamily: "'Noto Serif KR', serif" }}>{t.type}</span>
+                <div className="bg-navy px-5 py-5 text-center">
+                  <span className="text-white text-[22px] font-light tracking-wide">{t.type}</span>
                 </div>
                 <div className="p-6 space-y-5">
                   <div className="text-center">
-                    <p className="text-[11px] text-gray-400 font-medium tracking-wider uppercase mb-1.5">전용면적</p>
-                    <p className="text-[16px] text-gray-800 font-bold">{t.exclusive}</p>
+                    <p className="text-[11px] text-cool-gray font-medium tracking-wider uppercase mb-1.5">전용면적</p>
+                    <p className="text-[16px] text-dark-gray font-semibold">{t.exclusive}</p>
                   </div>
-                  <div className="h-px bg-gray-100" />
+                  <div className="h-px bg-gray-200" />
                   <div className="text-center">
-                    <p className="text-[11px] text-gray-400 font-medium tracking-wider uppercase mb-1.5">세대수</p>
-                    <p className="text-[22px] text-prugio-blue font-bold" style={{ fontFamily: "'Noto Serif KR', serif" }}>{t.count}</p>
+                    <p className="text-[11px] text-cool-gray font-medium tracking-wider uppercase mb-1.5">세대수</p>
+                    <p className="text-[22px] text-navy font-light">{t.count}</p>
                   </div>
-                  {/* 비율 바 */}
+                  {/* Progress bar */}
                   <div>
-                    <div className="flex justify-between text-[11px] text-gray-400 mb-1.5">
+                    <div className="flex justify-between text-[11px] text-cool-gray mb-1.5">
                       <span>구성 비율</span>
-                      <span className="text-prugio-blue font-semibold">{t.ratio}%</span>
+                      <span className="text-navy font-medium">{t.ratio}%</span>
                     </div>
-                    <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                    <div className="h-1.5 bg-gray-200 rounded-sm overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-prugio-blue to-prugio-blue-light rounded-full transition-all duration-1000"
+                        className="h-full bg-navy rounded-sm transition-all duration-1000"
                         style={{ width: sec4.visible ? `${t.ratio}%` : "0%" }}
                       />
                     </div>
@@ -216,36 +188,29 @@ export default function BusinessSection() {
       </div>
 
       {/* ===== CTA ===== */}
-      <div className="bg-[#FAFAF7]">
+      <div className="bg-off-white border-t border-gray-100">
         <div
           ref={sec5.ref}
-          className={`max-w-[700px] mx-auto px-6 pb-24 pt-8 text-center transition-all duration-700 ${sec5.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          className={`max-w-[700px] mx-auto px-6 py-20 text-center transition-all duration-700 ${sec5.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
-          <div className="bg-prugio-blue rounded-2xl p-10 sm:p-12 relative overflow-hidden">
-            <div className="absolute inset-0 pattern-waves opacity-10" />
-            <div className="absolute inset-0 bg-gradient-to-br from-prugio-blue-dark/20 to-transparent" />
-            <div className="relative">
-              <p className="text-prugio-gold text-[12px] font-semibold tracking-[3px] mb-3">CONTACT US</p>
-              <h3
-                className="text-white text-[22px] sm:text-[26px] font-light mb-3"
-                style={{ fontFamily: "'Noto Serif KR', serif" }}
-              >
-                분양 상담 <span className="font-bold">문의</span>
-              </h3>
-              <p className="text-white/50 text-[13px] mb-7">자세한 분양 정보와 상담을 도와드리겠습니다.</p>
-              <a
-                href="tel:1844-0981"
-                className="inline-flex items-center gap-3 px-9 py-3.5 bg-white text-prugio-blue rounded-full text-[15px] font-bold tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
-              >
-                <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                1844-0981
-              </a>
-            </div>
+          <div className="bg-navy rounded-sm p-10 sm:p-12">
+            <p className="text-gold/60 text-[11px] font-medium tracking-[3px] mb-3">CONTACT US</p>
+            <h3 className="text-white text-[22px] sm:text-[26px] font-extralight mb-3 tracking-tight">
+              분양 상담 문의
+            </h3>
+            <p className="text-white/30 text-[13px] mb-7 font-light">자세한 분양 정보와 상담을 도와드리겠습니다.</p>
+            <a
+              href="tel:1844-0981"
+              className="inline-flex items-center gap-3 px-9 py-3.5 bg-white text-navy rounded-sm text-[15px] font-semibold tracking-wider hover:bg-off-white transition-all duration-300"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              1844-0981
+            </a>
           </div>
-          <p className="text-[12px] text-gray-400 mt-8">
+          <p className="text-[12px] text-cool-gray mt-8 font-light">
             * 상기 내용은 인허가 과정에서 변경될 수 있습니다.
           </p>
         </div>

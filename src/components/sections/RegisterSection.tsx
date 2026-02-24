@@ -74,61 +74,52 @@ export default function RegisterSection() {
   };
 
   const inputClass =
-    "w-full max-w-[260px] px-4 py-2.5 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-prugio-blue/20 focus:border-prugio-blue transition-all duration-200";
+    "w-full max-w-[260px] px-4 py-2.5 border border-gray-200 rounded-sm text-[13px] bg-white focus:outline-none focus:ring-1 focus:ring-gold/30 focus:border-gold transition-all duration-200";
   const selectClass =
-    "px-3 py-2.5 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-prugio-blue/20 focus:border-prugio-blue transition-all duration-200 appearance-none cursor-pointer";
+    "px-3 py-2.5 border border-gray-200 rounded-sm text-[13px] bg-white focus:outline-none focus:ring-1 focus:ring-gold/30 focus:border-gold transition-all duration-200 appearance-none cursor-pointer";
   const radioClass =
-    "w-4 h-4 text-prugio-blue focus:ring-prugio-blue/30 border-gray-300 cursor-pointer";
+    "w-4 h-4 text-navy focus:ring-gold/30 border-gray-300 cursor-pointer";
 
   return (
-    <section className="pt-[80px]">
+    <section className="pt-[72px]">
       <SectionBanner
         title="관심고객등록"
         subtitle="업성 푸르지오 레이크시티에 관심을 가져주셔서 감사합니다."
-        fallbackGradient="bg-gradient-to-r from-amber-900 via-amber-800 to-amber-700"
+        fallbackGradient="bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500"
         bgImage="/images/banner-register.jpg"
       />
 
-      {/* 상단 안내 */}
-      <div className="bg-[#FAFAF7]">
+      {/* Header */}
+      <div className="bg-white">
         <div className="max-w-[800px] mx-auto px-6 pt-16 pb-6 text-center">
-          <p className="text-prugio-blue text-[13px] font-semibold tracking-[4px] uppercase mb-4">
+          <p className="text-gold text-[11px] font-medium tracking-[4px] uppercase mb-4">
             REGISTER
           </p>
-          <h2
-            className="text-[26px] sm:text-[32px] font-light text-gray-900 leading-snug"
-            style={{ fontFamily: "'Noto Serif KR', serif" }}
-          >
-            관심고객 <span className="font-bold">사전등록</span>
+          <h2 className="text-[26px] sm:text-[32px] font-light text-charcoal leading-snug tracking-tight">
+            관심고객 사전등록
           </h2>
-          <p className="mt-4 text-[14px] text-gray-500 leading-relaxed">
+          <p className="mt-4 text-[14px] text-cool-gray leading-relaxed font-light">
             아래 양식을 작성하시면 담당자가 빠른 시일 내에 연락드리겠습니다.
           </p>
-          <div className="mt-8 flex items-center justify-center gap-3">
-            <span className="w-8 h-[1px] bg-prugio-gold/40" />
-            <span className="w-1.5 h-1.5 rounded-full bg-prugio-gold/60" />
-            <span className="w-8 h-[1px] bg-prugio-gold/40" />
-          </div>
+          <div className="w-10 h-[1px] bg-gold/40 mx-auto mt-8" />
         </div>
       </div>
 
-      <div className="max-w-[800px] mx-auto px-6 py-10 bg-[#FAFAF7]">
+      <div className="max-w-[800px] mx-auto px-6 py-10 bg-white">
         <form onSubmit={handleSubmit}>
 
-          {/* ===== 개인정보 수집 동의 ===== */}
-          <div className="rounded-xl overflow-hidden mb-10 shadow-sm border border-gray-100">
-            <div className="bg-prugio-blue px-6 py-4 flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0">
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <h3 className="text-white text-[15px] font-bold tracking-wide">
+          {/* ===== Privacy Agreement ===== */}
+          <div className="rounded-sm overflow-hidden mb-10 border border-gray-200">
+            <div className="bg-navy px-6 py-4 flex items-center gap-3">
+              <svg className="w-4 h-4 text-gold/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <h3 className="text-white text-[14px] font-medium tracking-wide">
                 개인정보 수집 및 이용 목적 등에 관한 동의
               </h3>
             </div>
 
-            <div className="px-6 py-5 max-h-[280px] overflow-y-auto text-[12.5px] text-gray-600 leading-[1.9] space-y-4 bg-gray-50/60 custom-scrollbar">
+            <div className="px-6 py-5 max-h-[280px] overflow-y-auto text-[12.5px] text-gray-600 leading-[1.9] space-y-4 bg-off-white">
               <p>
                 DL이앤씨(이하 &quot;회사&quot;)은 고객님의 개인정보를 중요시하며, 「개인정보 보호법」 및 「정보통신망 이용촉진 및 정보보호에 관한 법률」을 준수하고 있습니다.
               </p>
@@ -157,17 +148,17 @@ export default function RegisterSection() {
                 </p>
               </div>
 
-              <div className="pt-2">
+              <div>
                 <p className="font-semibold text-gray-800 text-[13px]">2. 개인정보 취급 위탁에 대한 동의</p>
                 <p className="mt-1">회사는 원활한 업무 수행을 위하여 고객의 개인정보를 아래와 같이 위탁하고 있습니다.</p>
               </div>
 
               <div className="pl-3 space-y-2">
                 <p><span className="text-gray-800 font-medium">(1) 수탁업체 및 위탁 업무 내용</span></p>
-                <div className="overflow-hidden rounded-lg border border-gray-200 my-2">
+                <div className="overflow-hidden rounded-sm border border-gray-200 my-2">
                   <table className="w-full text-[12px]">
                     <thead>
-                      <tr className="bg-gray-100/80">
+                      <tr className="bg-gray-100">
                         <th className="py-2 px-3 text-left font-semibold text-gray-700 border-r border-gray-200 w-[35%]">수탁업체</th>
                         <th className="py-2 px-3 text-left font-semibold text-gray-700">위탁 업무 내용</th>
                       </tr>
@@ -198,7 +189,7 @@ export default function RegisterSection() {
                 </p>
               </div>
 
-              <div className="pt-2">
+              <div>
                 <p className="font-semibold text-gray-800 text-[13px]">3. 개인정보의 파기 절차 및 방법</p>
                 <p className="mt-1">회사는 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.</p>
               </div>
@@ -212,7 +203,7 @@ export default function RegisterSection() {
                 </p>
               </div>
 
-              <div className="pt-2">
+              <div>
                 <p className="font-semibold text-gray-800 text-[13px]">4. 개인정보 보호책임자</p>
               </div>
 
@@ -225,9 +216,9 @@ export default function RegisterSection() {
               </div>
             </div>
 
-            {/* 동의 선택 */}
-            <div className="px-6 py-5 flex items-center gap-8 border-t border-gray-100 bg-white">
-              <span className="text-[13px] text-gray-500 font-medium hidden sm:inline">위 내용에 동의하십니까?</span>
+            {/* Agreement buttons */}
+            <div className="px-6 py-5 flex items-center gap-8 border-t border-gray-200 bg-white">
+              <span className="text-[13px] text-cool-gray font-light hidden sm:inline">위 내용에 동의하십니까?</span>
               <div className="flex items-center gap-6">
                 <label className="flex items-center gap-2.5 cursor-pointer group">
                   <input
@@ -237,7 +228,7 @@ export default function RegisterSection() {
                     onChange={() => setAgreed(true)}
                     className={radioClass}
                   />
-                  <span className={`text-[13px] font-medium transition-colors ${agreed === true ? "text-prugio-blue" : "text-gray-600 group-hover:text-gray-900"}`}>
+                  <span className={`text-[13px] font-medium transition-colors ${agreed === true ? "text-navy" : "text-gray-600 group-hover:text-gray-900"}`}>
                     동의합니다
                   </span>
                 </label>
@@ -257,18 +248,18 @@ export default function RegisterSection() {
             </div>
           </div>
 
-          {/* ===== 개인정보 입력 ===== */}
+          {/* ===== Personal Info ===== */}
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-1 h-6 bg-prugio-blue rounded-full" />
-            <h3 className="text-[17px] font-bold text-gray-900">개인정보 입력</h3>
+            <div className="w-[3px] h-5 bg-gold" />
+            <h3 className="text-[16px] font-semibold text-charcoal">개인정보 입력</h3>
           </div>
 
-          <div className="rounded-xl overflow-hidden mb-10 shadow-sm border border-gray-100">
+          <div className="rounded-sm overflow-hidden mb-10 border border-gray-200">
             <table className="w-full text-[13px]">
               <tbody>
-                {/* 성명 */}
-                <tr className="border-b border-gray-100">
-                  <td className="bg-gray-50/80 px-6 py-5 font-semibold text-gray-700 w-[130px] whitespace-nowrap">
+                {/* Name */}
+                <tr className="border-b border-gray-200">
+                  <td className="bg-off-white px-6 py-5 font-medium text-dark-gray w-[130px] whitespace-nowrap">
                     <span className="flex items-center gap-1.5">
                       성명
                       <span className="text-red-400 text-[11px]">*</span>
@@ -285,9 +276,9 @@ export default function RegisterSection() {
                   </td>
                 </tr>
 
-                {/* 연락처 */}
-                <tr className="border-b border-gray-100">
-                  <td className="bg-gray-50/80 px-6 py-5 font-semibold text-gray-700 whitespace-nowrap">
+                {/* Phone */}
+                <tr className="border-b border-gray-200">
+                  <td className="bg-off-white px-6 py-5 font-medium text-dark-gray whitespace-nowrap">
                     <span className="flex items-center gap-1.5">
                       연락처
                       <span className="text-red-400 text-[11px]">*</span>
@@ -307,29 +298,29 @@ export default function RegisterSection() {
                         <option value="018">018</option>
                         <option value="019">019</option>
                       </select>
-                      <span className="text-gray-300 font-light">-</span>
+                      <span className="text-gray-300">-</span>
                       <input
                         type="text"
                         maxLength={4}
                         value={form.phone2}
                         onChange={(e) => handleChange("phone2", e.target.value.replace(/\D/g, ""))}
-                        className="w-[90px] px-4 py-2.5 border border-gray-200 rounded-lg text-[13px] text-center bg-white focus:outline-none focus:ring-2 focus:ring-prugio-blue/20 focus:border-prugio-blue transition-all duration-200"
+                        className="w-[90px] px-4 py-2.5 border border-gray-200 rounded-sm text-[13px] text-center bg-white focus:outline-none focus:ring-1 focus:ring-gold/30 focus:border-gold transition-all duration-200"
                       />
-                      <span className="text-gray-300 font-light">-</span>
+                      <span className="text-gray-300">-</span>
                       <input
                         type="text"
                         maxLength={4}
                         value={form.phone3}
                         onChange={(e) => handleChange("phone3", e.target.value.replace(/\D/g, ""))}
-                        className="w-[90px] px-4 py-2.5 border border-gray-200 rounded-lg text-[13px] text-center bg-white focus:outline-none focus:ring-2 focus:ring-prugio-blue/20 focus:border-prugio-blue transition-all duration-200"
+                        className="w-[90px] px-4 py-2.5 border border-gray-200 rounded-sm text-[13px] text-center bg-white focus:outline-none focus:ring-1 focus:ring-gold/30 focus:border-gold transition-all duration-200"
                       />
                     </div>
                   </td>
                 </tr>
 
-                {/* 관심유형 */}
-                <tr className="border-b border-gray-100">
-                  <td className="bg-gray-50/80 px-6 py-5 font-semibold text-gray-700 whitespace-nowrap">관심유형</td>
+                {/* Interest Type */}
+                <tr className="border-b border-gray-200">
+                  <td className="bg-off-white px-6 py-5 font-medium text-dark-gray whitespace-nowrap">관심유형</td>
                   <td className="px-6 py-4">
                     <div className="flex flex-wrap items-center gap-5">
                       {["특별공급", "1순위", "2순위"].map((type) => (
@@ -342,7 +333,7 @@ export default function RegisterSection() {
                             onChange={(e) => handleChange("interestType", e.target.value)}
                             className={radioClass}
                           />
-                          <span className={`text-[13px] transition-colors ${form.interestType === type ? "text-prugio-blue font-medium" : "text-gray-600 group-hover:text-gray-900"}`}>
+                          <span className={`text-[13px] transition-colors ${form.interestType === type ? "text-navy font-medium" : "text-gray-600 group-hover:text-gray-900"}`}>
                             {type}
                           </span>
                         </label>
@@ -351,9 +342,9 @@ export default function RegisterSection() {
                   </td>
                 </tr>
 
-                {/* 연령대 */}
-                <tr className="border-b border-gray-100">
-                  <td className="bg-gray-50/80 px-6 py-5 font-semibold text-gray-700 whitespace-nowrap">연령대</td>
+                {/* Age */}
+                <tr className="border-b border-gray-200">
+                  <td className="bg-off-white px-6 py-5 font-medium text-dark-gray whitespace-nowrap">연령대</td>
                   <td className="px-6 py-4">
                     <div className="flex flex-wrap items-center gap-5">
                       {["20대", "30대", "40대", "50대", "60대 이상"].map((age) => (
@@ -366,7 +357,7 @@ export default function RegisterSection() {
                             onChange={(e) => handleChange("age", e.target.value)}
                             className={radioClass}
                           />
-                          <span className={`text-[13px] transition-colors ${form.age === age ? "text-prugio-blue font-medium" : "text-gray-600 group-hover:text-gray-900"}`}>
+                          <span className={`text-[13px] transition-colors ${form.age === age ? "text-navy font-medium" : "text-gray-600 group-hover:text-gray-900"}`}>
                             {age}
                           </span>
                         </label>
@@ -375,9 +366,9 @@ export default function RegisterSection() {
                   </td>
                 </tr>
 
-                {/* 주소 */}
+                {/* Address */}
                 <tr>
-                  <td className="bg-gray-50/80 px-6 py-5 font-semibold text-gray-700 whitespace-nowrap">주소</td>
+                  <td className="bg-off-white px-6 py-5 font-medium text-dark-gray whitespace-nowrap">주소</td>
                   <td className="px-6 py-4">
                     <div className="flex flex-wrap items-center gap-2">
                       <select
@@ -409,14 +400,14 @@ export default function RegisterSection() {
                         value={form.district}
                         onChange={(e) => handleChange("district", e.target.value)}
                         placeholder="시/구/군"
-                        className="w-[110px] px-4 py-2.5 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-prugio-blue/20 focus:border-prugio-blue transition-all duration-200"
+                        className="w-[110px] px-4 py-2.5 border border-gray-200 rounded-sm text-[13px] bg-white focus:outline-none focus:ring-1 focus:ring-gold/30 focus:border-gold transition-all duration-200"
                       />
                       <input
                         type="text"
                         value={form.dong}
                         onChange={(e) => handleChange("dong", e.target.value)}
                         placeholder="읍/면/동"
-                        className="w-[110px] px-4 py-2.5 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-prugio-blue/20 focus:border-prugio-blue transition-all duration-200"
+                        className="w-[110px] px-4 py-2.5 border border-gray-200 rounded-sm text-[13px] bg-white focus:outline-none focus:ring-1 focus:ring-gold/30 focus:border-gold transition-all duration-200"
                       />
                     </div>
                   </td>
@@ -425,19 +416,19 @@ export default function RegisterSection() {
             </table>
           </div>
 
-          {/* ===== 버튼 ===== */}
+          {/* ===== Buttons ===== */}
           <div className="flex items-center justify-center gap-4">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-12 py-3.5 bg-prugio-blue text-white text-[14px] font-bold tracking-wider rounded-full hover:bg-prugio-blue-light transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+              className="px-12 py-3.5 bg-navy text-white text-[14px] font-semibold tracking-wider rounded-sm hover:bg-navy-light transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "등록 중..." : "등록하기"}
             </button>
             <button
               type="button"
               onClick={handleReset}
-              className="px-12 py-3.5 border border-gray-200 text-gray-500 text-[14px] font-medium tracking-wider rounded-full hover:bg-gray-50 hover:border-gray-300 transition-all duration-300"
+              className="px-12 py-3.5 border border-gray-200 text-cool-gray text-[14px] font-medium tracking-wider rounded-sm hover:bg-off-white hover:border-gray-300 transition-all duration-300"
             >
               다시작성
             </button>
@@ -446,16 +437,14 @@ export default function RegisterSection() {
 
         {/* Contact Info */}
         <div className="mt-14 text-center">
-          <div className="inline-flex items-center gap-4 px-8 py-5 bg-gray-50 rounded-2xl">
-            <div className="w-10 h-10 rounded-full bg-prugio-blue/10 flex items-center justify-center">
-              <svg className="w-5 h-5 text-prugio-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-            </div>
+          <div className="inline-flex items-center gap-4 px-8 py-5 bg-off-white rounded-sm border border-gray-100">
+            <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
             <div className="text-left">
-              <p className="text-[12px] text-gray-400 font-medium">전화 문의</p>
-              <a href="tel:1844-0981" className="text-prugio-blue font-bold text-[20px] tracking-wider hover:text-prugio-blue-light transition-colors">
+              <p className="text-[11px] text-cool-gray font-light">전화 문의</p>
+              <a href="tel:1844-0981" className="text-navy font-semibold text-[20px] tracking-wider hover:text-navy-light transition-colors">
                 1844-0981
               </a>
             </div>
