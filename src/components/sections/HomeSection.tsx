@@ -41,43 +41,40 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
   return (
     <section>
       {/* ══════════ INTRO SPLASH ══════════ */}
-      <div className="relative h-screen min-h-[700px] flex flex-col items-center justify-center overflow-hidden bg-[#F6F4F0]">
+      <div className="relative h-screen min-h-[700px] flex flex-col items-center justify-center overflow-hidden bg-[#0a0f18]">
 
-        {/* Lake photo — bottom half, fading upward into cream */}
-        <div className="absolute bottom-0 left-0 right-0 h-[60%] pointer-events-none">
-          <Image src="/images/hero-lake.jpg" alt="" fill className="object-cover object-center" sizes="100vw" priority />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F6F4F0] via-[#F6F4F0]/70 to-transparent" />
-          <div className="absolute inset-0 bg-[#F6F4F0]/30" />
-        </div>
+        {/* Lake photo background with dark overlay */}
+        <Image src="/images/hero-lake.jpg" alt="" fill className="object-cover opacity-30" sizes="100vw" priority />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f18]/60 via-transparent to-[#0a0f18]/60" />
 
         {/* Decorative circle — outer (gold) */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           <div
             className="w-[420px] h-[420px] sm:w-[500px] sm:h-[500px] lg:w-[580px] lg:h-[580px] rounded-full"
-            style={{ border: "1px solid rgba(184,151,106,0.13)" }}
+            style={{ border: "1px solid rgba(184,151,106,0.15)" }}
           />
         </div>
         {/* Decorative circle — inner */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           <div
             className="w-[350px] h-[350px] sm:w-[410px] sm:h-[410px] lg:w-[480px] lg:h-[480px] rounded-full"
-            style={{ border: "1px solid rgba(15,27,45,0.04)" }}
+            style={{ border: "1px solid rgba(255,255,255,0.05)" }}
           />
         </div>
 
         {/* Gold corner accents */}
         <div className="absolute top-8 right-8 lg:top-14 lg:right-14 pointer-events-none">
-          <div className="w-10 h-10 lg:w-14 lg:h-14 border-t border-r" style={{ borderColor: "rgba(184,151,106,0.18)" }} />
+          <div className="w-10 h-10 lg:w-14 lg:h-14 border-t border-r border-gold/20" />
         </div>
         <div className="absolute bottom-24 left-8 lg:bottom-28 lg:left-14 pointer-events-none">
-          <div className="w-10 h-10 lg:w-14 lg:h-14 border-b border-l" style={{ borderColor: "rgba(184,151,106,0.18)" }} />
+          <div className="w-10 h-10 lg:w-14 lg:h-14 border-b border-l border-gold/20" />
         </div>
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center px-6">
           {/* Icon */}
           <div className={`mb-10 transition-all duration-[1200ms] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}>
-            <svg className="w-10 h-10 text-gold/40" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={0.7}>
+            <svg className="w-10 h-10 text-gold/50" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={0.7}>
               <rect x="18" y="12" width="28" height="44" rx="1" />
               <rect x="8" y="28" width="10" height="28" rx="1" />
               <rect x="46" y="28" width="10" height="28" rx="1" />
@@ -99,7 +96,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
 
           {/* Title */}
           <h1
-            className={`text-[#1a1a1a] text-[36px] sm:text-[48px] lg:text-[58px] tracking-[12px] sm:tracking-[16px] lg:tracking-[20px] leading-none transition-all duration-[1400ms] delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`text-white text-[36px] sm:text-[48px] lg:text-[58px] tracking-[12px] sm:tracking-[16px] lg:tracking-[20px] leading-none transition-all duration-[1400ms] delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             style={{ fontWeight: 200 }}
           >
             PRUGIO
@@ -107,25 +104,25 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
 
           {/* Subtitle */}
           <div className={`flex items-center gap-4 mt-5 mb-7 transition-all duration-[1400ms] delay-[400ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
-            <span className="w-10 sm:w-16 h-[1px] bg-gold/25" />
-            <span className="text-[#1a1a1a]/35 text-[12px] sm:text-[14px] tracking-[6px] sm:tracking-[10px] font-extralight">
+            <span className="w-10 sm:w-16 h-[1px] bg-gold/30" />
+            <span className="text-white/50 text-[12px] sm:text-[14px] tracking-[6px] sm:tracking-[10px] font-extralight">
               레 이 크 시 티
             </span>
-            <span className="w-10 sm:w-16 h-[1px] bg-gold/25" />
+            <span className="w-10 sm:w-16 h-[1px] bg-gold/30" />
           </div>
 
           {/* Description */}
-          <p className={`text-[#1a1a1a]/25 text-[12px] sm:text-[13px] tracking-[2px] font-light mb-1 transition-all duration-[1400ms] delay-[600ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
+          <p className={`text-white/35 text-[12px] sm:text-[13px] tracking-[2px] font-light mb-1 transition-all duration-[1400ms] delay-[600ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
             호수공원 앞 · 프리미엄 주거단지
           </p>
-          <p className={`text-[#1a1a1a]/15 text-[10px] tracking-[3px] uppercase font-light mb-14 transition-all duration-[1400ms] delay-[700ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
+          <p className={`text-white/20 text-[10px] tracking-[3px] uppercase font-light mb-14 transition-all duration-[1400ms] delay-[700ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
             Lake Park · Premium Residence · DL E&amp;C
           </p>
 
           {/* Enter Button */}
           <button
             onClick={scrollToContent}
-            className={`px-16 sm:px-20 py-4 border border-[#1a1a1a]/10 text-[#1a1a1a]/35 text-[11px] tracking-[5px] uppercase font-light hover:bg-[#1a1a1a] hover:text-white hover:border-[#1a1a1a] transition-all duration-500 cursor-pointer ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`px-16 sm:px-20 py-4 border border-white/15 text-white/50 text-[11px] tracking-[5px] uppercase font-light hover:bg-white hover:text-[#0a0f18] hover:border-white transition-all duration-500 cursor-pointer ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             style={{ transitionDelay: loaded ? "900ms" : "0ms" }}
           >
             ENTER
@@ -134,14 +131,14 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
 
         {/* Scroll indicator */}
         <div className={`absolute bottom-[80px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 transition-all duration-[1400ms] delay-[1200ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
-          <span className="text-[#1a1a1a]/12 text-[9px] tracking-[3px] uppercase font-light">Scroll</span>
+          <span className="text-white/15 text-[9px] tracking-[3px] uppercase font-light">Scroll</span>
           <div className="w-[1px] h-5 relative overflow-hidden">
-            <div className="absolute w-full h-full bg-gradient-to-b from-gold/25 to-transparent animate-[scrollLine_2s_ease-in-out_infinite]" />
+            <div className="absolute w-full h-full bg-gradient-to-b from-gold/30 to-transparent animate-[scrollLine_2s_ease-in-out_infinite]" />
           </div>
         </div>
 
         {/* Bottom Nav */}
-        <div className={`absolute bottom-0 left-0 right-0 border-t border-[#1a1a1a]/[0.05] py-5 transition-all duration-[1400ms] delay-[1100ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
+        <div className={`absolute bottom-0 left-0 right-0 border-t border-white/[0.06] py-5 transition-all duration-[1400ms] delay-[1100ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap px-6">
             {[
               { id: "business", en: "OVERVIEW" },
@@ -152,7 +149,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
               <button
                 key={i}
                 onClick={() => onTabChange?.(item.id)}
-                className="text-[#1a1a1a]/20 hover:text-gold transition-colors duration-300"
+                className="text-white/25 hover:text-gold transition-colors duration-300"
               >
                 <span className="text-[10px] sm:text-[11px] tracking-[3px] uppercase font-light">{item.en}</span>
               </button>
