@@ -41,45 +41,31 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
   return (
     <section>
       {/* ══════════ INTRO SPLASH ══════════ */}
-      <div className="relative h-screen min-h-[700px] flex flex-col items-center justify-center overflow-hidden">
+      <div className="relative h-screen min-h-[700px] flex flex-col items-center justify-center overflow-hidden bg-[#F6F4F0]">
 
-        {/* Background: Lake image, blurred & faded */}
-        <Image
-          src="/images/hero-lake.jpg"
-          alt=""
-          fill
-          className="object-cover scale-110 blur-[3px]"
-          sizes="100vw"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F4F2ED]/[0.96] via-[#F4F2ED]/[0.82] to-[#F4F2ED]/[0.96]" />
+        {/* Subtle warm gradient (no photo, clean solid) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F0EDE7] via-[#F6F4F0] to-[#F0EDE7]" />
 
-        {/* Decorative: two refined circles (gold tones) */}
+        {/* Fine decorative circle — outer */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-          <div className="w-[480px] h-[480px] sm:w-[560px] sm:h-[560px] lg:w-[660px] lg:h-[660px] rounded-full border border-gold/[0.10] animate-[spin_180s_linear_infinite]" />
+          <div
+            className="w-[400px] h-[400px] sm:w-[480px] sm:h-[480px] lg:w-[560px] lg:h-[560px] rounded-full"
+            style={{ border: "1px solid rgba(184,151,106,0.12)" }}
+          />
         </div>
+        {/* Fine decorative circle — inner */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-          <div className="w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] lg:w-[500px] lg:h-[500px] rounded-full border border-navy/[0.05]" />
-        </div>
-
-        {/* Circular lake photo watermark (very faint, inside circles) */}
-        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] lg:w-[460px] lg:h-[460px] rounded-full overflow-hidden pointer-events-none transition-opacity duration-[2500ms] ${loaded ? "opacity-[0.08]" : "opacity-0"}`}>
-          <Image src="/images/lake-view.jpg" alt="" fill className="object-cover" sizes="460px" />
-        </div>
-
-        {/* Gold corner frames */}
-        <div className="absolute top-8 right-8 lg:top-14 lg:right-14 pointer-events-none">
-          <div className="w-12 h-12 lg:w-16 lg:h-16 border-t border-r border-gold/15" />
-        </div>
-        <div className="absolute bottom-24 left-8 lg:bottom-28 lg:left-14 pointer-events-none">
-          <div className="w-12 h-12 lg:w-16 lg:h-16 border-b border-l border-gold/15" />
+          <div
+            className="w-[340px] h-[340px] sm:w-[400px] sm:h-[400px] lg:w-[470px] lg:h-[470px] rounded-full"
+            style={{ border: "1px solid rgba(15,27,45,0.04)" }}
+          />
         </div>
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center px-6">
           {/* Icon */}
           <div className={`mb-10 transition-all duration-[1200ms] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}>
-            <svg className="w-11 h-11 text-gold/50" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={0.8}>
+            <svg className="w-10 h-10 text-gold/40" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={0.7}>
               <rect x="18" y="12" width="28" height="44" rx="1" />
               <rect x="8" y="28" width="10" height="28" rx="1" />
               <rect x="46" y="28" width="10" height="28" rx="1" />
@@ -101,50 +87,49 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
 
           {/* Title */}
           <h1
-            className={`text-navy/80 text-[38px] sm:text-[50px] lg:text-[64px] tracking-[14px] sm:tracking-[18px] lg:tracking-[24px] leading-none transition-all duration-[1400ms] delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`text-[#1a1a1a] text-[36px] sm:text-[48px] lg:text-[58px] tracking-[12px] sm:tracking-[16px] lg:tracking-[20px] leading-none transition-all duration-[1400ms] delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             style={{ fontWeight: 200 }}
           >
             PRUGIO
           </h1>
 
           {/* Subtitle */}
-          <div className={`flex items-center gap-5 mt-6 mb-8 transition-all duration-[1400ms] delay-[400ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
-            <span className="w-12 sm:w-20 h-[1px] bg-gold/30" />
-            <span className="text-navy/40 text-[13px] sm:text-[15px] tracking-[8px] sm:tracking-[12px] font-extralight">
+          <div className={`flex items-center gap-4 mt-5 mb-7 transition-all duration-[1400ms] delay-[400ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
+            <span className="w-10 sm:w-16 h-[1px] bg-gold/25" />
+            <span className="text-[#1a1a1a]/35 text-[12px] sm:text-[14px] tracking-[6px] sm:tracking-[10px] font-extralight">
               레 이 크 시 티
             </span>
-            <span className="w-12 sm:w-20 h-[1px] bg-gold/30" />
+            <span className="w-10 sm:w-16 h-[1px] bg-gold/25" />
           </div>
 
           {/* Description */}
-          <p className={`text-navy/35 text-[13px] sm:text-[14px] tracking-[3px] font-light mb-1 transition-all duration-[1400ms] delay-[600ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
-            업성 푸르지오 레이크시티
+          <p className={`text-[#1a1a1a]/25 text-[12px] sm:text-[13px] tracking-[2px] font-light mb-1 transition-all duration-[1400ms] delay-[600ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
+            호수공원 앞 · 프리미엄 주거단지
           </p>
-          <p className={`text-navy/20 text-[10px] sm:text-[11px] tracking-[4px] uppercase font-light mb-16 transition-all duration-[1400ms] delay-[700ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
-            Lake Park · Premium Residence
+          <p className={`text-[#1a1a1a]/15 text-[10px] tracking-[3px] uppercase font-light mb-14 transition-all duration-[1400ms] delay-[700ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
+            Lake Park · Premium Residence · DL E&amp;C
           </p>
 
           {/* Enter Button */}
           <button
             onClick={scrollToContent}
-            className={`group relative px-20 py-[18px] border border-gold/20 text-navy/45 text-[11px] tracking-[6px] uppercase font-light hover:border-gold/40 hover:text-navy/70 transition-all duration-500 cursor-pointer overflow-hidden ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`px-16 sm:px-20 py-4 border border-[#1a1a1a]/10 text-[#1a1a1a]/35 text-[11px] tracking-[5px] uppercase font-light hover:bg-[#1a1a1a] hover:text-white hover:border-[#1a1a1a] transition-all duration-500 cursor-pointer ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             style={{ transitionDelay: loaded ? "900ms" : "0ms" }}
           >
-            <span className="relative z-10">ENTER</span>
-            <div className="absolute inset-0 bg-gold/[0.03] group-hover:bg-gold/[0.08] transition-colors duration-500" />
+            ENTER
           </button>
         </div>
 
         {/* Scroll indicator */}
-        <div className={`absolute bottom-[88px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 transition-all duration-[1400ms] delay-[1200ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
-          <span className="text-navy/15 text-[9px] tracking-[4px] uppercase font-light">Scroll</span>
-          <div className="w-[1px] h-6 relative overflow-hidden">
-            <div className="absolute w-full h-full bg-gradient-to-b from-gold/30 to-transparent animate-[scrollLine_2s_ease-in-out_infinite]" />
+        <div className={`absolute bottom-[80px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 transition-all duration-[1400ms] delay-[1200ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
+          <span className="text-[#1a1a1a]/12 text-[9px] tracking-[3px] uppercase font-light">Scroll</span>
+          <div className="w-[1px] h-5 relative overflow-hidden">
+            <div className="absolute w-full h-full bg-gradient-to-b from-gold/25 to-transparent animate-[scrollLine_2s_ease-in-out_infinite]" />
           </div>
         </div>
 
         {/* Bottom Nav */}
-        <div className={`absolute bottom-0 left-0 right-0 border-t border-gold/[0.08] py-5 bg-[#F4F2ED]/60 backdrop-blur-sm transition-all duration-[1400ms] delay-[1100ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
+        <div className={`absolute bottom-0 left-0 right-0 border-t border-[#1a1a1a]/[0.05] py-5 transition-all duration-[1400ms] delay-[1100ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap px-6">
             {[
               { id: "business", en: "OVERVIEW" },
@@ -155,7 +140,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
               <button
                 key={i}
                 onClick={() => onTabChange?.(item.id)}
-                className="text-navy/25 hover:text-gold transition-colors duration-300"
+                className="text-[#1a1a1a]/20 hover:text-gold transition-colors duration-300"
               >
                 <span className="text-[10px] sm:text-[11px] tracking-[3px] uppercase font-light">{item.en}</span>
               </button>
