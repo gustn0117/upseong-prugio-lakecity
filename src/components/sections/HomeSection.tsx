@@ -25,8 +25,6 @@ export default function HomeSection() {
   const sec2 = useInView();
   const sec5 = useInView();
   const sec6 = useInView();
-  const secGallery = useInView(0.1);
-
   useEffect(() => {
     setLoaded(true);
     const handleScroll = () => setScrollY(window.scrollY);
@@ -263,52 +261,8 @@ export default function HomeSection() {
         </div>
       </div>
 
-      {/* == Divider: About → Gallery == */}
-      <div className="h-16 bg-gradient-to-b from-elif-cream to-white" />
-
-      {/* ===== Gallery Section - 호수공원 뷰 ===== */}
-      <div ref={secGallery.ref} className="relative bg-white pb-24 lg:pb-32 overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          {/* Gallery Grid - clean, no text overlay */}
-          <div className={`grid grid-cols-1 md:grid-cols-12 gap-4 transition-all duration-[800ms] ${secGallery.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            {/* Large Image */}
-            <div className="md:col-span-7 relative aspect-[16/10] rounded-2xl overflow-hidden group shadow-lg">
-              <Image
-                src="/images/lake-view.jpg"
-                alt="호수공원 전경"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 58vw"
-              />
-            </div>
-
-            {/* Right Column - 2 stacked images */}
-            <div className="md:col-span-5 flex flex-col gap-4">
-              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden group shadow-lg">
-                <Image
-                  src="/images/about-nature.jpg"
-                  alt="자연 풍경"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 42vw"
-                />
-              </div>
-              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden group shadow-lg">
-                <Image
-                  src="/images/hero-lake.jpg"
-                  alt="호수 풍경"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 42vw"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* == Divider: Gallery → 0분의 가치 == */}
-      <div className="h-px bg-gradient-to-r from-transparent via-elif-stone to-transparent" />
+      {/* == Divider: About → 0분의 가치 == */}
+      <div className="h-16 bg-gradient-to-b from-elif-cream to-[#f7f7f3]" />
 
       {/* ===== 0분의 가치 - 호수공원 앞 ===== */}
       <div ref={sec1.ref} className="relative py-28 lg:py-36 bg-[#f7f7f3] overflow-hidden">
