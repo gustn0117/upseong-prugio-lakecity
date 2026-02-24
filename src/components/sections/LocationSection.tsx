@@ -172,7 +172,7 @@ export default function LocationSection() {
           <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
             <div className="relative w-full" style={{ paddingBottom: "75%" }}>
               <Image
-                src="/images/69923b1f7d9c7_1920.JPG"
+                src="/images/location-map.jpg"
                 alt="엘리프 성성호수공원 입지 안내도"
                 fill
                 className="object-contain bg-[#f0ede6]"
