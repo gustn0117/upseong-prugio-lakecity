@@ -3,7 +3,7 @@ services:
     build: .
     container_name: upseong-prugio-lakecity
     ports:
-      - "3016:3000"
+      - "3017:3000"
     volumes:
       - prugio-data:/app/data
     environment:
