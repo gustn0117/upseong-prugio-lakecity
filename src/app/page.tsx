@@ -34,7 +34,7 @@ export default function Home() {
       <Header activeTab={activeTab} onTabChange={handleTabChange} />
 
       <main className="flex-1">
-        {activeTab === "home" && <HomeSection />}
+        {activeTab === "home" && <HomeSection onTabChange={handleTabChange} />}
         {activeTab === "business" && <BusinessSection />}
         {activeTab === "location" && <LocationSection />}
         {activeTab === "premium" && <PremiumSection />}
