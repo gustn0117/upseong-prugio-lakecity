@@ -5,6 +5,7 @@ import SectionBanner from "../SectionBanner";
 
 export default function RegisterSection() {
   const [agreed, setAgreed] = useState<boolean | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({
     name: "",
     phone1: "010",
@@ -21,7 +22,7 @@ export default function RegisterSection() {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!agreed) {
       alert("개인정보 수집 및 이용에 동의해 주세요.");
@@ -31,7 +32,30 @@ export default function RegisterSection() {
       alert("성명과 연락처를 입력해 주세요.");
       return;
     }
-    alert("관심고객 등록이 완료되었습니다.\n담당자가 빠른 시일 내에 연락드리겠습니다.");
+
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/registrations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          interestType: form.interestType,
+          agreed: true,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        handleReset();
+        alert("관심고객 등록이 완료되었습니다.\n담당자가 빠른 시일 내에 연락드리겠습니다.");
+      } else {
+        alert("등록 중 오류가 발생했습니다. 다시 시도해 주세요.");
+      }
+    } catch {
+      alert("등록 중 오류가 발생했습니다. 다시 시도해 주세요.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
@@ -405,9 +429,10 @@ export default function RegisterSection() {
           <div className="flex items-center justify-center gap-4">
             <button
               type="submit"
-              className="px-12 py-3.5 bg-elif-green text-white text-[14px] font-bold tracking-wider rounded-full hover:bg-elif-green-light transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+              disabled={isSubmitting}
+              className="px-12 py-3.5 bg-elif-green text-white text-[14px] font-bold tracking-wider rounded-full hover:bg-elif-green-light transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
             >
-              등록하기
+              {isSubmitting ? "등록 중..." : "등록하기"}
             </button>
             <button
               type="button"
