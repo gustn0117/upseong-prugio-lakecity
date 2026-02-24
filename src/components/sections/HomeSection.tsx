@@ -43,22 +43,34 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
       {/* ══════════ INTRO SPLASH ══════════ */}
       <div className="relative h-screen min-h-[700px] flex flex-col items-center justify-center overflow-hidden bg-[#F6F4F0]">
 
-        {/* Subtle warm gradient (no photo, clean solid) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F0EDE7] via-[#F6F4F0] to-[#F0EDE7]" />
+        {/* Lake photo — bottom half, fading upward into cream */}
+        <div className="absolute bottom-0 left-0 right-0 h-[60%] pointer-events-none">
+          <Image src="/images/hero-lake.jpg" alt="" fill className="object-cover object-center" sizes="100vw" priority />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#F6F4F0] via-[#F6F4F0]/70 to-transparent" />
+          <div className="absolute inset-0 bg-[#F6F4F0]/30" />
+        </div>
 
-        {/* Fine decorative circle — outer */}
+        {/* Decorative circle — outer (gold) */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           <div
-            className="w-[400px] h-[400px] sm:w-[480px] sm:h-[480px] lg:w-[560px] lg:h-[560px] rounded-full"
-            style={{ border: "1px solid rgba(184,151,106,0.12)" }}
+            className="w-[420px] h-[420px] sm:w-[500px] sm:h-[500px] lg:w-[580px] lg:h-[580px] rounded-full"
+            style={{ border: "1px solid rgba(184,151,106,0.13)" }}
           />
         </div>
-        {/* Fine decorative circle — inner */}
+        {/* Decorative circle — inner */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           <div
-            className="w-[340px] h-[340px] sm:w-[400px] sm:h-[400px] lg:w-[470px] lg:h-[470px] rounded-full"
+            className="w-[350px] h-[350px] sm:w-[410px] sm:h-[410px] lg:w-[480px] lg:h-[480px] rounded-full"
             style={{ border: "1px solid rgba(15,27,45,0.04)" }}
           />
+        </div>
+
+        {/* Gold corner accents */}
+        <div className="absolute top-8 right-8 lg:top-14 lg:right-14 pointer-events-none">
+          <div className="w-10 h-10 lg:w-14 lg:h-14 border-t border-r" style={{ borderColor: "rgba(184,151,106,0.18)" }} />
+        </div>
+        <div className="absolute bottom-24 left-8 lg:bottom-28 lg:left-14 pointer-events-none">
+          <div className="w-10 h-10 lg:w-14 lg:h-14 border-b border-l" style={{ borderColor: "rgba(184,151,106,0.18)" }} />
         </div>
 
         {/* Content */}
