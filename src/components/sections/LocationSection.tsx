@@ -170,15 +170,12 @@ export default function LocationSection() {
 
           {/* 지도 이미지 */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-            <div className="relative w-full" style={{ paddingBottom: "75%" }}>
-              <Image
-                src="/images/location-map.jpg"
-                alt="엘리프 성성호수공원 입지 안내도"
-                fill
-                className="object-contain bg-[#f0ede6]"
-                sizes="(max-width: 1200px) 100vw, 1200px"
-              />
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/location-map.jpg"
+              alt="엘리프 성성호수공원 입지 안내도"
+              className="w-full h-auto block"
+            />
             {/* 하단 그라데이션 */}
             <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 px-6 pb-5 flex items-end justify-between">
