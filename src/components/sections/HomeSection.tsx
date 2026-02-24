@@ -127,14 +127,14 @@ export default function HomeSection() {
                   </svg>
                 </button>
                 <a
-                  href="tel:1800-0000"
+                  href="tel:1844-0981"
                   className="flex items-center gap-2 px-6 py-4 border border-white/30 text-white/80 hover:border-white/60 hover:text-white text-[14px] font-medium tracking-wider transition-all duration-300 rounded-full backdrop-blur-sm bg-white/5"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  1800-0000
+                  1844-0981
                 </a>
               </div>
             </div>
@@ -154,7 +154,7 @@ export default function HomeSection() {
         {/* Side Info Bar */}
         <div className="absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6">
           <div className="w-[1px] h-16 bg-white/20" />
-          <span className="text-white/40 text-[11px] tracking-[2px] writing-vertical drop-shadow-sm">1800-0000</span>
+          <span className="text-white/40 text-[11px] tracking-[2px] writing-vertical drop-shadow-sm">1844-0981</span>
           <div className="w-[1px] h-16 bg-white/20" />
         </div>
       </div>
@@ -169,7 +169,7 @@ export default function HomeSection() {
             { label: "위치", value: "충남 천안시 서북구 일대" },
             { label: "총 세대수", value: "TBD" },
             { label: "타입", value: "TBD" },
-            { label: "분양문의", value: "1800-0000" },
+            { label: "분양문의", value: "1844-0981" },
           ].map((item, i) => (
             <div
               key={i}
@@ -395,12 +395,7 @@ export default function HomeSection() {
                 tag: "TRANSPORTATION",
                 title: "교통중심",
                 desc: "편리한 광역교통망과 우수한 도로 접근성으로 천안 주요 지역까지 빠르게 연결",
-                gradient: "from-[#1a3a2c] via-[#22493a] to-[#2a5a42]",
-                icon: (
-                  <svg className="w-10 h-10 text-elif-lake/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                  </svg>
-                ),
+                bgImage: "/images/premium-transport.jpg",
               },
               {
                 num: "02",
@@ -409,11 +404,6 @@ export default function HomeSection() {
                 title: "자연중심",
                 desc: "성성호수공원 바로 앞! 탁 트인 호수 조망과 풍요로운 자연환경의 힐링 라이프",
                 bgImage: "/images/lake-view.jpg",
-                icon: (
-                  <svg className="w-10 h-10 text-elif-lake/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                  </svg>
-                ),
               },
               {
                 num: "03",
@@ -421,12 +411,7 @@ export default function HomeSection() {
                 tag: "LIVING",
                 title: "생활중심",
                 desc: "대형마트, 상업시설 등 편리한 생활 인프라가 가까이",
-                gradient: "from-[#2a4a3a] via-[#325a48] to-[#3a6a52]",
-                icon: (
-                  <svg className="w-10 h-10 text-elif-lake/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                ),
+                bgImage: "/images/premium-living.jpg",
               },
               {
                 num: "04",
@@ -434,12 +419,7 @@ export default function HomeSection() {
                 tag: "EDUCATION",
                 title: "교육중심",
                 desc: "도보권 내 초·고등학교 설립 예정, 우수한 교육 환경",
-                gradient: "from-[#1e3830] via-[#264838] to-[#2e5845]",
-                icon: (
-                  <svg className="w-10 h-10 text-elif-lake/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                ),
+                bgImage: "/images/premium-edu.jpg",
               },
             ].map((item, i) => (
               <div
@@ -447,47 +427,35 @@ export default function HomeSection() {
                 className={`group relative h-[340px] overflow-hidden cursor-default rounded-xl ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                 style={{ transitionDelay: sec2.visible ? `${200 + i * 100}ms` : "0ms", transitionDuration: "800ms" }}
               >
-                {/* Background - Image or Gradient */}
+                {/* Background Image */}
                 <div className="absolute inset-0">
-                  {"bgImage" in item && item.bgImage ? (
-                    <>
-                      <Image
-                        src={item.bgImage}
-                        alt={item.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a12]/90 via-[#0a1a12]/40 to-[#0a1a12]/10" />
-                    </>
-                  ) : (
-                    <div className={`absolute inset-0 bg-gradient-to-br ${"gradient" in item ? item.gradient : "from-elif-green-dark to-elif-green"}`}>
-                      <div className="absolute inset-0 opacity-5 pattern-leaves" />
-                      {/* Icon decoration */}
-                      <div className="absolute top-8 right-8 opacity-40 group-hover:opacity-60 transition-opacity duration-500">
-                        {item.icon}
-                      </div>
-                    </div>
-                  )}
+                  <Image
+                    src={item.bgImage}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  {/* Strong multi-layer overlay for readability */}
+                  <div className="absolute inset-0 bg-black/25" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a12]/90 via-[#0a1a12]/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#0a1a12]/30 to-transparent" />
                 </div>
 
-                {/* Gradient Overlay for all cards */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a12]/70 via-transparent to-transparent" />
-
                 {/* Numbering */}
-                <span className="absolute top-5 right-7 text-[80px] font-black text-white/[0.04] leading-none select-none">{item.num}</span>
+                <span className="absolute top-5 right-7 text-[80px] font-black text-white/[0.06] leading-none select-none">{item.num}</span>
 
                 {/* Content */}
                 <div className="absolute inset-0 p-8 lg:p-10 flex flex-col justify-between">
                   <div className="flex items-center gap-3">
-                    <span className="text-elif-lake/70 text-[10px] tracking-[4px] font-medium">{item.tag}</span>
+                    <span className="text-elif-lake text-[10px] tracking-[4px] font-medium drop-shadow-sm">{item.tag}</span>
                   </div>
                   <div>
-                    <span className="inline-block px-3 py-1 bg-elif-lake/90 text-white text-[10px] font-bold tracking-[1px] rounded-full mb-4 shadow-lg shadow-elif-lake/20">
+                    <span className="inline-block px-3 py-1 bg-elif-lake text-white text-[10px] font-bold tracking-[1px] rounded-full mb-4 shadow-lg">
                       {item.badge}
                     </span>
-                    <h3 className="text-white text-[26px] lg:text-[30px] font-bold mb-2 drop-shadow-md">{item.title}</h3>
-                    <p className="text-white/60 text-[13px] leading-[1.8] max-w-[400px]">{item.desc}</p>
+                    <h3 className="text-white text-[26px] lg:text-[30px] font-bold mb-2 drop-shadow-lg">{item.title}</h3>
+                    <p className="text-white/70 text-[13px] leading-[1.8] max-w-[400px] drop-shadow-sm">{item.desc}</p>
                   </div>
                 </div>
               </div>
@@ -530,14 +498,14 @@ export default function HomeSection() {
             <br className="sm:hidden" /> 자세한 상담을 받아보세요.
           </p>
           <a
-            href="tel:1800-0000"
+            href="tel:1844-0981"
             className="group inline-flex items-center gap-3 px-14 py-5 bg-white text-elif-green text-[22px] font-bold tracking-wider transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 hover:scale-[1.02] rounded-full"
           >
             <svg className="w-6 h-6 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            1800-0000
+            1844-0981
           </a>
           <div className="mt-10 flex flex-wrap justify-center gap-8 text-white/25 text-[13px]">
             <span>시공 | 계룡건설산업(주)</span>

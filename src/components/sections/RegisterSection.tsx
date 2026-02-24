@@ -106,8 +106,8 @@ export default function RegisterSection() {
         <div className="mt-12 text-center">
           <p className="text-gray-500 text-sm">
             전화 문의:{" "}
-            <a href="tel:1800-0000" className="text-elif-green font-bold text-lg">
-              1800-0000
+            <a href="tel:1844-0981" className="text-elif-green font-bold text-lg">
+              1844-0981
             </a>
           </p>
         </div>
