@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import SectionBanner from "../SectionBanner";
+import Image from "next/image";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -19,22 +19,6 @@ function useInView(threshold = 0.15) {
   return { ref, visible };
 }
 
-const overviewData = [
-  { label: "사업명", value: "업성 푸르지오 레이크시티", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
-  { label: "사업지", value: "충청남도 천안시 서북구 업성동 368-7", icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z" },
-  { label: "사업규모", value: "최고 29층 / 5개동", icon: "M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" },
-  { label: "세대수", value: "1,165세대", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" },
-  { label: "주차대수", value: "세대당 1.38대 (법정 1.16대)", icon: "M5 13l4 4L19 7" },
-  { label: "시공사", value: "DL이앤씨", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
-];
-
-const highlights = [
-  { num: "29", unit: "층", label: "최고 층수" },
-  { num: "5", unit: "개동", label: "동 수" },
-  { num: "1,165", unit: "세대", label: "총 세대수" },
-  { num: "1.38", unit: "대", label: "세대당 주차" },
-];
-
 const typeInfo = [
   { type: "84㎡A", exclusive: "84.9800㎡", count: "468세대", ratio: 40.2 },
   { type: "84㎡B", exclusive: "84.9556㎡", count: "348세대", ratio: 29.9 },
@@ -42,177 +26,139 @@ const typeInfo = [
 ];
 
 export default function BusinessSection() {
-  const sec1 = useInView();
-  const sec2 = useInView();
-  const sec3 = useInView();
-  const sec4 = useInView();
-  const sec5 = useInView();
+  const hero = useInView();
+  const info = useInView();
+  const types = useInView();
 
   return (
     <section className="pt-[72px]">
-      <SectionBanner
-        title="사업개요"
-        subtitle="업성 푸르지오 레이크시티의 사업 정보를 확인하세요."
-        fallbackGradient="bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500"
-        bgImage="/images/banner-business.jpg"
-      />
-
-      {/* ===== Headline ===== */}
-      <div className="bg-white">
-        <div
-          ref={sec1.ref}
-          className={`max-w-[1100px] mx-auto px-6 pt-20 pb-16 text-center transition-all duration-700 ${sec1.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-        >
-          <p className="text-gold text-[11px] font-medium tracking-[4px] uppercase mb-4">PROJECT OVERVIEW</p>
-          <h2 className="text-[26px] sm:text-[32px] lg:text-[38px] font-light text-charcoal leading-snug tracking-tight">
-            호수공원의 새로운 랜드마크,<br />
-            업성 푸르지오 레이크시티
-          </h2>
-          <p className="mt-5 text-[14px] sm:text-[15px] text-cool-gray leading-relaxed max-w-[480px] mx-auto font-light">
-            자연과 도시가 조화를 이루는 프리미엄 주거단지<br />
-            1,165세대의 대규모 커뮤니티가 완성됩니다.
-          </p>
-          <div className="w-10 h-[1px] bg-gold/40 mx-auto mt-8" />
+      {/* ══════════ HERO BANNER — Full width image ══════════ */}
+      <div className="relative h-[50vh] min-h-[340px]">
+        <Image src="/images/banner-business.jpg" alt="" fill className="object-cover" sizes="100vw" priority />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center">
+            <p className="text-gold/60 text-[10px] tracking-[5px] font-medium uppercase mb-4">Project Overview</p>
+            <h1 className="text-white text-[36px] lg:text-[52px] font-extralight tracking-tight">사업개요</h1>
+          </div>
         </div>
       </div>
 
-      {/* ===== Highlight Numbers ===== */}
-      <div className="bg-white">
-        <div ref={sec2.ref} className="max-w-[1000px] mx-auto px-6 pb-20">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-            {highlights.map((item, i) => (
-              <div
-                key={i}
-                className={`relative bg-off-white rounded-sm p-7 text-center border border-gray-100 hover:border-gold/30 transition-all duration-500 group ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-                style={{ transitionDelay: sec2.visible ? `${i * 100}ms` : "0ms" }}
-              >
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-[34px] lg:text-[40px] font-extralight text-charcoal">
-                    {item.num}
-                  </span>
-                  <span className="text-[14px] text-gold font-medium">{item.unit}</span>
+      {/* ══════════ BIG NUMBERS — Horizontal ══════════ */}
+      <div ref={hero.ref} className="bg-white border-b border-gray-100">
+        <div className={`max-w-[1200px] mx-auto px-6 lg:px-16 py-20 transition-all duration-700 ${hero.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16">
+            {[
+              { num: "29", unit: "층", label: "최고 층수" },
+              { num: "5", unit: "개동", label: "동 수" },
+              { num: "1,165", unit: "세대", label: "총 세대수" },
+              { num: "1.38", unit: "대", label: "세대당 주차" },
+            ].map((item, i) => (
+              <div key={i} className={`transition-all duration-500 ${hero.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`} style={{ transitionDelay: `${i * 100}ms` }}>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-[48px] lg:text-[64px] font-extralight text-charcoal leading-none tracking-tight">{item.num}</span>
+                  <span className="text-gold text-[14px] font-medium">{item.unit}</span>
                 </div>
-                <p className="text-[13px] text-cool-gray mt-2 tracking-wide font-light">{item.label}</p>
+                <p className="text-cool-gray text-[12px] tracking-wider mt-2 font-light">{item.label}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* ===== Details ===== */}
-      <div className="bg-off-white border-t border-gray-100">
-        <div
-          ref={sec3.ref}
-          className={`max-w-[900px] mx-auto px-6 py-20 transition-all duration-700 ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-        >
-          <div className="text-center mb-14">
-            <p className="text-gold text-[11px] font-medium tracking-[4px] uppercase mb-3">DETAILS</p>
-            <h2 className="text-[24px] sm:text-[30px] text-charcoal font-light tracking-tight">
-              사업 상세 정보
-            </h2>
-          </div>
+      {/* ══════════ PROJECT INFO — Clean Two Column ══════════ */}
+      <div ref={info.ref} className="bg-off-white">
+        <div className={`max-w-[1200px] mx-auto px-6 lg:px-16 py-20 lg:py-28 transition-all duration-700 ${info.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+            {/* Left — Title & Description */}
+            <div>
+              <p className="text-gold text-[10px] tracking-[5px] font-medium uppercase mb-6">Details</p>
+              <h2 className="text-[28px] lg:text-[36px] font-extralight text-charcoal tracking-tight leading-tight mb-8">
+                호수공원의 새로운
+                <br />
+                랜드마크
+              </h2>
+              <div className="w-10 h-[1px] bg-gold/40 mb-8" />
+              <p className="text-cool-gray text-[14px] leading-[2.2] font-light">
+                자연과 도시가 조화를 이루는 프리미엄 주거단지.
+                1,165세대의 대규모 커뮤니티가 호수공원 앞에 완성됩니다.
+                DL이앤씨의 기술력과 푸르지오의 브랜드 가치가
+                새로운 주거 라이프를 선사합니다.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {overviewData.map((row, i) => (
-              <div
-                key={i}
-                className={`flex items-start gap-4 p-5 rounded-sm border border-gray-100 bg-white hover:border-gold/30 transition-all duration-300 ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-                style={{ transitionDelay: sec3.visible ? `${i * 80}ms` : "0ms" }}
-              >
-                <div className="w-10 h-10 rounded-sm bg-gold/10 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={row.icon} />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-[11px] text-gold font-medium tracking-wider mb-1">{row.label}</p>
-                  <p className="text-[14px] text-dark-gray font-medium leading-relaxed">{row.value}</p>
-                </div>
+            {/* Right — Data Table */}
+            <div>
+              <div className="divide-y divide-gray-200">
+                {[
+                  { label: "사업명", value: "업성 푸르지오 레이크시티" },
+                  { label: "사업지", value: "충청남도 천안시 서북구 업성동 368-7" },
+                  { label: "사업규모", value: "최고 29층 / 5개동" },
+                  { label: "세대수", value: "1,165세대" },
+                  { label: "주차대수", value: "세대당 1.38대 (법정 1.16대)" },
+                  { label: "시공사", value: "DL이앤씨" },
+                ].map((row, i) => (
+                  <div key={i} className="flex py-5 first:pt-0">
+                    <span className="w-[100px] flex-shrink-0 text-gold text-[11px] tracking-wider font-medium pt-0.5">{row.label}</span>
+                    <span className="text-dark-gray text-[14px] font-light">{row.value}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* ===== Unit Types ===== */}
-      <div className="bg-white border-t border-gray-100">
-        <div
-          ref={sec4.ref}
-          className={`max-w-[900px] mx-auto px-6 py-20 transition-all duration-700 ${sec4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-        >
-          <div className="text-center mb-14">
-            <p className="text-gold text-[11px] font-medium tracking-[4px] uppercase mb-3">UNIT TYPES</p>
-            <h2 className="text-[24px] sm:text-[30px] text-charcoal font-light tracking-tight">
-              타입별 세대 안내
-            </h2>
-          </div>
+      {/* ══════════ UNIT TYPES — Minimal Cards ══════════ */}
+      <div ref={types.ref} className="bg-white">
+        <div className={`max-w-[1200px] mx-auto px-6 lg:px-16 py-20 lg:py-28 transition-all duration-700 ${types.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <p className="text-gold text-[10px] tracking-[5px] font-medium uppercase mb-4">Unit Types</p>
+          <h2 className="text-[28px] lg:text-[36px] font-extralight text-charcoal tracking-tight mb-16">타입별 세대 안내</h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gray-200">
             {typeInfo.map((t, i) => (
-              <div
-                key={i}
-                className={`bg-off-white rounded-sm overflow-hidden border border-gray-100 hover:border-gold/30 transition-all duration-500 ${sec4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-                style={{ transitionDelay: sec4.visible ? `${i * 120}ms` : "0ms" }}
-              >
-                <div className="bg-navy px-5 py-5 text-center">
-                  <span className="text-white text-[22px] font-light tracking-wide">{t.type}</span>
-                </div>
-                <div className="p-6 space-y-5">
-                  <div className="text-center">
-                    <p className="text-[11px] text-cool-gray font-medium tracking-wider uppercase mb-1.5">전용면적</p>
-                    <p className="text-[16px] text-dark-gray font-semibold">{t.exclusive}</p>
-                  </div>
-                  <div className="h-px bg-gray-200" />
-                  <div className="text-center">
-                    <p className="text-[11px] text-cool-gray font-medium tracking-wider uppercase mb-1.5">세대수</p>
-                    <p className="text-[22px] text-navy font-light">{t.count}</p>
-                  </div>
-                  {/* Progress bar */}
+              <div key={i} className="bg-white p-8 lg:p-10">
+                <span className="text-navy text-[28px] lg:text-[32px] font-extralight tracking-tight">{t.type}</span>
+                <div className="mt-6 space-y-4">
                   <div>
-                    <div className="flex justify-between text-[11px] text-cool-gray mb-1.5">
-                      <span>구성 비율</span>
-                      <span className="text-navy font-medium">{t.ratio}%</span>
-                    </div>
-                    <div className="h-1.5 bg-gray-200 rounded-sm overflow-hidden">
-                      <div
-                        className="h-full bg-navy rounded-sm transition-all duration-1000"
-                        style={{ width: sec4.visible ? `${t.ratio}%` : "0%" }}
-                      />
+                    <p className="text-cool-gray text-[10px] tracking-wider uppercase mb-1 font-medium">전용면적</p>
+                    <p className="text-dark-gray text-[15px]">{t.exclusive}</p>
+                  </div>
+                  <div>
+                    <p className="text-cool-gray text-[10px] tracking-wider uppercase mb-1 font-medium">세대수</p>
+                    <p className="text-dark-gray text-[15px]">{t.count}</p>
+                  </div>
+                  <div>
+                    <p className="text-cool-gray text-[10px] tracking-wider uppercase mb-1 font-medium">구성비율</p>
+                    <div className="flex items-center gap-3 mt-1">
+                      <div className="flex-1 h-[3px] bg-gray-100">
+                        <div className="h-full bg-navy transition-all duration-1000" style={{ width: types.visible ? `${t.ratio}%` : "0%" }} />
+                      </div>
+                      <span className="text-navy text-[13px] font-medium">{t.ratio}%</span>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </div>
 
-      {/* ===== CTA ===== */}
-      <div className="bg-off-white border-t border-gray-100">
-        <div
-          ref={sec5.ref}
-          className={`max-w-[700px] mx-auto px-6 py-20 text-center transition-all duration-700 ${sec5.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-        >
-          <div className="bg-navy rounded-sm p-10 sm:p-12">
-            <p className="text-gold/60 text-[11px] font-medium tracking-[3px] mb-3">CONTACT US</p>
-            <h3 className="text-white text-[22px] sm:text-[26px] font-extralight mb-3 tracking-tight">
-              분양 상담 문의
-            </h3>
-            <p className="text-white/30 text-[13px] mb-7 font-light">자세한 분양 정보와 상담을 도와드리겠습니다.</p>
-            <a
-              href="tel:1844-0981"
-              className="inline-flex items-center gap-3 px-9 py-3.5 bg-white text-navy rounded-sm text-[15px] font-semibold tracking-wider hover:bg-off-white transition-all duration-300"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              1844-0981
-            </a>
-          </div>
-          <p className="text-[12px] text-cool-gray mt-8 font-light">
+          <p className="text-cool-gray text-[11px] mt-12 font-light">
             * 상기 내용은 인허가 과정에서 변경될 수 있습니다.
           </p>
+        </div>
+      </div>
+
+      {/* ══════════ CTA ══════════ */}
+      <div className="bg-navy py-20">
+        <div className="max-w-[600px] mx-auto px-6 text-center">
+          <p className="text-white/20 text-[10px] tracking-[5px] uppercase mb-4">Contact</p>
+          <h3 className="text-white text-[24px] font-extralight tracking-tight mb-6">분양 상담 문의</h3>
+          <a
+            href="tel:1844-0981"
+            className="inline-block px-12 py-4 bg-white text-navy text-[15px] font-semibold tracking-widest hover:bg-off-white transition-all duration-300"
+          >
+            1844-0981
+          </a>
         </div>
       </div>
     </section>
