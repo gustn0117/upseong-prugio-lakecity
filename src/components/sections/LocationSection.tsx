@@ -96,7 +96,7 @@ export default function LocationSection() {
     <section className="pt-[80px]">
       <SectionBanner
         title="입 지 환 경"
-        subtitle="성성호수공원 앞, 최적의 입지를 만나보세요."
+        subtitle="호수공원 앞, 최적의 입지를 만나보세요."
         fallbackGradient="bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500"
         bgImage="/images/banner-location.jpg"
       />
@@ -107,7 +107,7 @@ export default function LocationSection() {
           ref={sec1.ref}
           className={`max-w-[1100px] mx-auto px-6 pt-20 pb-16 text-center transition-all duration-700 ${sec1.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
-          <p className="text-elif-green text-[13px] font-semibold tracking-[4px] uppercase mb-4">LOCATION</p>
+          <p className="text-prugio-blue text-[13px] font-semibold tracking-[4px] uppercase mb-4">LOCATION</p>
           <h2
             className="text-[26px] sm:text-[32px] lg:text-[38px] font-light text-gray-900 leading-snug"
             style={{ fontFamily: "'Noto Serif KR', serif" }}
@@ -120,9 +120,9 @@ export default function LocationSection() {
             주거의 가치가 균형 있게 완성됩니다.
           </p>
           <div className="mt-8 flex items-center justify-center gap-3">
-            <span className="w-8 h-[1px] bg-elif-lake/40" />
-            <span className="w-1.5 h-1.5 rounded-full bg-elif-lake/60" />
-            <span className="w-8 h-[1px] bg-elif-lake/40" />
+            <span className="w-8 h-[1px] bg-prugio-gold/40" />
+            <span className="w-1.5 h-1.5 rounded-full bg-prugio-gold/60" />
+            <span className="w-8 h-[1px] bg-prugio-gold/40" />
           </div>
         </div>
       </div>
@@ -140,10 +140,10 @@ export default function LocationSection() {
                 className={`group relative bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500 ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: sec2.visible ? `${i * 120}ms` : "0ms" }}
               >
-                <div className="w-14 h-14 rounded-xl bg-elif-green/8 flex items-center justify-center text-elif-green mb-5 group-hover:bg-elif-green group-hover:text-white transition-all duration-300">
+                <div className="w-14 h-14 rounded-xl bg-prugio-blue/8 flex items-center justify-center text-prugio-blue mb-5 group-hover:bg-prugio-blue group-hover:text-white transition-all duration-300">
                   {item.icon}
                 </div>
-                <span className="inline-block px-2.5 py-1 bg-elif-lake/10 text-elif-lake text-[11px] font-bold rounded-full mb-3 tracking-wide">
+                <span className="inline-block px-2.5 py-1 bg-prugio-gold/10 text-prugio-gold text-[11px] font-bold rounded-full mb-3 tracking-wide">
                   {item.highlight}
                 </span>
                 <h3 className="text-[17px] font-bold text-gray-900 mb-2">{item.title}</h3>
@@ -155,22 +155,22 @@ export default function LocationSection() {
       </div>
 
       {/* ===== 그라데이션 전환 ===== */}
-      <div className="h-20 bg-gradient-to-b from-[#FAFAF7] to-elif-green-dark" />
+      <div className="h-20 bg-gradient-to-b from-[#FAFAF7] to-prugio-blue-dark" />
 
       {/* ===== 입지 지도 섹션 ===== */}
-      <div className="bg-elif-green-dark relative overflow-hidden">
+      <div className="bg-prugio-blue-dark relative overflow-hidden">
         <div className="absolute inset-0 pattern-waves opacity-10" />
         <div
           ref={sec3.ref}
           className={`max-w-[1200px] mx-auto px-6 py-20 transition-all duration-700 ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
           <div className="text-center mb-12">
-            <p className="text-elif-lake text-[12px] font-semibold tracking-[4px] uppercase mb-3">PREMIUM LOCATION MAP</p>
+            <p className="text-prugio-gold text-[12px] font-semibold tracking-[4px] uppercase mb-3">PREMIUM LOCATION MAP</p>
             <h2
               className="text-[24px] sm:text-[30px] text-white font-light"
               style={{ fontFamily: "'Noto Serif KR', serif" }}
             >
-              <span className="font-bold">엘리프 성성호수공원</span> 입지 안내
+              <span className="font-bold">업성 푸르지오 레이크시티</span> 입지 안내
             </h2>
           </div>
 
@@ -179,7 +179,7 @@ export default function LocationSection() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/location-map.jpg"
-              alt="엘리프 성성호수공원 입지 안내도"
+              alt="업성 푸르지오 레이크시티 입지 안내도"
               className="w-full h-auto block"
             />
             {/* 하단 그라데이션 */}
@@ -192,7 +192,7 @@ export default function LocationSection() {
       </div>
 
       {/* ===== 그라데이션 전환 ===== */}
-      <div className="h-16 bg-gradient-to-b from-elif-green-dark to-[#FAFAF7]" />
+      <div className="h-16 bg-gradient-to-b from-prugio-blue-dark to-[#FAFAF7]" />
 
       {/* ===== 주변 인프라 상세 ===== */}
       <div className="bg-[#FAFAF7]">
@@ -201,7 +201,7 @@ export default function LocationSection() {
           className={`max-w-[1100px] mx-auto px-6 pt-10 pb-24 transition-all duration-700 ${sec4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
           <div className="text-center mb-14">
-            <p className="text-elif-green text-[13px] font-semibold tracking-[4px] uppercase mb-3">INFRASTRUCTURE</p>
+            <p className="text-prugio-blue text-[13px] font-semibold tracking-[4px] uppercase mb-3">INFRASTRUCTURE</p>
             <h2
               className="text-[24px] sm:text-[30px] text-gray-900 font-light"
               style={{ fontFamily: "'Noto Serif KR', serif" }}
@@ -217,7 +217,7 @@ export default function LocationSection() {
                 className={`bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm transition-all duration-500 ${sec4.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: sec4.visible ? `${gi * 120}ms` : "0ms" }}
               >
-                <div className="bg-elif-green px-5 py-3.5 flex items-center gap-2.5">
+                <div className="bg-prugio-blue px-5 py-3.5 flex items-center gap-2.5">
                   <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
                     {gi === 0 && (
                       <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -246,7 +246,7 @@ export default function LocationSection() {
                   {group.items.map((item, ii) => (
                     <div key={ii} className="px-5 py-4 flex items-center justify-between hover:bg-gray-50/50 transition-colors">
                       <span className="text-[13px] text-gray-700">{item.name}</span>
-                      <span className="text-[12px] text-elif-green font-semibold bg-elif-green/8 px-2.5 py-1 rounded-full whitespace-nowrap">
+                      <span className="text-[12px] text-prugio-blue font-semibold bg-prugio-blue/8 px-2.5 py-1 rounded-full whitespace-nowrap">
                         {item.time}
                       </span>
                     </div>
@@ -262,11 +262,11 @@ export default function LocationSection() {
           </p>
 
           {/* CTA */}
-          <div className="mt-16 bg-elif-green rounded-2xl p-10 sm:p-12 relative overflow-hidden">
+          <div className="mt-16 bg-prugio-blue rounded-2xl p-10 sm:p-12 relative overflow-hidden">
             <div className="absolute inset-0 pattern-waves opacity-10" />
-            <div className="absolute inset-0 bg-gradient-to-br from-elif-green-dark/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-br from-prugio-blue-dark/20 to-transparent" />
             <div className="relative text-center">
-              <p className="text-elif-lake text-[12px] font-semibold tracking-[3px] mb-3">CONTACT US</p>
+              <p className="text-prugio-gold text-[12px] font-semibold tracking-[3px] mb-3">CONTACT US</p>
               <h3
                 className="text-white text-[22px] sm:text-[26px] font-light mb-3"
                 style={{ fontFamily: "'Noto Serif KR', serif" }}
@@ -276,7 +276,7 @@ export default function LocationSection() {
               <p className="text-white/50 text-[13px] mb-7">현장 방문 및 상세 입지 안내를 도와드리겠습니다.</p>
               <a
                 href="tel:1844-0981"
-                className="inline-flex items-center gap-3 px-9 py-3.5 bg-white text-elif-green rounded-full text-[15px] font-bold tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+                className="inline-flex items-center gap-3 px-9 py-3.5 bg-white text-prugio-blue rounded-full text-[15px] font-bold tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
               >
                 <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}

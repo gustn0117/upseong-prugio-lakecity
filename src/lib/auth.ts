@@ -1,6 +1,6 @@
 import crypto from "crypto";
 
-const AUTH_SECRET = process.env.AUTH_SECRET || "elif-admin-secret-key-2025";
+const AUTH_SECRET = process.env.AUTH_SECRET || "prugio-admin-secret-key-2025";
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "1234";
 
 export function checkPassword(password: string): boolean {

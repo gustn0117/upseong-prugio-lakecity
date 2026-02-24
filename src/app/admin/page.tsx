@@ -41,8 +41,8 @@ export default function AdminLoginPage() {
         {/* Logo */}
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-1 text-[28px] font-bold tracking-wider">
-            <span className="text-elif-green">EL</span>
-            <span className="text-elif-lake">IF</span>
+            <span className="text-prugio-blue">PU</span>
+            <span className="text-prugio-gold">GIO</span>
           </div>
           <p className="text-[12px] text-gray-400 tracking-[3px] mt-1">ADMIN</p>
         </div>
@@ -70,7 +70,7 @@ export default function AdminLoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="비밀번호를 입력하세요"
                 autoFocus
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl text-[14px] bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-elif-green/20 focus:border-elif-green focus:bg-white transition-all duration-200"
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl text-[14px] bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-prugio-blue/20 focus:border-prugio-blue focus:bg-white transition-all duration-200"
               />
             </div>
 
@@ -83,7 +83,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={loading || !password}
-              className="w-full py-3.5 bg-elif-green text-white text-[14px] font-bold tracking-wider rounded-xl hover:bg-elif-green-light transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-3.5 bg-prugio-blue text-white text-[14px] font-bold tracking-wider rounded-xl hover:bg-prugio-blue-light transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? "로그인 중..." : "로그인"}
             </button>
@@ -91,7 +91,7 @@ export default function AdminLoginPage() {
         </div>
 
         <p className="text-center text-[11px] text-gray-300 mt-6">
-          엘리프 성성호수공원 관리 시스템
+          업성 푸르지오 레이크시티 관리 시스템
         </p>
       </div>
     </div>

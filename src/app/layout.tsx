@@ -3,9 +3,9 @@ import "./globals.css";
 import ScrollAnimations from "@/components/ScrollAnimations";
 
 export const metadata: Metadata = {
-  title: "엘리프 성성호수공원 | 호수공원 앞 프리미엄 주거",
-  description: "엘리프 성성호수공원 - 성성호수공원 앞, 자연과 함께하는 프리미엄 주거. 계룡건설산업이 선보이는 새로운 라이프스타일",
-  keywords: "엘리프, 성성호수공원, 계룡건설, 아파트, 분양, 천안, 프리미엄, 호수공원",
+  title: "업성 푸르지오 레이크시티 | 호수공원 앞 프리미엄 주거",
+  description: "업성 푸르지오 레이크시티 - 호수공원 앞, 자연과 함께하는 프리미엄 주거. DL이앤씨가 선보이는 새로운 라이프스타일",
+  keywords: "푸르지오, 레이크시티, 업성동, DL이앤씨, 아파트, 분양, 천안, 프리미엄, 호수공원",
 };
 
 export default function RootLayout({

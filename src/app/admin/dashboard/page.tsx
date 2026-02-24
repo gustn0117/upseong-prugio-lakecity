@@ -149,8 +149,8 @@ export default function AdminDashboardPage() {
         <div className="max-w-[1400px] mx-auto px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="text-[18px] font-bold tracking-wider">
-              <span className="text-elif-green">EL</span>
-              <span className="text-elif-lake">IF</span>
+              <span className="text-prugio-blue">PU</span>
+              <span className="text-prugio-gold">GIO</span>
             </span>
             <span className="text-[13px] text-gray-400 font-medium">관리자</span>
           </div>
@@ -168,7 +168,7 @@ export default function AdminDashboardPage() {
         {stats && (
           <>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-              <StatCard label="전체 등록수" value={String(stats.totalRegistrations)} icon="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" color="elif-green" />
+              <StatCard label="전체 등록수" value={String(stats.totalRegistrations)} icon="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" color="prugio-blue" />
               <StatCard label="오늘 등록수" value={String(stats.todayRegistrations)} icon="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" color="blue-500" />
               <StatCard
                 label="인기 관심유형"
@@ -193,7 +193,7 @@ export default function AdminDashboardPage() {
                 ) : (
                   <div className="space-y-3">
                     {stats.byInterestType.map((item) => (
-                      <BarRow key={item.type} label={item.type} count={item.count} max={maxBarValue(stats.byInterestType)} color="bg-elif-green" />
+                      <BarRow key={item.type} label={item.type} count={item.count} max={maxBarValue(stats.byInterestType)} color="bg-prugio-blue" />
                     ))}
                   </div>
                 )}
@@ -239,7 +239,7 @@ export default function AdminDashboardPage() {
                           <span className="text-[11px] text-gray-500 font-medium">{item.count}</span>
                           <div className="w-full bg-gray-100 rounded-t-md relative" style={{ height: "100px" }}>
                             <div
-                              className="absolute bottom-0 w-full bg-elif-green rounded-t-md transition-all duration-500"
+                              className="absolute bottom-0 w-full bg-prugio-blue rounded-t-md transition-all duration-500"
                               style={{ height: `${height}%` }}
                             />
                           </div>
@@ -269,7 +269,7 @@ export default function AdminDashboardPage() {
                 </button>
                 <button
                   onClick={handleExport}
-                  className="px-4 py-2 bg-elif-green text-white text-[12px] font-semibold rounded-lg hover:bg-elif-green-light transition-colors flex items-center gap-1.5"
+                  className="px-4 py-2 bg-prugio-blue text-white text-[12px] font-semibold rounded-lg hover:bg-prugio-blue-light transition-colors flex items-center gap-1.5"
                 >
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -288,7 +288,7 @@ export default function AdminDashboardPage() {
                   onChange={(e) => setSearchInput(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                   placeholder="이름 / 연락처 검색"
-                  className="w-[200px] px-3 py-2 border border-gray-200 rounded-lg text-[13px] focus:outline-none focus:ring-2 focus:ring-elif-green/20 focus:border-elif-green"
+                  className="w-[200px] px-3 py-2 border border-gray-200 rounded-lg text-[13px] focus:outline-none focus:ring-2 focus:ring-prugio-blue/20 focus:border-prugio-blue"
                 />
                 <button
                   onClick={handleSearch}
@@ -302,7 +302,7 @@ export default function AdminDashboardPage() {
               <select
                 value={filterInterest}
                 onChange={(e) => { setFilterInterest(e.target.value); setPage(1); }}
-                className="px-3 py-2 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-elif-green/20"
+                className="px-3 py-2 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-prugio-blue/20"
               >
                 <option value="">관심유형 전체</option>
                 <option value="특별공급">특별공급</option>
@@ -313,7 +313,7 @@ export default function AdminDashboardPage() {
               <select
                 value={filterAge}
                 onChange={(e) => { setFilterAge(e.target.value); setPage(1); }}
-                className="px-3 py-2 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-elif-green/20"
+                className="px-3 py-2 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-prugio-blue/20"
               >
                 <option value="">연령대 전체</option>
                 <option value="20대">20대</option>
@@ -326,7 +326,7 @@ export default function AdminDashboardPage() {
               <select
                 value={filterCity}
                 onChange={(e) => { setFilterCity(e.target.value); setPage(1); }}
-                className="px-3 py-2 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-elif-green/20"
+                className="px-3 py-2 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-prugio-blue/20"
               >
                 <option value="">지역 전체</option>
                 {["서울","경기","인천","충남","충북","대전","세종","강원","전북","전남","경북","경남","부산","대구","울산","광주","제주"].map(c => (
@@ -338,14 +338,14 @@ export default function AdminDashboardPage() {
                 type="date"
                 value={dateFrom}
                 onChange={(e) => { setDateFrom(e.target.value); setPage(1); }}
-                className="px-3 py-2 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-elif-green/20"
+                className="px-3 py-2 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-prugio-blue/20"
               />
               <span className="text-gray-300 text-[13px]">~</span>
               <input
                 type="date"
                 value={dateTo}
                 onChange={(e) => { setDateTo(e.target.value); setPage(1); }}
-                className="px-3 py-2 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-elif-green/20"
+                className="px-3 py-2 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-prugio-blue/20"
               />
             </div>
           </div>
@@ -392,7 +392,7 @@ export default function AdminDashboardPage() {
                         <div className="flex items-center justify-center gap-2">
                           <button
                             onClick={() => setDetailItem(row)}
-                            className="text-[12px] text-elif-green hover:text-elif-green-light font-medium transition-colors"
+                            className="text-[12px] text-prugio-blue hover:text-prugio-blue-light font-medium transition-colors"
                           >
                             상세
                           </button>
@@ -436,7 +436,7 @@ export default function AdminDashboardPage() {
                       onClick={() => setPage(p)}
                       className={`w-8 h-8 rounded-lg text-[13px] font-medium transition-colors ${
                         p === page
-                          ? "bg-elif-green text-white"
+                          ? "bg-prugio-blue text-white"
                           : "text-gray-500 hover:bg-gray-100"
                       }`}
                     >
@@ -467,7 +467,7 @@ export default function AdminDashboardPage() {
       {detailItem && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40" onClick={() => setDetailItem(null)}>
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-[480px] mx-4 overflow-hidden" onClick={(e) => e.stopPropagation()}>
-            <div className="bg-elif-green px-6 py-4 flex items-center justify-between">
+            <div className="bg-prugio-blue px-6 py-4 flex items-center justify-between">
               <h3 className="text-white font-bold text-[15px]">등록 상세 정보</h3>
               <button onClick={() => setDetailItem(null)} className="text-white/60 hover:text-white transition-colors">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

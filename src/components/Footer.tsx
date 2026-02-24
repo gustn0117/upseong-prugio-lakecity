@@ -1,6 +1,6 @@
 "use client";
 
-import ElifLogo from "./ElifLogo";
+import PrugioLogo from "./PrugioLogo";
 
 interface FooterProps {
   onTabChange?: (tabId: string) => void;
@@ -17,7 +17,7 @@ export default function Footer({ onTabChange }: FooterProps) {
   return (
     <footer className="bg-[#1a1a1a] text-gray-400">
       {/* Top CTA Bar */}
-      <div className="bg-elif-green">
+      <div className="bg-prugio-blue">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <p className="text-white text-[22px] font-bold tracking-wide">관심고객 사전등록</p>
@@ -25,7 +25,7 @@ export default function Footer({ onTabChange }: FooterProps) {
           </div>
           <button
             onClick={() => handleNav("register")}
-            className="group flex items-center gap-3 px-8 py-3.5 bg-white/10 border border-white/20 text-white hover:bg-white hover:text-elif-green text-[14px] font-medium tracking-wider transition-all duration-300 rounded-full"
+            className="group flex items-center gap-3 px-8 py-3.5 bg-white/10 border border-white/20 text-white hover:bg-white hover:text-prugio-blue text-[14px] font-medium tracking-wider transition-all duration-300 rounded-full"
           >
             등록하기
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,16 +41,16 @@ export default function Footer({ onTabChange }: FooterProps) {
           {/* Brand */}
           <div className="max-w-[360px]">
             <div className="mb-6">
-              <ElifLogo white size="sm" className="opacity-70" />
+              <PrugioLogo white size="sm" className="opacity-70" />
             </div>
             <p className="text-[13px] leading-[1.8] text-gray-500">
-              성성호수공원 앞,
+              호수공원 앞,
               <br />
               자연과 함께하는 프리미엄 주거
             </p>
             <div className="mt-6 flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-                <svg className="w-4 h-4 text-elif-lake" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-prugio-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
@@ -58,7 +58,7 @@ export default function Footer({ onTabChange }: FooterProps) {
               <span className="text-[20px] font-bold text-white tracking-wider">1844-0981</span>
             </div>
             <div className="mt-8 text-[12px] text-gray-600">
-              <p><span className="text-gray-500">시공</span> 계룡건설산업(주)</p>
+              <p><span className="text-gray-500">시공</span> DL이앤씨</p>
             </div>
           </div>
 
@@ -90,7 +90,7 @@ export default function Footer({ onTabChange }: FooterProps) {
       <div className="border-t border-white/[0.06]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[12px] text-gray-600">
-            &copy; 2025 엘리프 성성호수공원. All rights reserved.
+            &copy; 2025 업성 푸르지오 레이크시티. All rights reserved.
           </p>
           <p className="text-[11px] text-gray-700 max-w-[600px] text-center md:text-right leading-relaxed">
             본 제작물에 사용된 이미지 및 내용, 문구 등은 소비자의 이해를 돕기 위해 제작 또는 표기된 것으로

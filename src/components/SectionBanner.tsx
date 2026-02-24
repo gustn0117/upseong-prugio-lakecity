@@ -29,7 +29,7 @@ export default function SectionBanner({
             priority
           />
           <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-elif-green-dark/60 via-elif-green-dark/20 to-elif-green-dark/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-prugio-blue-dark/60 via-prugio-blue-dark/20 to-prugio-blue-dark/70" />
         </>
       )}
 
@@ -37,7 +37,7 @@ export default function SectionBanner({
       <div className="absolute inset-0 pattern-waves opacity-20" />
       {/* Gradient overlays for depth */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/40" />
-      <div className="absolute inset-0 bg-gradient-to-r from-elif-green/20 via-transparent to-elif-green/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-prugio-blue/20 via-transparent to-prugio-blue/20" />
 
       {/* SVG wave curve at bottom */}
       <div className="absolute -bottom-1 left-0 right-0 h-20 z-[1]">
@@ -49,8 +49,8 @@ export default function SectionBanner({
       {/* Content */}
       <div className="relative z-10 text-center px-6">
         {/* English label */}
-        <p className="banner-sub-animate text-elif-lake text-[11px] sm:text-[12px] font-semibold tracking-[5px] uppercase mb-4 opacity-80">
-          ELIF SUNGSUNG
+        <p className="banner-sub-animate text-prugio-gold text-[11px] sm:text-[12px] font-semibold tracking-[5px] uppercase mb-4 opacity-80">
+          PRUGIO LAKECITY
         </p>
         {/* Title */}
         <h2
@@ -61,9 +61,9 @@ export default function SectionBanner({
         </h2>
         {/* Decorative line */}
         <div className="banner-sub-animate flex items-center justify-center gap-3 mt-6 mb-4">
-          <span className="w-8 h-[1px] bg-elif-lake/50" />
-          <span className="w-1.5 h-1.5 rounded-full bg-elif-lake/70" />
-          <span className="w-8 h-[1px] bg-elif-lake/50" />
+          <span className="w-8 h-[1px] bg-prugio-gold/50" />
+          <span className="w-1.5 h-1.5 rounded-full bg-prugio-gold/70" />
+          <span className="w-8 h-[1px] bg-prugio-gold/50" />
         </div>
       </div>
 

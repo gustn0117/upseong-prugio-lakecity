@@ -26,7 +26,7 @@ const premiumPoints = [
     tag: "NATURE",
     title: "호수공원 도보 1분",
     subtitle: "자연이 일상이 되는 프리미엄",
-    desc: "성성호수공원 도보 1분 거리, 사계절 아름다운 수변 산책로와 자연 생태공원이 일상의 쉼터가 됩니다. 호수를 바라보는 조망과 맑은 공기가 만드는 주거의 품격을 경험하세요.",
+    desc: "호수공원 도보권, 사계절 아름다운 수변 산책로와 자연 생태공원이 일상의 쉼터가 됩니다. 호수를 바라보는 조망과 맑은 공기가 만드는 주거의 품격을 경험하세요.",
     bgImage: "/images/premium-nature.jpg",
     features: ["호수공원 도보 1분", "수변 산책로·생태공원", "탁 트인 호수 조망"],
   },
@@ -66,8 +66,8 @@ const specHighlights = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    title: "계룡건설 시공",
-    desc: "50년 전통의 신뢰받는 시공사",
+    title: "DL이앤씨 시공",
+    desc: "글로벌 건설사의 프리미엄 브랜드",
   },
   {
     icon: (
@@ -118,7 +118,7 @@ export default function PremiumSection() {
           ref={sec1.ref}
           className={`max-w-[1100px] mx-auto px-6 pt-20 pb-16 text-center transition-all duration-700 ${sec1.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
-          <p className="text-elif-green text-[13px] font-semibold tracking-[4px] uppercase mb-4">PREMIUM</p>
+          <p className="text-prugio-blue text-[13px] font-semibold tracking-[4px] uppercase mb-4">PREMIUM</p>
           <h2
             className="text-[26px] sm:text-[32px] lg:text-[38px] font-light text-gray-900 leading-snug"
             style={{ fontFamily: "'Noto Serif KR', serif" }}
@@ -131,9 +131,9 @@ export default function PremiumSection() {
             프리미엄 주거의 새로운 기준
           </p>
           <div className="mt-8 flex items-center justify-center gap-3">
-            <span className="w-8 h-[1px] bg-elif-lake/40" />
-            <span className="w-1.5 h-1.5 rounded-full bg-elif-lake/60" />
-            <span className="w-8 h-[1px] bg-elif-lake/40" />
+            <span className="w-8 h-[1px] bg-prugio-gold/40" />
+            <span className="w-1.5 h-1.5 rounded-full bg-prugio-gold/60" />
+            <span className="w-8 h-[1px] bg-prugio-gold/40" />
           </div>
         </div>
       </div>
@@ -163,7 +163,7 @@ export default function PremiumSection() {
                   <div className={`absolute inset-0 hidden lg:block ${isEven ? "bg-gradient-to-r from-transparent to-black/10" : "bg-gradient-to-l from-transparent to-black/10"}`} />
                   {/* 넘버 배지 */}
                   <div className="absolute top-5 left-5 flex items-center gap-2">
-                    <span className="w-10 h-10 rounded-full bg-elif-green/90 text-white text-[14px] font-bold flex items-center justify-center backdrop-blur-sm">
+                    <span className="w-10 h-10 rounded-full bg-prugio-blue/90 text-white text-[14px] font-bold flex items-center justify-center backdrop-blur-sm">
                       {item.num}
                     </span>
                     <span className="text-white/80 text-[11px] font-semibold tracking-[3px] uppercase bg-black/20 backdrop-blur-sm px-3 py-1 rounded-full">
@@ -174,7 +174,7 @@ export default function PremiumSection() {
 
                 {/* 텍스트 */}
                 <div className="flex-1 px-8 py-8 lg:px-10 lg:py-10 flex flex-col justify-center">
-                  <p className="text-elif-lake text-[12px] font-bold tracking-[3px] uppercase mb-2">{item.tag}</p>
+                  <p className="text-prugio-gold text-[12px] font-bold tracking-[3px] uppercase mb-2">{item.tag}</p>
                   <h3
                     className="text-[22px] sm:text-[26px] font-bold text-gray-900 mb-1"
                     style={{ fontFamily: "'Noto Serif KR', serif" }}
@@ -185,8 +185,8 @@ export default function PremiumSection() {
                   <p className="text-[13.5px] text-gray-600 leading-[1.9] mb-6">{item.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {item.features.map((f, fi) => (
-                      <span key={fi} className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-elif-green/[0.06] text-elif-green text-[12px] font-medium rounded-full">
-                        <svg className="w-3 h-3 text-elif-green/60" fill="currentColor" viewBox="0 0 20 20">
+                      <span key={fi} className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-prugio-blue/[0.06] text-prugio-blue text-[12px] font-medium rounded-full">
+                        <svg className="w-3 h-3 text-prugio-blue/60" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         {f}
@@ -201,22 +201,22 @@ export default function PremiumSection() {
       </div>
 
       {/* ===== 그라데이션 전환 ===== */}
-      <div className="h-20 bg-gradient-to-b from-[#FAFAF7] to-elif-green-dark" />
+      <div className="h-20 bg-gradient-to-b from-[#FAFAF7] to-prugio-blue-dark" />
 
       {/* ===== 스펙 하이라이트 ===== */}
-      <div className="bg-elif-green-dark relative overflow-hidden">
+      <div className="bg-prugio-blue-dark relative overflow-hidden">
         <div className="absolute inset-0 pattern-waves opacity-10" />
         <div
           ref={sec2.ref}
           className={`max-w-[1000px] mx-auto px-6 py-20 transition-all duration-700 ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
           <div className="text-center mb-14">
-            <p className="text-elif-lake text-[12px] font-semibold tracking-[4px] uppercase mb-3">WHY ELIF</p>
+            <p className="text-prugio-gold text-[12px] font-semibold tracking-[4px] uppercase mb-3">WHY PRUGIO</p>
             <h2
               className="text-[24px] sm:text-[30px] text-white font-light"
               style={{ fontFamily: "'Noto Serif KR', serif" }}
             >
-              엘리프가 <span className="font-bold">특별한 이유</span>
+              푸르지오가 <span className="font-bold">특별한 이유</span>
             </h2>
           </div>
 
@@ -227,7 +227,7 @@ export default function PremiumSection() {
                 className={`text-center p-6 rounded-2xl border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.07] transition-all duration-500 ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: sec2.visible ? `${i * 100}ms` : "0ms" }}
               >
-                <div className="w-14 h-14 rounded-xl bg-elif-lake/15 flex items-center justify-center text-elif-lake mx-auto mb-4">
+                <div className="w-14 h-14 rounded-xl bg-prugio-gold/15 flex items-center justify-center text-prugio-gold mx-auto mb-4">
                   {item.icon}
                 </div>
                 <h4 className="text-[15px] text-white font-bold mb-1.5">{item.title}</h4>
@@ -239,14 +239,14 @@ export default function PremiumSection() {
       </div>
 
       {/* ===== CTA ===== */}
-      <div className="relative bg-elif-green-dark overflow-hidden">
+      <div className="relative bg-prugio-blue-dark overflow-hidden">
         <div className="absolute inset-0 pattern-waves opacity-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-elif-green-dark via-elif-green/30 to-elif-green-dark" />
+        <div className="absolute inset-0 bg-gradient-to-t from-prugio-blue-dark via-prugio-blue/30 to-prugio-blue-dark" />
         <div
           ref={sec3.ref}
           className={`relative max-w-[700px] mx-auto px-6 py-20 text-center transition-all duration-700 ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
-          <p className="text-elif-lake text-[13px] font-semibold tracking-[3px] mb-4">CONTACT US</p>
+          <p className="text-prugio-gold text-[13px] font-semibold tracking-[3px] mb-4">CONTACT US</p>
           <h2
             className="text-[24px] sm:text-[30px] text-white font-light mb-4"
             style={{ fontFamily: "'Noto Serif KR', serif" }}
@@ -256,7 +256,7 @@ export default function PremiumSection() {
           <p className="text-white/50 text-[14px] mb-8">분양 관련 자세한 상담을 도와드리겠습니다.</p>
           <a
             href="tel:1844-0981"
-            className="inline-flex items-center gap-3 px-10 py-4 bg-elif-lake text-white rounded-full text-[16px] font-bold tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+            className="inline-flex items-center gap-3 px-10 py-4 bg-prugio-gold text-white rounded-full text-[16px] font-bold tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}

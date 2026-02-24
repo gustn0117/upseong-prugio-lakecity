@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import ElifLogo from "./ElifLogo";
+import PrugioLogo from "./PrugioLogo";
 
 interface MenuItem {
   id: string;
@@ -49,7 +49,7 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
 
   const navItemClass = (itemId: string) => {
     const isActive = activeTab === itemId;
-    if (isActive) return isDark ? "text-white font-bold" : "text-elif-green font-bold";
+    if (isActive) return isDark ? "text-white font-bold" : "text-prugio-blue font-bold";
     return isDark
       ? "text-white/60 hover:text-white"
       : "text-gray-500 hover:text-gray-900";
@@ -77,7 +77,7 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
             onClick={() => { setMobileOpen(false); onTabChange("home"); }}
             className="flex items-center cursor-pointer flex-shrink-0"
           >
-            <ElifLogo white={isDark} size="md" showSub={false} />
+            <PrugioLogo white={isDark} size="md" showSub={false} />
           </button>
 
           {/* Nav + CTA (Desktop) */}
@@ -90,7 +90,7 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
               >
                 {item.label}
                 {activeTab === item.id && (
-                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-elif-lake" />
+                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-prugio-gold" />
                 )}
               </button>
             ))}
@@ -98,9 +98,9 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
             <div className="ml-4 flex items-center gap-4">
               <a
                 href="tel:18440981"
-                className={`hidden xl:flex items-center gap-1.5 text-[13px] font-bold tracking-wider transition-colors duration-300 ${isDark ? "text-white/70 hover:text-white" : "text-gray-500 hover:text-elif-green"}`}
+                className={`hidden xl:flex items-center gap-1.5 text-[13px] font-bold tracking-wider transition-colors duration-300 ${isDark ? "text-white/70 hover:text-white" : "text-gray-500 hover:text-prugio-blue"}`}
               >
-                <svg className="w-3.5 h-3.5 text-elif-lake" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 text-prugio-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
@@ -110,8 +110,8 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
                 onClick={() => onTabChange("register")}
                 className={`px-5 py-2 text-[12px] font-semibold tracking-wider rounded-full transition-all duration-300
                   ${isDark
-                    ? "border border-elif-lake/50 text-elif-lake hover:bg-elif-lake/10"
-                    : "bg-elif-green text-white hover:bg-elif-green-light"
+                    ? "border border-prugio-gold/50 text-prugio-gold hover:bg-prugio-gold/10"
+                    : "bg-prugio-blue text-white hover:bg-prugio-blue-light"
                   }`}
               >
                 관심고객등록
@@ -160,7 +160,7 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
             {/* CTA at top */}
             <button
               onClick={() => { onTabChange("register"); setMobileOpen(false); }}
-              className="w-full py-3.5 bg-elif-green text-white text-[14px] font-bold tracking-wider rounded-xl mb-5 hover:bg-elif-green-light transition-colors"
+              className="w-full py-3.5 bg-prugio-blue text-white text-[14px] font-bold tracking-wider rounded-xl mb-5 hover:bg-prugio-blue-light transition-colors"
             >
               관심고객등록
             </button>
@@ -171,10 +171,10 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
                 <button
                   onClick={() => { onTabChange(item.id); setMobileOpen(false); }}
                   className={`flex items-center justify-between w-full text-left py-3.5 text-[14px] font-medium transition-colors
-                    ${activeTab === item.id ? "text-elif-green font-bold" : "text-gray-700"}`}
+                    ${activeTab === item.id ? "text-prugio-blue font-bold" : "text-gray-700"}`}
                 >
                   <span>{item.label}</span>
-                  {activeTab === item.id && <span className="w-1.5 h-1.5 rounded-full bg-elif-lake" />}
+                  {activeTab === item.id && <span className="w-1.5 h-1.5 rounded-full bg-prugio-gold" />}
                 </button>
               </div>
             ))}
@@ -182,11 +182,11 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
             {/* Phone */}
             <div className="mt-5 pt-5 border-t border-gray-100">
               <a href="tel:18440981" className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-elif-lake" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-prugio-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="text-[15px] font-bold text-elif-green tracking-wider">1844-0981</span>
+                <span className="text-[15px] font-bold text-prugio-blue tracking-wider">1844-0981</span>
               </a>
             </div>
           </div>
