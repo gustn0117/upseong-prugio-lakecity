@@ -109,6 +109,7 @@ export default function PremiumSection() {
         title="프 리 미 엄"
         subtitle="자연과 함께하는 프리미엄 주거를 만나보세요."
         fallbackGradient="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600"
+        bgImage="/images/lake-view.jpg"
       />
 
       {/* ===== 헤드라인 ===== */}
@@ -129,7 +130,11 @@ export default function PremiumSection() {
             호수공원, 교통, 교육, 생활이 어우러진<br className="hidden sm:inline" />
             프리미엄 주거의 새로운 기준
           </p>
-          <div className="mt-8 w-14 h-[2px] bg-elif-lake/60 mx-auto rounded-full" />
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <span className="w-8 h-[1px] bg-elif-lake/40" />
+            <span className="w-1.5 h-1.5 rounded-full bg-elif-lake/60" />
+            <span className="w-8 h-[1px] bg-elif-lake/40" />
+          </div>
         </div>
       </div>
 
@@ -199,7 +204,8 @@ export default function PremiumSection() {
       <div className="h-20 bg-gradient-to-b from-[#FAFAF7] to-elif-green-dark" />
 
       {/* ===== 스펙 하이라이트 ===== */}
-      <div className="bg-elif-green-dark">
+      <div className="bg-elif-green-dark relative overflow-hidden">
+        <div className="absolute inset-0 pattern-waves opacity-10" />
         <div
           ref={sec2.ref}
           className={`max-w-[1000px] mx-auto px-6 py-20 transition-all duration-700 ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
@@ -234,6 +240,7 @@ export default function PremiumSection() {
 
       {/* ===== CTA ===== */}
       <div className="relative bg-elif-green-dark overflow-hidden">
+        <div className="absolute inset-0 pattern-waves opacity-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-elif-green-dark via-elif-green/30 to-elif-green-dark" />
         <div
           ref={sec3.ref}

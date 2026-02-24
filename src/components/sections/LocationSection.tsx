@@ -98,6 +98,7 @@ export default function LocationSection() {
         title="입 지 환 경"
         subtitle="성성호수공원 앞, 최적의 입지를 만나보세요."
         fallbackGradient="bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500"
+        bgImage="/images/hero-lake.jpg"
       />
 
       {/* ===== 헤드라인 섹션 ===== */}
@@ -118,7 +119,11 @@ export default function LocationSection() {
             호수공원과 교육, 산업단지를 아우르는 입지 위에<br className="hidden sm:inline" />
             주거의 가치가 균형 있게 완성됩니다.
           </p>
-          <div className="mt-8 w-14 h-[2px] bg-elif-lake/60 mx-auto rounded-full" />
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <span className="w-8 h-[1px] bg-elif-lake/40" />
+            <span className="w-1.5 h-1.5 rounded-full bg-elif-lake/60" />
+            <span className="w-8 h-[1px] bg-elif-lake/40" />
+          </div>
         </div>
       </div>
 
@@ -153,7 +158,8 @@ export default function LocationSection() {
       <div className="h-20 bg-gradient-to-b from-[#FAFAF7] to-elif-green-dark" />
 
       {/* ===== 입지 지도 섹션 ===== */}
-      <div className="bg-elif-green-dark">
+      <div className="bg-elif-green-dark relative overflow-hidden">
+        <div className="absolute inset-0 pattern-waves opacity-10" />
         <div
           ref={sec3.ref}
           className={`max-w-[1200px] mx-auto px-6 py-20 transition-all duration-700 ${sec3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
@@ -254,6 +260,32 @@ export default function LocationSection() {
           <p className="text-center text-[12px] text-gray-400 mt-10">
             * 거리 및 소요시간은 네이버 지도 기준이며, 교통 상황에 따라 달라질 수 있습니다.
           </p>
+
+          {/* CTA */}
+          <div className="mt-16 bg-elif-green rounded-2xl p-10 sm:p-12 relative overflow-hidden">
+            <div className="absolute inset-0 pattern-waves opacity-10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-elif-green-dark/20 to-transparent" />
+            <div className="relative text-center">
+              <p className="text-elif-lake text-[12px] font-semibold tracking-[3px] mb-3">CONTACT US</p>
+              <h3
+                className="text-white text-[22px] sm:text-[26px] font-light mb-3"
+                style={{ fontFamily: "'Noto Serif KR', serif" }}
+              >
+                입지 관련 <span className="font-bold">상담 문의</span>
+              </h3>
+              <p className="text-white/50 text-[13px] mb-7">현장 방문 및 상세 입지 안내를 도와드리겠습니다.</p>
+              <a
+                href="tel:1844-0981"
+                className="inline-flex items-center gap-3 px-9 py-3.5 bg-white text-elif-green rounded-full text-[15px] font-bold tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                1844-0981
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -62,25 +62,33 @@ export default function RegisterSection() {
         title="관심고객등록"
         subtitle="엘리프 성성호수공원에 관심을 가져주셔서 감사합니다."
         fallbackGradient="bg-gradient-to-r from-amber-900 via-amber-800 to-amber-700"
+        bgImage="/images/about-nature.jpg"
       />
 
       {/* 상단 안내 */}
-      <div className="bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-[800px] mx-auto px-6 pt-14 pb-4 text-center">
-          <p className="text-elif-green text-[13px] font-semibold tracking-[3px] uppercase mb-3">
+      <div className="bg-[#FAFAF7]">
+        <div className="max-w-[800px] mx-auto px-6 pt-16 pb-6 text-center">
+          <p className="text-elif-green text-[13px] font-semibold tracking-[4px] uppercase mb-4">
             REGISTER
           </p>
-          <h2 className="text-[24px] sm:text-[28px] font-bold text-gray-900 leading-snug">
-            관심고객 사전등록
+          <h2
+            className="text-[26px] sm:text-[32px] font-light text-gray-900 leading-snug"
+            style={{ fontFamily: "'Noto Serif KR', serif" }}
+          >
+            관심고객 <span className="font-bold">사전등록</span>
           </h2>
-          <p className="mt-3 text-[14px] text-gray-500 leading-relaxed">
+          <p className="mt-4 text-[14px] text-gray-500 leading-relaxed">
             아래 양식을 작성하시면 담당자가 빠른 시일 내에 연락드리겠습니다.
           </p>
-          <div className="mt-6 w-12 h-[2px] bg-elif-green/40 mx-auto rounded-full" />
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <span className="w-8 h-[1px] bg-elif-lake/40" />
+            <span className="w-1.5 h-1.5 rounded-full bg-elif-lake/60" />
+            <span className="w-8 h-[1px] bg-elif-lake/40" />
+          </div>
         </div>
       </div>
 
-      <div className="max-w-[800px] mx-auto px-6 py-10">
+      <div className="max-w-[800px] mx-auto px-6 py-10 bg-[#FAFAF7]">
         <form onSubmit={handleSubmit}>
 
           {/* ===== 개인정보 수집 동의 ===== */}
