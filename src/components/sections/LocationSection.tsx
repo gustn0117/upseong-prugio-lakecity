@@ -98,7 +98,7 @@ export default function LocationSection() {
         title="입 지 환 경"
         subtitle="성성호수공원 앞, 최적의 입지를 만나보세요."
         fallbackGradient="bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500"
-        bgImage="/images/hero-lake.jpg"
+        bgImage="/images/banner-location.jpg"
       />
 
       {/* ===== 헤드라인 섹션 ===== */}

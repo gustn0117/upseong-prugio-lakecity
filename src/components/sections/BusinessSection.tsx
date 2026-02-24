@@ -55,7 +55,7 @@ export default function BusinessSection() {
         title="사 업 개 요"
         subtitle="엘리프 성성호수공원의 사업 정보를 확인하세요."
         fallbackGradient="bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500"
-        bgImage="/images/nature-park.jpg"
+        bgImage="/images/banner-business.jpg"
       />
 
       {/* ===== 헤드라인 ===== */}

@@ -62,7 +62,7 @@ export default function RegisterSection() {
         title="관심고객등록"
         subtitle="엘리프 성성호수공원에 관심을 가져주셔서 감사합니다."
         fallbackGradient="bg-gradient-to-r from-amber-900 via-amber-800 to-amber-700"
-        bgImage="/images/about-nature.jpg"
+        bgImage="/images/banner-register.jpg"
       />
 
       {/* 상단 안내 */}

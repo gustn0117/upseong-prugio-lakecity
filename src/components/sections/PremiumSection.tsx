@@ -27,7 +27,7 @@ const premiumPoints = [
     title: "호수공원 도보 1분",
     subtitle: "자연이 일상이 되는 프리미엄",
     desc: "성성호수공원 도보 1분 거리, 사계절 아름다운 수변 산책로와 자연 생태공원이 일상의 쉼터가 됩니다. 호수를 바라보는 조망과 맑은 공기가 만드는 주거의 품격을 경험하세요.",
-    bgImage: "/images/lake-view.jpg",
+    bgImage: "/images/premium-nature.jpg",
     features: ["호수공원 도보 1분", "수변 산책로·생태공원", "탁 트인 호수 조망"],
   },
   {
@@ -36,7 +36,7 @@ const premiumPoints = [
     title: "KTX·SRT 역세권",
     subtitle: "서울까지 빠르게, 전국을 가깝게",
     desc: "천안아산역(KTX/SRT)을 통해 서울 용산까지 약 34분, 수서까지 약 30분. 경부고속도로와 1호선이 인접하여 수도권과 전국 어디든 편리하게 연결됩니다.",
-    bgImage: "/images/premium-transport.jpg",
+    bgImage: "/images/premium-transport-new.jpg",
     features: ["천안아산역 KTX/SRT", "경부고속도로 인접", "1호선 역세권"],
   },
   {
@@ -45,7 +45,7 @@ const premiumPoints = [
     title: "풍부한 생활 인프라",
     subtitle: "편리함을 갖춘 완성형 주거",
     desc: "이마트·롯데마트 등 대형마트와 천안시청, 행정복지센터 등 공공시설이 가깝습니다. 단국대병원·천안의료원 등 의료시설과 다양한 편의시설이 쾌적한 생활을 지원합니다.",
-    bgImage: "/images/premium-living.jpg",
+    bgImage: "/images/premium-life.jpg",
     features: ["대형마트·편의시설", "공공기관·의료시설", "문화·여가 인프라"],
   },
   {
@@ -54,7 +54,7 @@ const premiumPoints = [
     title: "우수한 교육 환경",
     subtitle: "아이들의 미래를 위한 학세권",
     desc: "천안업성초·중학교가 단지와 인접하고, 가람초·가람중이 가까운 도보 통학권입니다. 공주대 천안캠퍼스, 단국대 등 대학교도 인접해 교육 인프라가 풍부합니다.",
-    bgImage: "/images/premium-edu.jpg",
+    bgImage: "/images/premium-education.jpg",
     features: ["천안업성초·중 인접", "도보 통학권 확보", "대학교 인접"],
   },
 ];
@@ -109,7 +109,7 @@ export default function PremiumSection() {
         title="프 리 미 엄"
         subtitle="자연과 함께하는 프리미엄 주거를 만나보세요."
         fallbackGradient="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600"
-        bgImage="/images/lake-view.jpg"
+        bgImage="/images/banner-premium.jpg"
       />
 
       {/* ===== 헤드라인 ===== */}

@@ -395,7 +395,7 @@ export default function HomeSection() {
                 tag: "TRANSPORTATION",
                 title: "교통중심",
                 desc: "편리한 광역교통망과 우수한 도로 접근성으로 천안 주요 지역까지 빠르게 연결",
-                bgImage: "/images/premium-transport.jpg",
+                bgImage: "/images/premium-transport-new.jpg",
               },
               {
                 num: "02",
@@ -403,7 +403,7 @@ export default function HomeSection() {
                 tag: "NATURE",
                 title: "자연중심",
                 desc: "성성호수공원 바로 앞! 탁 트인 호수 조망과 풍요로운 자연환경의 힐링 라이프",
-                bgImage: "/images/lake-view.jpg",
+                bgImage: "/images/premium-nature.jpg",
               },
               {
                 num: "03",
@@ -411,7 +411,7 @@ export default function HomeSection() {
                 tag: "LIVING",
                 title: "생활중심",
                 desc: "대형마트, 상업시설 등 편리한 생활 인프라가 가까이",
-                bgImage: "/images/premium-living.jpg",
+                bgImage: "/images/premium-life.jpg",
               },
               {
                 num: "04",
@@ -419,7 +419,7 @@ export default function HomeSection() {
                 tag: "EDUCATION",
                 title: "교육중심",
                 desc: "도보권 내 초·고등학교 설립 예정, 우수한 교육 환경",
-                bgImage: "/images/premium-edu.jpg",
+                bgImage: "/images/premium-education.jpg",
               },
             ].map((item, i) => (
               <div
