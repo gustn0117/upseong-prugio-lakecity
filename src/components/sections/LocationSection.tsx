@@ -140,7 +140,7 @@ export default function LocationSection() {
                 className={`group relative bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500 ${sec2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: sec2.visible ? `${i * 120}ms` : "0ms" }}
               >
-                <div className="w-14 h-14 rounded-xl bg-prugio-blue/8 flex items-center justify-center text-prugio-blue mb-5 group-hover:bg-prugio-blue group-hover:text-white transition-all duration-300">
+                <div className="w-14 h-14 rounded-xl bg-prugio-blue/[0.08] flex items-center justify-center text-prugio-blue mb-5 group-hover:bg-prugio-blue group-hover:text-white transition-all duration-300">
                   {item.icon}
                 </div>
                 <span className="inline-block px-2.5 py-1 bg-prugio-gold/10 text-prugio-gold text-[11px] font-bold rounded-full mb-3 tracking-wide">
@@ -246,7 +246,7 @@ export default function LocationSection() {
                   {group.items.map((item, ii) => (
                     <div key={ii} className="px-5 py-4 flex items-center justify-between hover:bg-gray-50/50 transition-colors">
                       <span className="text-[13px] text-gray-700">{item.name}</span>
-                      <span className="text-[12px] text-prugio-blue font-semibold bg-prugio-blue/8 px-2.5 py-1 rounded-full whitespace-nowrap">
+                      <span className="text-[12px] text-prugio-blue font-semibold bg-prugio-blue/[0.08] px-2.5 py-1 rounded-full whitespace-nowrap">
                         {item.time}
                       </span>
                     </div>

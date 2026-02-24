@@ -15,8 +15,8 @@ interface PRSectionProps {
 function ComingSoon() {
   return (
     <div className="flex flex-col items-center justify-center py-32 lg:py-40">
-      <div className="w-16 h-16 rounded-full bg-elif-cream flex items-center justify-center mb-6">
-        <svg className="w-7 h-7 text-elif-lake" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="w-16 h-16 rounded-full bg-prugio-cream flex items-center justify-center mb-6">
+        <svg className="w-7 h-7 text-prugio-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       </div>
@@ -33,7 +33,7 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
     <section className="pt-[80px]">
       <SectionBanner
         title="홍 보 센 터"
-        subtitle="엘리프 성성호수공원의 최신 소식을 만나보세요."
+        subtitle="업성 푸르지오 레이크시티의 최신 소식을 만나보세요."
         fallbackGradient="bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700"
       />
 
@@ -46,14 +46,14 @@ export default function PRSection({ initialSubTab }: PRSectionProps) {
               onClick={() => setActiveSubTab(tab.id)}
               className={`relative px-8 py-4 text-[13px] tracking-[0.5px] font-medium transition-all duration-300 whitespace-nowrap
                 ${activeSubTab === tab.id
-                  ? "text-elif-green font-bold"
+                  ? "text-prugio-blue font-bold"
                   : "text-gray-400 hover:text-gray-600"
                 }
               `}
             >
               {tab.label}
               {activeSubTab === tab.id && (
-                <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-elif-lake rounded-full" />
+                <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-prugio-gold rounded-full" />
               )}
             </button>
           ))}
