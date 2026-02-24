@@ -63,46 +63,25 @@ export default function Footer({ onTabChange }: FooterProps) {
           </div>
 
           {/* Links */}
-          <div className="flex gap-16 lg:gap-20">
-            <div>
-              <h4 className="text-[12px] font-semibold text-white/50 tracking-[3px] uppercase mb-6">바로가기</h4>
-              <ul className="space-y-3.5">
-                {[
-                  { id: "business", label: "사업안내" },
-                  { id: "premium", label: "프리미엄" },
-                  { id: "complex", label: "단지안내" },
-                  { id: "unit", label: "세대안내" },
-                ].map((item) => (
-                  <li key={item.id}>
-                    <button
-                      onClick={() => handleNav(item.id)}
-                      className="text-[13px] text-gray-500 hover:text-white transition-colors duration-200"
-                    >
-                      {item.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-[12px] font-semibold text-white/50 tracking-[3px] uppercase mb-6">고객센터</h4>
-              <ul className="space-y-3.5">
-                {[
-                  { id: "sales", label: "분양안내" },
-                  { id: "pr", label: "홍보센터" },
-                  { id: "register", label: "관심고객등록" },
-                ].map((item) => (
-                  <li key={item.id}>
-                    <button
-                      onClick={() => handleNav(item.id)}
-                      className="text-[13px] text-gray-500 hover:text-white transition-colors duration-200"
-                    >
-                      {item.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div>
+            <h4 className="text-[12px] font-semibold text-white/50 tracking-[3px] uppercase mb-6">바로가기</h4>
+            <ul className="flex flex-wrap gap-x-10 gap-y-3.5">
+              {[
+                { id: "business", label: "사업개요" },
+                { id: "location", label: "입지환경" },
+                { id: "premium", label: "프리미엄" },
+                { id: "register", label: "관심고객등록" },
+              ].map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => handleNav(item.id)}
+                    className="text-[13px] text-gray-500 hover:text-white transition-colors duration-200"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

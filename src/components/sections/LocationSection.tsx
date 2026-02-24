@@ -16,13 +16,13 @@ function ComingSoon() {
   );
 }
 
-export default function PremiumSection() {
+export default function LocationSection() {
   return (
     <section className="pt-[80px]">
       <SectionBanner
-        title="프 리 미 엄"
-        subtitle="자연과 함께하는 프리미엄 주거를 만나보세요."
-        fallbackGradient="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600"
+        title="입 지 환 경"
+        subtitle="성성호수공원 앞, 최적의 입지를 만나보세요."
+        fallbackGradient="bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500"
       />
 
       <div className="max-w-[1200px] mx-auto px-6">

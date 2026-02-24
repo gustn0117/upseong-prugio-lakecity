@@ -5,11 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HomeSection from "@/components/sections/HomeSection";
 import BusinessSection from "@/components/sections/BusinessSection";
+import LocationSection from "@/components/sections/LocationSection";
 import PremiumSection from "@/components/sections/PremiumSection";
-import ComplexSection from "@/components/sections/ComplexSection";
-import UnitSection from "@/components/sections/UnitSection";
-import SalesSection from "@/components/sections/SalesSection";
-import PRSection from "@/components/sections/PRSection";
 import RegisterSection from "@/components/sections/RegisterSection";
 
 export default function Home() {
@@ -38,12 +35,9 @@ export default function Home() {
 
       <main className="flex-1">
         {activeTab === "home" && <HomeSection />}
-        {activeTab === "business" && <BusinessSection initialSubTab={activeSubTab} />}
-        {activeTab === "premium" && <PremiumSection initialSubTab={activeSubTab} />}
-        {activeTab === "complex" && <ComplexSection initialSubTab={activeSubTab} />}
-        {activeTab === "unit" && <UnitSection initialSubTab={activeSubTab} />}
-        {activeTab === "sales" && <SalesSection initialSubTab={activeSubTab} />}
-        {activeTab === "pr" && <PRSection initialSubTab={activeSubTab} />}
+        {activeTab === "business" && <BusinessSection />}
+        {activeTab === "location" && <LocationSection />}
+        {activeTab === "premium" && <PremiumSection />}
         {activeTab === "register" && <RegisterSection />}
       </main>
 
