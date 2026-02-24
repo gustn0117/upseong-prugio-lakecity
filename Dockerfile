@@ -38,7 +38,7 @@ COPY --from=builder /app/node_modules/prebuild-install ./node_modules/prebuild-i
 COPY --from=builder /app/node_modules/sharp ./node_modules/sharp
 COPY --from=builder /app/node_modules/@img ./node_modules/@img
 
-RUN mkdir -p /app/data && chown -R nextjs:nodejs /app/data
+RUN mkdir -p /app/data /app/.next/cache && chown -R nextjs:nodejs /app/data /app/.next/cache
 
 USER nextjs
 
