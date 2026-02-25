@@ -212,7 +212,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
 
               {/* Image */}
               <div className={`relative min-h-[400px] lg:min-h-0 transition-all duration-[900ms] delay-200 ${about.visible ? "opacity-100" : "opacity-0"}`}>
-                <Image src="/images/nature-park.jpg" alt="호수공원" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+                <Image src="/images/about-lobby.jpg" alt="프리미엄 주거" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
                 <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold/40 via-gold/10 to-transparent hidden lg:block" />
               </div>
             </div>
@@ -244,7 +244,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
 
               {/* Feature 1: Nature */}
               <div className={`lg:col-span-7 group relative min-h-[420px] lg:min-h-[560px] overflow-hidden transition-all duration-700 delay-100 ${features.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-                <Image src="/images/premium-nature.jpg" alt="자연중심" fill className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" sizes="(max-width: 1024px) 100vw, 58vw" />
+                <Image src="/images/premium-lakeview.jpg" alt="자연중심" fill className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" sizes="(max-width: 1024px) 100vw, 58vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
                   <div className="flex items-center gap-3 mb-4">
@@ -262,8 +262,8 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
               {/* Right column: stacked 2 & 3 */}
               <div className="lg:col-span-5 flex flex-col gap-3">
                 {[
-                  { img: "/images/premium-transport-new.jpg", num: "02", tag: "Transport", title: "KTX·SRT 역세권", desc: "서울 용산까지 34분, 수서까지 30분" },
-                  { img: "/images/premium-life.jpg", num: "03", tag: "Living", title: "풍부한 생활 인프라", desc: "대형마트, 의료시설, 편의시설 도보권" },
+                  { img: "/images/premium-highway.jpg", num: "02", tag: "Transport", title: "멀티 교통망", desc: "번영로, 삼성대로, 1호선 부성역 인접" },
+                  { img: "/images/premium-infra.jpg", num: "03", tag: "Living", title: "풍부한 생활 인프라", desc: "이마트, 코스트코 등 대형마트 인접" },
                 ].map((f, i) => (
                   <div
                     key={i}
@@ -288,7 +288,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
 
             {/* Feature 4: Education */}
             <div className={`mt-3 group relative h-[280px] lg:h-[320px] overflow-hidden transition-all duration-700 delay-[500ms] ${features.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-              <Image src="/images/premium-education.jpg" alt="교육중심" fill className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" sizes="100vw" />
+              <Image src="/images/premium-school.jpg" alt="교육중심" fill className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" sizes="100vw" />
               <div className="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/30 to-transparent" />
               <div className="absolute inset-0 flex items-center p-8 lg:p-14">
                 <div>
