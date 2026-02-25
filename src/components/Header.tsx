@@ -71,7 +71,7 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
             onClick={() => { setMobileOpen(false); onTabChange("home"); }}
             className="flex items-center cursor-pointer flex-shrink-0"
           >
-            <PrugioLogo white={isDark} size="sm" showSub={false} />
+            <PrugioLogo white={isDark} size="sm" showSub={true} />
           </button>
 
           {/* Nav + CTA (Desktop) */}

@@ -41,24 +41,29 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
   return (
     <section>
       {/* ══════════ INTRO SPLASH ══════════ */}
-      <div className="relative h-screen min-h-[700px] flex flex-col items-center justify-center overflow-hidden bg-[#0a0f18]">
+      <div className="relative h-screen min-h-[700px] flex flex-col items-center justify-center overflow-hidden bg-[#070b12]">
 
-        {/* Lake photo background with dark overlay */}
-        <Image src="/images/lake-view.jpg" alt="" fill className="object-cover opacity-30" sizes="100vw" priority />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f18]/60 via-transparent to-[#0a0f18]/60" />
+        {/* Lake photo background */}
+        <Image src="/images/lake-view.jpg" alt="" fill className="object-cover opacity-35" sizes="100vw" priority />
+
+        {/* Multi-layer gradient for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#070b12]/70 via-transparent to-[#070b12]/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070b12]/30 via-transparent to-[#070b12]/30" />
+        {/* Radial vignette */}
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, transparent 40%, rgba(7,11,18,0.6) 100%)" }} />
 
         {/* Decorative circle — outer (gold) */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           <div
             className="w-[420px] h-[420px] sm:w-[500px] sm:h-[500px] lg:w-[580px] lg:h-[580px] rounded-full"
-            style={{ border: "1px solid rgba(184,151,106,0.15)" }}
+            style={{ border: "1px solid rgba(184,151,106,0.12)" }}
           />
         </div>
         {/* Decorative circle — inner */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           <div
             className="w-[350px] h-[350px] sm:w-[410px] sm:h-[410px] lg:w-[480px] lg:h-[480px] rounded-full"
-            style={{ border: "1px solid rgba(255,255,255,0.05)" }}
+            style={{ border: "1px solid rgba(255,255,255,0.04)" }}
           />
         </div>
 
@@ -72,51 +77,59 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center px-6">
-          {/* Title — text-indent compensates trailing letter-spacing */}
+          {/* Eyebrow */}
+          <p
+            className={`text-gold/60 text-[10px] sm:text-[11px] tracking-[6px] uppercase font-light mb-6 text-shadow-subtle transition-all duration-[1400ms] delay-100 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+          >
+            Upseong · DL E&amp;C
+          </p>
+
+          {/* Title */}
           <h1
-            className={`text-white text-[36px] sm:text-[48px] lg:text-[58px] tracking-[12px] sm:tracking-[16px] lg:tracking-[20px] leading-none transition-all duration-[1400ms] delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-            style={{ fontWeight: 200, paddingLeft: "20px" }}
+            className={`text-white text-[38px] sm:text-[52px] lg:text-[64px] tracking-[12px] sm:tracking-[16px] lg:tracking-[22px] leading-none text-shadow-hero transition-all duration-[1400ms] delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            style={{ fontWeight: 200, paddingLeft: "22px" }}
           >
             PRUGIO
           </h1>
 
           {/* Subtitle */}
-          <div className={`flex items-center gap-4 mt-5 mb-7 transition-all duration-[1400ms] delay-[400ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
-            <span className="w-10 sm:w-16 h-[1px] bg-gold/30" />
-            <span className="text-white/50 text-[12px] sm:text-[14px] tracking-[6px] sm:tracking-[10px] font-extralight" style={{ paddingLeft: "10px" }}>
+          <div className={`flex items-center gap-4 sm:gap-5 mt-5 mb-8 transition-all duration-[1400ms] delay-[400ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
+            <span className="w-10 sm:w-20 h-[1px] bg-gradient-to-r from-transparent to-gold/40" />
+            <span className="text-white/70 text-[13px] sm:text-[15px] tracking-[8px] sm:tracking-[12px] font-extralight text-shadow-subtle" style={{ paddingLeft: "12px" }}>
               레 이 크 시 티
             </span>
-            <span className="w-10 sm:w-16 h-[1px] bg-gold/30" />
+            <span className="w-10 sm:w-20 h-[1px] bg-gradient-to-l from-transparent to-gold/40" />
           </div>
 
           {/* Description */}
-          <p className={`text-white/35 text-[12px] sm:text-[13px] tracking-[2px] font-light mb-1 transition-all duration-[1400ms] delay-[600ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
+          <p className={`text-white/50 text-[12px] sm:text-[14px] tracking-[2px] font-light mb-1 text-shadow-subtle transition-all duration-[1400ms] delay-[600ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
             호수공원 앞 · 프리미엄 주거단지
           </p>
-          <p className={`text-white/20 text-[10px] tracking-[3px] uppercase font-light mb-14 transition-all duration-[1400ms] delay-[700ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
-            Lake Park · Premium Residence · DL E&amp;C
+          <p className={`text-white/30 text-[10px] tracking-[3px] uppercase font-light mb-16 text-shadow-subtle transition-all duration-[1400ms] delay-[700ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
+            Lake Park · Premium Residence
           </p>
 
           {/* Enter Button */}
           <button
             onClick={scrollToContent}
-            className={`px-16 sm:px-20 py-4 border border-white/15 text-white/50 text-[11px] tracking-[5px] uppercase font-light hover:bg-white hover:text-[#0a0f18] hover:border-white transition-all duration-500 cursor-pointer ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`group relative px-16 sm:px-20 py-4 border border-white/20 text-white/70 text-[11px] tracking-[5px] uppercase font-light hover:bg-white hover:text-[#0a0f18] hover:border-white transition-all duration-500 cursor-pointer overflow-hidden ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             style={{ transitionDelay: loaded ? "900ms" : "0ms" }}
           >
-            ENTER
+            <span className="relative z-10">ENTER</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </button>
         </div>
 
         {/* Scroll indicator */}
         <div className={`absolute bottom-[80px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 transition-all duration-[1400ms] delay-[1200ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
-          <span className="text-white/15 text-[9px] tracking-[3px] uppercase font-light">Scroll</span>
+          <span className="text-white/20 text-[9px] tracking-[3px] uppercase font-light">Scroll</span>
           <div className="w-[1px] h-5 relative overflow-hidden">
-            <div className="absolute w-full h-full bg-gradient-to-b from-gold/30 to-transparent animate-[scrollLine_2s_ease-in-out_infinite]" />
+            <div className="absolute w-full h-full bg-gradient-to-b from-gold/40 to-transparent animate-[scrollLine_2s_ease-in-out_infinite]" />
           </div>
         </div>
 
         {/* Bottom Nav */}
-        <div className={`absolute bottom-0 left-0 right-0 border-t border-white/[0.06] py-5 transition-all duration-[1400ms] delay-[1100ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
+        <div className={`absolute bottom-0 left-0 right-0 border-t border-white/[0.08] py-5 bg-black/20 backdrop-blur-sm transition-all duration-[1400ms] delay-[1100ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap px-6">
             {[
               { id: "business", en: "OVERVIEW" },
@@ -127,7 +140,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
               <button
                 key={i}
                 onClick={() => onTabChange?.(item.id)}
-                className="text-white/25 hover:text-gold transition-colors duration-300"
+                className="text-white/35 hover:text-gold transition-colors duration-300"
               >
                 <span className="text-[10px] sm:text-[11px] tracking-[3px] uppercase font-light">{item.en}</span>
               </button>
@@ -142,17 +155,18 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
         {/* HERO CINEMATIC — fades from splash dark */}
         <div ref={hero.ref} className="relative h-[80vh] min-h-[550px]">
           <Image src="/images/hero-lake.jpg" alt="호수공원 전경" fill className="object-cover" sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-navy/20" />
+          {/* Stronger gradient for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1020]/90 via-navy/40 to-navy/25" />
           {/* Top fade from dark — seamless from splash */}
-          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0a0f18] to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-[#070b12] to-transparent" />
 
           <div className={`absolute inset-0 flex items-end transition-all duration-[1000ms] ${hero.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
             <div className="max-w-[1400px] mx-auto w-full px-8 lg:px-16 pb-16 lg:pb-24">
-              <p className="text-gold/50 text-[10px] tracking-[5px] uppercase mb-4">Upseong Prugio Lakecity</p>
-              <h2 className="text-white text-[36px] sm:text-[48px] lg:text-[60px] font-extralight leading-[1.1] tracking-tight mb-6">
+              <p className="text-gold/70 text-[10px] tracking-[5px] uppercase mb-4 text-shadow-subtle">Upseong Prugio Lakecity</p>
+              <h2 className="text-white text-[36px] sm:text-[48px] lg:text-[60px] font-extralight leading-[1.1] tracking-tight mb-6 text-shadow-hero">
                 호수 위의<br />새로운 라이프
               </h2>
-              <p className="text-white/40 text-[13px] sm:text-[14px] font-light leading-relaxed max-w-[400px]">
+              <p className="text-white/60 text-[13px] sm:text-[15px] font-light leading-relaxed max-w-[420px] text-shadow-subtle">
                 천안 업성동, 호수공원 바로 앞<br />
                 DL이앤씨가 선보이는 프리미엄 주거
               </p>
@@ -166,9 +180,9 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
               { num: "39", label: "최고층", suffix: "F" },
               { num: "72·84·95", label: "전용면적", suffix: "㎡" },
             ].map((s, i) => (
-              <div key={i} className="w-[160px] py-8 text-center border-l border-white/10 bg-navy/40 backdrop-blur-sm">
-                <p className="text-white text-[24px] font-extralight tracking-tight">{s.num}<span className="text-gold/60 text-[14px] ml-0.5">{s.suffix}</span></p>
-                <p className="text-white/30 text-[10px] tracking-wider mt-1">{s.label}</p>
+              <div key={i} className="w-[160px] py-8 text-center border-l border-white/10 bg-navy/50 backdrop-blur-md">
+                <p className="text-white text-[24px] font-extralight tracking-tight text-shadow-subtle">{s.num}<span className="text-gold/70 text-[14px] ml-0.5">{s.suffix}</span></p>
+                <p className="text-white/40 text-[10px] tracking-wider mt-1">{s.label}</p>
               </div>
             ))}
           </div>
@@ -245,15 +259,15 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
               {/* Feature 1: Nature */}
               <div className={`lg:col-span-7 group relative min-h-[420px] lg:min-h-[560px] overflow-hidden transition-all duration-700 delay-100 ${features.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
                 <Image src="/images/premium-lakeview.jpg" alt="자연중심" fill className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" sizes="(max-width: 1024px) 100vw, 58vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-gold text-[28px] font-extralight">01</span>
+                    <span className="text-gold text-[28px] font-extralight text-shadow-subtle">01</span>
                     <div className="w-8 h-[1px] bg-gold/40" />
-                    <span className="text-gold/60 text-[10px] tracking-[4px] uppercase font-medium">Nature</span>
+                    <span className="text-gold/70 text-[10px] tracking-[4px] uppercase font-medium">Nature</span>
                   </div>
-                  <h3 className="text-white text-[26px] lg:text-[34px] font-extralight tracking-tight mb-3">호수공원 도보 1분</h3>
-                  <p className="text-white/45 text-[13px] font-light max-w-[420px] leading-[1.8]">
+                  <h3 className="text-white text-[26px] lg:text-[34px] font-extralight tracking-tight mb-3 text-shadow-hero">호수공원 도보 1분</h3>
+                  <p className="text-white/60 text-[13px] font-light max-w-[420px] leading-[1.8] text-shadow-subtle">
                     호수공원 바로 앞! 탁 트인 호수 조망과 사계절 수변 산책로가 일상의 쉼터가 됩니다.
                   </p>
                 </div>
@@ -271,15 +285,15 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
                     style={{ transitionDelay: `${250 + i * 150}ms` }}
                   >
                     <Image src={f.img} alt={f.title} fill className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" sizes="(max-width: 1024px) 100vw, 42vw" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="text-gold text-[20px] font-extralight">{f.num}</span>
+                        <span className="text-gold text-[20px] font-extralight text-shadow-subtle">{f.num}</span>
                         <div className="w-5 h-[1px] bg-gold/30" />
-                        <span className="text-gold/50 text-[9px] tracking-[3px] uppercase">{f.tag}</span>
+                        <span className="text-gold/60 text-[9px] tracking-[3px] uppercase">{f.tag}</span>
                       </div>
-                      <h3 className="text-white text-[20px] lg:text-[22px] font-extralight tracking-tight mb-1">{f.title}</h3>
-                      <p className="text-white/35 text-[12px] font-light">{f.desc}</p>
+                      <h3 className="text-white text-[20px] lg:text-[22px] font-extralight tracking-tight mb-1 text-shadow-hero">{f.title}</h3>
+                      <p className="text-white/55 text-[12px] font-light text-shadow-subtle">{f.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -289,16 +303,16 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
             {/* Feature 4: Education */}
             <div className={`mt-3 group relative h-[280px] lg:h-[320px] overflow-hidden transition-all duration-700 delay-[500ms] ${features.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
               <Image src="/images/premium-school.jpg" alt="교육중심" fill className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" sizes="100vw" />
-              <div className="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
               <div className="absolute inset-0 flex items-center p-8 lg:p-14">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-gold text-[28px] font-extralight">04</span>
+                    <span className="text-gold text-[28px] font-extralight text-shadow-subtle">04</span>
                     <div className="w-8 h-[1px] bg-gold/40" />
-                    <span className="text-gold/60 text-[10px] tracking-[4px] uppercase font-medium">Education</span>
+                    <span className="text-gold/70 text-[10px] tracking-[4px] uppercase font-medium">Education</span>
                   </div>
-                  <h3 className="text-white text-[26px] lg:text-[34px] font-extralight tracking-tight mb-3">우수한 교육 환경</h3>
-                  <p className="text-white/40 text-[13px] font-light max-w-[420px] leading-[1.8]">
+                  <h3 className="text-white text-[26px] lg:text-[34px] font-extralight tracking-tight mb-3 text-shadow-hero">우수한 교육 환경</h3>
+                  <p className="text-white/55 text-[13px] font-light max-w-[420px] leading-[1.8] text-shadow-subtle">
                     천안업성초·중학교 인접, 도보 통학권. 공주대·단국대 등 대학 인프라도 풍부합니다.
                   </p>
                 </div>
@@ -340,19 +354,19 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
           <Image src="/images/lake-view.jpg" alt="" fill className="object-cover" sizes="100vw" />
           <div className="absolute inset-0 bg-navy/85" />
           <div className={`relative z-10 max-w-[600px] mx-auto px-6 text-center transition-all duration-700 ${cta.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            <p className="text-gold/40 text-[10px] tracking-[5px] uppercase mb-6">Contact</p>
-            <h2 className="text-white text-[32px] lg:text-[46px] font-extralight tracking-tight mb-3">분양문의</h2>
+            <p className="text-gold/50 text-[10px] tracking-[5px] uppercase mb-6">Contact</p>
+            <h2 className="text-white text-[32px] lg:text-[46px] font-extralight tracking-tight mb-3 text-shadow-hero">분양문의</h2>
             <div className="w-10 h-[1px] bg-gold/30 mx-auto mb-8" />
-            <p className="text-white/30 text-[13px] font-light mb-14 leading-[1.9]">
+            <p className="text-white/45 text-[13px] font-light mb-14 leading-[1.9] text-shadow-subtle">
               업성 푸르지오 레이크시티에 대해<br />자세한 상담을 받아보세요.
             </p>
             <a
               href="tel:1844-0981"
-              className="inline-block px-16 py-5 border border-gold/30 text-white text-[20px] font-extralight tracking-[6px] hover:bg-gold/10 hover:border-gold/50 transition-all duration-300"
+              className="inline-block px-16 py-5 border border-gold/30 text-white text-[20px] font-extralight tracking-[6px] hover:bg-gold/10 hover:border-gold/50 transition-all duration-300 text-shadow-subtle"
             >
               1844-0981
             </a>
-            <p className="text-white/10 text-[10px] mt-12 tracking-[3px] uppercase">시공 · DL이앤씨</p>
+            <p className="text-white/15 text-[10px] mt-12 tracking-[3px] uppercase">시공 · DL이앤씨</p>
           </div>
         </div>
       </div>

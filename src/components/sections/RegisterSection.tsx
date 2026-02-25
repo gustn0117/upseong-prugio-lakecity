@@ -68,11 +68,12 @@ export default function RegisterSection() {
       {/* ══════════ HERO ══════════ */}
       <div className="relative h-[50vh] min-h-[340px]">
         <Image src="/images/banner-register.jpg" alt="" fill className="object-cover" sizes="100vw" priority />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
-            <p className="text-gold/60 text-[10px] tracking-[5px] font-medium uppercase mb-4">Register</p>
-            <h1 className="text-white text-[36px] lg:text-[52px] font-extralight tracking-tight">관심고객등록</h1>
+            <p className="text-gold/80 text-[10px] tracking-[5px] font-medium uppercase mb-4 text-shadow-subtle">Register</p>
+            <h1 className="text-white text-[36px] lg:text-[52px] font-extralight tracking-tight text-shadow-banner">관심고객등록</h1>
           </div>
         </div>
       </div>
