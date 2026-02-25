@@ -43,7 +43,7 @@ export default function LocationSection() {
     <section className="pt-[72px]">
       {/* ══════════ HERO ══════════ */}
       <div className="relative h-[50vh] min-h-[340px]">
-        <Image src="/images/banner-location.jpg" alt="" fill className="object-cover" sizes="100vw" priority />
+        <Image src="/images/location.jpg" alt="" fill className="object-cover" sizes="100vw" priority />
         <div className="absolute inset-0 bg-black/55" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20" />
         <div className="absolute inset-0 flex items-center justify-center">
