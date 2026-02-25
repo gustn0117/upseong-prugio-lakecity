@@ -44,7 +44,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
       <div className="relative h-screen min-h-[700px] flex flex-col items-center justify-center overflow-hidden bg-[#0a0f18]">
 
         {/* Lake photo background with dark overlay */}
-        <Image src="/images/hero-lake.jpg" alt="" fill className="object-cover opacity-30" sizes="100vw" priority />
+        <Image src="/images/lake-view.jpg" alt="" fill className="object-cover opacity-30" sizes="100vw" priority />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f18]/60 via-transparent to-[#0a0f18]/60" />
 
         {/* Decorative circle — outer (gold) */}
@@ -72,28 +72,6 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center px-6">
-          {/* Icon */}
-          <div className={`mb-10 transition-all duration-[1200ms] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}>
-            <svg className="w-10 h-10 text-gold/50" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={0.7}>
-              <rect x="18" y="12" width="28" height="44" rx="1" />
-              <rect x="8" y="28" width="10" height="28" rx="1" />
-              <rect x="46" y="28" width="10" height="28" rx="1" />
-              <line x1="24" y1="20" x2="28" y2="20" />
-              <line x1="24" y1="26" x2="28" y2="26" />
-              <line x1="24" y1="32" x2="28" y2="32" />
-              <line x1="24" y1="38" x2="28" y2="38" />
-              <line x1="36" y1="20" x2="40" y2="20" />
-              <line x1="36" y1="26" x2="40" y2="26" />
-              <line x1="36" y1="32" x2="40" y2="32" />
-              <line x1="36" y1="38" x2="40" y2="38" />
-              <rect x="28" y="46" width="8" height="10" />
-              <line x1="12" y1="34" x2="14" y2="34" />
-              <line x1="12" y1="40" x2="14" y2="40" />
-              <line x1="50" y1="34" x2="52" y2="34" />
-              <line x1="50" y1="40" x2="52" y2="40" />
-            </svg>
-          </div>
-
           {/* Title */}
           <h1
             className={`text-white text-[36px] sm:text-[48px] lg:text-[58px] tracking-[12px] sm:tracking-[16px] lg:tracking-[20px] leading-none transition-all duration-[1400ms] delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
