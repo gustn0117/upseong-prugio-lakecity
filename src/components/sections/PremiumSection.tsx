@@ -19,59 +19,75 @@ function useInView(threshold = 0.15) {
   return { ref, visible };
 }
 
-const premiumPoints = [
+const premium7 = [
   {
     num: "01",
-    tag: "Nature",
-    title: "호수공원 도보 1분",
-    subtitle: "자연이 일상이 되는 프리미엄",
-    desc: "호수공원 도보권, 사계절 아름다운 수변 산책로와 자연 생태공원이 일상의 쉼터가 됩니다. 호수를 바라보는 조망과 맑은 공기가 만드는 주거의 품격을 경험하세요.",
+    tag: "Lake View",
+    title: "수려한 남향 호수뷰",
+    desc: "남쪽으로 아름답게 펼쳐진 명품 레이크 뷰. 성성호수공원의 탁 트인 수변 조망이 일상 속 특별한 풍경이 됩니다.",
     bgImage: "/images/premium-nature.jpg",
-    features: ["호수공원 도보 1분", "수변 산책로·생태공원", "탁 트인 호수 조망"],
   },
   {
     num: "02",
-    tag: "Transport",
-    title: "KTX·SRT 역세권",
-    subtitle: "서울까지 빠르게, 전국을 가깝게",
-    desc: "천안아산역(KTX/SRT)을 통해 서울 용산까지 약 34분, 수서까지 약 30분. 경부고속도로와 1호선이 인접하여 수도권과 전국 어디든 편리하게 연결됩니다.",
-    bgImage: "/images/premium-transport-new.jpg",
-    features: ["천안아산역 KTX/SRT", "경부고속도로 인접", "1호선 역세권"],
+    tag: "Landmark",
+    title: "푸르지오 랜드마크 프리미엄",
+    desc: "총 6,723세대 규모의 푸르지오 브랜드 타운. DL이앤씨가 만드는 대규모 랜드마크 주거단지의 프리미엄을 누리세요.",
+    bgImage: "/images/hero-lake.jpg",
   },
   {
     num: "03",
-    tag: "Living",
-    title: "풍부한 생활 인프라",
-    subtitle: "편리함을 갖춘 완성형 주거",
-    desc: "이마트·롯데마트 등 대형마트와 천안시청, 행정복지센터 등 공공시설이 가깝습니다. 단국대병원·천안의료원 등 의료시설과 다양한 편의시설이 쾌적한 생활을 지원합니다.",
-    bgImage: "/images/premium-life.jpg",
-    features: ["대형마트·편의시설", "공공기관·의료시설", "문화·여가 인프라"],
+    tag: "Design",
+    title: "차별화된 대단지 특화설계",
+    desc: "실내수영장, 스카이라운지, 힐링 단지조경 등 대단지만의 차별화된 특화설계로 입주민의 삶의 질을 높입니다.",
+    bgImage: "/images/premium-living.jpg",
   },
   {
     num: "04",
     tag: "Education",
-    title: "우수한 교육 환경",
-    subtitle: "아이들의 미래를 위한 학세권",
-    desc: "천안업성초·중학교가 단지와 인접하고, 가람초·가람중이 가까운 도보 통학권입니다. 공주대 천안캠퍼스, 단국대 등 대학교도 인접해 교육 인프라가 풍부합니다.",
+    title: "학교를 품은 안심 교육환경",
+    desc: "1블록 바로 옆 고등학교, 2블록 앞 초·중학교 배치. 도보 통학이 가능한 안심 교육환경과 학원가가 가까이 있습니다.",
     bgImage: "/images/premium-education.jpg",
-    features: ["천안업성초·중 인접", "도보 통학권 확보", "대학교 인접"],
+  },
+  {
+    num: "05",
+    tag: "Infrastructure",
+    title: "삶이 편리한 새도시 인프라",
+    desc: "이마트, 코스트코 등 대형마트와 중심 생활상권이 인접. 새도시의 풍부한 인프라가 편리한 일상을 완성합니다.",
+    bgImage: "/images/premium-life.jpg",
+  },
+  {
+    num: "06",
+    tag: "Transport",
+    title: "빠르고 다양한 멀티 교통망",
+    desc: "번영로, 삼성대로, 천안대로 등 광역 도로망과 1호선 부성역이 인접하여 서울과 전국을 빠르게 연결합니다.",
+    bgImage: "/images/premium-transport-new.jpg",
+  },
+  {
+    num: "07",
+    tag: "Future",
+    title: "불당 너머 성성호수 새도시",
+    desc: "2만 5천여 세대 규모의 신주거타운. 불당을 넘어 성성호수 새도시가 만드는 미래 비전과 성장 가치를 선점하세요.",
+    bgImage: "/images/lake-view.jpg",
   },
 ];
 
 export default function PremiumSection() {
   const hero = useInView();
-  const why = useInView();
+  const grid1 = useInView(0.1);
+  const mid = useInView(0.1);
+  const grid2 = useInView(0.1);
+  const last = useInView(0.1);
 
   return (
     <section className="pt-[72px]">
-      {/* ══════════ HERO ══════════ */}
+      {/* ══════════ HERO BANNER ══════════ */}
       <div className="relative h-[50vh] min-h-[340px]">
         <Image src="/images/banner-premium.jpg" alt="" fill className="object-cover" sizes="100vw" priority />
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <p className="text-gold/60 text-[10px] tracking-[5px] font-medium uppercase mb-4">Premium</p>
-            <h1 className="text-white text-[36px] lg:text-[52px] font-extralight tracking-tight">프리미엄</h1>
+            <h1 className="text-white text-[36px] lg:text-[52px] font-extralight tracking-tight">PREMIUM 7</h1>
           </div>
         </div>
       </div>
@@ -80,87 +96,126 @@ export default function PremiumSection() {
       <div ref={hero.ref} className="bg-white">
         <div className={`max-w-[900px] mx-auto px-6 lg:px-16 py-20 lg:py-28 text-center transition-all duration-700 ${hero.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <h2 className="text-[26px] lg:text-[38px] font-extralight text-charcoal leading-snug tracking-tight">
-            당신의 일상에
+            업성 푸르지오 레이크시티
             <br />
-            특별한 가치를 더하다
+            7가지 프리미엄
           </h2>
           <div className="w-10 h-[1px] bg-gold/40 mx-auto mt-8 mb-8" />
-          <p className="text-cool-gray text-[14px] leading-[2] font-light max-w-[480px] mx-auto">
-            호수공원, 교통, 교육, 생활이 어우러진
-            프리미엄 주거의 새로운 기준
+          <p className="text-cool-gray text-[14px] leading-[2] font-light max-w-[520px] mx-auto">
+            호수뷰, 랜드마크, 특화설계, 교육, 인프라, 교통, 미래가치까지
+            <br />
+            7가지 프리미엄이 하나의 단지에서 완성됩니다.
           </p>
         </div>
       </div>
 
-      {/* ══════════ PREMIUM POINTS — Alternating Full-bleed ══════════ */}
-      {premiumPoints.map((item, i) => {
-        const sec = useInView(0.1);
-        const isOdd = i % 2 !== 0;
-        return (
-          <div key={i} ref={sec.ref} className="bg-white">
-            <div className={`max-w-[1400px] mx-auto transition-all duration-[800ms] ${sec.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-              <div className={`grid lg:grid-cols-12 min-h-[70vh] ${isOdd ? "" : ""}`}>
-                {/* Image Side */}
-                <div className={`relative min-h-[340px] lg:min-h-0 ${isOdd ? "lg:col-start-7 lg:col-end-13 lg:row-start-1" : "lg:col-span-7"}`}>
-                  <Image
-                    src={item.bgImage}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 58vw"
-                  />
-                </div>
+      {/* ══════════ 01 — HERO CARD (Large) ══════════ */}
+      <div ref={grid1.ref} className="bg-white">
+        <div className={`max-w-[1400px] mx-auto transition-all duration-[800ms] ${grid1.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div className="grid lg:grid-cols-12 min-h-[70vh]">
+            {/* Image */}
+            <div className="relative min-h-[340px] lg:min-h-0 lg:col-span-7">
+              <Image src={premium7[0].bgImage} alt={premium7[0].title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 58vw" />
+            </div>
+            {/* Text */}
+            <div className="flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-24 lg:col-span-5">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-gold text-[32px] font-extralight">01</span>
+                <div className="w-8 h-[1px] bg-gold/30" />
+                <span className="text-gold/60 text-[10px] tracking-[4px] font-medium uppercase">{premium7[0].tag}</span>
+              </div>
+              <h3 className="text-[26px] lg:text-[32px] font-extralight text-charcoal tracking-tight mb-3">{premium7[0].title}</h3>
+              <p className="text-dark-gray text-[13px] leading-[2] font-light">{premium7[0].desc}</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-                {/* Text Side */}
-                <div className={`flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-24 ${isOdd ? "lg:col-start-1 lg:col-end-7 lg:row-start-1" : "lg:col-span-5"}`}>
-                  <div className="flex items-center gap-4 mb-6">
-                    <span className="text-gold text-[32px] font-extralight">{item.num}</span>
-                    <div className="w-8 h-[1px] bg-gold/30" />
-                    <span className="text-gold/60 text-[10px] tracking-[4px] font-medium uppercase">{item.tag}</span>
+      {/* ══════════ 02 & 03 — Two Column ══════════ */}
+      <div className="bg-off-white border-t border-gray-100">
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2">
+          {premium7.slice(1, 3).map((item, i) => {
+            const sec = useInView(0.1);
+            return (
+              <div key={i} ref={sec.ref} className={`group relative min-h-[400px] lg:min-h-[520px] overflow-hidden ${i === 0 ? "lg:border-r border-gray-100" : ""}`}>
+                <Image src={item.bgImage} alt={item.title} fill className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" sizes="(max-width: 1024px) 100vw, 50vw" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-transparent" />
+                <div className={`absolute bottom-0 left-0 right-0 p-8 lg:p-12 transition-all duration-700 ${sec.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-gold text-[28px] font-extralight">{item.num}</span>
+                    <div className="w-6 h-[1px] bg-gold/30" />
+                    <span className="text-gold/50 text-[9px] tracking-[3px] uppercase font-medium">{item.tag}</span>
                   </div>
-
-                  <h3 className="text-[26px] lg:text-[32px] font-extralight text-charcoal tracking-tight mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-cool-gray text-[13px] mb-6 font-light">{item.subtitle}</p>
-                  <p className="text-dark-gray text-[13px] leading-[2] mb-8 font-light">{item.desc}</p>
-
-                  <div className="space-y-2">
-                    {item.features.map((f, fi) => (
-                      <div key={fi} className="flex items-center gap-3">
-                        <div className="w-1 h-1 bg-gold" />
-                        <span className="text-cool-gray text-[12px] font-light">{f}</span>
-                      </div>
-                    ))}
-                  </div>
+                  <h3 className="text-white text-[24px] lg:text-[28px] font-extralight tracking-tight mb-3">{item.title}</h3>
+                  <p className="text-white/45 text-[13px] font-light leading-[1.8] max-w-[380px]">{item.desc}</p>
                 </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* ══════════ 04 — Full Width Horizontal ══════════ */}
+      <div ref={mid.ref} className="bg-white">
+        <div className={`max-w-[1400px] mx-auto transition-all duration-[800ms] ${mid.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div className="grid lg:grid-cols-12 min-h-[50vh]">
+            {/* Text (left) */}
+            <div className="flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-24 lg:col-span-5 order-2 lg:order-1">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-gold text-[32px] font-extralight">04</span>
+                <div className="w-8 h-[1px] bg-gold/30" />
+                <span className="text-gold/60 text-[10px] tracking-[4px] font-medium uppercase">{premium7[3].tag}</span>
+              </div>
+              <h3 className="text-[26px] lg:text-[32px] font-extralight text-charcoal tracking-tight mb-3">{premium7[3].title}</h3>
+              <p className="text-dark-gray text-[13px] leading-[2] font-light">{premium7[3].desc}</p>
+            </div>
+            {/* Image (right) */}
+            <div className="relative min-h-[300px] lg:min-h-0 lg:col-span-7 order-1 lg:order-2">
+              <Image src={premium7[3].bgImage} alt={premium7[3].title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 58vw" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ══════════ 05 & 06 — Two Column ══════════ */}
+      <div ref={grid2.ref} className="bg-off-white border-t border-gray-100">
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2">
+          {premium7.slice(4, 6).map((item, i) => (
+            <div key={i} className={`group relative min-h-[400px] lg:min-h-[520px] overflow-hidden ${i === 0 ? "lg:border-r border-gray-100" : ""}`}>
+              <Image src={item.bgImage} alt={item.title} fill className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-transparent" />
+              <div className={`absolute bottom-0 left-0 right-0 p-8 lg:p-12 transition-all duration-700 ${grid2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`} style={{ transitionDelay: `${i * 150}ms` }}>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-gold text-[28px] font-extralight">{item.num}</span>
+                  <div className="w-6 h-[1px] bg-gold/30" />
+                  <span className="text-gold/50 text-[9px] tracking-[3px] uppercase font-medium">{item.tag}</span>
+                </div>
+                <h3 className="text-white text-[24px] lg:text-[28px] font-extralight tracking-tight mb-3">{item.title}</h3>
+                <p className="text-white/45 text-[13px] font-light leading-[1.8] max-w-[380px]">{item.desc}</p>
               </div>
             </div>
-            {/* Divider */}
-            {i < premiumPoints.length - 1 && <div className="max-w-[1400px] mx-auto px-6 lg:px-16"><div className="h-[1px] bg-gray-100" /></div>}
-          </div>
-        );
-      })}
+          ))}
+        </div>
+      </div>
 
-      {/* ══════════ WHY PRUGIO — Clean Grid ══════════ */}
-      <div ref={why.ref} className="bg-off-white border-t border-gray-100">
-        <div className={`max-w-[1200px] mx-auto px-6 lg:px-16 py-20 lg:py-28 transition-all duration-700 ${why.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <p className="text-gold text-[10px] tracking-[5px] font-medium uppercase mb-4">Why Prugio</p>
-          <h2 className="text-[28px] lg:text-[36px] font-extralight text-charcoal tracking-tight mb-16">푸르지오가 특별한 이유</h2>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200">
-            {[
-              { title: "DL이앤씨 시공", desc: "글로벌 건설사의 프리미엄 브랜드" },
-              { title: "친환경 설계", desc: "자연과 조화로운 단지 배치" },
-              { title: "혁신 평면", desc: "실용적이고 넓은 공간 구성" },
-              { title: "프리미엄 커뮤니티", desc: "피트니스·라운지 등 입주민 시설" },
-            ].map((item, i) => (
-              <div key={i} className="bg-off-white p-8">
-                <span className="text-gold text-[24px] font-extralight">{String(i + 1).padStart(2, "0")}</span>
-                <h4 className="text-charcoal text-[15px] font-semibold mt-4 mb-2">{item.title}</h4>
-                <p className="text-cool-gray text-[12px] leading-relaxed font-light">{item.desc}</p>
+      {/* ══════════ 07 — Closing Hero ══════════ */}
+      <div ref={last.ref} className="bg-white">
+        <div className={`max-w-[1400px] mx-auto transition-all duration-[800ms] ${last.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div className="grid lg:grid-cols-12 min-h-[60vh]">
+            {/* Image */}
+            <div className="relative min-h-[340px] lg:min-h-0 lg:col-span-7">
+              <Image src={premium7[6].bgImage} alt={premium7[6].title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 58vw" />
+            </div>
+            {/* Text */}
+            <div className="flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-24 lg:col-span-5">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-gold text-[32px] font-extralight">07</span>
+                <div className="w-8 h-[1px] bg-gold/30" />
+                <span className="text-gold/60 text-[10px] tracking-[4px] font-medium uppercase">{premium7[6].tag}</span>
               </div>
-            ))}
+              <h3 className="text-[26px] lg:text-[32px] font-extralight text-charcoal tracking-tight mb-3">{premium7[6].title}</h3>
+              <p className="text-dark-gray text-[13px] leading-[2] font-light">{premium7[6].desc}</p>
+            </div>
           </div>
         </div>
       </div>

@@ -162,9 +162,9 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
           {/* Stats — bottom right */}
           <div className="absolute bottom-0 right-0 hidden lg:flex">
             {[
-              { num: "1,165", label: "총 세대", suffix: "" },
-              { num: "29", label: "최고층", suffix: "F" },
-              { num: "84·111", label: "전용면적", suffix: "㎡" },
+              { num: "1,908", label: "총 세대", suffix: "" },
+              { num: "39", label: "최고층", suffix: "F" },
+              { num: "72·84·95", label: "전용면적", suffix: "㎡" },
             ].map((s, i) => (
               <div key={i} className="w-[160px] py-8 text-center border-l border-white/10 bg-navy/40 backdrop-blur-sm">
                 <p className="text-white text-[24px] font-extralight tracking-tight">{s.num}<span className="text-gold/60 text-[14px] ml-0.5">{s.suffix}</span></p>
@@ -198,9 +198,9 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
 
                 <div className="flex items-start gap-10 lg:gap-14">
                   {[
-                    { num: "1,165", label: "세대" },
-                    { num: "5", label: "개 동" },
-                    { num: "29", label: "최고층" },
+                    { num: "1,908", label: "세대" },
+                    { num: "11", label: "개 동" },
+                    { num: "39", label: "최고층" },
                   ].map((s, i) => (
                     <div key={i}>
                       <p className="text-navy text-[32px] lg:text-[36px] font-extralight tracking-tight leading-none">{s.num}</p>
@@ -314,10 +314,10 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
         <div ref={stats.ref} className="bg-white">
           <div className={`max-w-[1200px] mx-auto grid grid-cols-2 lg:grid-cols-4 transition-all duration-700 ${stats.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
             {[
-              { value: "1,165", unit: "세대", desc: "대단지 프리미엄" },
-              { value: "29", unit: "층", desc: "최고층 랜드마크" },
-              { value: "도보 1", unit: "분", desc: "호수공원 접근성" },
-              { value: "34", unit: "분", desc: "서울 용산 KTX" },
+              { value: "1,908", unit: "세대", desc: "대단지 프리미엄" },
+              { value: "39", unit: "층", desc: "최고층 랜드마크" },
+              { value: "11", unit: "개동", desc: "대규모 단지" },
+              { value: "1,460", unit: "세대", desc: "금회 공급" },
             ].map((s, i) => (
               <div key={i} className={`py-14 lg:py-20 text-center ${i < 3 ? "border-r border-gray-100" : ""}`}>
                 <p className="text-navy text-[32px] lg:text-[38px] font-extralight tracking-tight leading-none">
