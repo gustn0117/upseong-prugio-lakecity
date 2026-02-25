@@ -72,10 +72,10 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center px-6">
-          {/* Title */}
+          {/* Title — text-indent compensates trailing letter-spacing */}
           <h1
             className={`text-white text-[36px] sm:text-[48px] lg:text-[58px] tracking-[12px] sm:tracking-[16px] lg:tracking-[20px] leading-none transition-all duration-[1400ms] delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-            style={{ fontWeight: 200 }}
+            style={{ fontWeight: 200, paddingLeft: "20px" }}
           >
             PRUGIO
           </h1>
@@ -83,7 +83,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
           {/* Subtitle */}
           <div className={`flex items-center gap-4 mt-5 mb-7 transition-all duration-[1400ms] delay-[400ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
             <span className="w-10 sm:w-16 h-[1px] bg-gold/30" />
-            <span className="text-white/50 text-[12px] sm:text-[14px] tracking-[6px] sm:tracking-[10px] font-extralight">
+            <span className="text-white/50 text-[12px] sm:text-[14px] tracking-[6px] sm:tracking-[10px] font-extralight" style={{ paddingLeft: "10px" }}>
               레 이 크 시 티
             </span>
             <span className="w-10 sm:w-16 h-[1px] bg-gold/30" />
@@ -139,12 +139,13 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
       {/* ══════════ BELOW THE FOLD ══════════ */}
       <div id="home-content">
 
-        {/* HERO CINEMATIC */}
+        {/* HERO CINEMATIC — fades from splash dark */}
         <div ref={hero.ref} className="relative h-[80vh] min-h-[550px]">
           <Image src="/images/hero-lake.jpg" alt="호수공원 전경" fill className="object-cover" sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-navy/20" />
+          {/* Top fade from dark — seamless from splash */}
+          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0a0f18] to-transparent" />
 
-          {/* Text overlay — bottom left */}
           <div className={`absolute inset-0 flex items-end transition-all duration-[1000ms] ${hero.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
             <div className="max-w-[1400px] mx-auto w-full px-8 lg:px-16 pb-16 lg:pb-24">
               <p className="text-gold/50 text-[10px] tracking-[5px] uppercase mb-4">Upseong Prugio Lakecity</p>
@@ -171,6 +172,9 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
               </div>
             ))}
           </div>
+
+          {/* Bottom fade to white — seamless into About */}
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
         </div>
 
         {/* ABOUT */}
@@ -192,7 +196,6 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
                   프리미엄 주거 가치를 제공합니다.
                 </p>
 
-                {/* Key figures inline */}
                 <div className="flex items-start gap-10 lg:gap-14">
                   {[
                     { num: "1,165", label: "세대" },
@@ -207,19 +210,21 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
                 </div>
               </div>
 
-              {/* Image with overlay accent */}
+              {/* Image */}
               <div className={`relative min-h-[400px] lg:min-h-0 transition-all duration-[900ms] delay-200 ${about.visible ? "opacity-100" : "opacity-0"}`}>
                 <Image src="/images/nature-park.jpg" alt="호수공원" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
-                {/* Gold accent stripe */}
                 <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold/40 via-gold/10 to-transparent hidden lg:block" />
               </div>
             </div>
           </div>
         </div>
 
+        {/* About → Features transition */}
+        <div className="h-20 lg:h-28 bg-gradient-to-b from-white to-[#F8F7F4]" />
+
         {/* FEATURES */}
         <div ref={features.ref} className="bg-[#F8F7F4]">
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-16 py-24 lg:py-36">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-16 pt-8 lg:pt-12 pb-24 lg:pb-36">
 
             {/* Section header */}
             <div className={`flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 lg:mb-24 transition-all duration-700 ${features.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
@@ -237,7 +242,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
             {/* Feature grid */}
             <div className="grid lg:grid-cols-12 gap-3">
 
-              {/* Feature 1: Nature — large left */}
+              {/* Feature 1: Nature */}
               <div className={`lg:col-span-7 group relative min-h-[420px] lg:min-h-[560px] overflow-hidden transition-all duration-700 delay-100 ${features.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
                 <Image src="/images/premium-nature.jpg" alt="자연중심" fill className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" sizes="(max-width: 1024px) 100vw, 58vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-transparent" />
@@ -281,7 +286,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
               </div>
             </div>
 
-            {/* Feature 4: Education — full width horizontal */}
+            {/* Feature 4: Education */}
             <div className={`mt-3 group relative h-[280px] lg:h-[320px] overflow-hidden transition-all duration-700 delay-[500ms] ${features.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
               <Image src="/images/premium-education.jpg" alt="교육중심" fill className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" sizes="100vw" />
               <div className="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/30 to-transparent" />
@@ -302,17 +307,19 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
           </div>
         </div>
 
+        {/* Features → Stats transition */}
+        <div className="h-16 lg:h-20 bg-gradient-to-b from-[#F8F7F4] to-white" />
+
         {/* STATS STRIP */}
-        <div ref={stats.ref} className="bg-white border-y border-gray-100">
+        <div ref={stats.ref} className="bg-white">
           <div className={`max-w-[1200px] mx-auto grid grid-cols-2 lg:grid-cols-4 transition-all duration-700 ${stats.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
             {[
-              { icon: "🏠", value: "1,165", unit: "세대", desc: "대단지 프리미엄" },
-              { icon: "🏗", value: "29", unit: "층", desc: "최고층 랜드마크" },
-              { icon: "🌊", value: "도보 1", unit: "분", desc: "호수공원 접근성" },
-              { icon: "🚄", value: "34", unit: "분", desc: "서울 용산 KTX" },
+              { value: "1,165", unit: "세대", desc: "대단지 프리미엄" },
+              { value: "29", unit: "층", desc: "최고층 랜드마크" },
+              { value: "도보 1", unit: "분", desc: "호수공원 접근성" },
+              { value: "34", unit: "분", desc: "서울 용산 KTX" },
             ].map((s, i) => (
-              <div key={i} className={`py-12 lg:py-16 text-center ${i < 3 ? "border-r border-gray-100" : ""}`}>
-                <p className="text-[20px] mb-3">{s.icon}</p>
+              <div key={i} className={`py-14 lg:py-20 text-center ${i < 3 ? "border-r border-gray-100" : ""}`}>
                 <p className="text-navy text-[32px] lg:text-[38px] font-extralight tracking-tight leading-none">
                   {s.value}<span className="text-gold text-[16px] ml-1 font-light">{s.unit}</span>
                 </p>
@@ -322,8 +329,14 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
           </div>
         </div>
 
+        {/* Stats → CTA transition */}
+        <div className="relative h-24 lg:h-32 overflow-hidden">
+          <Image src="/images/lake-view.jpg" alt="" fill className="object-cover" sizes="100vw" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-navy/60 to-navy/85" />
+        </div>
+
         {/* CTA */}
-        <div ref={cta.ref} className="relative py-32 lg:py-40 overflow-hidden">
+        <div ref={cta.ref} className="relative py-28 lg:py-36 overflow-hidden">
           <Image src="/images/lake-view.jpg" alt="" fill className="object-cover" sizes="100vw" />
           <div className="absolute inset-0 bg-navy/85" />
           <div className={`relative z-10 max-w-[600px] mx-auto px-6 text-center transition-all duration-700 ${cta.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
@@ -335,7 +348,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
             </p>
             <a
               href="tel:1844-0981"
-              className="inline-block px-16 py-5 border border-gold/30 text-white text-[20px] font-extralight tracking-[6px] hover:bg-gold/10 hover:border-gold/50 transition-all duration-400"
+              className="inline-block px-16 py-5 border border-gold/30 text-white text-[20px] font-extralight tracking-[6px] hover:bg-gold/10 hover:border-gold/50 transition-all duration-300"
             >
               1844-0981
             </a>
