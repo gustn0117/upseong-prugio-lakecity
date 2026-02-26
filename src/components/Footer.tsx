@@ -56,7 +56,7 @@ export default function Footer({ onTabChange }: FooterProps) {
               <span className="text-[18px] font-semibold text-white/80 tracking-wider">1844-0981</span>
             </div>
             <div className="mt-8 text-[12px] text-gray-700">
-              <p><span className="text-gray-600">시공</span> DL이앤씨</p>
+              <p><span className="text-gray-600">시공</span> 대우건설</p>
             </div>
           </div>
 

@@ -83,7 +83,7 @@ export default function BusinessSection() {
               <p className="text-cool-gray text-[14px] leading-[2.2] font-light">
                 총 1,908세대의 대규모 주거단지가 업성3 도시개발지구에 완성됩니다.
                 금회 공급 1블록 1,460세대, 지하2층~지상39층 11개동 규모로
-                DL이앤씨의 기술력과 푸르지오 브랜드 가치가 만나
+                대우건설의 기술력과 푸르지오 브랜드 가치가 만나
                 새로운 주거 라이프를 선사합니다.
               </p>
             </div>
@@ -96,7 +96,7 @@ export default function BusinessSection() {
                   { label: "대지위치", value: "천안 업성3 도시개발지구 내 공동주택 부지(1BL)" },
                   { label: "건축규모", value: "총 1,908세대 중 금회공급 1블록 1,460세대\n지하2층~지상39층 11개동" },
                   { label: "주택형", value: "전용 72㎡A·B·C·D / 84㎡A·B·C·D / 95㎡A·B" },
-                  { label: "시공사", value: "DL이앤씨" },
+                  { label: "시공사", value: "대우건설" },
                 ].map((row, i) => (
                   <div key={i} className="flex py-5 first:pt-0">
                     <span className="w-[90px] flex-shrink-0 text-gold text-[11px] tracking-wider font-medium pt-0.5">{row.label}</span>

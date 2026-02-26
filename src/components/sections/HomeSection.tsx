@@ -81,7 +81,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
           <p
             className={`text-gold/60 text-[10px] sm:text-[11px] tracking-[6px] uppercase font-light mb-6 text-shadow-subtle transition-all duration-[1400ms] delay-100 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
-            Upseong · DL E&amp;C
+            Upseong · Daewoo E&amp;C
           </p>
 
           {/* Title */}
@@ -168,7 +168,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
               </h2>
               <p className="text-white/60 text-[13px] sm:text-[15px] font-light leading-relaxed max-w-[420px] text-shadow-subtle">
                 천안 업성동, 호수공원 바로 앞<br />
-                DL이앤씨가 선보이는 프리미엄 주거
+                대우건설이 선보이는 프리미엄 주거
               </p>
             </div>
           </div>
@@ -206,7 +206,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
                 <p className="text-cool-gray text-[14px] leading-[2.2] font-light mb-14 max-w-[440px]">
                   업성 푸르지오 레이크시티는 호수공원 바로 앞에 위치하여
                   탁 트인 호수 조망과 쾌적한 자연환경을 누릴 수 있습니다.
-                  DL이앤씨 푸르지오 브랜드로 새로운 라이프스타일과
+                  대우건설 푸르지오 브랜드로 새로운 라이프스타일과
                   프리미엄 주거 가치를 제공합니다.
                 </p>
 
@@ -366,7 +366,7 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
             >
               1844-0981
             </a>
-            <p className="text-white/15 text-[10px] mt-12 tracking-[3px] uppercase">시공 · DL이앤씨</p>
+            <p className="text-white/15 text-[10px] mt-12 tracking-[3px] uppercase">시공 · 대우건설</p>
           </div>
         </div>
       </div>

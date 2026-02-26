@@ -102,7 +102,7 @@ export default function RegisterSection() {
               {privacyOpen && (
                 <div className="px-6 pb-5 max-h-[240px] overflow-y-auto text-[12px] text-cool-gray leading-[1.9] space-y-3 border-t border-gray-100">
                   <p className="pt-4">
-                    DL이앤씨(이하 &quot;회사&quot;)은 고객님의 개인정보를 중요시하며, 「개인정보 보호법」 및 관련 법률을 준수합니다.
+                    대우건설(이하 &quot;회사&quot;)은 고객님의 개인정보를 중요시하며, 「개인정보 보호법」 및 관련 법률을 준수합니다.
                   </p>
                   <p><strong className="text-dark-gray">수집항목:</strong> 이름, 연락처, 관심유형, 연령대, 주소</p>
                   <p><strong className="text-dark-gray">이용목적:</strong> 분양 마케팅, 고객 상담, 분양정보 안내</p>
