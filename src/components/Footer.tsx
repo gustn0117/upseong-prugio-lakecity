@@ -88,7 +88,7 @@ export default function Footer({ onTabChange }: FooterProps) {
       <div className="border-t border-white/[0.05]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[12px] text-gray-700">
-            &copy; 2025 업성 푸르지오 레이크시티. All rights reserved.
+            &copy; 2025 업성 푸르지오 레이크시티. All rights reserved. | 사이트 관리자: 김현주
           </p>
           <p className="text-[11px] text-gray-700 max-w-[600px] text-center md:text-right leading-relaxed">
             본 제작물에 사용된 이미지 및 내용, 문구 등은 소비자의 이해를 돕기 위해 제작 또는 표기된 것으로
