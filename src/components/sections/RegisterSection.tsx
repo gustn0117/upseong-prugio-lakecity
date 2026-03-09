@@ -104,7 +104,7 @@ export default function RegisterSection() {
                   <p className="pt-4">
                     대우건설(이하 &quot;회사&quot;)은 고객님의 개인정보를 중요시하며, 「개인정보 보호법」 및 관련 법률을 준수합니다.
                   </p>
-                  <p><strong className="text-dark-gray">수집항목:</strong> 이름, 연락처, 관심유형, 연령대, 주소</p>
+                  <p><strong className="text-dark-gray">수집항목:</strong> 이름, 연락처, 관심유형, 생년월일, 주소</p>
                   <p><strong className="text-dark-gray">이용목적:</strong> 분양 마케팅, 고객 상담, 분양정보 안내</p>
                   <p><strong className="text-dark-gray">보유기간:</strong> 분양 종료 시까지 (철회 요청 시 즉시 파기)</p>
                   <p><strong className="text-dark-gray">수탁업체:</strong> 분양대행사, 홈페이지 운영업체, 문자 발송업체</p>
@@ -195,25 +195,17 @@ export default function RegisterSection() {
               </div>
             </div>
 
-            {/* Age */}
+            {/* Birth */}
             <div>
-              <label className="text-gold text-[10px] tracking-[3px] font-medium uppercase">연령대</label>
-              <div className="flex flex-wrap gap-3 mt-3">
-                {["20대", "30대", "40대", "50대", "60대+"].map((age) => (
-                  <button
-                    key={age}
-                    type="button"
-                    onClick={() => handleChange("age", age)}
-                    className={`px-5 py-2.5 text-[13px] border transition-all duration-200 ${
-                      form.age === age
-                        ? "border-navy bg-navy text-white"
-                        : "border-gray-200 text-cool-gray hover:border-gray-400"
-                    }`}
-                  >
-                    {age}
-                  </button>
-                ))}
-              </div>
+              <label className="text-gold text-[10px] tracking-[3px] font-medium uppercase">생년월일</label>
+              <input
+                type="text"
+                maxLength={6}
+                value={form.age}
+                onChange={(e) => handleChange("age", e.target.value.replace(/\D/g, ""))}
+                placeholder="생년월일 6자리 (예: 901225)"
+                className={inputBase}
+              />
             </div>
 
             {/* Address */}
