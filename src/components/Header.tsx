@@ -92,7 +92,7 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
             <div className="ml-6 flex items-center gap-5">
               <a
                 href="tel:18440981"
-                className={`hidden xl:flex items-center gap-1.5 text-[13px] font-semibold tracking-wider transition-colors duration-300 ${isDark ? "text-white/60 hover:text-white" : "text-cool-gray hover:text-navy"}`}
+                className={`hidden xl:flex items-center gap-1.5 text-[15px] font-semibold tracking-wider transition-colors duration-300 ${isDark ? "text-white/60 hover:text-white" : "text-cool-gray hover:text-navy"}`}
               >
                 <svg className="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -102,7 +102,7 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
               </a>
               <button
                 onClick={() => onTabChange("register")}
-                className={`px-5 py-2 text-[12px] font-semibold tracking-wider rounded-sm transition-all duration-300
+                className={`px-6 py-2.5 text-[14px] font-semibold tracking-wider rounded-sm transition-all duration-300
                   ${isDark
                     ? "border border-white/20 text-white/80 hover:bg-white/10"
                     : "bg-navy text-white hover:bg-navy-light"
