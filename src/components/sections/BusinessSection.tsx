@@ -140,10 +140,10 @@ export default function BusinessSection() {
           <p className="text-white/20 text-[10px] tracking-[5px] uppercase mb-4">Contact</p>
           <h3 className="text-white text-[24px] font-extralight tracking-tight mb-6">분양 상담 문의</h3>
           <a
-            href="tel:1844-0981"
+            href="tel:1844-1680"
             className="inline-block px-12 py-4 bg-white text-navy text-[15px] font-semibold tracking-widest hover:bg-off-white transition-all duration-300"
           >
-            1844-0981
+            1844-1680
           </a>
         </div>
       </div>

@@ -171,13 +171,13 @@ export default function AdminDashboardPage() {
               <StatCard label="전체 등록수" value={String(stats.totalRegistrations)} icon="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" color="navy" />
               <StatCard label="오늘 등록수" value={String(stats.todayRegistrations)} icon="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" color="blue-500" />
               <StatCard
-                label="인기 관심유형"
+                label="인기 관심타입"
                 value={stats.byInterestType[0]?.type || "-"}
                 icon="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                 color="amber-500"
               />
               <StatCard
-                label="인기 연령대"
+                label="인기 방문일시"
                 value={stats.byAge[0]?.age || "-"}
                 icon="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                 color="purple-500"
@@ -186,8 +186,8 @@ export default function AdminDashboardPage() {
 
             {/* ===== 차트 ===== */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-              {/* 관심유형별 */}
-              <ChartCard title="관심유형별 분포">
+              {/* 관심타입별 */}
+              <ChartCard title="관심타입별 분포">
                 {stats.byInterestType.length === 0 ? (
                   <p className="text-[13px] text-gray-300 text-center py-6">데이터 없음</p>
                 ) : (
@@ -199,8 +199,8 @@ export default function AdminDashboardPage() {
                 )}
               </ChartCard>
 
-              {/* 연령대별 */}
-              <ChartCard title="연령대별 분포">
+              {/* 방문일시별 */}
+              <ChartCard title="방문일시별 분포">
                 {stats.byAge.length === 0 ? (
                   <p className="text-[13px] text-gray-300 text-center py-6">데이터 없음</p>
                 ) : (
@@ -304,24 +304,19 @@ export default function AdminDashboardPage() {
                 onChange={(e) => { setFilterInterest(e.target.value); setPage(1); }}
                 className="px-3 py-2 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-navy/20"
               >
-                <option value="">관심유형 전체</option>
-                <option value="특별공급">특별공급</option>
-                <option value="1순위">1순위</option>
-                <option value="2순위">2순위</option>
+                <option value="">관심타입 전체</option>
+                <option value="74타입">74타입</option>
+                <option value="84타입">84타입</option>
+                <option value="95타입">95타입</option>
               </select>
 
-              <select
+              <input
+                type="text"
                 value={filterAge}
                 onChange={(e) => { setFilterAge(e.target.value); setPage(1); }}
-                className="px-3 py-2 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-navy/20"
-              >
-                <option value="">연령대 전체</option>
-                <option value="20대">20대</option>
-                <option value="30대">30대</option>
-                <option value="40대">40대</option>
-                <option value="50대">50대</option>
-                <option value="60대 이상">60대 이상</option>
-              </select>
+                placeholder="방문일시 검색"
+                className="w-[160px] px-3 py-2 border border-gray-200 rounded-lg text-[13px] bg-white focus:outline-none focus:ring-2 focus:ring-navy/20"
+              />
 
               <select
                 value={filterCity}
@@ -358,8 +353,8 @@ export default function AdminDashboardPage() {
                   <th className="px-4 py-3 text-left font-semibold text-gray-500 w-[60px]">No.</th>
                   <SortTh label="성명" col="name" current={sortBy} order={sortOrder} onClick={toggleSort} />
                   <SortTh label="연락처" col="phone" current={sortBy} order={sortOrder} onClick={toggleSort} />
-                  <SortTh label="관심유형" col="interest_type" current={sortBy} order={sortOrder} onClick={toggleSort} />
-                  <SortTh label="생년월일" col="age" current={sortBy} order={sortOrder} onClick={toggleSort} />
+                  <SortTh label="관심타입" col="interest_type" current={sortBy} order={sortOrder} onClick={toggleSort} />
+                  <SortTh label="방문일시" col="age" current={sortBy} order={sortOrder} onClick={toggleSort} />
                   <th className="px-4 py-3 text-left font-semibold text-gray-500">지역</th>
                   <SortTh label="등록일시" col="created_at" current={sortBy} order={sortOrder} onClick={toggleSort} />
                   <th className="px-4 py-3 text-center font-semibold text-gray-500 w-[120px]">관리</th>
@@ -375,8 +370,8 @@ export default function AdminDashboardPage() {
                       <td className="px-4 py-3">
                         {row.interest_type ? (
                           <span className={`inline-block px-2 py-0.5 rounded-full text-[11px] font-medium ${
-                            row.interest_type === "특별공급" ? "bg-purple-50 text-purple-600" :
-                            row.interest_type === "1순위" ? "bg-blue-50 text-blue-600" :
+                            row.interest_type === "74타입" ? "bg-purple-50 text-purple-600" :
+                            row.interest_type === "84타입" ? "bg-blue-50 text-blue-600" :
                             "bg-green-50 text-green-600"
                           }`}>
                             {row.interest_type}
@@ -479,8 +474,8 @@ export default function AdminDashboardPage() {
               <DetailRow label="No." value={String(detailItem.id)} />
               <DetailRow label="성명" value={detailItem.name} />
               <DetailRow label="연락처" value={detailItem.phone} />
-              <DetailRow label="관심유형" value={detailItem.interest_type || "-"} />
-              <DetailRow label="생년월일" value={detailItem.age || "-"} />
+              <DetailRow label="관심타입" value={detailItem.interest_type || "-"} />
+              <DetailRow label="방문일시" value={detailItem.age || "-"} />
               <DetailRow label="시/도" value={detailItem.city || "-"} />
               <DetailRow label="시/구/군" value={detailItem.district || "-"} />
               <DetailRow label="읍/면/동" value={detailItem.dong || "-"} />

@@ -361,10 +361,10 @@ export default function HomeSection({ onTabChange }: HomeSectionProps) {
               업성 푸르지오 레이크시티에 대해<br />자세한 상담을 받아보세요.
             </p>
             <a
-              href="tel:1844-0981"
+              href="tel:1844-1680"
               className="inline-block px-16 py-5 border border-gold/30 text-white text-[20px] font-extralight tracking-[6px] hover:bg-gold/10 hover:border-gold/50 transition-all duration-300 text-shadow-subtle"
             >
-              1844-0981
+              1844-1680
             </a>
             <p className="text-white/15 text-[10px] mt-12 tracking-[3px] uppercase">시공 · 대우건설</p>
           </div>

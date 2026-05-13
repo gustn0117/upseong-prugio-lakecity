@@ -56,7 +56,7 @@ export default function AdminLoginPage() {
             관리자 <span className="font-bold">로그인</span>
           </h1>
           <p className="text-[13px] text-gray-400 text-center mb-8">
-            관심고객 등록 관리 시스템
+            방문예약 관리 시스템
           </p>
 
           <form onSubmit={handleSubmit}>

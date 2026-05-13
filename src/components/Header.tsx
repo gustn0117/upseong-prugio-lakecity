@@ -91,14 +91,14 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
 
             <div className="ml-6 flex items-center gap-5">
               <a
-                href="tel:18440981"
+                href="tel:18441680"
                 className={`hidden xl:flex items-center gap-2 text-[16px] font-bold tracking-wider transition-colors duration-300 ${isDark ? "text-white hover:text-white" : "text-navy hover:text-navy-light"}`}
               >
                 <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                1844-0981
+                1844-1680
               </a>
               <button
                 onClick={() => onTabChange("register")}
@@ -108,14 +108,14 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
                     : "bg-navy text-white hover:bg-navy-light"
                   }`}
               >
-                관심고객등록
+                방문예약
               </button>
             </div>
           </div>
 
           {/* Mobile Controls */}
           <div className="lg:hidden flex items-center gap-2">
-            <a href="tel:18440981" className={`p-1.5 ${textColor}`}>
+            <a href="tel:18441680" className={`p-1.5 ${textColor}`}>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -156,7 +156,7 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
               onClick={() => { onTabChange("register"); setMobileOpen(false); }}
               className="w-full py-3.5 bg-navy text-white text-[14px] font-semibold tracking-wider rounded-sm mb-6 hover:bg-navy-light transition-colors"
             >
-              관심고객등록
+              방문예약
             </button>
 
             {/* Menu Items */}
@@ -175,12 +175,12 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
 
             {/* Phone */}
             <div className="mt-6 pt-6 border-t border-gray-100">
-              <a href="tel:18440981" className="flex items-center gap-2">
+              <a href="tel:18441680" className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="text-[15px] font-semibold text-navy tracking-wider">1844-0981</span>
+                <span className="text-[15px] font-semibold text-navy tracking-wider">1844-1680</span>
               </a>
             </div>
           </div>

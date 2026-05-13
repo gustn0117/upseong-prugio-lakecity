@@ -161,10 +161,10 @@ export default function PremiumSection() {
           <p className="text-white/20 text-[10px] tracking-[5px] uppercase mb-4">Contact</p>
           <h3 className="text-white text-[24px] font-extralight tracking-tight mb-6">지금 바로 상담받아보세요</h3>
           <a
-            href="tel:1844-0981"
+            href="tel:1844-1680"
             className="inline-block px-12 py-4 bg-gold text-white text-[15px] font-semibold tracking-widest hover:bg-gold-light transition-all duration-300"
           >
-            1844-0981
+            1844-1680
           </a>
         </div>
       </div>

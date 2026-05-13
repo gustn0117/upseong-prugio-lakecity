@@ -20,7 +20,7 @@ export default function Footer({ onTabChange }: FooterProps) {
       <div className="bg-navy">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <p className="text-white text-[20px] font-light tracking-wide">관심고객 사전등록</p>
+            <p className="text-white text-[20px] font-light tracking-wide">방문예약 신청</p>
             <p className="text-white/30 text-[13px] mt-2 font-light">빠른 상담을 위해 지금 바로 등록하세요</p>
           </div>
           <button
@@ -53,7 +53,7 @@ export default function Footer({ onTabChange }: FooterProps) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              <span className="text-[18px] font-semibold text-white/80 tracking-wider">1844-0981</span>
+              <span className="text-[18px] font-semibold text-white/80 tracking-wider">1844-1680</span>
             </div>
             <div className="mt-8 text-[12px] text-gray-700">
               <p><span className="text-gray-600">시공</span> 대우건설</p>
@@ -68,7 +68,7 @@ export default function Footer({ onTabChange }: FooterProps) {
                 { id: "business", label: "사업개요" },
                 { id: "location", label: "입지환경" },
                 { id: "premium", label: "프리미엄" },
-                { id: "register", label: "관심고객등록" },
+                { id: "register", label: "방문예약" },
               ].map((item) => (
                 <li key={item.id}>
                   <button
